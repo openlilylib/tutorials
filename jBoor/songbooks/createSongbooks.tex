@@ -9,97 +9,148 @@ You should provide an abstract
 \end{authorAbstract}
 
 \section*{Songbooks}
- A songbook is a book that contains pieces of music, but also contains various bits of text.  It may include a general introduction, and specific introductions or performance notes for each piece. It should have frontmatter, including a table of contents that lists all of the pieces of music included in the book. 
+A songbook is a book that contains pieces of music, but also contains various bits of text. 
+It may include a general introduction, and specific introductions or performance notes for each piece. 
+It should have frontmatter, including a table of contents that lists all of the pieces of music included in the book. 
 
-LilyPond provides a python script called  \texttt{lilypond-book} that is designed to incorporate LilyPond output into \LaTeX\ documents. However, \texttt{ lilypond-book} is best suited for musicological documents, wherein musical examples are presented for consideration rather than for perfomance. \texttt{ lilypond-book} is not designed to preserve all of the format and layout decisions that make LilyPond scores excellent for musical use, such as system length and between-system spacing. 
+LilyPond provides a python script called  \package{lilypond-book} that is designed to incorporate LilyPond output into \LaTeX\ documents. 
+However, \package{lilypond-book} is best suited for musicological documents, wherein musical examples are presented for consideration rather than for perfomance. 
+\package{lilypond-book} is not designed to preserve all of the format and layout decisions that make LilyPond scores excellent for musical use, such as system length and between-system spacing. 
 
-In a songbook, the musical scores should be given an optimal presentation for use as musical scores, while the text should be given an optimal presentation for reading. Attempts to use \texttt{ lilypond-book} for songbook production result in an unfruitful opposition between \LaTeX's layout procedures and those of LilyPond.
+In a songbook, the musical scores should be given an optimal presentation for use as musical scores, while the text should be given an optimal presentation for reading. 
+Attempts to use \package{lilypond-book} for songbook production result in an unfruitful opposition between \LaTeX's layout procedures and those of LilyPond.
 
-The best situation for producing a songbook with LilyPond and \LaTeX\ is one in which \LaTeX's layout and formatting are simply suspended while the musical score is inserted into the final output. To this end we will use  \cmd{includepdf}.
+The best situation for producing a songbook with LilyPond and \LaTeX\ is one in which \LaTeX's layout and formatting are simply suspended while the musical score is inserted into the final output. 
+To this end we will use  \cmd{includepdf}.
 
 \section*{Preparing Your LilyPond Scores}
 
 \begin{itemize}
 
-\item  LilyPond scores must be compiled and the resulting PDFs must be to hand before we can do anything with \LaTeX\ to turn them into a songbook. It will be easiest if we keep our finished LilyPond scores in the same directory as out \LaTeX\ source, so as not to have to type long paths when we call the PDFs into \LaTeX.  
+\item  LilyPond scores must be compiled and the resulting PDFs must be to hand before we can do anything with \LaTeX\ to turn them into a songbook. 
+It will be easiest if we keep our finished LilyPond scores in the same directory as out \LaTeX\ source, so as not to have to type long paths when we call the PDFs into \LaTeX.  
 
 \item  Since we want our LilyPond scores to be separable within the the songbook, we should compile them separately, producing one PDF for each piece of music.  
 
-\item  Since the page-numbering must be done by \LaTeX, we should turn off page numbering in our LilyPond source. This is done in the \cmd{paper} block:
+\item  Since the page-numbering must be done by \LaTeX, we should turn off page numbering in our LilyPond source. 
+This is done in the \cmd{paper} block:
 
-\begin{verbatim} \paper{ print-page-number = ##f}  \end{verbatim}
+\begin{verbatim}
+	\paper{ print-page-number = ##f} 
+\end{verbatim}
 
 \end{itemize}
 
 \section*{Using \cmd{includepdf}}
 
-The \cmd{includepdf} command is part of the \texttt{ pdfpages} package. You must have this package installed and have \cmd{usepackage{pdfpages}} in the preamble of your \LaTeX\ document.
+The \cmd{includepdf} command is part of the \package{pdfpages} package. 
+You must have this package installed and have \cmd{usepackage{pdfpages}} in the preamble of your \LaTeX\ document.
 
-By default, \cmd{includepdf} includes only the first page of the PDF. To include all of your PDF score, your basic use of \cmd{includepdf} should look like this:
+By default, \cmd{includepdf} includes only the first page of the PDF. 
+To include all of your PDF score, your basic use of \cmd{includepdf} should look like this:
 
-\begin{verbatim} \includepdf[pages=-]{path/to/myScore.pdf} \end{verbatim}
+\begin{verbatim}
+	\includepdf[pages=-]{path/to/myScore.pdf}
+\end{verbatim}
 
-This use of \cmd{includepdf} brings your LilyPond scores into the flow of your \LaTeX\ output. Each score will begin on its own page, and regular \LaTeX\ business will follow on the the page that follows the last page of your PDF.
+This use of \cmd{includepdf} brings your LilyPond scores into the flow of your \LaTeX\ output. 
+Each score will begin on its own page, and regular \LaTeX\ business will follow on the the page that follows the last page of your PDF.
 
-Also by default, \cmd{includepdf} removes all headers and footers supplied by \LaTeX. This includes page-numbering. In order to restore page-numbering to your music pages, include this line in the body of your \LaTeX\ document:
+Also by default, \cmd{includepdf} removes all headers and footers supplied by \LaTeX. 
+This includes page-numbering. 
+In order to restore page-numbering to your music pages, include this line in the body of your \LaTeX\ document:
 
-\begin{verbatim} \includepdfset{pagecommand=\thispagestyle{plain}} \end{verbatim}
+\begin{verbatim}
+	\includepdfset{pagecommand=\thispagestyle{plain}}
+\end{verbatim}
 
-This sets the pagestyle to \texttt{ plain} for all PDF pages. The \texttt{ plain} pagestyle provides a page number at the bottom center of each page, but no headers. It is likely that the placement of the page number will interfere with your LilyPond score. We shall deal with this issue later.
+This sets the pagestyle to \texttt{plain} for all PDF pages. 
+The \texttt{plain} pagestyle provides a page number at the bottom center of each page, but no headers. 
+It is likely that the placement of the page number will interfere with your LilyPond score. 
+We shall deal with this issue later.
 
 \section*{Getting Your Scores into the Table of Contents}
 
-Your songbook probably needs a table of contents, and you will want your scores to be listed. The regular \LaTeX\ \cmd\texttt{  section} and \cmd{chapter} commands provide a TOC listing, but they also print a numbered title above the section to which they refer. This will not be appropriate for scores, since the scores already have their own titles produced by LilyPond. To provide a TOC listing without printing a title, you can use: 
+Your songbook probably needs a table of contents, and you will want your scores to be listed. 
+The regular \LaTeX\ \cmd{section} and \cmd{chapter} commands provide a TOC listing, but they also print a numbered title above the section to which they refer. 
+This will not be appropriate for scores, since the scores already have their own titles produced by LilyPond. 
+To provide a TOC listing without printing a title, you can use: 
 
-\begin{verbatim} \addcontentsline{toc}{section}{The Name of a Piece of Music} \end{verbatim}
+\begin{verbatim}
+	\addcontentsline{toc}{section}{The Name of a Piece of Music}
+\end{verbatim}
 
-This should immediately follow the \cmd{includepdf} command. So now each inclusion of a piece of music in your book looks something like this:
+This should immediately follow the \cmd{includepdf} command. 
+So now each inclusion of a piece of music in your book looks something like this:
 
-\begin{verbatim} \addcontentsline{toc}{section}{The Name of a Piece of Music}
- \includepdf[pages=-]{path/to/thePDFscoreOfThatPiece.pdf} \end{verbatim}
+\begin{verbatim}
+	\addcontentsline{toc}{section}{The Name of a Piece of Music}
+	\includepdf[pages=-]{path/to/thePDFscoreOfThatPiece.pdf}
+\end{verbatim}
 
-Note that \cmd{section} is used when your \LaTeX\ document uses the \texttt{ article} class, while \texttt{ chapter} should be substituted if you are making a \texttt{ book}.
+Note that \cmd{section} is used when your \LaTeX\ document uses the \package{article} class, while \cmd{chapter} should be substituted if you are making a \package{book}.
 
-These PDF-inclusions can be interspersed with regular \cmd{section} or \texttt{ chapter} commands. This is useful if you want to provide introductions to your pieces or other textual interludes. Of course, if the introduction has the same title as your piece, then you should omit the \texttt{ addcontentsline} for that piece.
+These PDF-inclusions can be interspersed with regular \cmd{section} or \cmd{chapter} commands. 
+This is useful if you want to provide introductions to your pieces or other textual interludes. 
+Of course, if the introduction has the same title as your piece, then you should omit the \cmd{addcontentsline} for that piece.
 
-By default, \cmd{section} and \texttt{ chapter} are numbered, both in their titles and in their TOC entries. \texttt{ addcontentsline} entries are not numbered. To turn off numbering for all TOC entries for the sake of uniformity, include this line the body of your \LaTeX\ document:
+By default, \cmd{section} and \cmd{chapter} are numbered, both in their titles and in their TOC entries. 
+\cmd{addcontentsline} entries are not numbered. 
+To turn off numbering for all TOC entries for the sake of uniformity, include this line the body of your \LaTeX\ document:
 
-\begin{verbatim}  \setcounter{secnumdepth}{-1} \end{verbatim}
+\begin{verbatim}
+	\setcounter{secnumdepth}{-1}
+\end{verbatim}
 
-With \texttt{ chapter/section} numbering turned off, you can freely intersperse textual sections with scores however you please:
+With \cmd{chapter/section} numbering turned off, you can freely intersperse textual sections with scores however you please:
 
 \begin{verbatim}[frame=single] 
-\section{Excellent Song} 
-The introduction to ``Excellent Song'' goes like this. 
-It elaborates upon the excellence of ``Excellent Song.'' 
+	\section{Excellent Song} 
+	The introduction to ``Excellent Song'' goes like this. 
+	It elaborates upon the excellence of ``Excellent Song.'' 
+	
+	%  We don't need a second TOC entry  
+	%  after the introduction, so straight to: 
+	
+	\includepdf[pages=-]{path/to/ExcellentSong.pdf}
+	
+	% The next song doesn't need an introduction, so: 
+	\addcontentsline{toc}{section}{Mediocre Song} 
+	\includepdf[pages=-]{path/to/MediocreSong.pdf} 
+	\addcontentsline{toc}{section}{Another Song} 
+	\includepdf[pages=-]{path/to/anotherSong.pdf}
+	
+	\section{Verbose Preamble to the Next Bit}
+\end{verbatim}
 
-%  We don't need a second TOC entry  
-%  after the introduction, so straight to: 
-
-\includepdf[pages=-]{path/to/ExcellentSong.pdf}
-
-% The next song doesn't need an introduction, so: 
-\addcontentsline{toc}{section}{Mediocre Song} 
-\includepdf[pages=-]{path/to/MediocreSong.pdf} 
-\addcontentsline{toc}{section}{Another Song} 
-\includepdf[pages=-]{path/to/anotherSong.pdf}
-
-\section{Verbose Preamble to the Next Bit} \end{verbatim}
-
-Please not that \LaTeX\ must compile your file at least \textit{twice} in order to get the TOC right. 
+Please note that \LaTeX\ must compile your file at least \textit{twice} in order to get the TOC right. 
 
 \section*{Getting LilyPond Scores and \LaTeX\ Page-numbers out of Each Other's Way}
 
-We have page numbers on our scores, but they're in the wrong place with regard to the score. The way that we fix this will depend on the final dimensions of the book we intend to produce, and will be affected by our manipulation of layout variables in both LilyPond and \LaTeX. Basically, we need enough room for everything. We need the scores to stop in time to leave enough room for the page number, and we also need the page number to be low (or high) enough that the score doesn’t need to stop (or start) in a silly-looking place. Fortunately, the page-numbers can be moved around a bit in \LaTeX\ without mucking up the rest of the layout.
+We have page numbers on our scores, but they're in the wrong place with regard to the score. 
+The way that we fix this will depend on the final dimensions of the book we intend to produce, and will be affected by our manipulation of layout variables in both LilyPond and \LaTeX. 
+Basically, we need enough room for everything. 
+We need the scores to stop in time to leave enough room for the page number, and we also need the page number to be low (or high) enough that the score doesn’t need to stop (or start) in a silly-looking place. 
+Fortunately, the page-numbers can be moved around a bit in \LaTeX\ without mucking up the rest of the layout.
 
-In \LaTeX\ we can use both the \texttt{ geometry} package (which will be necessary anyway if our book is an odd size) and the \cmd{setlength} command. We will be primarily interested in the length of the \cmd{footskip} variable, which determines how far away the footer is from the body of the text.
+In \LaTeX\ we can use both the \package{geometry} package (which will be necessary anyway if our book is an odd size) and the \cmd{setlength} command. 
+We will be primarily interested in the length of the \cmd{footskip} variable, which determines how far away the footer is from the body of the text.
 
-In LilyPond, we need to work with the \cmd{paper} block. Assuming that we want to leave out page numbers on the bottom, we will most likely be interested in adjusting the  bottom-margin and the foot-separation.
+In LilyPond, we need to work with the \cmd{paper} block. 
+Assuming that we want to leave out page numbers on the bottom, we will most likely be interested in adjusting the  bottom-margin and the foot-separation.
 
 If the book is limited to a standard paper size like A4 or US-letter, the desired affect can be acheived simply by making LilyPond's bottom margin slightly wider, and \LaTeX's \cmd{footskip} value somewhat larger.
 
-If the dimensions of the book allow for it, we might also be interested in moving the page numbers to the top of the page on alternate sides, as happens by default in LilyPond. This can be done with the help of the \texttt{ fancyhdr} package, which allows the redefinition of pagestyles. 
+If the dimensions of the book allow for it, we might also be interested in moving the page numbers to the top of the page on alternate sides, as happens by default in LilyPond. 
+This can be done with the help of the \package{fancyhdr} package, which allows the redefinition of pagestyles. 
 
-Using \texttt{ fancyhdr}, we can also apply a different pagestyle to the text-only pages of our book. This can be useful if we want the headers of our pages to have fancy things on them  like headrules and chapter names. To do this, we set the pagestyle of the document to something other than style given to the score pages in the  \cmd{includepdfset{pagecommand=\thispagestyle{plain}}} command. So the body of our \LaTeX\ document might contain the command \cmd{pagestyle{fancy}} This setting will be overriden and the pagestyle replaced whenever \cmd{includepdf} is invoked.
+Using \package{fancyhdr}, we can also apply a different pagestyle to the text-only pages of our book. 
+This can be useful if we want the headers of our pages to have fancy things on them like headrules and chapter names. 
+To do this, we set the pagestyle of the document to something other than style given to the score pages in the  \cmd{includepdfset\{pagecommand=\cmd{thispagestyle\{plain\}\}}} command. 
+So the body of our \LaTeX\ document might contain the command \cmd{pagestyle\{fancy\}}. 
+This setting will be overriden and the pagestyle replaced whenever \cmd{includepdf} is invoked.
+
+\bigskip
+\todo{Include the (corrected) License information}
 
 \end{document} 
