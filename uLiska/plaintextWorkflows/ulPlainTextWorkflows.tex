@@ -30,12 +30,279 @@
 
 \begin{document}
 
-\chapter{Writing (About) Music \\
-with Plain-Text Based Tools}
+\parttitle{Writing (About) Music with Plain-Text Based Tools}
 \begin{authorAbstract}{Urs Liska}
 Abstract
 \end{authorAbstract}
 
-\section*{Outline}
+\chapter{Outline}
+
+\begin{itemize}
+\item Main purpose of the document
+\item Intended audience?\\
+-- People who write text documents about and including music\\
+-- People who typeset musical scores.
+\item I want to present a set of tools who work on the compilation of source files instead of binary file formats and WYSIWYG editing.
+\item What do I mean with “plain-text based tools”?\\
+Difference binary/plain-text file formats and write/compile vs. WYSIWYG (use of editors)
+	\begin{itemize*}
+	\item Human readable
+	\item Maintainable (attention: Character encoding!)
+	\item Machine readable, scriptable\\
+	Programs can analyze or process files\\
+	Programs can create files
+	\item Comments can be inserted in-place
+	\item Stability: Any formatting/markup/tweaks are inserted in a robust way
+	\item \textbf{diffable}
+	\end{itemize*}
+\item diffable means ready for version control -> techniques used in software development\\
+One of the major impacts is on collaboration.
+\item totally different work-flow paradigm\\
+It can't be denied that this requires quite a shift in the ... mind-set\\
+and that the learning curve is considerable (especially if you're not a programmer type)\\
+But I'd say it's an investment for your life (find good comparisons to other tools we have to learn. Maybe also a language that we'd have to learn for our job?)\\
+And one starts with simple examples -- these are easy to grasp.
+
+\item I will present four programs/systems in this paper:
+	\begin{itemize*}
+	\item Markdown (markup language) -- to be used for notes and sketches
+	\item LaTeX (typesetting system) -- to create professional text documents
+	\item LilyPond -- Music notation software
+	\item Git (Distributed Version Control System) -- to keep it all together
+	\end{itemize*}
+\end{itemize}
+
+\chapter{Markdown}
+
+\begin{itemize}
+\item As a gentle introduction ;-)
+\item Describe HTML
+	\begin{itemize*}
+	\item Markup language
+	\item Plain text based
+	\item Separation of content and appearance
+	\item Source code “readable” but not really expressive
+	\end{itemize*}
+\item Markdown wants to define a syntax to “markup” text in a way that the plain text nearly shows what is meant
+\item Editors can display a formatted version of the text\\
+Often used for Web, e.g. for entering forum entries: One enters markdown and the web server transforms that into HTML
+\item Very useful for short sketches -- way less overhead than using a word processor.
+\item One example document in ReText\\
+Show a few syntax examples (including links)\\
+Show the option to export to other formats.
+\item possible editors for different OSs
+\end{itemize}
+
+\chapter{\LaTeX}
+\begin{itemize}
+\item Main purpose: Typesetting text documents\\
+Although there are powerful capabilites in other graphical areas.
+\item History, architecture
+\item Document setup
+\item syntax at its most basic level\\
+Compare semantic and direct markup in latex and word\\
+(e.g. also search\&replace)
+\item Don't know how many examples (and how complex) I should provide
+\item Extending the capabilites through packages\\
+A few examples (e.g. mdwlist)
+\item Implement your own packages/classes to hide away complexity\\
+Bsp. concert programme/letter -> resulting source file is really tiny
+\item Specifically musical issues
+	\begin{itemize*}
+	\item musicexamples\\
+	Only mention its existence and show its use later (after LilyPond introduction)
+	\item lilyglyphs.
+	\end{itemize*}
+\item Editors/IDEs\\
+Concept of syntax highlighting
+\end{itemize}
+
+\chapter{LilyPond}
+\begin{itemize}
+\item the “\LaTeX” of music notation (even historically)
+\item short history (summary/excerpts from the lilypond.org essay?) and main objective
+\item Highlight the engraving quality as a result of the non-wysiwyg approach
+\item Basic syntax introduction (how is music represented?)
+\end{itemize}
+
+\section*{Characteristics and Qualities of LilyPond}
+\subsection*{Characteristics due to the plain-text file format}
+\begin{itemize}
+\item Ability to place (technical and editorial) comments in the source code
+\item Source code is “robust”, i.\,e. no hidden settings\\
+I can see explicitely if something has been tweaked or not\\
+“Update Layout” won't revert your changes arbitraryly\\
+Everything is there, written down explicitely
+\item Use of variables:\\
+This is transparent and robust\\
+Easy transposition and “stretching”\\
+\item Use of (empty) variables as switches, e.\,g. for draft/final mode
+\item Variables imply huge potential for reusing code for different score versions:\\
+-- Score/parts\\
+-- Different layouts, e.\,g. conductor's/study score\\
+-- Excerpts, e.\,g. for music examples
+\item Style sheets:\\
+Apply consistent settings across multiple scores (e.\,g. examples in a book)\\
+Easily change settings in a central place, then recompile all examples\\
+Easily switch between versions by uncommenting/commenting out include files
+\item Music can be generated by programs\\
+Example: Midnight-minutes\\
+Example: lilyglyphs generation scripts
+\item Features for theory, teaching etc.?\\
+Schenker graphs\\
+Empty spaces (for tests)\\
+More?
+\end{itemize}
+
+\subsection*{Typical Qualities}
+\begin{itemize}
+\item Very good readability of the out-of-the-box results
+\item Flexibility for time management
+\item good control of the output format: Important for the creation of music examples
+\end{itemize}
+
+\subsection*{Working with LilyPond}
+\begin{itemize}
+\item Editors: There are a few, but I'll only talk about Frescobaldi
+	\begin{itemize*}
+	\item Collect features to be stated here
+	\item TODO: fix my installation so the music view works again!!!
+	\item 2-way Point-and-click
+	\item development is readily available and listening
+	\end{itemize*}
+\item How to work with LilyPond (continue first syntax introduction)
+	\begin{itemize*}
+	\item Show simple tweaks (with preset commands like \cmd{dynamicsUp})
+	\item Show some more complex tweaks
+	\item Show a slur tweaking (with \cmd{displayControlPoints} on)
+	\item More?
+	\end{itemize*}
+\end{itemize}
+
+\subsection*{Integrating \LaTeX{} and LilyPond}
+\begin{itemize}
+\item Show the use of \texttt{musicexamples} and \texttt{lilyglyphs}
+\item mention \texttt{lilypond-book}
+\end{itemize}
+
+\chapter{Git}
+\begin{itemize}
+\item What means “versioning”?\\
+Point out the relationship with/the origin from software development
+\item What is a diff?\\
+Point out the plain text issue again.
+\item What is a commit?\\
+Important: like a fine-tuned “save”\\
+Maybe mention the basic \texttt{rebase} functionality?
+\item What do we gain from the commit history?
+	\begin{itemize*}
+	\item  A unlimited and especially a completely selectable “undo/redo” function
+	\item Can inspect \emph{any} state the project has been in
+	\item Can apply any single changeset\\
+	(Example with Cherry-Picking)
+	\end{itemize*}
+\item Branching
+	\begin{itemize*}
+	\item Separate workspaces
+	\item work without affecting the stable state
+	\item easily switch between different states
+	\end{itemize*}
+\end{itemize}
+
+\section{Collaboration with Git}
+\subsection*{Traditional approaches}
+\begin{itemize}
+\item Exchanging documents by email
+	\begin{itemize*}
+	\item May work with \emph{very} few collaborators
+	\item If we're sending documents back and forth we're getting multiple versions of the files -- at least in the mail archive, possibly also on disk $\rightarrow$ possible confusion
+	\item Office packages allow to “record changes”, which allows to see what the other did, but:\\
+	What if A sends B a file, B modifies and returns the file, but A has done further changes in the meantime?\\
+	You'll end up comparing files manually!
+	\end{itemize*}
+\item Storing files in a “cloud” based location like Dropbox or another network based solution
+	\begin{itemize*}
+	\item Works better because there aren't multiple copies of the files\\
+	(or if there are they are transparently managed by the service provider)
+	\item But you still have to lock files by email, which is error prone
+	\item What if I want to work offline for a while (because one of my computers doesn't have internet access or I'm in the train)?\\
+	I have to “lock” all files I \emph{might} possibly work on, or just work and hope nobody else touches the files in the meantime.
+	\end{itemize*}
+\end{itemize}
+Both approaches have severe drawbacks. And especially they become virtually un-manageable when there are more than two or three participants to be coordinated.
+
+\subsection*{“Enter Version Control”}
+\begin{itemize}
+\item Local and Remote repos
+\item Distributed VCS:\\
+Central shared repository, (unlimited number of) independent local repositories\\
+Local repo has the \emph{complete} code base\\
+light-weight, small commits are encouraged\\
+work offline and only now and then merge the results
+\item Push and Pull (relationship commit?)\\
+first pull then push
+\item Due to the line-by-line comparison I don't need to lock anything\\
+I just work locally and then bring the changes in line with upstream\\
+Quite small risk of merge conflicts\\
+If they arise they are usually simple to resolve.
+\end{itemize}
+
+\begin{itemize}
+\item Service providers: GitHub and BitBucket\\
+Difference mainly the pricing policy (explain)
+\item Show web site (e.g. issues)
+\item Some examples for commits:\\
+Create one branch in the demo repository and go through them \\
+Show the evolution of one file with the “view file @” button
+	\begin{itemize*}
+	\item Example where a commit closes an issue
+	\item Single change of a note
+	\item complex tweak
+	\item changeset across several files
+	\item “Blame” -- several contributors
+	\end{itemize*}
+\end{itemize}
+
+\chapter{Conclusion}
+\begin{itemize}
+\item Advantages
+	\begin{itemize*}
+	\item History: Unlimited undo/redo\\
+	One can even revert changes partially (i.e. some changes inside one commit/file)
+	\item Easy collaboration on a set of files
+	\end{itemize*}
+\item Difficulties:
+	\begin{itemize*}
+	\item Learning curve
+	\item One is restricted to plain text documents\\
+	other file types need special consideration
+	\end{itemize*}
+\item Data exchange
+	\begin{itemize*}
+	\item Text document to LaTeX quite straightforward
+	\item LaTeX document to Office document also (of course some incompatibilites (see command with arguments))
+	\item scores into lilypond: Possible through MusicXML
+	\item So far it isn't possible to export LilyPond scores to other formats\\
+	This is a major drawback as many publishers insist on using Finale or Sibelius files (unfortunately)\\
+	could be changed comparably easily.
+	\end{itemize*}
+\item Use cases
+	\begin{itemize*}
+	\item scholarly edition\\
+	Different participants can work on the same set of files: Entering music --- scholarly revision --- proof-reading --- beautify engraving --- critical report --- compile final volume\\
+	If for example there are musical errors to fix during the final stage (prepress) they can be just applied (in a bug-fix branch) and tested. If they produce side-effects the engraver can fix these, otherwise no further action has to be taken.
+	\item “Crowd” edition\\
+	There can really be many people involved in an edition (just like in a software project)\\
+	This can be used to speed up the process (use the term “scalability”?), e.g.\\
+	-- each participant does a few pieces/movements (e.g. in a song book) --> Wilbert?\\
+	-- each participant enters a part from a score (possibly) with peer review work-flows
+	\item Books\\
+	Editors and proof-readers can simply work in the original document, author can (partially) accept changes.\\
+	-- another use: Translations, improvemnts in the language
+	\item Distinguishing between project and community members\\
+	-- read-only and read/write (or push) access.\\
+	-- Fork / Pull request approach (show online?)
+	\end{itemize*}
+\end{itemize}
 
 \end{document}
