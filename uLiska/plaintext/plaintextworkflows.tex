@@ -24,6 +24,9 @@
 
 \documentclass[../../LilyPond-Tutorials]{subfiles}
 
+\usepackage{paralist}
+\usepackage{fancybox}
+
 \begin{document}
 \parttitle[Urs Liska]{Editing Musical Documents as Plain Text}
 \begin{authorAbstract}{Urs Liska}
@@ -31,14 +34,14 @@ Abstract
 \end{authorAbstract}
 
 \chapter*{Introduction}
-\label{chap:introduction}
+\label{chap:pt_introduction}
 This paper discusses an approach to authoring musical documents%
 \footnote{i.\,e.\ scores and texts about music}
-that is based on \emph{plain text files} as opposed to those using graphical \textsc{wysiwyg} software.
-These concepts, tools, and workflows have significantly changed my life as a document author, and I  wholeheartedly endorse them because I strongly believe in their unique and substantial advantages.
+that is based on editing \emph{plain text files} instead of using graphical \textsc{wysiwyg} software.
+The described concepts, tools, and workflows have significantly changed my life as a document author, and I  wholeheartedly endorse them because I strongly believe in their unique and substantial advantages.
 
 The plain text approach is practically non-existent in the humanist disciplines or in the music business, while being de facto standard in many natural and computer sciences.
-Working with plain text based tools indeed requires a certain shift in mind-set for people who aren't already familiar with the working paradigms through their profession.
+Working with plain text based tools indeed requires a certain shift in mind-set for people who aren't already familiar with the corresponding working paradigms.
 And it can't be denied that the learning curve is considerable.
 But this investment is absolutely justified because on the long run it greatly benefits productivity and offers potentials unimaginable otherwise.
 Reading and writing music, playing an instrument, investigating a manuscript source---all this involves a very long and intense learning curve, and we mastered them as a matter of course in order to become the professionals we are.
@@ -46,21 +49,114 @@ So why be afraid learning something new?
 
 This paper is focused on scholarly and collaborative workflows, particularly preparing musical editions for publication, because that's my cup or tea.
 But most of it will equally apply to creating musical scores or texts about music that have a certain level of complexity.
-The described concepts will also prove useful for people who have repeatedly to do with comparable documents, such as presentations, teaching/exam materials, music examples etc.
-However I will \emph{not} cover workflows that mainly depend on instant accessibility or results but don't care about structure or output quality, such as just-in-time arranging or the like.
+The described concepts will also prove useful for people who have to deal repeatedly with similar document types, such as presentations, teaching/exam materials, music examples etc.
+However I will \emph{not} cover workflows that mainly depend on instant results but don't care about structure or output quality, such as just-in-time arranging or the like.
 For such applications plain text tools may not be the appropriate choice.
 
-If you expect an in-depth description or even a guide how to use the tools I describe you might be disappointed because that's not the intention of this document.
-What I would like to achieve is giving you a sense of the power that text based approaches can give you.
-For this I will discuss most of it from a rather elevated point of view, keeping your exposure to concrete examples at a minimum.
-At the end of the text I will direct you to more extensive material that is suitable to get you more intimately acquainted with the concepts and that may actually get you in touch with editing plain text files.
+If you expect an in-depth description or even a guide how to use the mentioned tools you might be disappointed because that's not the intention of this document.
+What I hope to give you is a sense of the power that text based approaches can give you.
+For this I will discuss the topics mostly from a rather elevated point of view, keeping your exposure to concrete examples at a minimum%
+\footnote{with the exception of some intentionally spectacular examples}.
+At the end of the text I will direct you to more extensive material that is suitable to get you more intimately acquainted with the relevant concepts and that may actually aid you getting your feet wet with editing plain text files.
 
-The programs I will introduce to you on the following pages are:
+The software packages I will introduce you to on the following pages are:
 \begin{itemize*}
 \item \emph{LilyPond} -- the program that lets you engrave beautiful scores
 \item \emph{Git} -- the versioning system that keeps your work under control
 \item \emph{\LaTeX} -- the professional typesetting engine for text documents
 \end{itemize*}
 
+\chapter{Plain Text Format}
+\label{chap:pt_plain-text-format}
+Who on earth would voluntarily enter music as a text file?
+Aren't these people just nerds who think that only what hurts can be good?
+Isn't it \emph{natural} to edit musical scores within a graphical user interface?
+
+Well, when computers became more powerful it was an inevitable development to provide increasingly powerful graphical user interfaces, allowing users to edit any visual aspects of a document visually with a mouse or other pointing device.
+This is obviously quickly, effectively and easily available.
+But considered seriously and open-minded there are lots of reasons why it is a good idea to edit and store documents in text files.
+Text based work avoids several fundamental problems that other approachess share, and it opens up a whole range of possibilities.
+To start getting into the topic I will consider a few major aspects of plain text document storage.
+Mostly this is equally about text documents as about scores with some emphasis on musical engraving every now and then.
+
+\section*{Transparency and Control}
+\label{sec:pt_transparency-and-control}
+Have you wondered how your notation program internally manages the contents you entered?
+Well, not as a mental exercise but because you had the impression it maliciously made fun of you?
+One of the reasons I turned my back on graphical notation programs was my frustration with being completely at the mercy of the software when it comes to interpreting manual interventions.
+I can't recall (and actually don't want to) how often I ran through the loop
+\begin{inparaenum}[1.)]
+\item Enter music 
+\item Move items around 
+\item Do some manual tweaks like flipping stems, breaking beams, suppressing or parenthesizing cautionary accidentals 
+\item Hit “Update Layout” 
+\item Tear my hair out because at least one third of my manual settings mysteriously vanished.
+\end{inparaenum}
+
+Maybe my judgment isn't fair because it is based on very outdated software.
+Maybe things have improved a lot, but the fundamental fault is still valid: 
+I am at the mercy of the software and can't see or control how it represents the content internally.
+
+A friend turned his back to a later version of the same graphical program when he fixed one missing accidental in a score he had earlier tweaked to perfection---and this accidental caused the whole layout to break irreversibly.
+
+Another issue is that I am at the mercy of the program concerning the references for my manual interventions.
+If I drag an item somewhere I don't know how this is interpreted and stored.
+It could store a relative offset to the programs own decisions, it could store a fixed point relative to some “parent” element, it could even store a fixed point in the measure or on the page.
+None of that is wrong, but I don't know it, and it does make a difference if the layout changes for any reason.
+
+\medskip
+If I edit a plain text file I'm completely in control over all these issues.
+If I tell the program to break a beam or to draw a slur above the note it is explicitely and reproducibly defined.
+There is nothing hidden in “settings” dialogs or even buried in the file as the result of dragging something with the mouse.
+There is a price for this, namely having to do much by hand, but it is very rewarding on the long run.
+And being in control just feels better \dots
+
+\section*{Content, Meaning and Appearance}
+I began this chapter with rhethorically arguing that it seems “natural” to edit a graphical object such as a score in a graphical way.
+But in fact that's not entirely true.
+If you consider it you may realize that a score isn't quite a graphical object like a painting
+but it is rather a graphical \emph{representation} of the musical \emph{content}.
+This relation is similar in text documents, although less distinct.
+The visual appearance of a text document is \emph{not} its actual content.
+If you look at that text document:
+
+\begin{center}
+\noindent\shadowbox{\parbox{.8\textwidth}{%
+\Large \textbf{\textsf{My new chapter}}
+
+\medskip
+\normalsize \textbf{\textsf{With a section}}
+
+\medskip
+\small This is the \textbf{\textsf{continuous}} text with some \textbf{\textsf{emphasized}} words.}
+}\end{center}
+
+\noindent you will notice that there are several instances formatted in sans-serif bold face.
+In the case of the two different section headings you may guess their function and you may assume the author has applied the corresponding style sheets.
+But if you look at that file in a word processor you actually have to select the text and look into the corresponding menu or toolbox to determine if he hasn't accidentally formatted the items manually.
+What you see in the document window is the visual appearance of the content and not its structure and meaning.
+
+The corresponding file you would edit as a \LaTeX{} document would look like:
+
+\begin{lstlisting}[language=TeX]
+\documentclass{article}
+\begin{document}
+    \chapter{My new chapter}
+    \section{with a section}
+    This is the \terminus{continuous} text with
+    some \textbf{\textsf{emphasized}} words.
+\end{document}
+\end{lstlisting}
+    
+
+\section*{Readability and Complexity of the Files}
+
+\section*{Editor Independence}
+
+\section*{Accessibility to Programs}
+
+Aspect: While many users won't ever be able or even interested in programming there may be uses in larger scale projects where \emph{someone} can program scripts that the ordinary users just use.
+
+\section*{Advantages of Compiling Files}
 
 \end{document}
