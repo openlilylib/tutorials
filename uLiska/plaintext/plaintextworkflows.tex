@@ -74,8 +74,8 @@ Isn't it \emph{natural} to edit musical scores within a graphical user interface
 
 Well, when computers became more powerful it was an inevitable development to provide increasingly powerful graphical user interfaces, allowing users to edit any visual aspects of a document visually with a mouse or other pointing device.
 This is obviously quickly, effectively and easily available.
-But considered seriously and open-minded there are lots of reasons why it is a good idea to edit and store documents in text files.
-Text based work avoids several fundamental problems that other approachess share, and it opens up a whole range of possibilities.
+But considered seriously and open-minded there are lots of reasons why it \emph{is} a good idea to edit and store documents in text files.
+Text based work avoids several fundamental problems that other approaches share, and it opens up a whole range of possibilities.
 To start getting into the topic I will consider a few major aspects of plain text document storage.
 Mostly this is equally about text documents as about scores with some emphasis on musical engraving every now and then.
 
@@ -83,31 +83,31 @@ Mostly this is equally about text documents as about scores with some emphasis o
 \label{sec:pt_transparency-and-control}
 Have you wondered how your notation program internally manages the contents you entered?
 Well, not as a mental exercise but because you had the impression it maliciously made fun of you?
-One of the reasons I turned my back on graphical notation programs was my frustration with being completely at the mercy of the software when it comes to interpreting manual interventions.
-I can't recall (and actually don't want to) how often I ran through the loop
+One of the reasons I turned my back on graphical notation programs was my frustration with being completely at the mercy of the software with regard to my personal layout decisions.
+I can't recall (and actually don't want to) how often I ran through the loop of
 \begin{inparaenum}[1.)]
-\item Enter music 
-\item Move items around 
-\item Do some manual tweaks like flipping stems, breaking beams, suppressing or parenthesizing cautionary accidentals 
-\item Hit “Update Layout” 
-\item Tear my hair out because at least one third of my manual settings mysteriously vanished.
+\item entering music,
+\item moving items around ,
+\item applying some manual tweaks like flipping stems, breaking beams, suppressing or parenthesizing cautionary accidentals,
+\item hitting “Update Layout” and finally
+\item tearing my hair out because at least one third of my manual settings mysteriously vanished.
 \end{inparaenum}
 
 Maybe my judgment isn't fair because it is based on very outdated software.
 Maybe things have improved a lot, but the fundamental fault is still valid: 
 I am at the mercy of the software and can't see or control how it represents the content internally.
 
-A friend turned his back to a later version of the same graphical program when he fixed one missing accidental in a score he had earlier tweaked to perfection---and this accidental caused the whole layout to break irreversibly.
+A friend finally stopped using (a later version of) the same graphical program when he fixed one missing accidental in a score he had earlier tweaked to perfection---and this accidental caused the whole layout to break irreversibly.
 
-Another issue is that I am at the mercy of the program concerning the references for my manual interventions.
-If I drag an item somewhere I don't know how this is interpreted and stored.
-It could store a relative offset to the programs own decisions, it could store a fixed point relative to some “parent” element, it could even store a fixed point in the measure or on the page.
-None of that is wrong, but I don't know it, and it does make a difference if the layout changes for any reason.
+Besides this risk of losing work I also can't usually tell how the program interprets my displacements applied through a pointing device.
+Are they interpreted as offsets relative to some point on the page, or relative to the original decisions of the program?
+Are they measured in fixed units or with some proportional factor?
+None of that would be wrong, but I just don't know about it, and it \emph{does} make a difference if the layout changes afterwards for any reason.
 
 \medskip
-If I edit a plain text file I'm completely in control over all these issues.
-If I tell the program to break a beam or to draw a slur above the note it is explicitely and reproducibly defined.
-There is nothing hidden in “settings” dialogs or even buried in the file as the result of dragging something with the mouse.
+If I edit a plain text file instead I'm completely in control over all these issues.
+If I tell the program to break a beam or to draw a slur above the note it is explicitely and reproducibly defined and readable by anybody.
+There is nothing hidden in “settings” dialogs or even buried somewhere in the file as the result of dragging something with the mouse.
 There is a price for this, namely having to do much by hand, but it is very rewarding on the long run.
 And being in control just feels better \dots
 
