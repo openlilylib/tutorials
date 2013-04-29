@@ -271,28 +271,49 @@ The programmed infrastructure will always process a full score filled with rests
 \section{Compiling Files vs.\ Instant Feedback}
 \label{sec:pt_compiling-instant}
 One thing the average \textsc{wysiwyg} user needs to get used to is \emph{not} to get instant feedback.
-Graphical programs immediately display thany updates in their graphical user interface, while the text files first have to be \emph{compiled} before you can see the results of your modification.
+Graphical programs immediately display any updates in their graphical user interface, while the text files first have to be \emph{compiled} before you can see the results of your modification.
 
 While this may seem cumbersome, it actually isn't a problem but an inherent advantage, and a big one!
 Other than the graphical program the compiler can first read the input file, get a solid internal representation of the content and structure, and finally take its time to produce the best possible layout for the given content.
-It can judge the implication of a modification for the whole document and completely rethink layout completely.
-The problems graphical programs are encountering are immediately visible when you (for example) try to move a figure in a 250 pages text document with 80 figures, or when you insert some music in the middle of a longer score.
+It can judge the implication of a modification for the whole document and rethink the layout completely.
+The problems graphical programs are encountering are immediately visible when you (for example) try to move a figure in a 250 pages text document with 80 figures, or when you insert some music in the middle of a longer score---tasks that don't upset text based programs at all.
 
-As a logical result from this different approach text based programs (I'm speaking of LilyPond and \LaTeX{} in particulare) produce \emph{default output} of significantly superior quality than their graphical counterparts.
+As a logical result from this different approach text based programs (I'm speaking of LilyPond and \LaTeX{} in particular) produce \emph{default output} of significantly superior quality than their graphical counterparts.
 While it is surely possible to produce publication quality with Finale\texttrademark{} or Sibelius\texttrademark{} (but not with Word\texttrademark{} or OpenOffice\texttrademark) the default output of Lilypond is practically always \emph{readable} and \emph{usable} without any further intervention.
-As a rule of thumb I'd say that you can use LilyPond scores (and \LaTeX{} documents) without bothering about layout details unless (and only at that final point) you want to publish it.
-This is a significant improvement for the development process of documents and editions as you can work on the real \emph{content} until the last stage of print preparation.
+As a rule of thumb I'd say that you can use LilyPond scores (and \LaTeX{} documents) without bothering about layout details as long as you don't want to publish them.
+This is a significant improvement for the development process of documents and editions as you can work on the real \emph{content} up to the final stage of print preparation.
 
 Look at the following example of a score%
-\footnote{Arnold Schönberg: Excerpt from: “Nie ward ich, Herrin, müd” | Nr. 4 aus "6 Orchesterlieder" | für Gesang und Orchester | op. 8/1, \copyright{} 1911 by Universal Edition A.\,G., Wien/UE 3041, \href{http://www.universaledition.com/}{www.universaledition.com} [permission granted for use in this tutorial. You may redistribute the document without modifying the music contained in this example, and keeping this copyright notice in place]}
+\footnote{Arnold Schönberg: Excerpt from: “Nie ward ich, Herrin, müd” | Nr. 4 aus “6 Orchesterlieder" | für Gesang und Orchester | op. 8/1, \copyright{} 1911 by Universal Edition A.\,G., Wien/UE 3041, \href{http://www.universaledition.com/}{www.universaledition.com} [permission granted for use in this tutorial. You may redistribute the document provided you keep this copyright notice in place and don't modify the music contained in this example]}
 that LilyPond did \emph{not} manage to engrave perfectly without assistance:
 
 \begin{musicExampleNonFloat}
-\lilypondSFE{examples/schoenberg-op-8-4}
+\lilypondSFE{examples/schoenberg-opus-8-4}
 \end{musicExampleNonFloat}
 
-\todo{State that no manual interventions are there.}
-If you excuse the long phrasing slur from m.\,1 through 3 (which I judge no automated engraving system would be able to get right by itself) you will notice that the engraving is completely readable---you could put it on the music stand and play from it right away.
+Please note that there is no single manual tweak to that engraving.
+I just entered the music and assigned the right voice contexts to it.
+Of course this is far from perfect, and the LilyPond developers would surely take this examples as a source of inspiration for improvements of the engraving engine.
+If you excuse the long phrasing slur from m.\,1 through 3 (which I judge no automated engraving system would be able to get right by itself) you will notice that the engraving is completely readable---you could put it on the music stand and play from it right away (which I can confirm from practical experience \dots).
+
+If you compare that to the attempt one of the two “big players” took at the same measures (with the same prerequisites: entering music, assign voices correctly, no further manual tweaks), you will understand what I mean:
+
+\begin{musicExampleNonFloat}
+    \musicSFE{examples/schoenberg-opus-8-4-finale}
+\end{musicExampleNonFloat}
+
+\bigskip
+There are a few more features about working with text files that I'll write about in the LilyPond \fref{chap:pt_lilypond}, namely the potentials of using \emph{variables}, of being able to \emph{include} files and design sophisticated cascading set-ups, and finally of \emph{commenting} and \emph{documenting} source files.
+But first I'll take the time to write about what is maybe the single most important feature of plain text files:
+their accessibility to \emph{version control}.
+
 \chapter{Version Control}
+\label{chap:pt_version-control}
+
+\chapter{LilyPond}
+\label{chap:pt_lilypond}
+
+\chapter{\LaTeX}
+\label{chap:pt_latex}
 
 \end{document}
