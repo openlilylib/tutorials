@@ -77,6 +77,8 @@ Well, when computers became more powerful it was an inevitable development to pr
 This is obviously quickly, effectively and easily available.
 But considered seriously and open-minded there are lots of reasons why it \emph{is} a good idea to edit and store documents in text files.
 Text based work avoids several fundamental problems that other approaches share, and it opens up a whole range of possibilities.
+And it is good to know that by now there are editors available that significantly assist you in dealing with text files.
+
 To start getting into the topic I will consider a few major aspects of plain text document storage.
 Mostly this is equally about text documents as about scores with some emphasis on musical engraving every now and then.
 
@@ -233,17 +235,64 @@ With the majority of programs you would need to have some older version to be ab
 This may actually be a monetary factor---and with some “luck” there doesn't even exist a version that runs on your current operating system.
 
 This may also happen with programs that store their data in plain text files.
-But as the file format is usually much better documented it is less likely that there isn't a conversion option available.
+But as the file format is usually much better documented it is mroe likely that there will still be a conversion option available.
 And if everything fails and you have a file for which you absolutely don't find a program that can edit it in its intended way, you still have the plain text and free access to it.
 
 \section{Editor Independence}
+\label{sec:pt_editor-independence}
+Plain text workflows separate the tasks of editing, processing and displaying documents.
+This way you are not restricted to \emph{the one} application the (commercial) vendor imposes on you, but you are free to chose any editing environment you like, consider appropriate or just feel comfortable with.
+There are programs that try to integrate all parts of a workflow, just like the \textsc{wysiwyg} tools do---but it is your free choice to use them or not.
 
-\section{Accessibility to Programs}
+You can even edit one project with different tools at a time.
+For example it might be handy to be able to edit a document with any text editor on your smartphone, or just go to a public internet access point and send yourself an email with a sketch---both of which you would then process to a pdf document when you are home again.
 
-Aspect: While many users won't ever be able or even interested in programming there may be uses in larger scale projects where \emph{someone} can program scripts that the ordinary users just use.
+Another interesting application is the use of plain text as input to web forms.
+Many web forms, e.\,g.\ in forums, allow you to enter your posts in \emph{Markdown}%
+\footnote{\url{http://daringfireball.net/projects/markdown/}},
+a minimalist plain text language, and convert them to formatted \textsc{html}.
+And by now you can even enter LilyPond code that will be rendered as music examples in Wikipedia entries.
 
-\section{Advantages of Compiling Files}
+\section{Programmability}
+\label{sec:pt_programmability}
+Plain text files can be edited not only by any text editor but by \emph{anything} that can edit text files---which makes it accessible to about any programming language you may think of.
+You are not restricted to any scripting interface the vendor graciously provides you, but you can apply any imaginable operations with your source files: 
+analyze them,
+process them,
+or even computationally generate them from scratch.
 
+I you have never programmed and don't intend to learn it you may think that's a rather unimportant feature.
+But this isn't true at all.
+If you are taking part in a project with at least \emph{one} member who can write programs you still can benefit enormously from the versality this offers.
+There are many possible applications, from applying contrapuntal operations or algorithmic composition up to managing music examples in a database.
+For example I'm currently working on the infrastructure for a large orchestral score where most people who will enter the music are just facing a small segment of one instrumental part.
+The programmed infrastructure will always process a full score filled with rests, where only the segments that have already been entered will be inserted.
+
+\section{Compiling Files vs.\ Instant Feedback}
+\label{sec:pt_compiling-instant}
+One thing the average \textsc{wysiwyg} user needs to get used to is \emph{not} to get instant feedback.
+Graphical programs immediately display thany updates in their graphical user interface, while the text files first have to be \emph{compiled} before you can see the results of your modification.
+
+While this may seem cumbersome, it actually isn't a problem but an inherent advantage, and a big one!
+Other than the graphical program the compiler can first read the input file, get a solid internal representation of the content and structure, and finally take its time to produce the best possible layout for the given content.
+It can judge the implication of a modification for the whole document and completely rethink layout completely.
+The problems graphical programs are encountering are immediately visible when you (for example) try to move a figure in a 250 pages text document with 80 figures, or when you insert some music in the middle of a longer score.
+
+As a logical result from this different approach text based programs (I'm speaking of LilyPond and \LaTeX{} in particulare) produce \emph{default output} of significantly superior quality than their graphical counterparts.
+While it is surely possible to produce publication quality with Finale\texttrademark{} or Sibelius\texttrademark{} (but not with Word\texttrademark{} or OpenOffice\texttrademark) the default output of Lilypond is practically always \emph{readable} and \emph{usable} without any further intervention.
+As a rule of thumb I'd say that you can use LilyPond scores (and \LaTeX{} documents) without bothering about layout details unless (and only at that final point) you want to publish it.
+This is a significant improvement for the development process of documents and editions as you can work on the real \emph{content} until the last stage of print preparation.
+
+Look at the following example of a score%
+\footnote{Arnold Schönberg: Excerpt from: “Nie ward ich, Herrin, müd” | Nr. 4 aus "6 Orchesterlieder" | für Gesang und Orchester | op. 8/1, \copyright{} 1911 by Universal Edition A.\,G., Wien/UE 3041, \href{http://www.universaledition.com/}{www.universaledition.com} [permission granted for use in this tutorial. You may redistribute the document without modifying the music contained in this example, and keeping this copyright notice in place]}
+that LilyPond did \emph{not} manage to engrave perfectly without assistance:
+
+\begin{musicExampleNonFloat}
+\lilypondSFE{examples/schoenberg-op-8-4}
+\end{musicExampleNonFloat}
+
+\todo{State that no manual interventions are there.}
+If you excuse the long phrasing slur from m.\,1 through 3 (which I judge no automated engraving system would be able to get right by itself) you will notice that the engraving is completely readable---you could put it on the music stand and play from it right away.
 \chapter{Version Control}
 
 \end{document}
