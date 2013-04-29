@@ -24,8 +24,8 @@
 
 \documentclass[../../LilyPond-Tutorials]{subfiles}
 
-\usepackage{paralist}
 \usepackage{fancybox}
+\RequirePackage{multicol}
 
 \begin{document}
 \parttitle[Urs Liska]{Editing Musical Documents as Plain Text}
@@ -37,7 +37,8 @@ Abstract
 \label{chap:pt_introduction}
 This paper discusses an approach to authoring musical documents%
 \footnote{i.\,e.\ scores and texts about music}
-that is based on editing \emph{plain text files} instead of using graphical \textsc{wysiwyg} software.
+that is based on editing \emph{plain text files} instead of using graphical \textsc{wysiwyg} software%
+\footnote{What You See Is What You Get---such programs provide an editing environment where the document is displayed identically to the way it will be printed.}.
 The described concepts, tools, and workflows have significantly changed my life as a document author, and I  wholeheartedly endorse them because I strongly believe in their unique and substantial advantages.
 
 The plain text approach is practically non-existent in the humanist disciplines or in the music business, while being de facto standard in many natural and computer sciences.
@@ -79,7 +80,7 @@ Text based work avoids several fundamental problems that other approaches share,
 To start getting into the topic I will consider a few major aspects of plain text document storage.
 Mostly this is equally about text documents as about scores with some emphasis on musical engraving every now and then.
 
-\section*{Transparency and Control}
+\section{Transparency and Control}
 \label{sec:pt_transparency-and-control}
 Have you wondered how your notation program internally manages the contents you entered?
 Well, not as a mental exercise but because you had the impression it maliciously made fun of you?
@@ -105,19 +106,25 @@ Are they measured in fixed units or with some proportional factor?
 None of that would be wrong, but I just don't know about it, and it \emph{does} make a difference if the layout changes afterwards for any reason.
 
 \medskip
+\todo{Example how this applies to text documents}
+
+\medskip
 If I edit a plain text file instead I'm completely in control over all these issues.
 If I tell the program to break a beam or to draw a slur above the note it is explicitely and reproducibly defined and readable by anybody.
-There is nothing hidden in “settings” dialogs or even buried somewhere in the file as the result of dragging something with the mouse.
-There is a price for this, namely having to do much by hand, but it is very rewarding on the long run.
-And being in control just feels better \dots
+There is nothing hidden in “settings” dialogs or even unreadably buried somewhere in the file as the result of dragging something with the mouse.
+If I manage to break something (which of course happens) I can review what I did, compare to the last working version%
+\footnote{See \fref{chap:pt_version-control}}
+and understand and fix the issue.
+With a graphical program my only resort is to “undo” and hope this will fix it \dots
 
-\section*{Content, Meaning and Appearance}
-I began this chapter with rhethorically arguing that it seems “natural” to edit a graphical object such as a score in a graphical way.
-But in fact that's not entirely true.
-If you consider it you may realize that a score isn't quite a graphical object like a painting
-but it is rather a graphical \emph{representation} of the musical \emph{content}.
-This relation is similar in text documents, although less distinct.
-The visual appearance of a text document is \emph{not} its actual content.
+There is a price for this, namely having to enter code by hand and learning how to do that, but it is very rewarding on the long run.
+And being in control just \emph{feels} better \dots
+
+\section{Content, Meaning and Appearance}
+\label{sec:pt_separation-content-meaning-appearance}
+Through the overwhelming presence of \textsc{wysiwyg} applications we have got used to the impression that the \emph{visual appearance} of a document is identical to its \emph{content}.
+But this is actually a quite shortsighted assumption.
+
 If you look at that text document:
 
 \begin{center}
@@ -131,15 +138,16 @@ If you look at that text document:
 \small This is the \textbf{\textsf{continuous}} text with some \textbf{\textsf{emphasized}} words.}
 }\end{center}
 
-\noindent you will notice that there are several instances formatted in sans-serif bold face.
-In the case of the two different section headings you may guess their function and you may assume the author has applied the corresponding style sheets.
-But if you look at that file in a word processor you actually have to select the text and look into the corresponding menu or toolbox to determine if he hasn't accidentally formatted the items manually.
-What you see in the document window is the visual appearance of the content and not its structure and meaning.
+\noindent you will notice that there are several parts formatted in sans-serif bold face of different sizes.
+You may guess that the author has applied several style sheets to get this appearance, but to verify it you'd actually have to select the texts and look into the corresponding dialogs or toolbox elements.
+Only then you can see whether the author manually formatted the text, applied paragraph styles or character styles.
+He may even have applied character instead of paragraph styles to format the headings.
 
-The corresponding file you would edit as a \LaTeX{} document would look like:
+The corresponding \LaTeX{} source file would look like:
 
-\begin{lstlisting}[language=TeX]
+\begin{lstlisting}[language={[LaTeX]TeX}]
 \documentclass{article}
+\newcommand{\terminus}{\textbf{\textsf{#1}}}
 \begin{document}
     \chapter{My new chapter}
     \section{with a section}
@@ -147,16 +155,95 @@ The corresponding file you would edit as a \LaTeX{} document would look like:
     some \textbf{\textsf{emphasized}} words.
 \end{document}
 \end{lstlisting}
-    
 
-\section*{Readability and Complexity of the Files}
+While this may look complicated on first sight it actually is much clearer because it distinctly shows you the content and the author's intentions.
+The \cmd{documentclass} is something like a document template, but much more powerful \todo{link to LaTeX section}.
+\cmd{terminus} is defined as a character style applying bold (“\dots bf” for BoldFace) and sans-serif (“\dots sf” for Sans-Serif) to its content.
+Inside the document body (enclosed by the \cmd{begin} and \cmd{end} statements) you can see the \emph{content} along with \emph{semantic markup}.
+The two headings use explicit sectioning commands which are (for now) equivalent to paragraph styles.
+The two bold words in the text line are formatted differently: 
+the first one  is enclosed by our \cmd{terminus\{\}} character style while the second one is manually formatted as bold and sans-serif.
+This mixture of formatting techniques is highly disadvised and only used for the sake of the example.
+But you may notice that in the plain text file this “problem” is immediately obvious while the graphical program actually hides away such inconsistencies.
 
-\section*{Editor Independence}
+\medskip
+If we think about musical scores we have to come to a very similar conclusion.
+I began this chapter with rhethorically arguing that it seems “natural” to edit a graphical document such as a score in a graphical way.
+But in fact that's not true because a score isn't quite a graphical object like a painting
+but it is rather a graphical \emph{representation} of the musical \emph{content}.
 
-\section*{Accessibility to Programs}
+If you consider the following minimal score and its (complete) LilyPond input file:
+\begin{multicols}{2}
+\begin{musicExampleNonFloat}
+\begin{quote}
+\lilypondSFE{examples/minimal-score}
+\end{quote}
+\end{musicExampleNonFloat}
+\columnbreak
+
+\begin{centering}
+\begin{lstlisting}
+{
+  \time 3/4
+  \key es \major
+  \clef treble
+  es'2.
+}
+\end{lstlisting}
+\end{centering}
+\end{multicols}
+
+\noindent you can see that the source on the right side completely defines the \emph{musical content} of the score:
+a time signature, a key definition, a clef, and a single note with duration.
+Of course the page layout is also an inseparable part of the score document, but on a conceptual level it is completely separate from the musical content.
+Without going into more detail here you should note that in LilyPond's plain text file you have complete control over the separation of content, meaning and appearance.
+While this at first may seem somewhat abstract it is actually a very important point when it comes to preparing different output from one source \todo{link to single-source publishing section}.
+
+\section{Readability and Stability of Text and Binary Files}
+\label{sec:pt_readability-stability}
+In the previous section you have seen examples of plain text files for a text and a score document.
+OK, I admit that it takes some time getting used to filtering out the markup commands in a text file mentally.
+But I can't emphasize enough that you actually \emph{can read} that file \emph{at all}.
+
+Does this bold statement surprise you?
+Don't you think that you can immediately conceive the content of the graphical score, much faster and easier than the source file that you first have to read and interpret?
+Well, then you are again exchanging the real document file and the graphical representation the graphical programs expose to you.
+
+Please take the time and have a look at \todo{prepare “listings”, put them in appendix and add link to them}.
+That's what the file contents from the previous examples actually look like.
+After skimming through the Word\texttrademark, OpenOffice\texttrademark, Finale\texttrademark{} and Sibelius\texttrademark{} files you should reconsider the “overly complex” \emph{source code listings} of the previous section.
+Now you'll probably see why I emphasize that you can \emph{read} \LaTeX{} and LilyPond files, isn't it?
+You may have noticed that both Word\texttrademark{} and OpenOffice\texttrademark{} also have an alternative file format that is stored in “plain \textsc{xml}”.
+While a human actually \emph{can} read these files the actual content is very deeply buried inside them and practically inaccessible to the human eye.
+
+The fact that plain text files are human readable has two major implications:
+
+\paragraph{Recovery after file corruption}
+There are several ways that can make a file unusable, the most common being accidental deletion, a general disk failure or the crash of a program leading to an inconsistent state of the file (the latter fortunately becoming increasingly rare nowadays).
+Usually such files can be partially retrieved with special tools, but the picky thing is the “partially”.
+If you have a binary file that can only be read by its original program the whole file is now unusable, even if the corrupted portion is very small.
+From a corrupted plain text file on the other hand you will be able to retrieve everything \emph{as content} that is still there at all.
+And with some luck you may even guess the missing pieces.
+Sometimes it will still be more efficient to start again from scratch, but depending on the nature of your project this characteristic of plain text files may actually be a life-saver.
+
+\paragraph{Restoring “ancient” files}
+As programs mature they modify their file formats.
+Usually programs can still open the files from older program versions, but that isn't an endless option.
+With the majority of programs you would need to have some older version to be able to open “ancient” files.
+This may actually be a monetary factor---and with some “luck” there doesn't even exist a version that runs on your current operating system.
+
+This may also happen with programs that store their data in plain text files.
+But as the file format is usually much better documented it is less likely that there isn't a conversion option available.
+And if everything fails and you have a file for which you absolutely don't find a program that can edit it in its intended way, you still have the plain text and free access to it.
+
+\section{Editor Independence}
+
+\section{Accessibility to Programs}
 
 Aspect: While many users won't ever be able or even interested in programming there may be uses in larger scale projects where \emph{someone} can program scripts that the ordinary users just use.
 
-\section*{Advantages of Compiling Files}
+\section{Advantages of Compiling Files}
+
+\chapter{Version Control}
 
 \end{document}
