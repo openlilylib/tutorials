@@ -287,7 +287,7 @@ As a rule of thumb I'd say that you can use LilyPond scores (and \LaTeX{} docume
 This is a significant improvement for the development process of documents and editions as you can work on the real \emph{content} up to the final stage of print preparation.
 
 Look at the following example of a rather complex score%
-\footnote{Arnold Schönberg: Excerpt from: “Nie ward ich, Herrin, müd” | Nr. 4 aus “6 Orchesterlieder" | für Gesang und Orchester | op. 8/1, \copyright{} 1911 by Universal Edition A.\,G., Wien/UE 3041, \href{http://www.universaledition.com/}{www.universaledition.com} [permission granted for use in this tutorial. You may redistribute the document provided you keep this copyright notice in place and don't modify the music contained in this example]}
+\footnote{Arnold Schönberg: Excerpt from: “Nie ward ich, Herrin, müd” | Nr. 4 aus “6 Orchesterlieder" | für Gesang und Orchester | op. 8/1, \copyright{} 1911 by Universal Edition A.\,G., Wien/UE 3041, \href{http://www.universaledition.com/}{www.universaledition.com} [permission granted for use in this tutorial. You may redistribute the document provided you keep this copyright notice and the hyperlink in place]}
 that LilyPond did \emph{not} manage to engrave perfectly without assistance:
 
 \begin{musicExampleNonFloat}
@@ -316,7 +316,7 @@ But first let's take the time to learn about what is maybe the single most impor
 
 \emph{Version control} is a concept I had heard of long ago, and I assumed it was one of the tools belonging to software development in general.
 But realizing that it can very well be used by musicians and musicologists was a revelation that made me completely revise my working methods last year.
-I actually \emph{changed my life} as a document author, and I can't imagine how I could ever have existed without \dots
+It actually \emph{changed my life} as a document author, and I can't imagine how I could ever have existed without \dots
 
 As a first approximation you may understand version control as an infinitely flexible implementation of \emph{undo/redo} mechanisms.
 Versioning stores the complete development history of your document or project and lets you investigate \emph{any} state it has ever been in over time.
@@ -326,7 +326,7 @@ Suppose two weeks ago you reworked a chapter of your book and now you realize th
 With a traditional toolchain you would be lucky to have a version of that state at hand, either as a backup file or printed on paper.
 With the backup file you may roll back your work to that state---but of course you lose all work done afterwards.
 Or you could put the (digital or printed) backup and the current version side by side and manually emend the changes you applied.
-Both solutions are cumbersome, error prone, and they rely on the---random--- existence of a backup of exactly the desired state.
+Both solutions are cumbersome, error prone, and they rely on the---random---existence of a backup of exactly the desired state.
 
 With a document under version control you may identify the exact changeset that you want to undo and just revert these changes -- and leave everything done before or after the way it is.
 It may not be obvious to you, but this can easily span decades, programs, and even operating systems' lifecycles---because it works on plain text files as seen in the previous chapter.
@@ -336,10 +336,11 @@ And this is just the surface -- we'll later deal with other, maybe even more imp
 \section{Basics of Version Control}
 \label{sec:pt_basics-version-control}
 The fundament all this is built upon is the line-by-line comparison of the complete project directory that the versioning program performs when you “save” your project%
-\footnote{The actual terminology is different but I'll try to speak in familiar terms as long as possible.}.
-Of course these “lines” refer to the lines in your plain text files.
+\footnote{The actual terminology is different but I'll try to use familiar terms as long as possible.}.
+Of course these “lines” that are compared refer to the lines in your plain text files.
 In a text document a line will usually contain one coherent entity like a sentence, a list item or the like.
-In a score this may be (depending on the complexity of the material) one voice in one measure.
+In a score this might be (depending on the complexity of the material) one voice in one measure.
+(Of course you can lay out your text files as you want.)
 So this means that whenever you save your project the versioning software records (e.\,g.) which sentences or which measures you have modified, stores this as a \emph{changeset}, and adds this to the project history.
 And you can completely decide yourself how fine-grained you tailor such changesets:
 They may envelope the work of a day, the complete revision of a chapter or a single corrected note.
@@ -353,17 +354,101 @@ Probably you'd rather split your day's work into snapshots like
 Note that this concept does work on the project directory and not on single files.
 So a changeset can span a whole set of files, thus linking related work together.
 
-\begin{itemize}
-\item now in history (forever)
-\item can later be accessed individually
-\item changed or reverted
-\item Each state can be inspected
-\item branching
-\item repository / working tree, describe as “bag”
-\end{itemize}
+Once you have saved a changeset to the project it is part of its history, and it is practically impossible to lose that work again by accident.
+To achieve this you would have to apply some really advanced tools you normally wouldn't touch at all.
+You can imagine a project under version control like a bag where you put all your changesets in, while the versioning software keeps track of everything.
+Whenever you want to investigate any earlier state of your project the versioning system uses the content of the bag and its own records to bring your project directory into the form it had at that specific state.
+From there you can revert, modify or reapply any changeset that doesn't create structural conflicts%
+\footnote{Such a conflict would for example arise if you would try to revert changes to some lines in file that has in the meantime been deleted}.
+
+But you could also create a new \emph{branch} from that state.
+\emph{Branching} is one more important concept of source code versioning.
+You can see a branch as a “session” that is independent from other lines of work.
+To use the given example (of inspecting an earlier point in project history) you might go back to a certain point, create a new branch and work in a different direction.
+If you are satisfied with this new approach you can simply replace your earlier work with the new one (while keeping it in the project history)---or you can decide to throw away the new attempt and switch back to the original version of your document.
+A more common application of branches is to start any new work that might get your document/project into an inconsistent state in the context of a branch and merge it with the main line of work only when it is finished.
+An example for this would be integrating the results of a critical revision into a score---this way the main line would keep its consistent original state up to the moment when you merge in the revision in one single step.
+
+Until now I have deliberately not mentioned any concrete software that does this ominous versioning.
+This is because there are numerous tools in this area, but they more or less share the described concepts.
+In their generic form they all are command line programs that you can tell to perform actions on your project like saving a new changeset, managing branches or inspecting dedicated states of history.
+For all versioning systems there exist graphical front-ends for all major operating systems that aim to ease working with the systems.
+But one has to admit that versioning systems are \emph{very} powerful tools that consequently deserve some work getting used to and some care in working with them.
+You \emph{may} have heard the names \emph{CVS, Subversion, Git} or \emph{Mercurial}, but if you don't it's no problem.
+They share some concepts and differ in others---but that is beyond the scope of this article and actually completely unimportant for its purpose.
+
 
 \section{Collaborative Editing}
 \label{sec:pt_collaborative-editing}
+
+While all this is already very exciting we haven't touched the most important aspect of all: the impact versioning can have on the concepts of \emph{collaborative editing}.
+The ambiguity of the expression is intended---I'm talking about editing (or more generally working on/with) musical works in a collaborative and social way, and I'm talking of simultaneously editing source files.
+To emphasize the potentials I will take a step back and first describe traditional ways of collaboration (“traditional” being quite relative, of course).
+
+\medskip
+The most basic way to collaborate on a project is to exchange ideas personally, by phone or by email, and have one person edit the document(s).
+This way the document is guaranteed to be in a consistent state, but the workflow isn't really practical if you don't happen to share an apartment or at least an office.
+
+The next (and quite common) way is to exchange documents by email or on data storage media like disks or \textsc{usb} devices.
+You will surely have already worked that way or do it regularely.
+While this \emph{may} work in simple cases (for example two collaborators and only a very small number of files) it adds complexity that can easily lead to problems:
+\begin{enumerate*}
+\item What do I do with a document returned by a partner?
+Do I replace my original version or do I make a copy (presumably named something like “essay-revision-Michael-2009-12-04” or “essay-v003”)?
+What if there are more than two people and/or numerous iterations involved?
+\item How do I prevent the situation that a document is simultaneously modified by different people?
+This can easily happen if my partner sends a document a second time with further modifications while I have already made changes to it.
+If we're lucky and notice the conflict at all the only resort is probably to compare the files manually!
+\item Working with such a system is only possible if you are dealing with a quite small number of files.
+Currently I'm working on an edition project with a project directory containing more than 500 files.
+It would definitely be impossible to even try to keep track of modifications of this number of files.
+\end{enumerate*}
+
+\medskip
+The first and the last problem can be dealt with by storing the files at some shared location---in a local network or at one of the numerous providers of \emph{cloud based} storage.
+This way you don't have to manage different copies of your documents, which improves the situation a lot.
+
+\medskip
+The second problem however---preventing simultaneous modifications---can't be solved reliably with this approach.
+To avoid conflicts a team has to obey to strict policies that aren't always easy to enforce.
+People have to “lock” files they want to edit, which is quite difficult if they aren't permanently connected to the network.
+While not theoretically impossible such an approach bears an enormous inherent risk, especially with larger numbers of collaborators---and sooner or later there \emph{will} be accidents \dots
+
+This is where \emph{version control} comes into play, and this is where we \emph{really} enter new grounds in our scholarly or artistic workflows.
+Using plain text files and version control enables us to benefit from techniques and strategies that have been invented for and improved for decades in software development%
+\footnote{In fact Git has been originally written to manage the development of the Linux kernel.}.
+And the key concept in this regard is \emph{collaboration}.
+Software is mostly developed by teams or even large communities, and version control systems have been originally designed to seamlessly manage contributions by a large number of people.
+For example the Linux kernel project accounts for several hundreds of thousand “commits” by more than 10.000 contributors.
+
+\medskip
+The heart of a versioned workflow is a shared data inventory, or \emph{repository,} located on a server that is accessible by all project members%
+\footnote{This could be a server on the local network or---much more common---a dedicated service provider such as GitHub (\url{https://github.com}) or Bitbucket (\url{https://www.bitbucket.org})}.
+With \emph{distributed} version control (which is what I'm talking about exclusively) each contributor has a local copy of the repository on which he can work without having contact to the shared server.
+There he adds his snapshots to the project history (as described earlier), and whenever it is appropriate or practical he can synchronize his work with the data on the server, downloading the new work from others, integrating this with his own work and finally uploading the local changes to the shared repository.
+
+Earlier I wrote that version control is based on line-by-line comparison of files.
+This is of even greater importance in distributed collaborative workflows, as it effectively renders file locking unnecessary.
+I would like to stress that it is for example even possible that one contributor adds articulations to one hand of a piano part while another one at the same time fixes engraving shortcomings in the other hand of the same measure without any problem.
+As long as the two people won't modify \emph{the same line} in the same file, all of this synchronization will work silently without anybody really noticing it!
+
+Of course this isn't effective because it makes conflicts \emph{unlikely}---this would actually be quite negligent.
+The point is that potential conflicts can be reduced to the conflicting line(s) in the source file.
+If simultaneous changes can't be reconciled because of a conflict the contributor faced with it will find markers in the text file indicating the conflicting versions.
+From there he can decide individually which version to keep (or the mix them) and submit the result to the versioning system.
+So while versioning can't completely prevent conflicts it significantly reduces the hassles to recover from them.
+
+\medskip
+Another feature that has become crucial to my work relies on the way versioning software records changesets.
+As described earlier they keep track of file differences, and they can be inspected later.
+This way I can see exactly what my partner has done to a file without even bothering to compare the files manually or visually.
+Office programs have a feature to record changes (whatever it may be called in a given program and language).
+But once I have accepted or rejected the changes this (visual) indicator has vanished while the changesets are part of the project history and therefore eternally present.
+
+\medskip
+To sum up: in a project with version control each contributor has access to and can work simultaneously on the whole data inventory, with very little risk of conflicts and a straightforward way to resolve conflicts that may eventually arise nevertheless.
+This opens up quite a lot of perspectives on collaborative work that I consider very promising.
+
 
 \chapter{LilyPond}
 \label{chap:pt_lilypond}

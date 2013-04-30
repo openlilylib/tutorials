@@ -856,10 +856,6 @@ You will provide a small “template file”, and a helper script will create a 
 This way you can include arbitrary notational elements as characters in your text documents, with perfect control over the scaling and positioning.
 
 \chapter{Git}
-Now that we have covered%
-\footnote{Well, \emph{scratched} would seem more appropriate}
-some of the concepts and possibilities emerging from working with plain text files we will finally be heading towards the most important aspect of it all: \emph{collaborative editing}.
-The ambiguity of the word is intended -- I'm talking about editing (or more generally working on/with) musical works in a collaborative and social way, and I'm talking of simultaneously editing source files.
 Earlier in \fref{sec:intro-versioning} I have introduced some key concepts of versioning with Git: \emph{diffs}, \emph{commits}, \emph{history}, and the \emph{working tree}.
 I'll give you short reminders while also providing a slightly new perspective on them based on what we saw in the meantime.
 
@@ -916,12 +912,6 @@ One can design more or less sophisticated workflows around Git branches -- but t
 \todo{Where to enter history graphs?}
 
 \section{Collaboration with Git}
-This is where we \emph{really} enter new grounds in our scholarly or artistic workflows.
-Using plain text files and version control enables us to benefit from techniques and strategies that have been invented for and improved for decades in software development%
-\footnote{In fact Git has been originally written to manage the development of the Linux kernel.}.
-And the key concept in this regard is \emph{collaboration}.
-Software is mostly developed by teams or even large communities.
-Therefore it is crucial to have tools that manage the contribution of multiple authors to the code base, and distributed version control is one very good tool for that.
 
 \subsection*{Traditional approaches}
 Let me begin with describing traditional approaches (“traditional” being of course quite relative).
@@ -929,18 +919,6 @@ The most basic way to collaborate on a project is to exchange ideas personally, 
 This way the document is guaranteed to be in a consistent state, but the workflow isn't really practical.
 
 \medskip
-A document may be \emph{shared by email} in order to let a collaborator apply edits to it.
-This \emph{may} work if there is only a very small number of people involved (usually just two).
-But it adds complexity.
-What to do with the file returned by email?
-Rename it (with date and time for example) and add a second copy, or overwrite the previous version that had been sent to the other?
-
-Office programs offer functionality to “record changes”.
-While this is useful to visualize the different collaborators' contributions it doesn't really solve the complexity of shared documents.
-What if A sends B a file, B modifies and returns the file, but A has done further changes in the meantime?
-You can't just use the file but have to save two separate copies and compare them manually!
-Now try to figure out how probable it is to run into such conflicts with more than two participants \dots
-
 \medskip
 Storing files in a “cloud” based location like a Dropbox folder improves the situation in that there isn't the need anymore to maintain multiple copies of the files (or if there are they are transparently managed by the service provider).
 But you still have to avoid parallel modification of one file by different people.
