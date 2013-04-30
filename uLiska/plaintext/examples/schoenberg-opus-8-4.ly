@@ -30,7 +30,7 @@
   ragged-right = ##f
 }
 
-\include "debugCurves.ily"
+%\include "debugCurves.ily"
 
 global = {
   \key f \major
@@ -39,7 +39,7 @@ global = {
 
 tweakPhrasingSlur = { 
   % Shape the PhrasingSlur from m.1 to m.3
-  \displayControlPointsOnce
+  %\displayControlPointsOnce
   \shape #'((0 . 5) (6 . 4.8)  (0 . 12.3)  (0 . 5.8)) PhrasingSlur
 }
 
@@ -70,7 +70,7 @@ rightOne = \relative bes' {
 rightTwo = \relative a'' {
   \voiceTwo
   s1 | % measure 1
-  a4 gis \times 2/3 { g^\< e c'\! } | % measure 2
+  a4 gis \times 2/3 { g\< e c'\! } | % measure 2
   s1 | % measure 3
   <c,, f a c>1~ | % measure 4
   q4 s2.
@@ -110,6 +110,7 @@ leftThree = \relative bes, {
 
 \score { 
   \new PianoStaff <<
+    \set PianoStaff.instrumentName = " " % workaround for clipped bracket!
     \new Staff = "right" 
     {
       % Hier werden die globalen Einstellungen verwendet
