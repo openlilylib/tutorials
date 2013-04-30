@@ -181,20 +181,6 @@ I will try to give you a similarly gentle first impression of the nature of \emp
 It really is only an impression and not an introduction, as I won't tell you how to actually \emph{do} anything.
 I'll only describe the underlying concepts and name a few keywords associated with them.
 
-As a first approximation you may understand version control as a huge and infinitely flexible undo/redo implementation.
-Versioning stores the complete history of your document or project and lets you investigate \emph{any} state it has been in over time.
-Furthermore it lets you roll back (or reapply) \emph{any} change you have applied at any time, not necessarily in (reverse) chronological order.
-
-Suppose two weeks ago you reworked a chapter of your book and now you realize that this reworking was based on false assumptions -- you need to remove these changes and try to get the chapter into the state it had been before.
-With a traditional toolchain you would be lucky to have a version of that state at hand, either as a backup file or printed on paper.
-With the backup file you may roll back your work to that state -- but of course you lose all work done afterwards.
-Or you could put the (digital or printed) backup and the current version side by side and manually emend the changes you applied.
-Both solutions are cumbersome, error prone, and they rely on the -- random -- existence of a backup of exactly the desired state.
-
-With a document under version control you may identify the exact changeset that you want to undo and just revert these changes -- and leave everything done before or after the way it is.
-You think that's cool? I can tell you it \emph{is}!
-I dare say this insight changed my life as a document author when I started to realize the potential of it about half a year ago.
-And this is just the surface -- we'll deal with other, maybe even more important aspects of versioning in the last chapter of this paper.
 
 \medskip
 Now let's have a look how this is achieved.

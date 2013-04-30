@@ -74,18 +74,18 @@ Aren't these people just nerds who think that only what hurts can be good?
 Isn't it \emph{natural} to edit musical scores within a graphical user interface?
 
 Well, when computers became more powerful it was an inevitable development to provide increasingly powerful graphical user interfaces, allowing users to edit any visual aspects of a document visually with a mouse or other pointing device.
-This is obviously quickly, effectively and easily available.
+This is obviously quick, effective and easy approach.
 But considered seriously and open-minded there are lots of reasons why it \emph{is} a good idea to edit and store documents in text files.
-Text based work avoids several fundamental problems that other approaches share, and it opens up a whole range of possibilities.
+Text based work avoids several fundamental problems that other approaches share, and it opens up a whole range of advanced options not imaginable otherwise.
 And it is good to know that by now there are editors available that significantly assist you in dealing with text files.
 
-To start getting into the topic I will consider a few major aspects of plain text document storage.
-Mostly this is equally about text documents as about scores with some emphasis on musical engraving every now and then.
+To start getting into the topic I will consider a number of features of working with plain text files.
+Mostly this applies equally to text documents and scores, although the emphasis of this paper clearly is on musical engraving.
 
 \section{Transparency and Control}
 \label{sec:pt_transparency-and-control}
-Have you wondered how your notation program internally manages the contents you entered?
-Well, not as a mental exercise but because you had the impression it maliciously made fun of you?
+Have you ever wondered how your notation program internally manages the contents you entered?
+Not as a mental exercise but because you had the impression it maliciously made fun of you?
 One of the reasons I turned my back on graphical notation programs was my frustration with being completely at the mercy of the software with regard to my personal layout decisions.
 I can't recall (and actually don't want to) how often I ran through the loop of
 \begin{inparaenum}[1.)]
@@ -115,7 +115,7 @@ If I edit a plain text file instead I'm completely in control over all these iss
 If I tell the program to break a beam or to draw a slur above the note it is explicitely and reproducibly defined and readable by anybody.
 There is nothing hidden in “settings” dialogs or even unreadably buried somewhere in the file as the result of dragging something with the mouse.
 If I manage to break something (which of course happens) I can review what I did, compare to the last working version%
-\footnote{See \fref{chap:pt_version-control}}
+\footnote{See the “version control” \fref{chap:pt_version-control}}
 and understand and fix the issue.
 With a graphical program my only resort is to “undo” and hope this will fix it \dots
 
@@ -159,8 +159,9 @@ The corresponding \LaTeX{} source file would look like:
 \end{lstlisting}
 
 While this may look complicated on first sight it actually is much clearer because it distinctly shows you the content and the author's intentions.
-The \cmd{documentclass} is something like a document template, but much more powerful \todo{link to LaTeX section}.
-\cmd{terminus} is defined as a character style applying bold (“\dots bf” for BoldFace) and sans-serif (“\dots sf” for Sans-Serif) to its content.
+The \cmd{documentclass} is something like a document template, but much more powerful%
+\footnote{See the \LaTeX{} chapter \fref{chap:pt_latex}}.
+\cmd{terminus} is defined as a character style applying bold (“\dots bf” for BoldFace) and sans-serif (“\dots sf” for Sans-Serif) to its content (“\#1”).
 Inside the document body (enclosed by the \cmd{begin} and \cmd{end} statements) you can see the \emph{content} along with \emph{semantic markup}.
 The two headings use explicit sectioning commands which are (for now) equivalent to paragraph styles.
 The two bold words in the text line are formatted differently: 
@@ -170,9 +171,9 @@ But you may notice that in the plain text file this “problem” is immediately
 
 \medskip
 If we think about musical scores we have to come to a very similar conclusion.
-I began this chapter with rhethorically arguing that it seems “natural” to edit a graphical document such as a score in a graphical way.
-But in fact that's not true because a score isn't quite a graphical object like a painting
-but it is rather a graphical \emph{representation} of the musical \emph{content}.
+I began this chapter with the rhethorical pretention that it is “natural” to edit a score in a graphical way.
+But in fact that's not entirely true because a score isn't a graphical object like a painting
+but rather a graphical \emph{representation} of the musical \emph{content}.
 
 If you consider the following minimal score and its (complete) LilyPond input file:
 \begin{multicols}{2}
@@ -199,7 +200,8 @@ If you consider the following minimal score and its (complete) LilyPond input fi
 a time signature, a key definition, a clef, and a single note with duration.
 Of course the page layout is also an inseparable part of the score document, but on a conceptual level it is completely separate from the musical content.
 Without going into more detail here you should note that in LilyPond's plain text file you have complete control over the separation of content, meaning and appearance.
-While this at first may seem somewhat abstract it is actually a very important point when it comes to preparing different output from one source \todo{link to single-source publishing section}.
+While this at first may seem somewhat abstract it is actually a very important point when it comes to preparing different output from one source%
+\footnote{See “single-source publishing” section \fref{sec:pt_single-source-publishing}}.
 
 \section{Readability and Stability of Text and Binary Files}
 \label{sec:pt_readability-stability}
@@ -217,7 +219,7 @@ After skimming through the Word\texttrademark, OpenOffice\texttrademark, Finale\
 Now you'll probably see why I emphasize that you can \emph{read} \LaTeX{} and LilyPond files, isn't it?
 You may have noticed that both Word\texttrademark{} and OpenOffice\texttrademark{} also have an alternative file format that is stored in “plain \textsc{xml}”.
 While a human actually \emph{can} read these files the actual content is very deeply buried inside them and practically inaccessible to the human eye.
-
+	
 The fact that plain text files are human readable has two major implications:
 
 \paragraph{Recovery after file corruption}
@@ -235,8 +237,8 @@ With the majority of programs you would need to have some older version to be ab
 This may actually be a monetary factor---and with some “luck” there doesn't even exist a version that runs on your current operating system.
 
 This may also happen with programs that store their data in plain text files.
-But as the file format is usually much better documented it is mroe likely that there will still be a conversion option available.
-And if everything fails and you have a file for which you absolutely don't find a program that can edit it in its intended way, you still have the plain text and free access to it.
+But as the file format is usually much better documented it is more likely that you will find a conversion option still available.
+And if everything fails and you have a file but no dedicated editor you still have the plain text and free access to it.
 
 \section{Editor Independence}
 \label{sec:pt_editor-independence}
@@ -244,8 +246,8 @@ Plain text workflows separate the tasks of editing, processing and displaying do
 This way you are not restricted to \emph{the one} application the (commercial) vendor imposes on you, but you are free to chose any editing environment you like, consider appropriate or just feel comfortable with.
 There are programs that try to integrate all parts of a workflow, just like the \textsc{wysiwyg} tools do---but it is your free choice to use them or not.
 
-You can even edit one project with different tools at a time.
-For example it might be handy to be able to edit a document with any text editor on your smartphone, or just go to a public internet access point and send yourself an email with a sketch---both of which you would then process to a pdf document when you are home again.
+You can even edit a project with different tools at a time.
+For example it might be handy to be able to edit a document with any text editor on your smartphone, or just going to a public internet access point and send yourself an email with a sketch---both of which you would then process to a pdf document when you are home again.
 
 Another interesting application is the use of plain text as input to web forms.
 Many web forms, e.\,g.\ in forums, allow you to enter your posts in \emph{Markdown}%
@@ -263,10 +265,11 @@ or even computationally generate them from scratch.
 
 I you have never programmed and don't intend to learn it you may think that's a rather unimportant feature.
 But this isn't true at all.
-If you are taking part in a project with at least \emph{one} member who can write programs you still can benefit enormously from the versality this offers.
+A project you are working with can hire (or have) someone with that ability, so the whole project can benefit enormously from the versatility this offers---without the individual members needing to see any line of programming code.
+
 There are many possible applications, from applying contrapuntal operations or algorithmic composition up to managing music examples in a database.
-For example I'm currently working on the infrastructure for a large orchestral score where most people who will enter the music are just facing a small segment of one instrumental part.
-The programmed infrastructure will always process a full score filled with rests, where only the segments that have already been entered will be inserted.
+For example I'm currently working on the infrastructure for a large orchestral score where those who enter the music only work on small segments of the instrumental parts.
+The full score (which is initially filled with rests) will automagically build itself and use whatever segments have already been entered.
 
 \section{Compiling Files vs.\ Instant Feedback}
 \label{sec:pt_compiling-instant}
@@ -279,11 +282,11 @@ It can judge the implication of a modification for the whole document and rethin
 The problems graphical programs are encountering are immediately visible when you (for example) try to move a figure in a 250 pages text document with 80 figures, or when you insert some music in the middle of a longer score---tasks that don't upset text based programs at all.
 
 As a logical result from this different approach text based programs (I'm speaking of LilyPond and \LaTeX{} in particular) produce \emph{default output} of significantly superior quality than their graphical counterparts.
-While it is surely possible to produce publication quality with Finale\texttrademark{} or Sibelius\texttrademark{} (but not with Word\texttrademark{} or OpenOffice\texttrademark) the default output of Lilypond is practically always \emph{readable} and \emph{usable} without any further intervention.
+While it is obviously possible to produce publication quality output with Finale\texttrademark{} or Sibelius\texttrademark{} (but not with Word\texttrademark{} or OpenOffice\texttrademark) the default output of Lilypond is practically always \emph{readable} and \emph{usable} without any further intervention.
 As a rule of thumb I'd say that you can use LilyPond scores (and \LaTeX{} documents) without bothering about layout details as long as you don't want to publish them.
 This is a significant improvement for the development process of documents and editions as you can work on the real \emph{content} up to the final stage of print preparation.
 
-Look at the following example of a score%
+Look at the following example of a rather complex score%
 \footnote{Arnold Schönberg: Excerpt from: “Nie ward ich, Herrin, müd” | Nr. 4 aus “6 Orchesterlieder" | für Gesang und Orchester | op. 8/1, \copyright{} 1911 by Universal Edition A.\,G., Wien/UE 3041, \href{http://www.universaledition.com/}{www.universaledition.com} [permission granted for use in this tutorial. You may redistribute the document provided you keep this copyright notice in place and don't modify the music contained in this example]}
 that LilyPond did \emph{not} manage to engrave perfectly without assistance:
 
@@ -293,27 +296,85 @@ that LilyPond did \emph{not} manage to engrave perfectly without assistance:
 
 Please note that there is no single manual tweak to that engraving.
 I just entered the music and assigned the right voice contexts to it.
-Of course this is far from perfect, and the LilyPond developers would surely take this examples as a source of inspiration for improvements of the engraving engine.
-If you excuse the long phrasing slur from m.\,1 through 3 (which I judge no automated engraving system would be able to get right by itself) you will notice that the engraving is completely readable---you could put it on the music stand and play from it right away (which I can confirm from practical experience \dots).
+Of course this is far from perfect, and the LilyPond developers would surely take this example as a source of inspiration for improvements of the engraving engine.
+But if you excuse the long phrasing slur from m.\,1 throughout 3 (which I judge no automated engraving system would be able to get right by itself) you will notice that the engraving is completely readable---you could put it on the music stand and play from it right away (which I can confirm from practical experience \dots).
 
-If you compare that to the attempt one of the two “big players” took at the same measures (with the same prerequisites: entering music, assign voices correctly, no further manual tweaks), you will understand what I mean:
+If you compare that to the attempt one of the two “big players” took at the same measures (with the same prerequisites: entering music, assign voices correctly, no further manual tweaks), you will understand what I mean \dots
 
 \begin{musicExampleNonFloat}
-    \musicSFE{examples/schoenberg-opus-8-4-finale}
+    \musicSFE[trim=2.6cm 21.5cm 1.3cm 2.9cm, clip]{examples/schoenberg-opus-8-4-finale}
 \end{musicExampleNonFloat}
 
-\bigskip
+
+\todo{ask UE about permission to also use the “Gethsemane example”. If this is possible place it \emph{before} the two other examples!}
+
 There are a few more features about working with text files that I'll write about in the LilyPond \fref{chap:pt_lilypond}, namely the potentials of using \emph{variables}, of being able to \emph{include} files and design sophisticated cascading set-ups, and finally of \emph{commenting} and \emph{documenting} source files.
-But first I'll take the time to write about what is maybe the single most important feature of plain text files:
-their accessibility to \emph{version control}.
+But first let's take the time to learn about what is maybe the single most important feature of plain text files: their accessibility to \emph{version control}.
 
 \chapter{Version Control}
 \label{chap:pt_version-control}
+
+\emph{Version control} is a concept I had heard of long ago, and I assumed it was one of the tools belonging to software development in general.
+But realizing that it can very well be used by musicians and musicologists was a revelation that made me completely revise my working methods last year.
+I actually \emph{changed my life} as a document author, and I can't imagine how I could ever have existed without \dots
+
+As a first approximation you may understand version control as an infinitely flexible implementation of \emph{undo/redo} mechanisms.
+Versioning stores the complete development history of your document or project and lets you investigate \emph{any} state it has ever been in over time.
+Furthermore it lets you roll back (or reapply) \emph{any individual} change you have applied at any time, not necessarily in (reverse) chronological but in arbitrary order.
+
+Suppose two weeks ago you reworked a chapter of your book and now you realize that someone else has just now published exactly the same insights---you need to remove these changes and try to get the chapter into the state it had been before.
+With a traditional toolchain you would be lucky to have a version of that state at hand, either as a backup file or printed on paper.
+With the backup file you may roll back your work to that state---but of course you lose all work done afterwards.
+Or you could put the (digital or printed) backup and the current version side by side and manually emend the changes you applied.
+Both solutions are cumbersome, error prone, and they rely on the---random--- existence of a backup of exactly the desired state.
+
+With a document under version control you may identify the exact changeset that you want to undo and just revert these changes -- and leave everything done before or after the way it is.
+It may not be obvious to you, but this can easily span decades, programs, and even operating systems' lifecycles---because it works on plain text files as seen in the previous chapter.
+You think that's cool? I can tell you it \emph{is}!
+And this is just the surface -- we'll later deal with other, maybe even more important aspects of versioning.
+
+\section{Basics of Version Control}
+\label{sec:pt_basics-version-control}
+The fundament all this is built upon is the line-by-line comparison of the complete project directory that the versioning program performs when you “save” your project%
+\footnote{The actual terminology is different but I'll try to speak in familiar terms as long as possible.}.
+Of course these “lines” refer to the lines in your plain text files.
+In a text document a line will usually contain one coherent entity like a sentence, a list item or the like.
+In a score this may be (depending on the complexity of the material) one voice in one measure.
+So this means that whenever you save your project the versioning software records (e.\,g.) which sentences or which measures you have modified, stores this as a \emph{changeset}, and adds this to the project history.
+And you can completely decide yourself how fine-grained you tailor such changesets:
+They may envelope the work of a day, the complete revision of a chapter or a single corrected note.
+But note that the first example is actually a bad one because the idea of versioning is to organize the history of a project as a series of coherent sets of changes. 
+Probably you'd rather split your day's work into snapshots like 
+\begin{inparaenum}[1.)]
+\item “proof-reading choir parts” 
+\item “adding critical notes”
+\item “reorganize directory structure”.
+\end{inparaenum}
+Note that this concept does work on the project directory and not on single files.
+So a changeset can span a whole set of files, thus linking related work together.
+
+\begin{itemize}
+\item now in history (forever)
+\item can later be accessed individually
+\item changed or reverted
+\item Each state can be inspected
+\item branching
+\item repository / working tree, describe as “bag”
+\end{itemize}
+
+\section{Collaborative Editing}
+\label{sec:pt_collaborative-editing}
 
 \chapter{LilyPond}
 \label{chap:pt_lilypond}
 
 \chapter{\LaTeX}
 \label{chap:pt_latex}
+
+\chapter{Applications}
+\label{chap:pt_applications}
+
+\section{Single-source Publishing}
+\label{sec:pt_single-source-publishing}
 
 \end{document}
