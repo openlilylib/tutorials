@@ -287,6 +287,20 @@ As a rule of thumb I'd say that you can use LilyPond scores (and \LaTeX{} docume
 This is a significant improvement for the development process of documents and editions as you can work on the real \emph{content} up to the final stage of print preparation.
 
 Look at the following example of a rather complex score%
+\footnote{Arnold Schönberg: Excerpt from “Gethsemane” (fragment).
+\todo{ask for permission}
+First published in: Arnold Schönberg. Sämtliche Werke \dots
+}:
+
+\begin{musicExampleNonFloat}
+\lilypondmfe[examples/gethsemane]
+\end{musicExampleNonFloat}
+
+\noindent and note that there isn't a single manual intervention beyond assigning the music to the right voice contexts.
+It is really amazing how LilyPond manages to do most things immediately right.
+While the score isn't perfect to publication quality there is \emph{nothing} that hampers reading the music when placed on the music stand.
+
+Now have a look at the following example of a rather complex score%
 \footnote{Arnold Schönberg: Excerpt from: “Nie ward ich, Herrin, müd” | Nr. 4 aus “6 Orchesterlieder" | für Gesang und Orchester | op. 8/1, \copyright{} 1911 by Universal Edition A.\,G., Wien/UE 3041, \href{http://www.universaledition.com/}{www.universaledition.com} [permission granted for use in this tutorial. You may redistribute the document provided you keep this copyright notice and the hyperlink in place]}
 that LilyPond did \emph{not} manage to engrave perfectly without assistance:
 
@@ -299,7 +313,7 @@ I just entered the music and assigned the right voice contexts to it.
 Of course this is far from perfect, and the LilyPond developers would surely take this example as a source of inspiration for improvements of the engraving engine.
 But if you excuse the long phrasing slur from m.\,1 throughout 3 (which I judge no automated engraving system would be able to get right by itself) you will notice that the engraving is completely readable---you could put it on the music stand and play from it right away (which I can confirm from practical experience \dots).
 
-If you compare that to the attempt one of the two “big players” took at the same measures (with the same prerequisites: entering music, assign voices correctly, no further manual tweaks), you will understand what I mean \dots
+If you compare that to the attempt one of the two “big players” took at the same measures (with the same task description: entering music, assign voices correctly, no further manual tweaks), you will understand what I mean \dots
 
 \begin{musicExampleNonFloat}
     \musicSFE[trim=2.6cm 21.5cm 1.3cm 2.9cm, clip]{examples/schoenberg-opus-8-4-finale}
@@ -328,7 +342,7 @@ With the backup file you may roll back your work to that state---but of course y
 Or you could put the (digital or printed) backup and the current version side by side and manually emend the changes you applied.
 Both solutions are cumbersome, error prone, and they rely on the---random---existence of a backup of exactly the desired state.
 
-With a document under version control you may identify the exact changeset that you want to undo and just revert these changes -- and leave everything done before or after the way it is.
+With a document under version control on the other hand you may identify the exact changeset that you want to undo and just revert these changes---and leave everything done before or after the way it is.
 It may not be obvious to you, but this can easily span decades, programs, and even operating systems' lifecycles---because it works on plain text files as seen in the previous chapter.
 You think that's cool? I can tell you it \emph{is}!
 And this is just the surface -- we'll later deal with other, maybe even more important aspects of versioning.
@@ -342,9 +356,9 @@ In a text document a line will usually contain one coherent entity like a senten
 In a score this might be (depending on the complexity of the material) one voice in one measure.
 (Of course you can lay out your text files as you want.)
 So this means that whenever you save your project the versioning software records (e.\,g.) which sentences or which measures you have modified, stores this as a \emph{changeset}, and adds this to the project history.
-And you can completely decide yourself how fine-grained you tailor such changesets:
+And you can completely decide for yourself how fine-grained you tailor such changesets:
 They may envelope the work of a day, the complete revision of a chapter or a single corrected note.
-But note that the first example is actually a bad one because the idea of versioning is to organize the history of a project as a series of coherent sets of changes. 
+But note that the first example is actually a bad one because the idea of versioning is to organize the history of a project as a series of \emph{coherent} sets of changes. 
 Probably you'd rather split your day's work into snapshots like 
 \begin{inparaenum}[1.)]
 \item “proof-reading choir parts” 
@@ -355,21 +369,22 @@ Note that this concept does work on the project directory and not on single file
 So a changeset can span a whole set of files, thus linking related work together.
 
 Once you have saved a changeset to the project it is part of its history, and it is practically impossible to lose that work again by accident.
-To achieve this you would have to apply some really advanced tools you normally wouldn't touch at all.
-You can imagine a project under version control like a bag where you put all your changesets in, while the versioning software keeps track of everything.
+To achieve this you would have to apply some really advanced tools you normally never touch.
+You can think of a project under version control like a bag where you put all your stuff in, while the versioning software keeps track of all changes.
 Whenever you want to investigate any earlier state of your project the versioning system uses the content of the bag and its own records to bring your project directory into the form it had at that specific state.
 From there you can revert, modify or reapply any changeset that doesn't create structural conflicts%
-\footnote{Such a conflict would for example arise if you would try to revert changes to some lines in file that has in the meantime been deleted}.
+\footnote{Such a conflict would for example arise if you would try to revert changes to some lines in file that has in the meantime been deleted.}.
 
 But you could also create a new \emph{branch} from that state.
 \emph{Branching} is one more important concept of source code versioning.
 You can see a branch as a “session” that is independent from other lines of work.
 To use the given example (of inspecting an earlier point in project history) you might go back to a certain point, create a new branch and work in a different direction.
-If you are satisfied with this new approach you can simply replace your earlier work with the new one (while keeping it in the project history)---or you can decide to throw away the new attempt and switch back to the original version of your document.
-A more common application of branches is to start any new work that might get your document/project into an inconsistent state in the context of a branch and merge it with the main line of work only when it is finished.
+If you are satisfied with this new approach you can simply replace your earlier work with the new one (while not completely losing it because it's kept in the project history)---or you can decide to throw away the new attempt and switch back to the original version of your document.
+A more common application of branches is to start any new work that might get your document/project into an inconsistent state in the context of a branch.
+This is merged with the main line of work only later when it is finished.
 An example for this would be integrating the results of a critical revision into a score---this way the main line would keep its consistent original state up to the moment when you merge in the revision in one single step.
 
-Until now I have deliberately not mentioned any concrete software that does this ominous versioning.
+Until now I have omitted mentioning any concrete software that does this ominous versioning.
 This is because there are numerous tools in this area, but they more or less share the described concepts.
 In their generic form they all are command line programs that you can tell to perform actions on your project like saving a new changeset, managing branches or inspecting dedicated states of history.
 For all versioning systems there exist graphical front-ends for all major operating systems that aim to ease working with the systems.
@@ -381,7 +396,7 @@ They share some concepts and differ in others---but that is beyond the scope of 
 \section{Collaborative Editing}
 \label{sec:pt_collaborative-editing}
 
-While all this is already very exciting we haven't touched the most important aspect of all: the impact versioning can have on the concepts of \emph{collaborative editing}.
+While all this is already very exciting we still haven't touched the most important aspect of all: the impact versioning can have on the concepts of \emph{collaborative editing}.
 The ambiguity of the expression is intended---I'm talking about editing (or more generally working on/with) musical works in a collaborative and social way, and I'm talking of simultaneously editing source files.
 To emphasize the potentials I will take a step back and first describe traditional ways of collaboration (“traditional” being quite relative, of course).
 
@@ -401,7 +416,7 @@ This can easily happen if my partner sends a document a second time with further
 If we're lucky and notice the conflict at all the only resort is probably to compare the files manually!
 \item Working with such a system is only possible if you are dealing with a quite small number of files.
 Currently I'm working on an edition project with a project directory containing more than 500 files.
-It would definitely be impossible to even try to keep track of modifications of this number of files.
+It would definitely be impossible to even try to keep track of modifications of this number of files via email.
 \end{enumerate*}
 
 \medskip
@@ -430,7 +445,7 @@ There he adds his snapshots to the project history (as described earlier), and w
 Earlier I wrote that version control is based on line-by-line comparison of files.
 This is of even greater importance in distributed collaborative workflows, as it effectively renders file locking unnecessary.
 I would like to stress that it is for example even possible that one contributor adds articulations to one hand of a piano part while another one at the same time fixes engraving shortcomings in the other hand of the same measure without any problem.
-As long as the two people won't modify \emph{the same line} in the same file, all of this synchronization will work silently without anybody really noticing it!
+As long as the two people won't modify \emph{the same line} in the same source file, all of this synchronization will work silently without anybody really noticing it!
 
 Of course this isn't effective because it makes conflicts \emph{unlikely}---this would actually be quite negligent.
 The point is that potential conflicts can be reduced to the conflicting line(s) in the source file.
@@ -441,17 +456,88 @@ So while versioning can't completely prevent conflicts it significantly reduces 
 \medskip
 Another feature that has become crucial to my work relies on the way versioning software records changesets.
 As described earlier they keep track of file differences, and they can be inspected later.
-This way I can see exactly what my partner has done to a file without even bothering to compare the files manually or visually.
+This way I can see exactly what my partner has done to a file without even bothering to compare the files manually or visually%
+\footnote{In fact I can even inspect others' changes on the go, as there exist smartphone apps for several hosting providers}.
 Office programs have a feature to record changes (whatever it may be called in a given program and language).
 But once I have accepted or rejected the changes this (visual) indicator has vanished while the changesets are part of the project history and therefore eternally present.
 
 \medskip
 To sum up: in a project with version control each contributor has access to and can work simultaneously on the whole data inventory, with very little risk of conflicts and a straightforward way to resolve conflicts that may eventually arise nevertheless.
 This opens up quite a lot of perspectives on collaborative work that I consider very promising.
-
+In the last chapter \fref{chap:pt_applications} I will describe some of them.
 
 \chapter{LilyPond}
 \label{chap:pt_lilypond}
+When it comes to engraving musical scores my tool of choice is \emph{GNU LilyPond}%
+\footnote{\url{http://www.lilypond.org}}.
+Not only do I love its beautiful score output, but I really value how seamlessly and professionally I can integrate scores with (\LaTeX) text documents, and I have come to absolutely rely on the workflows and concepts based on the plain text approach that it allows.
+
+Of course I would love to give you a thorough introduction to this amazing software but that would be quite pretentious and especially out of scope of this article.
+Therefore I will keep my focus on the potentials of the text based approach, giving you just enough information so you can get an impression on how it would “feel” to work with it and to get the necessary foundation for the following ideas.
+
+As you know quite well by now LilyPond works by reading in text files and processing them to engraved scores.
+So one effectively has to learn how music is represented in LilyPond's input language.
+But it may be good to know that while it is actually possible to edit the text files with any plain text editor there actually \emph{are} graphical programs assisting you heavily in dealing with the text files.
+Although there are quite a few I will only show you one.
+
+\section{Frescobaldi}
+\label{sec:pt_frescobaldi}
+
+\textit{Frescobaldi%
+\footnote{\url{http://www.frescobaldi.org}}}
+is a complete editing environment that allows you to do everything you need within one interface.
+In that it is quite similar to the graphical programs I have earlier dismissed as conceptually flawed.
+But there is a big difference, as Frescobaldi presumably offers the best of both worlds:
+it gives you the greatest possible graphical access to the editing process while in its core still being a---sophisticated---text editor.
+
+Its main window presents itself like many programs that allow to edit textual source files of graphical documents: it is split in a \emph{text editor} and a \emph{music view} (see \fref{fig:pt_fb-main-window}).
+In the music view on the right hand you see (surprise) the music.
+Please note that b) Frescobaldi isn't responsible for generating the engraving in this view and b) this view doesn't have a  “live“ connection to the source but is only updated when LilyPond is run.
+So you could actually call Frescobaldi a \textsc{wysiwyg} editor because what you see actually \emph{is} what you get finally---but you can't (yet) edit the score in a graphical way in this music view.
+On the left side of the screen shot you can see the \emph{Quick Insert} widget, one of the tools that simplify your life by “remembering” how to insert all sorts of graphical symbols for you---but again: they won't insert them “into the score” but as text into your input file.
+
+\begin{figure}
+\includegraphics[max width=\textwidth]{examples/frescobaldi/main-window}
+\caption{Frescobaldi's Main Window}
+\label{fig:pt_fb-main-window}
+\end{figure}
+
+Another example of the useful tools is the \emph{Score Setup Wizard} that allows you to graphically configure a score of arbitrary complexity (just like in other programs) and that generates the text used for the corresponding score for you (see \fref{fig:pt_fb-score-setup-wizard}).
+
+\begin{figure}
+\includegraphics[max width=\textwidth]{examples/frescobaldi/score-wizard}
+\caption{Frescobaldi: Score Setup Wizard}
+\label{fig:pt_fb-score-setup-wizard}
+\end{figure}
+
+If you look at the text editor again (in \fref{fig:pt_fb-main-window}) you will see that the text is colored a lot.
+This is a feature that Frescobaldi shares with most programming editors: it “knows” LilyPond's language and highlights the source text according to its structure.
+Once one has got used to that practice it greatly eases reading and writing the necessary text files.
+
+When you start typing a command Frescobaldi can also give you suggestions on how to complete them (\fref{fig:pt_fb-code-completion}).
+
+\begin{figure}
+\centering
+\includegraphics[width=8cm]{examples/frescobaldi/code-completion}
+\caption{Frescobaldi: Suggestions for available commands}
+\label{fig:pt_fb-code-completion}
+\end{figure}
+
+But the maybe most important feature for daily work is that you can click on an element in the music view and will be taken to the corresponding place in the input file.
+In \fref{fig:pt_fb-point-and-click} you can see the slur highlighted in purple in the music view and the highlighted text in line 8 in the text editor.
+
+\begin{figure}
+\centering
+\includegraphics[max width=\textwidth]{examples/frescobaldi/point-and-click}
+\caption{Frescobaldi: Two-way link between input file and score}
+\label{fig:pt_fb-point-and-click}
+\end{figure}
+
+This technique lets you easily navigate your text file(s) which could have been somewhat difficult when this wasn't available yet.
+
+\bigskip
+
+Current development ideas
 
 \chapter{\LaTeX}
 \label{chap:pt_latex}
