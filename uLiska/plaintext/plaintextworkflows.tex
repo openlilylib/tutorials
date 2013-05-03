@@ -508,7 +508,7 @@ Another example of the useful tools is the \emph{Score Setup Wizard} that allows
 \label{fig:pt_fb-score-setup-wizard}
 \end{figure}
 
-If you look at the text editor again (in \fref{fig:pt_fb-main-window}) you will see that the text is colored a lot.
+If you look at the text editor again (in \fref{fig:pt_fb-main-window}) you will see that the text is colored a lot (I will talk about the actual text soon).
 This is a feature that Frescobaldi shares with most programming editors: it “knows” LilyPond's language and highlights the source text according to its structure.
 Once one has got used to that practice it greatly eases reading and writing the necessary text files.
 
@@ -531,11 +531,31 @@ In \fref{fig:pt_fb-point-and-click} you can see the slur highlighted in purple i
 \label{fig:pt_fb-point-and-click}
 \end{figure}
 
-This technique lets you easily navigate your text file(s) which could have been somewhat difficult when this wasn't available yet.
+This also works in the other direction: If you select text in the editor the corresponding notation elements are highlighted in the score.
+This way you can easily navigate your text file(s) which could have been somewhat difficult when this wasn't available yet.
 
-\bigskip
+Current development of Frescobaldi focuses on enhancement of the music view's functionality.
+So it will soon be possible to “edit” the score with the mouse---of course in fact you will be able to tweak something visually and Frescobaldi will insert the appropriate text in the source file, possibly giving you the option to select from different approaches.
+Currently there are plans to implement correcting pitches, shaping curves, and annotating objects (see also \fref{sec:pt_lilypond-comments}).
+This will make “working with text files” even more comfortable.
 
-Current development ideas
+Of course these remarks were only a very cursory overview of Frescobaldi.
+A thorough introduction can't be the intention of this paper, but I wanted to give you a feeling to what extent smart editors can smoothen your editing experience.
+Now you are ready to learn something about how LilyPond input files actually work.
+
+\section{Textual Representation of Music}
+\label{sec:pt_textual-representation}
+In \fref{fig:pt_fb-main-window} you have seen a short score excerpt from Brahms' first violin sonata, along with the LilyPond code that produced it.
+Now I'll use that example to show you a little bit about the basic elements in a LilyPond score.
+
+T
+
+\section{Variables and Includes}
+
+\section{Comments}
+\label{sec:pt_lilypond-comments}
+
+
 
 \chapter{\LaTeX}
 \label{chap:pt_latex}
@@ -546,4 +566,10 @@ Current development ideas
 \section{Single-source Publishing}
 \label{sec:pt_single-source-publishing}
 
+\chapter{Where To Go From Here?}
+\label{chap:pt_where-to-go-from-here}
+
+\begin{itemize}
+\item Recommended introductory material for all aspects
+\end{itemize}
 \end{document}
