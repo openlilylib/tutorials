@@ -288,7 +288,7 @@ This is a significant improvement for the development process of documents and e
 
 Look at the following example of a rather complex score%
 \footnote{Arnold Schönberg: Excerpt from “Gethsemane” (fragment).
-\todo{ask for permission}
+\todo{ask Larry Schoenberg for permission}
 First published in: Arnold Schönberg. Sämtliche Werke \dots
 }:
 
@@ -319,8 +319,6 @@ If you compare that to the attempt one of the two “big players” took at the 
     \musicSFE[trim=2.6cm 21.5cm 1.3cm 2.9cm, clip]{examples/schoenberg-opus-8-4-finale}
 \end{musicExampleNonFloat}
 
-
-\todo{ask UE about permission to also use the “Gethsemane example”. If this is possible place it \emph{before} the two other examples!}
 
 There are a few more features about working with text files that I'll write about in the LilyPond \fref{chap:pt_lilypond}, namely the potentials of using \emph{variables}, of being able to \emph{include} files and design sophisticated cascading set-ups, and finally of \emph{commenting} and \emph{documenting} source files.
 But first let's take the time to learn about what is maybe the single most important feature of plain text files: their accessibility to \emph{version control}.
@@ -473,7 +471,7 @@ When it comes to engraving musical scores my tool of choice is \emph{GNU LilyPon
 Not only do I love its beautiful score output, but I really value how seamlessly and professionally I can integrate scores with (\LaTeX) text documents, and I have come to absolutely rely on the workflows and concepts based on the plain text approach that it allows.
 
 Of course I would love to give you a thorough introduction to this amazing software but that would be quite pretentious and especially out of scope of this article.
-Therefore I will keep my focus on the potentials of the text based approach, giving you just enough information so you can get an impression on how it would “feel” to work with it and to get the necessary foundation for the following ideas.
+Therefore I will keep my focus on the potentials of the text based approach, giving you just enough information to get an impression on how it would “feel” to work with it and to get the necessary foundation for the following ideas.
 
 As you know quite well by now LilyPond works by reading in text files and processing them to engraved scores.
 So one effectively has to learn how music is represented in LilyPond's input language.
@@ -492,8 +490,8 @@ it gives you the greatest possible graphical access to the editing process while
 
 Its main window presents itself like many programs that allow to edit textual source files of graphical documents: it is split in a \emph{text editor} and a \emph{music view} (see \fref{fig:pt_fb-main-window}).
 In the music view on the right hand you see (surprise) the music.
-Please note that b) Frescobaldi isn't responsible for generating the engraving in this view and b) this view doesn't have a  “live“ connection to the source but is only updated when LilyPond is run.
-So you could actually call Frescobaldi a \textsc{wysiwyg} editor because what you see actually \emph{is} what you get finally---but you can't (yet) edit the score in a graphical way in this music view.
+Please note that a) Frescobaldi isn't responsible for generating the engraving in this view and b) this view doesn't have a  “live“ connection to the source but is only updated when LilyPond is run.
+So you could actually call Frescobaldi a \textsc{wysiwyg} editor because what you see actually \emph{is} what you finally get---but you can't (yet) edit the score in a graphical way in this music view.
 On the left side of the screen shot you can see the \emph{Quick Insert} widget, one of the tools that simplify your life by “remembering” how to insert all sorts of graphical symbols for you---but again: they won't insert them “into the score” but as text into your input file.
 
 \begin{figure}
@@ -523,7 +521,7 @@ When you start typing a command Frescobaldi can also give you suggestions on how
 \label{fig:pt_fb-code-completion}
 \end{figure}
 
-But the maybe most important feature for daily work is that you can click on an element in the music view and will be taken to the corresponding place in the input file.
+But maybe the most important feature for daily work is that you can click on an element in the music view and will be taken to the corresponding place in the input file.
 In \fref{fig:pt_fb-point-and-click} you can see the slur highlighted in purple in the music view and the highlighted text in line 8 in the text editor.
 
 \begin{figure}
