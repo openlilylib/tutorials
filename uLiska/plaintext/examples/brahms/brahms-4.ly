@@ -2,7 +2,7 @@
 {
   \key g \major
   \time 6/4
-  \tempo "Vivace ma non troppo" 4 = 90
+  \tempo "Vivace ma non troppo" 2. = 60
   r2. r4 d-.(
     -\markup { \dynamic "p" \italic "mezza voce" } 
     r8 d-.) | d4.( c8 b g) d2.
