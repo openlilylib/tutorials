@@ -26,6 +26,7 @@
 
 \usepackage{fancybox}
 \RequirePackage{multicol}
+\RequirePackage{tabularx}
 
 \begin{document}
 \parttitle[Urs Liska]{Editing Musical Documents as Plain Text}
@@ -177,11 +178,13 @@ but rather a graphical \emph{representation} of the musical \emph{content}.
 
 If you consider the following minimal score and its (complete) LilyPond input file:
 \begin{multicols}{2}
+\vfill
 \begin{musicExampleNonFloat}
 \begin{quote}
 \lilypondSFE{examples/minimal-score}
 \end{quote}
 \end{musicExampleNonFloat}
+\vfill
 \columnbreak
 
 \begin{centering}
@@ -476,7 +479,7 @@ Therefore I will keep my focus on the potentials of the text based approach, giv
 As you know quite well by now LilyPond works by reading in text files and processing them to engraved scores.
 So one effectively has to learn how music is represented in LilyPond's input language.
 But it may be good to know that while it is actually possible to edit the text files with any plain text editor there actually \emph{are} graphical programs assisting you heavily in dealing with the text files.
-Although there are quite a few I will only show you one.
+Although there are a few I will only show you one.
 
 \section{Frescobaldi}
 \label{sec:pt_frescobaldi}
@@ -512,7 +515,7 @@ If you look at the text editor again (in \fref{fig:pt_fb-main-window}) you will 
 This is a feature that Frescobaldi shares with most programming editors: it “knows” LilyPond's language and highlights the source text according to its structure.
 Once one has got used to that practice it greatly eases reading and writing the necessary text files.
 
-When you start typing a command Frescobaldi can also give you suggestions on how to complete them (\fref{fig:pt_fb-code-completion}).
+When you start typing a command Frescobaldi can also give you suggestions on how to complete them (\fref{fig:pt_fb-code-completion})---also a valuable assistance, not so much because of its time-saving but because it assists you in remembering and efficiently reduces errors.
 
 \begin{figure}
 \centering
@@ -523,32 +526,65 @@ When you start typing a command Frescobaldi can also give you suggestions on how
 
 But maybe the most important feature for daily work is that you can click on an element in the music view and will be taken to the corresponding place in the input file.
 In \fref{fig:pt_fb-point-and-click} you can see the slur highlighted in purple in the music view and the highlighted text in line 8 in the text editor.
-
 \begin{figure}
 \centering
 \includegraphics[max width=\textwidth]{examples/frescobaldi/point-and-click}
 \caption{Frescobaldi: Two-way link between input file and score}
 \label{fig:pt_fb-point-and-click}
 \end{figure}
-
 This also works in the other direction: If you select text in the editor the corresponding notation elements are highlighted in the score.
-This way you can easily navigate your text file(s) which could have been somewhat difficult when this wasn't available yet.
+This lets you easily navigate your text file(s) and removes a handicap one could have seen in editing plain text files in the past.
 
-Current development of Frescobaldi focuses on enhancement of the music view's functionality.
-So it will soon be possible to “edit” the score with the mouse---of course in fact you will be able to tweak something visually and Frescobaldi will insert the appropriate text in the source file, possibly giving you the option to select from different approaches.
-Currently there are plans to implement correcting pitches, shaping curves, and annotating objects (see also \fref{sec:pt_lilypond-comments}).
+One focus of current Frescobaldi development is the enhancement of the music view's functionality.
+So it will soon be possible to partially “edit” the score with the mouse---of course in fact you will be able to tweak something visually and Frescobaldi will insert the appropriate text in the source file, possibly giving you the option to select from different approaches.
+Currently there are plans to implement (e.\,g.) correcting pitches, drawing and shaping curves, and annotating objects (see also \fref{sec:pt_lilypond-comments}).
 This will make “working with text files” even more comfortable.
 
 Of course these remarks were only a very cursory overview of Frescobaldi.
-A thorough introduction can't be the intention of this paper, but I wanted to give you a feeling to what extent smart editors can smoothen your editing experience.
+A thorough introduction can't be the intention of this paper, but I wanted to give you a feeling to what extent current and smart editors can smoothen your editing experience.
 Now you are ready to learn something about how LilyPond input files actually work.
 
 \section{Textual Representation of Music}
 \label{sec:pt_textual-representation}
-In \fref{fig:pt_fb-main-window} you have seen a short score excerpt from Brahms' first violin sonata, along with the LilyPond code that produced it.
+In \fref{fig:pt_fb-main-window} (and \fref{fig:pt_fb-point-and-click}) you have seen a short score excerpt from Brahms' first violin sonata, along with the LilyPond code that produced it.
 Now I'll use that example to show you a little bit about the basic elements in a LilyPond score.
 
-T
+At the most basic level notes are represented by their pitch and duration, as you can see in this “bare” example:
+
+\begin{multicols}{2}
+\begin{verbatim}
+{
+  r2. r4 d r8 d 
+  d4. c8 b g d2. 
+}
+\end{verbatim}
+\columnbreak
+\includegraphics{examples/brahms/brahms-1}
+\end{multicols}
+
+The text writes rests (\texttt{\textit{r}}) and pitches (\texttt{\textit{d}} etc.), and everything is enclosed in a pair of curly braces.
+This is LilyPond's notion of a \emph{music expression}.
+A score is represented by one big music expression which can be constructed of arbitrarily nested smaller music expressions.
+There are a few things “missing” in the source that LilyPond adds by itself, namely a staff, a clef, and beams.
+
+Two more elements aren't actually figured out automatically, but hidden from the example.
+In fact you have to write down \cmd{key g} \cmd{major} and \cmd{time 6/4} to tell LilyPond about the key and time signatures.
+But the beaming in the second measure is done automatically according to the time signature.
+Many things can be defined by such \emph{commands}.
+
+Elements like articulations or dynamics are attached to notes or rests by printing them after the reference item, like this fake example:
+
+\begin{multicols}{2}
+    \begin{verbatim}
+    {
+    r2. r4 d-. r8 d-- 
+    d4.\sf c8\> b g d2.\! 
+    }
+    \end{verbatim}
+    \columnbreak
+    \includegraphics{examples/brahms/brahms-2}
+\end{multicols}
+
 
 \section{Variables and Includes}
 
