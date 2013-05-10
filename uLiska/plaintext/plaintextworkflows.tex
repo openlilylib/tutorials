@@ -673,16 +673,80 @@ Music defined in a variable is used by a score---and it can equally be used by a
 Different scores accessing shared music may be a full score and the instrumental parts or different transpositions of the same song.
 In both cases the music is defined only once, and any update to that definition is propagated to all scores automatically.
 
+Being able to reuse variables would only be a partial advantage if one couldn't separate the definitions even one step further, into separate files, and \emph{include} them.
+This way one can create a collection of files, a \emph{library}, and keep them available for further use.
+This is not only useful for reusing work in future projects but also within one project.
+You can organize style and layout templates in a hierarchical and sophisticated way and have all files share some common styles (like font selections) but have different additional styles for different output formats (full scors, part, music example \dots).
+Any change in one of the style files is then automatically propagated to all scores.
+Or you can make use of a technique called \emph{commenting out}---place two alternative includes but make a comment of one of them, like this:
+
+\begin{Verbatim}
+\include "draft-layout.ily"
+%\include "publish-layout.ily"
+\end{Verbatim}
+
+The second line of this is a \emph{comment}, so only the draft-layout file will be included (and may color editorial additions red, print additional information about the date or whatever you like to define) as long as you are working on the score.
+When you're finished and prepare the final printout you can just move the percent sign one line up and get your final publication layout.
+And if you have this construction in a shared style file this switch will have global affect to all scores that are part of your project.
+
 \section{Comments}
 \label{sec:pt_lilypond-comments}
+The last example of the previous section led us smoothly to the next aspect: \emph{comments}.
+LilyPond---as virtually all plain text formats---allows you to mark parts of a file as comments, text that will be ignored by the typesetting.
+This can for example be used to document what you have done or comment on technical issues you are facing.
+You could for example explain why you have decided to implement a certain voice-leading to solve a typographic problem, or leave a mark that some issues will have to be resolved.
+Combine this with the fact that all your manual interventions are written explicitely in the file and compare that with the situation of a graphical score editing program where you can hardly tell in backsight what your manual interventions are \dots
 
+Currently there are plans to greatly enhance this functionality, especially with preparing scholarly editions in mind.
+It will be possible to enter specific comments in the input file---\emph{i.\,e.\ directly beside the music they are referring to}---and a tool that will be called \texttt{lilypond-doc} will output them to a variety of formats.
+This will provide you with nicely formatted lists of 
+\begin{inparaenum}
+\item \textsc{todo} items,
+\item musicological questions,
+\item typographical questions, and finally
+\item critical remarks.
+\end{inparaenum}
+The items in the list will be smartly linked, so that clicking on them will point you directly to the corresponding place in the source file.
+\emph{Frescobaldi} will probably be able to allow you to insert such comments directly from within the music view, so you can click on a note and enter the comment.
+This way you will be able to do all your work \emph{within the actual score}, and finally you will get the entries for the critical report nicely formatted as source text to be used in the corresponding \LaTeX{} document!
 
+\section{Conclusion}
+\label{sec:pt_lilypond-conclusion}
+
+\begin{itemize}
+\item General remarks?
+\item Output quality \emph{and} workflow
+\item import/export :-(
+\end{itemize}
 
 \chapter{\LaTeX}
 \label{chap:pt_latex}
+\begin{itemize}
+\item As short as possible
+\item short introduction about architecture (what is my interface to it?)
+\item No syntax overview (just: somewhat similar to LilyPond)
+\item Extension packages, includes
+\item Musicexamples (full example file in appendix)
+\item Lilyglyphs
+\end{itemize}
 
 \chapter{Applications}
 \label{chap:pt_applications}
+
+\section{Preparing a Musical Edition}
+\label{sec:pt_preparing-edition}
+\begin{itemize}
+\item Integrated workflow \emph{in situ}
+\item fluid task boundaries
+\end{itemize}
+
+\section{“Crowd Editing”}
+\label{sec:pt_crowd-editing}
+\begin{itemize}
+\item Big orchestral score
+\item Distribute over many contributors
+\item Usefulness of programmability (even when the individual doesn't know to program)
+\end{itemize}
 
 \section{Single-source Publishing}
 \label{sec:pt_single-source-publishing}
