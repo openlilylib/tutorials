@@ -643,6 +643,35 @@ And you should feel comfortable with knowing that there are editors at hand that
 
 \section{Variables and Includes}
 \label{sec:pt_variables-includes}
+In the previous section I wrote that LilyPond adds necessary elements to what you have entered.
+In the case of a file just consisting of a music expression as in our example it will actually add the necessary context for a staff, the score, and a “book” which represents the output file.
+This works only for simple scores such as music examples or maybe plain chants, but for most real scores you will have to define the score structure explicitely.
+While one would perhaps start with writing the music expressions directly inside the score set-up, there is the concept of \emph{variables} that proves infinitely useful for any project of some dimensions.
+
+The basic structure of a score looks like this:
+\begin{quote}
+\begin{verbatim}
+\score {
+  \new Staff { ... music expression ... }
+  \layout{}
+  \midi{}
+}
+\end{verbatim}
+\end{quote}
+
+Inside the score block there is one \emph{Staff} that contains a music expression (I could have pasted the code from the previous examples here). \cmd{layout\{\}} tells LilyPond to create a score, the optional \cmd{midi\{\}} block additionally creates a \textsc{midi} file.
+Instead of just \cmd{new Staff} there would be the complete structure of all (potentially nested) staves of the score, so the file would soon become very complex and confusing.
+To avoid this one wraps up the music definition in a variable (e.\,g.\ \texttt{violin}) and simply writes \verb+\new Staff \violin+ in the score block.
+
+\medskip
+Reading this you might consider it just a detail of the input file structure and wonder how this relates to you.
+But packaging musical expressions in variables isn't only useful to reduce the complexity of the score block but serves many more goals.
+It is a way for transparently and robustly store, use \emph{and reuse} blocks of music.
+Reusing music is very useful, not only for the---admittedly quite specific---case of musical snippets or patterns, but also for the fundamental handling of the needs of musical engraving.
+Earlier I wrote about the separation of content and appearance, here we are dealing with separation of the \emph{definition} and \emph{use} of music.
+Music defined in a variable is used by a score---and it can equally be used by another score.
+Different scores accessing shared music may be a full score and the instrumental parts or different transpositions of the same song.
+In both cases the music is defined only once, and any update to that definition is propagated to all scores automatically.
 
 \section{Comments}
 \label{sec:pt_lilypond-comments}

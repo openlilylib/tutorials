@@ -597,16 +597,6 @@ When handling all these questions the comments can continuously be changed to cr
 Combined with the potential for collaborative work we'll discuss later this will set LilyPond apart from any other solution one could think of.
 
 \paragraph{Variables}
-Packaging musical expressions in variables isn't only useful to reduce the complexity of the score block but serves many more goals.
-It is a way for transparently and robustly store, use \emph{and reuse} blocks of music.
-Reusing music is very useful, not only for the -- admittedly quite specific -- case of musical snippets or patterns, but also for the fundamental handling of the needs of musical engraving.
-You never have to \emph{extract parts} from a score, instead you write down the music and use the variables to construct different scores from it (e.\,g. the conductor's score and the instrumental parts).
-As you have seen in the previous example you will put the variable with the music definition inside the definition of a score -- and you can simply put it inside the definition of another score to get another type of output.
-The same is true for transpositions: 
-If you need a transposition you don't have to make a copy of the music but just use the variable and apply the transposition.
-Depending on the task at hand you may apply it to an individual variable, a part (or staff) or the complete score.
-And you always know exactly where your music is defined in the source file -- all in all this is a very robust approach.
-
 Another very handy property of variables is that you can \emph{redefine} them.
 One common application of this is a construction like this:
 
@@ -681,36 +671,12 @@ This is a really robust approach just like for example the design of a web site 
 \footnote{Cascading Style Sheets, \url{http://en.wikipedia.org/wiki/Cascading_Style_Sheets}},
 with nothing hidden in “settings” dialogs and everything transparently accessible.
 
-\paragraph{Robust source code}
-As you have already seen \emph{every} aspect of musical content and notation is written down in the source files.
-Of course this can get quite complex when the music gets complex, for example with articulations, dynamics, elements like slurs or text spanners, and especially when manual intervention in the layout decisions have to be made.
-But I consider this definitely an advantage because of being so explicit.
-If I write \cmd{slurUp} to tell LilyPond to print a slur above the notes or \cmd{noBeam} to force the breaking of a beam there is no way for ambiguity.
-Way back when I was using (admittedly now outdated) \textsc{wysiwyg} notation software I constantly suffered from having half of my manual decisions reverted when hitting “Update layout” \dots
-
-\todo{Do I need examples here? Or can this wait until the “Working with LilyPond” section?}
-
-\paragraph{Algorithmic notation}
-\todo{better title!}
-Plain text files are perfect for being accessed and processed by computer programs.
-Maybe you will never make use of that, but it's a fascinating possibility you will probably never get from graphical programs.
-Generating, interpreting and processing text files are the very basic capabilities of practically every programming language.
-So you can very easily create algorithmic processes to generate music input for LilyPond (for example I once realized a complete rendering of a serial composition), you might write an analysis tool or apply contrapuntal operations on music snippets.
-As the access to plain text is so straightforward the only limits are your fantasy and your programming capabilites:
-From the technical point of view it would be a breeze to create a script that downloads the daily weather data from an internet server, algorithmically composes a movement of your ground-breaking “Weather Suite” and posts the pdf to your Facebook wall%
-\footnote{The aesthetical value of this work in progress would be debatable, though}.
 
 Another -- real-world -- example is \package{lilyglyphs}, a package that allows to include LilyPond's notational elements in \LaTeX{} documents (see \fref{subsec:lilyglyphs}).
 To extend the collection of available symbols one has to create a score file for each symbol.
 In order to streamline this process I created a script that generates the complete LilyPond input file from a very short template file, invokes lilypond to compile it, and finally generates the \LaTeX{} code that is then needed to include the symbol in the text document.
 
 \paragraph{Profound notion of the musical structure}
-As a result from the explicit nature of the input source and the non-realtime behaviour LilyPond is able to get a very good idea of the syntactical structure of the music before bothering with layout decisions.
-While you may not notice this every day it is reassuring that you practically can't disturb LilyPond with difficult or complex (except for plainly \emph{wrong}) input%
-\footnote{with maybe the exception of one long-standing bug with the synchronization of grace notes in some contexts. This is quite annoying but fortunately there is a simple workaround available.}.
-This is especially impressive with complex timing situations.
-You can notate arbitrarily complex nested tuplets without making LilyPond sweat.
-One of my first scores with LilyPond was a fraction of a piano part of a composition by Brian Ferneyhough that I couldn't read from the material the ensemble had provided me with -- the result was \emph{very} convincing, and I would love to include the example here if it weren't for copyright considerations.
 And it is similarly easy and robust to enter any form of polymetric constellation%
 \footnote{For some examples see\\ \url{http://www.lilypond.org/doc/v2.16/Documentation/notation/displaying-rhythms.html\#polymetric-notation}}.
 
