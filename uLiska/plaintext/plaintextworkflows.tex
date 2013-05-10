@@ -27,6 +27,7 @@
 \usepackage{fancybox}
 \RequirePackage{multicol}
 \RequirePackage{tabularx}
+\RequirePackage{fancyvrb}
 
 \begin{document}
 \parttitle[Urs Liska]{Editing Musical Documents as Plain Text}
@@ -477,7 +478,7 @@ Of course I would love to give you a thorough introduction to this amazing softw
 Therefore I will keep my focus on the potentials of the text based approach, giving you just enough information to get an impression on how it would “feel” to work with it and to get the necessary foundation for the following ideas.
 
 As you know quite well by now LilyPond works by reading in text files and processing them to engraved scores.
-So one effectively has to learn how music is represented in LilyPond's input language.
+So one effectively \emph{has} to learn how music is represented in LilyPond's input language.
 But it may be good to know that while it is actually possible to edit the text files with any plain text editor there actually \emph{are} graphical programs assisting you heavily in dealing with the text files.
 Although there are a few I will only show you one.
 
@@ -552,12 +553,13 @@ Now I'll use that example to show you a little bit about the basic elements in a
 At the most basic level notes are represented by their pitch and duration, as you can see in this “bare” example:
 
 \begin{multicols}{2}
-\begin{verbatim}
+\begin{Verbatim}[samepage=true,
+				   commandchars=|„“]
 {
-  r2. r4 d r8 d 
-  d4. c8 b g d2. 
+  r2. r4 d r8 d
+  d4. c8 b g d2.
 }
-\end{verbatim}
+\end{Verbatim}
 \columnbreak
 \includegraphics{examples/brahms/brahms-1}
 \end{multicols}
@@ -572,21 +574,75 @@ In fact you have to write down \cmd{key g} \cmd{major} and \cmd{time 6/4} to tel
 But the beaming in the second measure is done automatically according to the time signature.
 Many things can be defined by such \emph{commands}.
 
-Elements like articulations or dynamics are attached to notes or rests by printing them after the reference item, like this fake example:
+Elements like articulations or dynamics are attached to notes or rests by printing them after the reference item, like in this fake example:
+
+\newcommand{\hilite}[1]{\textcolor{red}{\textbf{#1}}}
 
 \begin{multicols}{2}
-    \begin{verbatim}
-    {
-    r2. r4 d-. r8 d-- 
-    d4.\sf c8\> b g d2.\! 
-    }
-    \end{verbatim}
-    \columnbreak
-    \includegraphics{examples/brahms/brahms-2}
+\begin{Verbatim}[samepage=true,
+				   commandchars=|„“]
+{
+  r2. r4 d|hilite„-.“ r8 d|hilite„-.“ 
+  d4.|hilite„\sf“ c8|hilite„\>“ b g|hilite„\!“ d2.|hilite„->“
+}
+\end{Verbatim}
+\columnbreak
+\includegraphics{examples/brahms/brahms-2}
 \end{multicols}
 
+We have a few articulations that are attached with a hyphen, the staccato dot written as a dot, the accent as a \texttt{>}, all characters have been chosen to be as intuitive as possible.
+Dynamics are attached by a backslash, in the example we have the \lilyDynamics{sf} with \cmd{sf}, the \decrescHairpin with \cmd{>}, and (as the only unusual item) the \cmd{!} which represents the \emph{end} of the hairpin.
+
+We can attach \emph{spanners} to pairs of notes, e.\,g.\ the slur in the first measure of the following example.
+Slurs are written as opening and closing round brackets (\emph{after} the note they are referring to)
+There you can see that you can attach multiple items to a note by just writing them one after another
+
+\begin{multicols}{2}
+\begin{Verbatim}[samepage=true,
+				   commandchars=|„“]
+{
+  r2. r4 d-.|hilite„(“ r8 d-.|hilite„)“
+  d4.|hilite„(“ c8|hilite„[“ b|hilite„]“ g|hilite„)“ d2.
+}
+\end{Verbatim}
+\columnbreak
+\includegraphics{examples/brahms/brahms-3}
+\end{multicols}
+
+In addition to the slurs you can also see an example of manually setting the beams against the rules for the time signature, which is indicated by the use of square brackets (again \emph{after} the notes they are referring to).
+
+In the last example of this \emph{very} short introduction to LilyPond files we'll add the necessary text elements to the score.
+The \emph{tempo} indication is entered by the \cmd{tempo} command (the non-verbal part is here as an example only), while the \lilyDynamics{p} \emph{mezza voce} is a \cmd{markup}---a text that is attached to a note like any articulation or dynamic sign.
+
+\begin{multicols}{2}
+\begin{Verbatim}[samepage=true,
+				   commandchars=|„“]
+{
+  |hilite„\tempo“ "Vivace ma non troppo" |hilite„2. = 60“
+  r2. r4 d-.(|hilite„-\markup“
+    { \dynamic "p" \italic "mezza voce" } 
+    r8 d-.) 
+  d4.( c8 b g) d2.
+}
+\end{Verbatim}
+\columnbreak
+\vspace*{4.5em}
+\includegraphics{examples/brahms/brahms-4}
+\end{multicols}
+
+One thing you may have noticed in the example is that I have broken the first line of music into three.
+LilyPond doesn't care about this \emph{white space} and allows you to lay out your text file as you find appropriate---which usually will mean to keep coherent entities on a single line.
+In this case the entity is the \emph{markup}, also an expression enclosed in curly braces.
+You could just throw some text in there, but in this score we format the elements, one using the dynamics font, the other as italic text.
+
+\medskip
+Now you've seen your first real-world example of a LilyPond score.
+Of course the complexity of these text files increases when the music gets longer or more complex.
+But when looking at an input file you should always keep in mind that it is built from very small and rather simple units.
+And you should feel comfortable with knowing that there are editors at hand that really help you navigating and improving them.
 
 \section{Variables and Includes}
+\label{sec:pt_variables-includes}
 
 \section{Comments}
 \label{sec:pt_lilypond-comments}
