@@ -813,19 +813,68 @@ As producing books is the basic motivation for \LaTeX{} you also can expect prof
 \medskip
 Now that we have seen a \emph{very} short introduction to \LaTeX{} it is time to consider some specifically \emph{musical} aspects to authoring text documents.
 
-\section{musicexamples}
-\label{sec:pt_musicexamples}
+\section{Music Examples}
+\label{sec:pt_music-examples}
+Of course you can embed images in text documents if you want to add music examples to a text.
+\LaTeX{} does a very good job at typesetting these additions with the best possible quality.
+But there are a few dedicated tools that aid you with this specific task, in particular I will talk about \package{lilypond-book} and \package{musicexamples}.
 
-\section{\lilyglyphs}
-\label{sec:pt_lilyglyphs}
+\subsection{lilypond-book}
+\label{subsec:pt_lilypond-book}
+The program \package{lilypond-book} is part of the LilyPond distribution and allows to embed LilyPond source code directly in \LaTeX{} documents.
+First you run \package{lilypond-book} on the document, which will call LilyPond to generate all (necessary) examples and create a copy of the document including these generated files.
+Then you run \LaTeX{} to compile this processed copy.
+This procedure has some overhead due to the large number of intermediate files, and many people using \package{lilypond-book} with complex documents or on a regular basis actually approach this using self-made scripts.
+But if you have documents with lots of (small) examples you won't find any better solution to manage your music sources \emph{in situ}.
+
+\subsection{musicexamples}
+\label{subsec:pt_musicexamples}
+Another way to embed music examples in \LaTeX{} documents is \package{musicexamples}, a package that is part of \openlilylib%
+\footnote{\url{http://www.openlilylib.org/musicexamples}}.
+Originally started as an alternative approach to \package{lilypond-book} it can actually work together with it quite well.
+\package{musicexamples} provides environments and commands to include and manage music examples in \LaTeX{} documents.
+There is support for floating and non-floating environments, single-line or multi-line examples (with the multi-line ones being able to be split on several pages).
+You can also print full-page examples, with special support for examples starting on odd or even pages (you can force example to start at the next odd or even page).
+All examples in a document share the same counter and can be exported to a contigious list of music examples.
+
+It is possible to use \emph{any} images for your music examples, but there is special support for using LilyPond (of course).
+There are tools that compile your LilyPond files correctly to files that can directly be used in the \LaTeX{} document.
+This may be the way for you if you want to have your scores separate.
+Finally there will be%
+\footnote{This part of the package hasn't been implemented yet.}
+helper scripts that keep the music examples up to date (and conditionally recompile missing music example files).
+
+Instead of existing image files (LilyPond generated or not) you can equally embed LilyPond code with \package{lilypond-book} and benefit from both approaches:
+\package{lilypond-book}s in-place example code and \package{musicexamples}' beautiful layout and example management.
+
+You can see a comprehensive example document with music examples in the appendix \todo{fref}.
+
+\subsubsection*{OOoLilyPond}
+\label{subsubsec:pt_ooo-lilypond}
+Finally I have to mention another option to integrate music examples in text documents, although it isn't quite as professional.
+\emph{OOoLilyPond} is an OpenOffice extension which allows to store LilyPond code as embedded objects in Writer documents.
+It can compile them in place and display the corresponding image files while keeping the source code ready for further editing.
+Unfortunately this can only produce raster images and no vector graphics, resulting in a rather medium output quality.
+
+\section{Notational Elements}
+\label{sec:pt_notational-elements}
+Another member of our family of resources is \lilyglyphs[scale=1.1].
+This package allows to include LilyPond's notational elements in the continuous text of \LaTeX{} documents.
+This is significantly different from entering music examples as it will embed them as characters, like \lilyDynamics{mf} for example.
+The main advantage of this package over any other solution I know of is that these elements are readily available, scale well with the surrounding text size, and that you can realize virtually anything you can do with LilyPond.
+
+Elements that are part of LilyPond's OpenType font can be accessed through predefined commands (the above example was written \cmd{lilyDynamics\{mf\}}) or---if there isn't a predefined command yet---through their glyph names from the font, like this \lilyGlyph[scale=1, raise=0.75]{clefs.mensural.c} mensural clef \cmd{lilyGlyph{\{clefs.mensural.c\}}}.
+
+For elements that aren't part of the OpenType font and that are normally drawn by LilyPond \lilyglyphs[scale=1.1] uses small images that have been generated with LilyPond.
+The use is identical if there are predefined commands like this \crotchet[scale=1.1] \cmd{crotchet} or other non-text \crescHairpin  elements.
+If there isn't a predefined command or if you need a very non-standard symbol, \lilyglyphs[scale=1.1] assists you in creating your own predefined commands with a relatively easy to use interface:
+You will provide a small “template file”, and a tool will manage the process for you up to generating the necessary \LaTeX{} command.
+This way you can include arbitrary notational elements as characters in your text documents, with perfect control over the scaling and positioning.
 
 \begin{itemize}
-\item Musicexamples (full example file in appendix)
-\item Lilyglyphs
 \item Conclusion\\
 --- import/export\\
 --- General professionality\\
---- --- floats(?)
 \end{itemize}
 
 \chapter{Applications}
@@ -833,19 +882,38 @@ Now that we have seen a \emph{very} short introduction to \LaTeX{} it is time to
 
 \section{Preparing a Musical Edition}
 \label{sec:pt_preparing-edition}
-\begin{itemize}
-\item Integrated workflow \emph{in situ}
-\item fluid task boundaries
-\end{itemize}
+This is what I actually experienced recently---and what I definitely don't want to miss anymore.
+There are several steps in preparing a scholarly edition, which are partly interdependent and are partly distributed between different team members.
+\begin{itemize*}
+    \item Entering the music
+    \item Setting up the score layout and the style sheets
+    \item Proof-reading the music
+    \item Scholarly revision
+    \item Fine-tuning the engraving
+    \item Authoring critical reports
+    \item Layout of the main volume and prepress
+\end{itemize*}
+All of these steps can be done within one code base.
+While it would traditionally also be done in one file the major difference is that the code base is shared and continuously accessible by everybody, the single score file can only be shared consecutively, with complicated and risky workflows to avoid unrecoverable conflicts.
+The technical infrastructure doesn't impose any restrictions on the workflow and order of the steps beyond what is immanent in the task (it doesn't make sense for example to fine-tune the engraving while there are still revisions in process that might change the content).
+When an editor finds an error just before the edition is sent to the printer he may simply correct it \emph{in the shared code base}, and the engraver can immediately check for side-effects and fix these if necessary.
+
+\section{Book preparation}
+The same is true for the preparation of books, and of compilation books from more than one author in particular.
+All collaborators can seamlessly work together in a shared code base: the author(s), editors, typesetters, and maybe additional specialists preparing figures or music examples.
+A collaborative set-up provides for an efficient workflow between an author and his editor, and it can be particularly useful when proof-reading or documents or polishing them linguistically with many assistants.
 
 \section{“Crowd Editing”}
 \label{sec:pt_crowd-editing}
-\begin{itemize}
-\item Big orchestral score
-\item Distribute over many contributors
-\item Usefulness of programmability (even when the individual doesn't know to program)\\
-Mentione Scheme extensibility here
-\end{itemize}
+
+A last use case is something that isn't really common yet because it can exclusively be inspired by the use of workflows that are driven by version control.
+With the capability to manage contributions by a (practically) unlimited number of participants it is possible to create musical scores with a large community.
+This way the workload can be “clustered” among a potentially great number of people, each one according to his capabilities and special knowledge (about specific instruments for example), and large quantities of music entered in astonishingly little time.
+While this doesn't save actual working hours it can be used to process them in parallel.
+Even in a large-scale symphonic score each single part is quite manageable, and if there is one contributor for each part (or better: two contributors for two parts who do a peer-review before submitting) the score should grow rapidly.
+In such a context the aspect of programmability may once more become important.
+The “project” may be supported by extensive programming without the individual contributor knowing anything about it---well it may be explicitely programmed to expose the individual to a quite simple interface.
+
 
 \section{Single-source Publishing}
 \label{sec:pt_single-source-publishing}
