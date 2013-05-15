@@ -1,4 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                         %
 %      This file is part of the 'openLilyLib' library.                    %
 %                                ===========                              %
@@ -771,20 +771,61 @@ But unfortunately there can't be any promises when (and if at all) this hole wil
 \label{chap:pt_latex}
 
 \LaTeX{} is for typesetting text documents what LilyPond is for typesetting scores.
-It provides professional typesetting as opposed to mere text processing, because an ordinary document author shouldn't have to know too much about the rules of typography.
+It provides typesetting as opposed to mere text processing, providing the usual document author---who doesn't know too much about the rules of typography---with the necessary expertise to produce professionally typeset documents.
 And it works by compiling plain text input files, so everything I have written about the advantages of using plain text files applies to \LaTeX{} equally.
-Therefore I won't get into details introducing you to the concrete syntax of its input files.
+Therefore I won't get into details introducing you to the concrete syntax of its input files, but try to introduce you concisely to some of the specifically musical features.
 
-\LaTeX{} is available in form of \emph{distributions} such as TeXLive for Linux, MacTeXfor Mac OS, or MiKTeX for Windows.
-These distributions contain several core programs that actually perform the compilation as well as documentation and numerous extension \emph{packages}.
+\LaTeX{} is available in form of \emph{distributions} such as \emph{TeXLive} for Linux, \emph{MacTeX} for Mac OS, or \emph{MiKTeX} for Windows.
+These distributions are based on a number of core programs that actually perform the compilation of the input files.
+In addition they contain numerous \emph{packages} that can be used to extend the typesetting capabilities.
+Your interface to \LaTeX{} is the same as to LilyPond:
+The input files can be edited with \emph{any} editor, and the compilers are command line programs.
+But there are (quite numerous) dedictaed editors or IDEs%
+\footnote{Integrated Development Environments}
+that assist you in editing the documents and organizing the compilation process for you.
+
+Earlier in \fref{sec:pt_separation-content-meaning-appearance} I showed you a basic \LaTeX{} document in which you saw the three fundamental elements: the \emph{document class}, \emph{commands} and \emph{environments} (although I didn't explicitely named) the latter.
+As mentioned the documents is somewhat comparable to a document template in an office application.
+But it is much more powerful in that it can contain many layout elments, commands and more functionality.
+The LaTeX{} distribution contains many document classes for many purposes (from standard articles over beamer presentations to classes specific to fields of research), but you can also download classes from other sources, and you can (and will) write your own.
+One important aspect of document classes is the selection of \emph{packages} to be included.
+
+When run on a basic document as in our example \LaTeX{} only loads a small subset of its possibilities in order to save time and memory.
+If you need additional functionality you can include it through the use of \emph{packages}.
+Such a package might contain anything from a small set of related semantic markup commands up to sophisticated bibliographic functionality%
+\footnote{See \url{http://en.wikibooks.org/wiki/LaTeX/Package_Reference} for a list of some packages with short comments on their functionality}.
+When you want a different style for tables or lists, to include images, or add music examples---chances are good that there is a package enabling just what you need.
+
+As I have also mentioned earlier the \emph{commands} and \emph{environments} are roughly similar to character and paragraph styles as used in office documents.
+But they too are much more powerful because they are more like programmer's commands, especially as they use arguments.
+A command can do anything with its arguments which makes it a very versatile tool.
+As a single example I have a command for entries in a revision report that takes arguments for measure number, position in the measure, affected voice/system, and the actual comment.
+This information it then processed to a nice layout, skipping the separator characters when an argument is empty.
+If I should decide upon a completely different layout I just have to update the command to propagate it to the whole document---or a complete set of documents if I have defined it in a package.
+And of course I will soon be able to incorporate the report entries that \texttt{lilypond-doc} will give me from within the LilyPond scores \dots
+
+\emph{Environments} are somewhat similar, with the difference that the commands are a one-time event while environments have a begin and an end (like the \emph{document environment} seen in the initial example).
+Environments like \env{figure} or \env{table} allow you to place graphical items as \emph{floating} objects.
+This allows \LaTeX{} to place them at the best position concerning the page breaking.
+While this is something one has to get used to it is actually a big enhancement towards a \emph{professional} typesetting, especially of books and similar documents.
+As producing books is the basic motivation for \LaTeX{} you also can expect professional tools with regard to bibliography, indices or figure lists etc.
+
+\medskip
+Now that we have seen a \emph{very} short introduction to \LaTeX{} it is time to consider some specifically \emph{musical} aspects to authoring text documents.
+
+\section{musicexamples}
+\label{sec:pt_musicexamples}
+
+\section{\lilyglyphs}
+\label{sec:pt_lilyglyphs}
 
 \begin{itemize}
-\item As short as possible
-\item short introduction about architecture (what is my interface to it?)
-\item No syntax overview (just: somewhat similar to LilyPond)
-\item Extension packages, includes
 \item Musicexamples (full example file in appendix)
 \item Lilyglyphs
+\item Conclusion\\
+--- import/export\\
+--- General professionality\\
+--- --- floats(?)
 \end{itemize}
 
 \chapter{Applications}
@@ -815,4 +856,10 @@ Mentione Scheme extensibility here
 \begin{itemize}
 \item Recommended introductory material for all aspects
 \end{itemize}
+
+\appendix
+
+
+\includepdf[%
+	pages=-]{../../../musicexamples/documentation/example-document/xmp-Example}
 \end{document}
