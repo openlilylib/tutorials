@@ -443,7 +443,8 @@ There he adds his snapshots to the project history (as described earlier), and w
 Earlier I wrote that version control is based on line-by-line comparison of files.
 This is of even greater importance in distributed collaborative workflows, as it effectively renders file locking unnecessary.
 I would like to stress that it is for example even possible that one contributor adds articulations to one hand of a piano part while another one at the same time fixes engraving shortcomings in the other hand of the same measure without any problem.
-As long as the two people won't modify \emph{the same line} in the same source file, all of this synchronization will work silently without anybody really noticing it!
+As long as the two people won't modify \emph{the same line} in the same source file, all of this synchronization will work silently without anybody really noticing it. 
+This will even work when person A modifies some content of a file \texttt{foo.txt} while person B \emph{at the same time} renames that file!
 
 Of course this isn't effective because it makes conflicts \emph{unlikely}---this would actually be quite negligent.
 The point is that potential conflicts can be reduced to the conflicting line(s) in the source file.
