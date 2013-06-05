@@ -3,6 +3,6 @@
 {
   \time 3/4
   \key es \major
-  \clef treble
-  es'2.
+  \clef bass
+  es8 f8 g8 as8 f8 es8
 }
