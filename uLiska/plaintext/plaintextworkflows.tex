@@ -187,15 +187,15 @@ If you consider the following minimal score and its (complete) LilyPond input fi
 {
   \time 3/4
   \key es \major
-  \clef treble
-  es'2.
+  \clef bass
+  es8 f8 g8 as8 f8 es8
 }
 \end{lstlisting}
 \end{centering}
 \end{multicols}
 
 \noindent you can see that the source on the right side completely defines the \emph{musical content} of the score:
-a time signature, a key definition, a clef, and a single note with duration.
+a time signature, a key definition, a clef, and a few notes with durations.
 Of course the page layout is also an inseparable part of the score document, but on a conceptual level it is completely separate from the musical content.
 Without going into more detail here you should note that in LilyPond's plain text file you have complete control over the separation of content, meaning and appearance.
 While this at first may seem somewhat abstract it is actually a very important point when it comes to preparing different output from one source%
