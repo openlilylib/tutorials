@@ -239,6 +239,9 @@ This may also happen with programs that store their data in plain text files.
 But as the file format is usually much better documented it is more likely that you will find a conversion option still available.
 And if everything fails and you have a file but no dedicated editor you still have the plain text and free access to it.
 
+% suggestion: mention that when software becomes unsupported,
+% you cannot open the files.
+
 \section{Editor Independence}
 \label{sec:pt_editor-independence}
 Plain text workflows separate the tasks of editing, processing and displaying documents.
@@ -445,6 +448,10 @@ This is of even greater importance in distributed collaborative workflows, as it
 I would like to stress that it is for example even possible that one contributor adds articulations to one hand of a piano part while another one at the same time fixes engraving shortcomings in the other hand of the same measure without any problem.
 As long as the two people won't modify \emph{the same line} in the same source file, all of this synchronization will work silently without anybody really noticing it. 
 This will even work when person A modifies some content of a file \texttt{foo.txt} while person B \emph{at the same time} renames that file!
+
+% another spectacular example: person A changes something in foo.txt
+% while person B renames foo.txt to bar.txt - git automatically merges
+% such changes.
 
 Of course this isn't effective because it makes conflicts \emph{unlikely}---this would actually be quite negligent.
 The point is that potential conflicts can be reduced to the conflicting line(s) in the source file.
