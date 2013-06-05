@@ -28,7 +28,7 @@
 \parttitle[Urs Liska]{Plain Text Files in Music}
 \begin{authorAbstract}{Urs Liska}
 The idea of editing plain text files when creating musical scores and text documents may seem strange to people used to working with graphical tools.
-But there are serious advantages going the route of plain text driven workflows---starting from superior result quality, extending through robust and reliable storage forms up to workflow options unimaginable otherwise.
+But there are serious advantages going the route of plain text driven workflows---starting from superior result quality, extending through robust and reliable storage forms, up to workflow options unimaginable otherwise.
 
 This paper introduces musicians and musicologists to key concepts of working with plain text documents and collaborative workflows.
 In particular it deals with the LilyPond notation software, the \LaTeX{} typesetting system, and version control.
@@ -48,19 +48,15 @@ Working with plain text based tools indeed requires a certain shift in mind-set 
 And it can't be denied that the learning curve is considerable.
 But this investment is absolutely justified because on the long run it greatly benefits productivity and offers potentials unimaginable otherwise.
 Reading and writing music, playing an instrument, investigating a manuscript source---all this involves a very long and intense learning curve, and we mastered them as a matter of course in order to become the professionals we are.
-So why be afraid learning something new?
+Don't be afraid to learning something new!
 
-This paper is focused on scholarly and collaborative workflows, particularly preparing musical editions for publication, because that's my cup or tea.
-But most of it will equally apply to creating any musical scores or texts about music that have a certain level of complexity.
-The described concepts will also prove useful for people who have to deal repeatedly with similar document types, such as presentations, teaching/exam materials, music examples etc.
-However I will \emph{not} cover workflows that mainly depend on instant results but don't care about structure or output quality, such as just-in-time arranging or the like.
-For such applications plain text tools may not be the appropriate choice.
+% i think the introduction was getting too long.
 
-If you expect an in-depth description or even a guide how to use the mentioned tools you might be disappointed because that's not the intention of this document.
-What I hope to give you is a sense of the power that text based approaches can give you.
-For this I will discuss the topics mostly from a rather elevated point of view, keeping your exposure to concrete examples at a minimum%
-\footnote{with the exception of some intentionally spectacular examples}.
-At the end of the text I will direct you to more extensive material that is suitable to get you more intimately acquainted with the relevant concepts and that may actually aid you getting your feet wet with editing plain text files.
+This document aims to give you an overview of the
+power that text based approaches can give you.
+It is not meant as a detailed description or a guide
+to using the software mentioned --- for that, please refer
+to the suggested reading at the end.
 
 The software packages I will introduce you to on the following pages are:
 \begin{itemize*}
@@ -75,19 +71,18 @@ Who on earth would voluntarily enter music as a text file?
 Aren't these people just nerds who think that only what hurts can be good?
 Isn't it \emph{natural} to edit musical scores within a graphical user interface?
 
-Well, when computers became more powerful it was an inevitable development to provide increasingly powerful graphical user interfaces, allowing users to edit any visual aspects of a document visually with a mouse or other pointing device.
-This is obviously quick, effective and easy.
-But considered seriously and open-minded there are lots of reasons why it \emph{is} a good idea to edit and store documents in text files.
+Well, a graphical user interfaces which allow users to edit
+a document with a mouse or other pointing device is obviously
+quick, effective and easy.
+However, there are lots of reasons why it \emph{is} a good idea to edit and store documents in text files.
 Text based work avoids several fundamental problems that other approaches share, and it opens up a whole range of advanced options not imaginable otherwise.
 And it is good to know that by now there are editors available that significantly assist you in dealing with text files.
 
-To start getting into the topic I will consider a number of features of working with plain text files.
-Mostly this applies equally to text documents and scores, although the emphasis of this paper clearly is on musical engraving.
+Firstly, let us consider a number of features of working with plain text files.
 
 \section{Transparency and Control}
 \label{sec:pt_transparency-and-control}
-Have you ever wondered how your notation program internally manages the contents you entered?
-Not as a mental exercise but because you had the impression it maliciously made fun of you?
+Have you ever wondered how your notation program internally manages the contents you entered, especially when you had the impression it maliciously made fun of you?
 One of the reasons I turned my back on graphical notation programs was my frustration with being completely at the mercy of the software with regard to my personal layout decisions.
 I can't recall (and actually don't want to) how often I ran through the loop of
 \begin{inparaenum}[1.)]
@@ -98,16 +93,15 @@ I can't recall (and actually don't want to) how often I ran through the loop of
 \item tearing my hair out because at least one third of my manual settings mysteriously vanished.
 \end{inparaenum}
 
-Maybe my judgment isn't fair because it is based on very outdated software.
-Maybe things have improved a lot, but the fundamental fault is still valid: 
+It's been a long while since I had used graphical software, so maybe things have improved a lot, but the fundamental fault is still valid: 
 I am at the mercy of the software and can't see or control how it represents the content internally.
 
 A friend finally stopped using (a later version of) the same graphical program when he fixed one missing accidental in a score he had earlier tweaked to perfection---and this accidental caused the whole layout to break irreversibly.
 
-Besides this risk of losing work I also can't usually tell how the program interprets my displacements applied through a pointing device.
-Are they interpreted as offsets relative to some point on the page, or relative to the original decisions of the program?
-Are they measured in fixed units or with some proportional factor?
-None of that would be wrong, but I just don't know about it, and it \emph{does} make a difference if the layout changes afterwards for any reason.
+Besides this risk of losing work I also can't usually tell how the program
+interprets changes I've made.  For example, if I add a description text
+somewhere near the violin staff, will it follow the music when the page layout
+changes or will it stay in the same position relative to the corner of the page?
 
 \medskip
 \todo{Example how this applies to text documents}
