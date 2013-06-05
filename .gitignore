@@ -46,3 +46,6 @@
 # We don't want to add our deployment directory
 deploy/*
 
+# lilypond-book (musicexamples) intermediate files
+*.count
+*.texi
