@@ -285,24 +285,24 @@ While it is obviously possible to produce publication quality output with Finale
 As a rule of thumb I'd say that you can use LilyPond scores (and \LaTeX{} documents) without bothering about layout details as long as you don't want to publish them.
 This is a significant improvement for the development process of documents and editions as you can concentrate on the real \emph{content} up to the final stage of print preparation.
 
-Look at the following example of a rather complex score%
+Look at the following example of a complex score%
 \footnote{Arnold Schönberg: Excerpt from “Gethsemane” (fragment).
-\todo{ask Larry Schoenberg for permission}
-First published in: Arnold Schönberg. Sämtliche Werke \dots
+\textcopyright{} Belmont Music Publishers, permission granted for use in this tutorial.
+You may use and redistribute the example unchanged provided you keep this copyright notice in place.
 }:
 
-\todo{fix lilypondMFE issue}
-
 \begin{musicExampleNonFloat}
-%\lilypondmfe{examples/gethsemane}
+\lilypondSFE{examples/gethsemane-1}
+\lilypondSFE{examples/gethsemane-2}
 \end{musicExampleNonFloat}
 
-\noindent and note that there isn't a single manual intervention beyond assigning the music to the right voice contexts.
+\noindent and note that there isn't a single manual intervention.
+All I did to help LilyPond do its job was assigning the musical lines to the right voice numbers (1--4) so it knew whether to place stems up- or downwards and how to move items to avoid clashes.
 It is really amazing how LilyPond manages to do most things immediately right.
 While the score isn't perfect to publication quality there is \emph{nothing} that hampers reading the music when placed on the music stand.
 
-Now have a look at the following example of a rather complex score%
-\footnote{Arnold Schönberg: Excerpt from: “Nie ward ich, Herrin, müd” | Nr. 4 aus “6 Orchesterlieder" | für Gesang und Orchester | op. 8/1, \copyright{} 1911 by Universal Edition A.\,G., Wien/UE 3041, \href{http://www.universaledition.com/}{www.universaledition.com} [permission granted for use in this tutorial. You may redistribute the document provided you keep this copyright notice and the hyperlink in place]}
+Now have a look at the following example of another complex score%
+\footnote{Arnold Schönberg: Excerpt from: “Nie ward ich, Herrin, müd” | Nr. 4 aus “6 Orchesterlieder" | für Gesang und Orchester | op. 8/1, \copyright{} 1911 by Universal Edition A.\,G., Wien/UE 3041, \href{http://www.universaledition.com/}{www.universaledition.com} [permission granted for use in this tutorial. You may redistribute the example provided you keep this copyright notice and the hyperlink in place]}
 that LilyPond did \emph{not} manage to engrave perfectly without assistance:
 
 \begin{musicExampleNonFloat}
