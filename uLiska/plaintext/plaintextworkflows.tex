@@ -29,28 +29,18 @@
 \begin{document}
 \parttitle[Urs Liska]{Plain Text Files in Music}
 \begin{authorAbstract}{Urs Liska}
-The idea of editing plain text files when creating musical scores and text documents may seem strange to people used to working with graphical tools.
-But there are serious advantages going the route of plain text driven workflows---starting from superior result quality, extending through robust and reliable storage forms, up to workflow options unimaginable otherwise.
-
-This paper introduces musicians and musicologists to key concepts of working with plain text documents and collaborative workflows.
-In particular it deals with the LilyPond notation software, the \LaTeX{} typesetting system, and version control.
-
-\end{authorAbstract}
-
-\chapter*{Introduction}
-\label{chap:pt_introduction}
-This paper discusses an approach to authoring musical documents%
-\footnote{i.\,e.\ scores and texts about music.}
-that is based on editing \emph{plain text files} instead of using graphical \textsc{wysiwyg} software%
+Most musicians and musicologists are used to editing text documents and musical scores with graphical \textsc{wysiwyg} tools%
 \footnote{What You See Is What You Get---such programs provide an editing environment where the document is displayed identically to the way it will be printed.}.
+and wouldn't even consider there is a different possibility at all.
+This paper discusses an approach to authoring musical documents that is based on editing \emph{plain text files} instead.
 The described concepts, tools, and workflows have significantly changed my life as a document author, and I  wholeheartedly endorse them because I strongly believe in their unique and substantial advantages.
 
 The plain text approach is practically non-existent in the humanist disciplines or in the music business, while being de facto standard in many natural and computer sciences.
 Working with plain text based tools indeed requires a certain shift in mind-set for people who aren't already familiar with the corresponding working paradigms.
 And it can't be denied that the learning curve is considerable.
-But this investment is absolutely justified because on the long run it greatly benefits productivity and offers potentials unimaginable otherwise.
+But this investment is absolutely justified because on the long run it greatly benefits productivity ---starting from superior result quality, extending through robust and reliable storage forms, up to workflow options unimaginable otherwise.
 Reading and writing music, playing an instrument, investigating a manuscript source---all this involves a very long and intense learning curve, and we mastered them as a matter of course in order to become the professionals we are.
-Don't be afraid to learning something new!
+So don't be afraid!
 
 This document aims to give you an overview of the
 power that text based approaches can give you.
@@ -65,6 +55,8 @@ The software packages I will introduce you to on the following pages are:
 \item \emph{\LaTeX} -- the professional typesetting engine for text documents
 \end{itemize*}
 
+\end{authorAbstract}
+
 \chapter{Plain Text Format}
 \label{chap:pt_plain-text-format}
 Who on earth would voluntarily enter music as a text file?
@@ -73,7 +65,7 @@ Isn't it \emph{natural} to edit musical scores within a graphical user interface
 
 Well, using graphical user interfaces to edit a document with a mouse or other pointing device is obviously quick, effective and easy.
 However, there are lots of reasons why it \emph{is} a good idea to edit and store documents in text files.
-Text based work avoids several fundamental problems that other approaches share, and it opens up a whole range of advanced options that are only available in this context..
+Text based work avoids several fundamental problems that other approaches share, and it opens up a whole range of advanced options that are only available in this context.
 And it is good to know that nowadays there are editors available that significantly streamline your work with text files.
 
 Firstly, let us consider a number of features working with plain text files offers.
@@ -813,7 +805,7 @@ But if you have documents with lots of (small) examples you won't find any bette
 \label{subsec:pt_musicexamples}
 Another way to embed music examples in \LaTeX{} documents is \package{musicexamples}, a package that is part of \openlilylib%
 \footnote{\url{http://www.openlilylib.org/musicexamples}}.
-Originally started as an alternative approach to \package{lilypond-book} it can actually work together with it quite well.
+Originally started as an alternative approach to \package{lilypond-book} not requiring intermediate documents it can actually work together with it quite well.
 \package{musicexamples} provides environments and commands to include and manage music examples in \LaTeX{} documents.
 There is support for floating and non-floating environments, single-line or multi-line examples (with the multi-line ones being able to be split on several pages).
 You can also print full-page examples, with special support for examples starting on odd or even pages (you can force an example to start at the next odd or even page).
@@ -827,7 +819,7 @@ Finally there will be%
 helper scripts that keep the music examples up to date (and conditionally recompile missing music example files).
 
 Instead of existing image files (LilyPond generated or not) you can equally embed LilyPond code with \package{lilypond-book} and benefit from both approaches:
-\package{lilypond-book}s in-place example code and \package{musicexamples}' beautiful layout and example management.
+\package{lilypond-book}s in-place example code and \package{musicexamples}' example management.
 
 You can see a comprehensive example document with all sorts of music examples in \fref{xmp:musicexamples-document}.
 
@@ -869,11 +861,11 @@ If you are already acquainted with LilyPond the learning curve won't be as steep
 
 If you have to deliver documents in other forms than \textsc{pdf} files (usually office files that hopefully are typeset with professional tools afterwards) you still can benefit from the versioning part which improves your efficiency---
 I wouldn't want to work any other way by now.
-Other than LilyPond scores \LaTeX source files can be exported to a variety of formats like \textsc{rtf} or \textsc{html}.
+Other than LilyPond scores \LaTeX{} source files can be exported to a variety of formats like \textsc{rtf} or \textsc{html}.
 This process isn't always guaranteed, though---the more sophisticated your tools and commands are the more problems will arise with export filters.
 Which should be evident: If you design complex custom commands with multiple arguments, how should a converter know to translate them to \textsc{rtf} for example?
-So if you write program notes that have to be delivered as a Word file you can still use \LaTeX{} to author the document but keep it simple in terms of layout or structure.
-But this isn't really a restriction because if you're working in such a context you are usually expected to deliver “raw” material anyway.
+So if you write program notes that have to be delivered as a Word file you can still use \LaTeX{} to author the document but you should keep it simple in terms of layout or structure.
+But this shouldn't really be considered a restriction because if you're working in such a context you are usually expected to deliver “raw” material anyway.
 
 \chapter{Applications}
 \label{chap:pt_applications}
@@ -881,7 +873,13 @@ But this isn't really a restriction because if you're working in such a context 
 \section{Preparing a Musical Edition}
 \label{sec:pt_preparing-edition}
 This is what I actually experienced recently---and what I definitely don't want to miss anymore.
-There are several steps in preparing a scholarly edition, which are partly interdependent and are partly distributed between different team members.
+During the preparation of an edition I'm currently working on we switched our workflow from sharing files in a Dropbox%
+\footnote{Dropbox is a cloud based file hosting provider. See \url{http://www.dropbox.com}}
+to versioning it with Git.
+It was a real revelation to me, and I don't know how we managed before.
+This becomes especially obvious when we are dealing with issues that date from before that time and there isn't any Git history present to inspect them.
+
+There are several steps in preparing a scholarly edition, which are partly interdependent and are partly distributed between different team members:
 \begin{itemize*}
     \item Entering the music
     \item Setting up the score layout and the style sheets
@@ -891,39 +889,110 @@ There are several steps in preparing a scholarly edition, which are partly inter
     \item Authoring critical reports
     \item Layout of the main volume and prepress
 \end{itemize*}
-With the described plain text tools all of these steps can be done within one code base.
-While it would traditionally also be done in one file there is a major difference: the code base is shared and continuously accessible by everybody, the single (binary) score file can only be shared consecutively, with complicated and risky workflows to avoid unrecoverable conflicts.
-The technical infrastructure of a versioned workflow doesn't impose any restrictions on the order of the steps beyond what is immanent in the task (it doesn't make sense for example to fine-tune the engraving while there are still revisions in process that might change the content).
-When an editor finds an error just before the edition is sent to the printer he may simply correct it \emph{in the shared code base}, and the engraver can immediately check for side-effects and fix these if necessary.
+
+First of all the complete process can be done within one code base.
+Any collaborator can edit anything at any time, usually without stepping on others' feet, as described in the “Versioning” \fref{chap:pt_version-control}.
+Traditionally one would work with one file (or one for each piece/movement) and would have to take great care about potential version conflicts.
+Basically these files would have to be completely processed by one person before being passed on to the next in the chain.
+
+An important side-effect of this situation is that tasks can be shared in a much more flexible way.
+As anybody can edit everything he can also handle any task he feels able or has time to.
+Most of us aren't completely single-minded and specialised on a single skill.
+My main part in this project is being one of the scholarly editors, but I have also entered parts of the music and can do a lot for pinpointing typographical issues.
+The guy who is responsible for the fine-engraving has a good eye on his own and can also spot questionable issues in the musical text.
+
+We have developed the concept of a “draft mode” that allows us to visualize (i.\,e.\ mostly colorize) issues and have some kind of “in-source” communication through messages that are written to the command line.
+When a piece is finished we just switch to “publication mode” and have our print-ready scores.
+Comments in the source files increase the impact of this concept, but the next project will take this a major step further.
+Currently I'm developing a system that will allow comprehensive annotations inside the source files.
+This way we'll have automatic lists of \textsc{todo}-items, issues and questions etc.\ that are generated while compiling the scores.
+And ultimately we'll have the entries for the critical report right in the source files!
+
+As all general layout and styling is done in central style sheets it isn't an issue at all to keep the different scores consistent. We don't even have to decide upon it before starting work.
+All changes to the layout are automatically propagated to all scores, and it would for example be possible that someone is assigned the task to develop the general appearance of the publication \emph{while the others are working on the edition}, always having the latest version of the musical text as example material.
+That way the edition can also automatically benefit from improvements of LilyPond that are released along the way.
+Only when starting the final beautification would the development of the layout settings have to stop---but that's a restriction that is inherent in the matter and not imposed by the technical infrastructure.
+
+While this isn't that important for small individual scores it is a major “selling point” for ambitious and large-scale projects.
+And I would love to discuss and experience the impact this could have on working on a scholarly edition with numerous volumes and multiple editors.
+Remember what I wrote about plain text files outliving operating systems' lifecycles?
+Such a system could very well be the perfect match for a long-running critical edition.
 
 \section{Book preparation}
 The same is true for the preparation of books, and of compilation books from more than one author in particular.
 All collaborators can seamlessly work together in a shared code base: the author(s), editors, typesetters, and maybe additional specialists preparing figures or music examples.
 A collaborative set-up provides an efficient workflow between an author and his editor, and it can be particularly useful when proof-reading or documents or polishing them linguistically with many assistants.
 
+Of course the musical edition described in the previous section is also a “book” in this sense, as the scores are created with LilyPond and included in a \LaTeX{} document.
+The complete volume can be compiled at any time and reflects the current state of the development of the scores.
+
+\section{“Crowd Editing”}
+\label{sec:pt_crowd-editing}
+
+It isn't really common yet because it can exclusively be inspired by the use of workflows that are driven by version control.
+But with the capability to manage contributions by a (practically) unlimited number of participants it is possible to extend the concepts from the the two previous sections and create musical scores with a large community.
+This way the workload can be “clustered” among a potentially great number of people, each one according to his capabilities and special knowledge (about specific instruments for example), and large quantities of music entered in astonishingly little time.
+While this doesn't save actual working hours it can be used to process them in parallel.
+Even in a large-scale symphonic score each single part is quite manageable, and if there is one contributor for each part (or better: two contributors for two parts who do a peer-review before submitting) the score should grow rapidly.
+
+In such a context the aspect of programmability may once more become important.
+While the individual contributors don't have to be programmers at all the “project” can be extensively programmed.
+It can gain advanced and specialized functionality, benefit from automatic project management or just from giving the “ordinary engraver” an easy-to-use interface.
+
 \section{Single-source Publishing}
 \label{sec:pt_single-source-publishing}
 
 Plain text files are a good starting point for creating documents for different output formats.
 One example already discussed is the possibility to create several different scores (or parts) with LilyPond from a single set of input files.
-But this can quite easily be extended to generating documents for printing, beamer presentation, mobile devices and web pages from single sources.
-
-\section{“Crowd Editing”}
-\label{sec:pt_crowd-editing}
-
-A last use case is something that isn't really common yet because it can exclusively be inspired by the use of workflows that are driven by version control.
-With the capability to manage contributions by a (practically) unlimited number of participants it is possible to create musical scores with a large community.
-This way the workload can be “clustered” among a potentially great number of people, each one according to his capabilities and special knowledge (about specific instruments for example), and large quantities of music entered in astonishingly little time.
-While this doesn't save actual working hours it can be used to process them in parallel.
-Even in a large-scale symphonic score each single part is quite manageable, and if there is one contributor for each part (or better: two contributors for two parts who do a peer-review before submitting) the score should grow rapidly.
-In such a context the aspect of programmability may once more become important.
-The “project” may be supported by extensive programming without the individual contributor knowing anything about it---it may even be explicitely programmed to expose the individual to a quite simple interface.
+I don't have concrete experiences to present but it's inherent in the nature of plain text files that they are good for use in single-source publishing.
+This can easily apply to generating documents for printing, beamer presentation, mobile devices and web pages from single sources, to name just a few.
 
 
 \chapter{Where To Go From Here?}
 \label{chap:pt_where-to-go-from-here}
 
-\todo{Recommended introductory material for the individual aspects}
+What I've laid out for you over the previous few dozen pages of course only slightly scratches the surface.
+You have seen a few examples that were necessary to get an impression of the material, but in general I talked on a rather conceptual level.
+This document isn't intended for and can't be used to actually start working with the tools in question.
+It could be the opening chapter of a valuable book on document authoring but I don't see anybody having spare time to write the rest of it \dots
+
+Therefore I'm going to provide you with references to further reading on the different subjects.
+If you know of or find interesting introductions on any level feel free to tell me so I can enhance the list.
+
+\section*{Plain Text}
+
+\url{http://www.terminally-incoherent.com/blog/2012/05/21/why-plain-text/} is a blog post that I have read only after having written this document. I think it tells you everything again that I have written on the characteristics of plain text files, from a different perspective and maybe even more convincing.
+
+\section*{Version Control}
+
+\url{http://pages.cs.wisc.edu/~driscoll/software/vcs/index.html} gives a visually rich introduction to the concepts of version control.
+
+\paragraph*{Git}
+\begin{itemize*}
+\item \url{http://git-scm.com/book}\\
+The official documentation
+\item \url{http://sixrevisions.com/resources/git-tutorials-beginners/}\\
+List with presumably easy introductions
+\item \url{http://www.vogella.com/articles/Git/article.html}\\
+Long introduction with comprehensive usage examples
+\end{itemize*}
+You get Git at:
+\begin{itemize*}
+\item \url{http://git-scm.com}\\
+The official source.\\
+On Linux you will probably have it in your software repositories\\
+On Windows you can also get it bundled with one of the GUI tools
+\end{itemize*}
+There are numerous GUI tools around, a number of them collected on \url{http://git-scm.com/downloads/guis}.
+But I recommend starting to use it on the command line because this way you will faster get an understanding of what's happening exactly.
+
+\section*{LilyPond}
+
+The main resource for LilyPond is its website \url{http://www.lilypond.org}. 
+There you'll find the software as well as a truly huge manual.
+Of particular interest for now is the 
+
+\section*{\LaTeX}
 
 \appendix
 \chapter{Appendix}
@@ -961,6 +1030,10 @@ So after the score files you'll see the text document and then its corresponding
 \item OpenOffice „Flat XML“ (.fodt)
 \end{itemize} 
 
+You may notice that both Word and OpenOffice provide \textsc{xml} files that somehow qualify as plain text files in that they \emph{can} be read by a human.
+But you also see that the content information is really buried inside all that markup, so it isn't realy usable as a plain text format.
+Besides these formats aren't practical for versioning as they contain lots of “volatile” information like timestamps or window positionings. 
+In my experience such a file may be modified considerably just by opening it on another computer.
 
 \includepdf{examples/fileformats/finale}
 
