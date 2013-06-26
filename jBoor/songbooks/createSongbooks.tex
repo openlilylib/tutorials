@@ -2,13 +2,14 @@
 
 \begin{document}
 
-\parttitle{Songbooks with LilyPond and \LaTeX}
+\parttitle[Jeremy Boor]{Songbooks with LilyPond and \LaTeX}
 
 \begin{authorAbstract}{Jeremy Boor}
-You should provide an abstract
+There are different ways to combine text and music to books.
+This tutorial describes step by step how to compile a songbook consisting of textual parts and complete scores using \LaTeX{} and LilyPond.
 \end{authorAbstract}
 
-\section*{Songbooks}
+\chapter{Songbooks}
 A songbook is a book that contains pieces of music, but also contains various bits of text. 
 It may include a general introduction, and specific introductions or performance notes for each piece. 
 It should have frontmatter, including a table of contents that lists all of the pieces of music included in the book. 
@@ -23,7 +24,7 @@ Attempts to use \package{lilypond-book} for songbook production result in an unf
 The best situation for producing a songbook with LilyPond and \LaTeX\ is one in which \LaTeX's layout and formatting are simply suspended while the musical score is inserted into the final output. 
 To this end we will use  \cmd{includepdf}.
 
-\section*{Preparing Your LilyPond Scores}
+\section{Preparing Your LilyPond Scores}
 
 \begin{itemize}
 
@@ -41,7 +42,7 @@ This is done in the \cmd{paper} block:
 
 \end{itemize}
 
-\section*{Using \cmd{includepdf}}
+\section{Using \cmd{includepdf}}
 
 The \cmd{includepdf} command is part of the \package{pdfpages} package. 
 You must have this package installed and have \cmd{usepackage{pdfpages}} in the preamble of your \LaTeX\ document.
@@ -69,7 +70,7 @@ The \texttt{plain} pagestyle provides a page number at the bottom center of each
 It is likely that the placement of the page number will interfere with your LilyPond score. 
 We shall deal with this issue later.
 
-\section*{Getting Your Scores into the Table of Contents}
+\section{Getting Your Scores into the Table of Contents}
 
 Your songbook probably needs a table of contents, and you will want your scores to be listed. 
 The regular \LaTeX\ \cmd{section} and \cmd{chapter} commands provide a TOC listing, but they also print a numbered title above the section to which they refer. 
@@ -80,7 +81,7 @@ To provide a TOC listing without printing a title, you can use:
 	\addcontentsline{toc}{section}{The Name of a Piece of Music}
 \end{verbatim}
 
-This should immediately follow the \cmd{includepdf} command. 
+This should be immediately before the \cmd{includepdf} command. 
 So now each inclusion of a piece of music in your book looks something like this:
 
 \begin{verbatim}
@@ -125,7 +126,7 @@ With \cmd{chapter/section} numbering turned off, you can freely intersperse text
 
 Please note that \LaTeX\ must compile your file at least \textit{twice} in order to get the TOC right. 
 
-\section*{Getting LilyPond Scores and \LaTeX\ Page-numbers out of Each Other's Way}
+\section{Getting LilyPond Scores and \LaTeX\ Page-numbers out of Each Other's Way}
 
 We have page numbers on our scores, but they're in the wrong place with regard to the score. 
 The way that we fix this will depend on the final dimensions of the book we intend to produce, and will be affected by our manipulation of layout variables in both LilyPond and \LaTeX. 
@@ -149,8 +150,5 @@ This can be useful if we want the headers of our pages to have fancy things on t
 To do this, we set the pagestyle of the document to something other than style given to the score pages in the  \cmd{includepdfset\{pagecommand=\cmd{thispagestyle\{plain\}\}}} command. 
 So the body of our \LaTeX\ document might contain the command \cmd{pagestyle\{fancy\}}. 
 This setting will be overriden and the pagestyle replaced whenever \cmd{includepdf} is invoked.
-
-\bigskip
-\todo{Include the (corrected) License information}
 
 \end{document} 
