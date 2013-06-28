@@ -31,7 +31,7 @@
 \begin{authorAbstract}{Urs Liska}
 Most musicians and musicologists are used to editing text documents and musical scores with graphical \textsc{wysiwyg} tools%
 \footnote{What You See Is What You Get---such programs provide an editing environment where the document is displayed identically to the way it will be printed.}.
-and wouldn't even consider there is a different possibility at all.
+and wouldn't even consider a different option at all.
 This paper discusses an approach to authoring musical documents that is based on editing \emph{plain text files} instead.
 The described concepts, tools, and workflows have significantly changed my life as a document author, and I  wholeheartedly endorse them because I strongly believe in their unique and substantial advantages.
 
@@ -186,13 +186,13 @@ While this at first may seem somewhat abstract it is actually a very important p
 \label{sec:pt_readability-stability}
 In the previous section you have seen examples of plain text files for a text and a score document.
 OK, I admit that it takes some time getting used to filtering out the markup commands in a text file mentally.
-But I can't emphasize enough that you actually \emph{can read} that file \emph{at all}.
+But I can't emphasize enough that you actually can \emph{read} that file \emph{at all}.
 
 Does this bold statement surprise you?
 Don't you think that you can immediately conceive the content of the graphical score, much faster and easier than the source file that you first have to read and interpret?
 Well, then you are again exchanging the real document file and the graphical representation the graphical programs expose to you.
 
-Please take the time and have a look at \todo{prepare “listings”, put them in appendix and add link to them}.
+Please take the time and have a look at \fref{sec:pt_comparison-of-file-formats}.
 That's what the file contents from the previous examples actually look like.
 After skimming through the Word\texttrademark, OpenOffice\texttrademark, Finale\texttrademark{} and Sibelius\texttrademark{} files you should reconsider the “overly complex” \emph{source code listings} of the previous section.
 Now you'll probably see why I emphasize that you can \emph{read} \LaTeX{} and LilyPond files, isn't it?
@@ -278,6 +278,7 @@ All I did to help LilyPond do its job was assigning the musical lines to the rig
 \begin{musicExampleNonFloat}
 \lilypondSFE{examples/gethsemane-1}
 \lilypondSFE{examples/gethsemane-2}
+\caption{Arnold Schönberg: Excerpt from “Gethsemane”}
 \end{musicExampleNonFloat}
 
 It is really amazing how LilyPond manages to do most things immediately right.
@@ -289,6 +290,7 @@ that LilyPond did \emph{not} manage to engrave perfectly without assistance:
 
 \begin{musicExampleNonFloat}
 \lilypondSFE{examples/schoenberg-opus-8-4}
+\caption{Arnold Schönberg: Excerpt from “Nie ward ich, Herrin, müd” op.\,8,\,4}
 \end{musicExampleNonFloat}
 
 Please note that there isn't any single manual tweak to that engraving either.
@@ -826,8 +828,8 @@ You can see a comprehensive example document with all sorts of music examples in
 \subsection{OOoLilyPond}
 \label{subsubsec:pt_ooo-lilypond}
 Finally I have to mention another option to integrate music examples in text documents, although it isn't quite as professional.
-\emph{OOoLilyPond%
-\footnote{\todo{URL}}}
+\emph{OOoLilyPond}%
+\footnote{\url{http://ooolilypond.sourceforge.net/}}
 is an OpenOffice extension which allows to store LilyPond code as embedded objects in Writer documents.
 It can compile them in place and display the corresponding image files while keeping the source code ready for further editing.
 Unfortunately this can only produce bitmaps and no vector graphics, resulting in a rather medium output quality. But for daily use it may be a good compromise.
@@ -922,9 +924,11 @@ Such a system could very well be the perfect match for a long-running critical e
 The same is true for the preparation of books, and of compilation books from more than one author in particular.
 All collaborators can seamlessly work together in a shared code base: the author(s), editors, typesetters, and maybe additional specialists preparing figures or music examples.
 A collaborative set-up provides an efficient workflow between an author and his editor, and it can be particularly useful when proof-reading or documents or polishing them linguistically with many assistants.
+It has to be said that such a work-flow is already standard in many scientific journals in other disciplines.
 
 Of course the musical edition described in the previous section is also a “book” in this sense, as the scores are created with LilyPond and included in a \LaTeX{} document.
 The complete volume can be compiled at any time and reflects the current state of the development of the scores.
+
 
 \section{“Crowd Editing”}
 \label{sec:pt_crowd-editing}
@@ -934,6 +938,7 @@ But with the capability to manage contributions by a (practically) unlimited num
 This way the workload can be “clustered” among a potentially great number of people, each one according to his capabilities and special knowledge (about specific instruments for example), and large quantities of music entered in astonishingly little time.
 While this doesn't save actual working hours it can be used to process them in parallel.
 Even in a large-scale symphonic score each single part is quite manageable, and if there is one contributor for each part (or better: two contributors for two parts who do a peer-review before submitting) the score should grow rapidly.
+I know of at least one semi-professional choir that has by now switched to preparing its scores in such a social manner.
 
 In such a context the aspect of programmability may once more become important.
 While the individual contributors don't have to be programmers at all the “project” can be extensively programmed.
@@ -946,6 +951,7 @@ Plain text files are a good starting point for creating documents for different 
 One example already discussed is the possibility to create several different scores (or parts) with LilyPond from a single set of input files.
 I don't have concrete experiences to present but it's inherent in the nature of plain text files that they are good for use in single-source publishing.
 This can easily apply to generating documents for printing, beamer presentation, mobile devices and web pages from single sources, to name just a few.
+I think---and hope---that this can also be made very fruitful in the light of current discussions to present scholarly editions in modern ways beyound printed scores.
 
 
 \chapter{Where To Go From Here?}
@@ -957,11 +963,11 @@ This document isn't intended for and can't be used to actually start working wit
 It could be the opening chapter of a valuable book on document authoring but I don't see anybody having spare time to write the rest of it \dots
 
 Therefore I'm going to provide you with references to further reading on the different subjects.
-If you know of or find interesting introductions on any level feel free to tell me so I can enhance the list.
+If you know of or find interesting introductions on any level feel free to tell me so I can extend the list.
 
 \section*{Plain Text}
 
-\url{http://www.terminally-incoherent.com/blog/2012/05/21/why-plain-text/} is a blog post that I have read only after having written this document. I think it tells you everything again that I have written on the characteristics of plain text files, from a different perspective and maybe even more convincing.
+\sloppy \url{http://www.terminally-incoherent.com/blog/2012/05/21/why-plain-text/} is a blog post that I have read only after having written this document. I think it tells you everything that I have written on the characteristics of plain text files, but from a different perspective and maybe even more urgent and convincing.
 
 \section*{Version Control}
 
@@ -981,23 +987,42 @@ You get Git at:
 \item \url{http://git-scm.com}\\
 The official source.\\
 On Linux you will probably have it in your software repositories\\
-On Windows you can also get it bundled with one of the GUI tools
+On Windows and Mac you can also get it bundled with one of the GUI tools, for example from \url{https://github.com} or \url{https://www.bitbucket.org}.
 \end{itemize*}
 There are numerous GUI tools around, a number of them collected on \url{http://git-scm.com/downloads/guis}.
-But I recommend starting to use it on the command line because this way you will faster get an understanding of what's happening exactly.
+But I recommend starting to use it on the command line because this way you will get a better understanding of what's happening exactly.
 
 \section*{LilyPond}
 
 The main resource for LilyPond is its website \url{http://www.lilypond.org}. 
 There you'll find the software as well as a truly huge manual.
-Of particular interest for now is the 
+Of particular interest for now are the Introduction%
+\footnote{\url{http://www.lilypond.org/introduction.html}}
+and the Learning Manual%
+\footnote{\url{http://www.lilypond.org/doc/v2.16/Documentation/learning/index.html}}.
+
+A most welcome resource is the \texttt{lilypond-user} mailing list%
+\footnote{\url{https://lists.gnu.org/mailman/listinfo/lilypond-user}}
+where you can find tons of information and get help with your current problems.
+Two new resources are the openLilyLib project%
+\footnote{\url{http://www.openlilylib.org}}
+(where you'll also find information on \texttt{musicexamples}, \lilyglyphs and \texttt{lilypond-doc}),
+and the \emph{Scores of Beauty} blog%
+\footnote{\url{http://lilypondblog.org}}.
 
 \section*{\LaTeX}
+
+Given the age of the \LaTeX{} project it is not surprising that there exists a wealth of documentation and tutorials about using it.
+Therefore I will only direct you to the project's homepage \url{http://latex-project.org} and especially the page \url{http://latex-project.org/guides/} there which is a collection of links to resources that have been selected by the project members themselves.
+
+For German readers I can additionally recommend one book: Joachim Schlosser, \emph{Wissenschaftliche Arbeiten schreiben mit \LaTeX} (\url{http://www.latexbuch.de}).
+It has helped me getting into the spirit of \LaTeX{} by taking the perspective of an academic writer and providing information (with the necessary amount and complexity) to start authoring scholarly documents.
 
 \appendix
 \chapter{Appendix}
 
 \section{Comparison of File Formats}
+\label{sec:pt_comparison-of-file-formats}
 In this appendix I'd like you to contemplate a little bit over a few raw listings of file contents of different programs.
 We start with a minimal score created with LilyPond
 
@@ -1020,7 +1045,7 @@ After that we'll do the same with a text document whose \LaTeX{} source looks li
 \end{document}
 \end{lstlisting}
 
-So after the score files you'll see the text document and then its corresponding base files (first pages) from:
+So after the score files you'll see the text document and then its corresponding document files (first pages) from:
 
 \begin{itemize}
 \item Word 2007 (.docx)
