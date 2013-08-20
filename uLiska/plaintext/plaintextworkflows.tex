@@ -24,33 +24,23 @@
 
 \documentclass[../../LilyPond-Tutorials]{subfiles}
 
+\RequirePackage{xmpFancyref}
+
 \begin{document}
 \parttitle[Urs Liska]{Plain Text Files in Music}
 \begin{authorAbstract}{Urs Liska}
-The idea of editing plain text files when creating musical scores and text documents may seem strange to people used to working with graphical tools.
-But there are serious advantages going the route of plain text driven workflows---starting from superior result quality, extending through robust and reliable storage forms, up to workflow options unimaginable otherwise.
-
-This paper introduces musicians and musicologists to key concepts of working with plain text documents and collaborative workflows.
-In particular it deals with the LilyPond notation software, the \LaTeX{} typesetting system, and version control.
-
-\end{authorAbstract}
-
-\chapter*{Introduction}
-\label{chap:pt_introduction}
-This paper discusses an approach to authoring musical documents%
-\footnote{i.\,e.\ scores and texts about music}
-that is based on editing \emph{plain text files} instead of using graphical \textsc{wysiwyg} software%
+Most musicians and musicologists are used to editing text documents and musical scores with graphical \textsc{wysiwyg} tools%
 \footnote{What You See Is What You Get---such programs provide an editing environment where the document is displayed identically to the way it will be printed.}.
+and wouldn't even consider a different option at all.
+This paper discusses an approach to authoring musical documents that is based on editing \emph{plain text files} instead.
 The described concepts, tools, and workflows have significantly changed my life as a document author, and I  wholeheartedly endorse them because I strongly believe in their unique and substantial advantages.
 
 The plain text approach is practically non-existent in the humanist disciplines or in the music business, while being de facto standard in many natural and computer sciences.
 Working with plain text based tools indeed requires a certain shift in mind-set for people who aren't already familiar with the corresponding working paradigms.
 And it can't be denied that the learning curve is considerable.
-But this investment is absolutely justified because on the long run it greatly benefits productivity and offers potentials unimaginable otherwise.
+But this investment is absolutely justified because on the long run it greatly benefits productivity ---starting from superior result quality, extending through robust and reliable storage forms, up to workflow options unimaginable otherwise.
 Reading and writing music, playing an instrument, investigating a manuscript source---all this involves a very long and intense learning curve, and we mastered them as a matter of course in order to become the professionals we are.
-Don't be afraid to learning something new!
-
-% i think the introduction was getting too long.
+So don't be afraid!
 
 This document aims to give you an overview of the
 power that text based approaches can give you.
@@ -60,10 +50,12 @@ to the suggested reading at the end.
 
 The software packages I will introduce you to on the following pages are:
 \begin{itemize*}
+\item \emph{Version Control Systems} -- that keep your work under control
 \item \emph{LilyPond} -- the program that lets you engrave beautiful scores
-\item \emph{Git} -- the versioning system that keeps your work under control
 \item \emph{\LaTeX} -- the professional typesetting engine for text documents
 \end{itemize*}
+
+\end{authorAbstract}
 
 \chapter{Plain Text Format}
 \label{chap:pt_plain-text-format}
@@ -71,14 +63,12 @@ Who on earth would voluntarily enter music as a text file?
 Aren't these people just nerds who think that only what hurts can be good?
 Isn't it \emph{natural} to edit musical scores within a graphical user interface?
 
-Well, a graphical user interfaces which allow users to edit
-a document with a mouse or other pointing device is obviously
-quick, effective and easy.
+Well, using graphical user interfaces to edit a document with a mouse or other pointing device is obviously quick, effective and easy.
 However, there are lots of reasons why it \emph{is} a good idea to edit and store documents in text files.
-Text based work avoids several fundamental problems that other approaches share, and it opens up a whole range of advanced options not imaginable otherwise.
-And it is good to know that by now there are editors available that significantly assist you in dealing with text files.
+Text based work avoids several fundamental problems that other approaches share, and it opens up a whole range of advanced options that are only available in this context.
+And it is good to know that nowadays there are editors available that significantly streamline your work with text files.
 
-Firstly, let us consider a number of features of working with plain text files.
+Firstly, let us consider a number of features working with plain text files offers.
 
 \section{Transparency and Control}
 \label{sec:pt_transparency-and-control}
@@ -95,25 +85,18 @@ I can't recall (and actually don't want to) how often I ran through the loop of
 
 It's been a long while since I had used graphical software, so maybe things have improved a lot, but the fundamental fault is still valid: 
 I am at the mercy of the software and can't see or control how it represents the content internally.
-
 A friend finally stopped using (a later version of) the same graphical program when he fixed one missing accidental in a score he had earlier tweaked to perfection---and this accidental caused the whole layout to break irreversibly.
+With a graphical program there is no notion of the manual changes against the default result, so the only resort is to “undo” and hope this will fix it \dots
 
-Besides this risk of losing work I also can't usually tell how the program
-interprets changes I've made.  For example, if I add a description text
-somewhere near the violin staff, will it follow the music when the page layout
-changes or will it stay in the same position relative to the corner of the page?
+Besides this risk of losing work I also can't usually tell how the program interprets changes I've made.
+For example, if I add a description text somewhere near the violin staff, will it follow the music when the page layout changes or will it stay in the same position relative to the corner of the page?
 
-\medskip
-\todo{Example how this applies to text documents}
-
-\medskip
-If I edit a plain text file instead I'm completely in control over all these issues.
+ If I edit a plain text file instead I'm completely in control over all these issues.
 If I tell the program to break a beam or to draw a slur above the note it is explicitely and reproducibly defined and readable by anybody.
 There is nothing hidden in “settings” dialogs or even unreadably buried somewhere in the file as the result of dragging something with the mouse.
 If I manage to break something (which of course happens) I can review what I did, compare to the last working version%
 \footnote{See the “version control” \fref{chap:pt_version-control}}
 and understand and fix the issue.
-With a graphical program my only resort is to “undo” and hope this will fix it \dots
 
 There is a price for this, namely having to enter code by hand and learning how to do that, but it is very rewarding on the long run.
 And being in control just \emph{feels} better \dots
@@ -155,8 +138,7 @@ The corresponding \LaTeX{} source file would look like:
 \end{lstlisting}
 
 While this may look complicated on first sight it actually is much clearer because it distinctly shows you the content \emph{and} the author's intentions.
-The \cmd{documentclass} is something like a document template, but much more powerful%
-\footnote{See the \LaTeX{} chapter \fref{chap:pt_latex}}.
+The \cmd{documentclass} is something like a document template, but much more powerful.
 \cmd{terminus} is defined as a character style applying bold (“\dots bf” for BoldFace) and sans-serif (“\dots sf” for Sans-Serif) to its content (“\#1”).
 Inside the document body (enclosed by the \cmd{begin} and \cmd{end} statements) you can see the \emph{content} along with \emph{semantic markup}.
 The two headings use explicit sectioning commands which are (for now) equivalent to paragraph styles.
@@ -183,7 +165,7 @@ If you consider the following minimal score and its (complete) LilyPond input fi
 \columnbreak
 
 \begin{centering}
-\begin{lstlisting}
+\begin{lstlisting}[language={[LaTeX]TeX}]
 {
   \time 3/4
   \key es \major
@@ -198,20 +180,19 @@ If you consider the following minimal score and its (complete) LilyPond input fi
 a time signature, a key definition, a clef, and a few notes with durations.
 Of course the page layout is also an inseparable part of the score document, but on a conceptual level it is completely separate from the musical content.
 Without going into more detail here you should note that in LilyPond's plain text file you have complete control over the separation of content, meaning and appearance.
-While this at first may seem somewhat abstract it is actually a very important point when it comes to preparing different output from one source%
-\footnote{See “single-source publishing” section \fref{sec:pt_single-source-publishing}}.
+While this at first may seem somewhat abstract it is actually a very important point when it comes to preparing different output from one source.
 
 \section{Readability and Stability of Text and Binary Files}
 \label{sec:pt_readability-stability}
 In the previous section you have seen examples of plain text files for a text and a score document.
 OK, I admit that it takes some time getting used to filtering out the markup commands in a text file mentally.
-But I can't emphasize enough that you actually \emph{can read} that file \emph{at all}.
+But I can't emphasize enough that you actually can \emph{read} that file \emph{at all}.
 
 Does this bold statement surprise you?
 Don't you think that you can immediately conceive the content of the graphical score, much faster and easier than the source file that you first have to read and interpret?
 Well, then you are again exchanging the real document file and the graphical representation the graphical programs expose to you.
 
-Please take the time and have a look at \todo{prepare “listings”, put them in appendix and add link to them}.
+Please take the time and have a look at \fref{sec:pt_comparison-of-file-formats}.
 That's what the file contents from the previous examples actually look like.
 After skimming through the Word\texttrademark, OpenOffice\texttrademark, Finale\texttrademark{} and Sibelius\texttrademark{} files you should reconsider the “overly complex” \emph{source code listings} of the previous section.
 Now you'll probably see why I emphasize that you can \emph{read} \LaTeX{} and LilyPond files, isn't it?
@@ -252,22 +233,23 @@ Another interesting application is the use of plain text as input to web forms.
 Many web forms, e.\,g.\ in forums, allow you to enter your posts in \emph{Markdown}%
 \footnote{\url{http://daringfireball.net/projects/markdown/}},
 a minimalist plain text language, and convert them to formatted \textsc{html}.
-And recently \emph{Wikipedia} added support for LilyPond code that will be rendered as music examples.
+And recently \emph{Wikipedia} added support for LilyPond code that will be rendered as music examples%
+\footnote{\url{http://en.wikipedia.org/wiki/Help:Score}}.
 
 \section{Programmability}
 \label{sec:pt_programmability}
 Plain text files can be edited not only by any text editor but by \emph{anything} that can edit text files---which makes it accessible to about any programming language you may think of.
-You are not restricted to any scripting interface the vendor graciously provides you, but you can apply any imaginable operations with your source files: 
+You are not restricted to any scripting interface the vendor graciously provides you, but you can apply any imaginable operations to your source files: 
 analyze them,
 process them,
 or even computationally generate them from scratch.
 There are many possible applications, from applying contrapuntal operations or algorithmic composition up to managing music examples in a database.
 
-If you have never programmed and don't intend to learn it you may think that's a rather unimportant feature.
+If you have never programmed and don't intend to learn it you may think that's a rather academic feature.
 But this isn't true at all.
-For example I'm currently working on the infrastructure for a large orchestral score where those who enter the music only work on small segments of the instrumental parts.
+For example I'm currently working on the infrastructure for a large orchestral score where those who enter the music are only exposed to small segments of individual instrumental parts.
 The full score (which is initially filled with rests) will automagically build itself and use whatever segments have already been entered.
-This is an example of an approach where the administrators of a project \emph{explicitely} use programming to allow sophisticated logic in the project while at the same time hiding the complexity from the regular contributors.
+This is an example of an approach where the administrators of a project \emph{explicitely} use programming to allow sophisticated logic in the project while at the same time \emph{hiding the complexity} from the regular contributors.
 
 
 \section{Compiling Files vs.\ Instant Feedback}
@@ -276,7 +258,7 @@ One thing the average \textsc{wysiwyg} user needs to get used to is \emph{not} t
 Graphical programs immediately display any updates in their graphical user interface, while the text files first have to be \emph{compiled} before you can see the results of your modification.
 
 While this may seem cumbersome, it actually isn't a problem but an inherent advantage, and a big one!
-Other than the graphical program the compiler can first read the input file, get a solid internal representation of the content and structure, and finally take its time to produce the best possible layout for the given content.
+Other than a graphical program the compiling program can first read the input file, get a solid internal representation of the content and structure, and finally take its time to produce the best possible layout for the given content.
 It can judge the implication of a modification for the whole document and rethink the layout completely.
 The problems graphical programs are encountering are immediately visible when you (for example) try to move a figure in a 250 pages text document containing 80 figures, or when you insert some music in the middle of a longer score---tasks that don't upset text based programs at all.
 
@@ -285,34 +267,36 @@ While it is obviously possible to produce publication quality output with Finale
 As a rule of thumb I'd say that you can use LilyPond scores (and \LaTeX{} documents) without bothering about layout details as long as you don't want to publish them.
 This is a significant improvement for the development process of documents and editions as you can concentrate on the real \emph{content} up to the final stage of print preparation.
 
-Look at the following example of a rather complex score%
+Look at the following example of a complex score%
 \footnote{Arnold Schönberg: Excerpt from “Gethsemane” (fragment).
-\todo{ask Larry Schoenberg for permission}
-First published in: Arnold Schönberg. Sämtliche Werke \dots
-}:
-
-\todo{fix lilypondMFE issue}
+\textcopyright\,Belmont Music Publishers, permission granted for use in this tutorial.
+You may use and redistribute the example unchanged provided you keep this copyright notice in place.
+}
+and note that there isn't a single manual intervention.
+All I did to help LilyPond do its job was assigning the musical lines to the right voice numbers (1--4) so it knew whether to place stems up- or downwards and how to move items to avoid clashes.
 
 \begin{musicExampleNonFloat}
-%\lilypondmfe{examples/gethsemane}
+\lilypondSFE{examples/gethsemane-1}
+\lilypondSFE{examples/gethsemane-2}
+\caption{Arnold Schönberg: Excerpt from “Gethsemane”}
 \end{musicExampleNonFloat}
 
-\noindent and note that there isn't a single manual intervention beyond assigning the music to the right voice contexts.
 It is really amazing how LilyPond manages to do most things immediately right.
 While the score isn't perfect to publication quality there is \emph{nothing} that hampers reading the music when placed on the music stand.
 
-Now have a look at the following example of a rather complex score%
-\footnote{Arnold Schönberg: Excerpt from: “Nie ward ich, Herrin, müd” | Nr. 4 aus “6 Orchesterlieder" | für Gesang und Orchester | op. 8/1, \copyright{} 1911 by Universal Edition A.\,G., Wien/UE 3041, \href{http://www.universaledition.com/}{www.universaledition.com} [permission granted for use in this tutorial. You may redistribute the document provided you keep this copyright notice and the hyperlink in place]}
+Now have a look at the following example of another complex score%
+\footnote{Arnold Schönberg: Excerpt from: “Nie ward ich, Herrin, müd” | Nr. 4 aus “6 Orchesterlieder" | für Gesang und Orchester | op. 8/1, \copyright{} 1911 by Universal Edition A.\,G., Wien/UE 3041, \href{http://www.universaledition.com/}{www.universaledition.com} [permission granted for use in this tutorial. You may redistribute the example provided you keep this copyright notice and the hyperlink in place]}
 that LilyPond did \emph{not} manage to engrave perfectly without assistance:
 
 \begin{musicExampleNonFloat}
 \lilypondSFE{examples/schoenberg-opus-8-4}
+\caption{Arnold Schönberg: Excerpt from “Nie ward ich, Herrin, müd” op.\,8,\,4}
 \end{musicExampleNonFloat}
 
 Please note that there isn't any single manual tweak to that engraving either.
-I just entered the music and specified which voices should be upstemmed and which ones downstemmed.
+I just entered the music as in the previous example.
 Of course this is far from perfect, and the LilyPond developers would surely take this example as a source of inspiration for improvements of the engraving engine.
-But if you excuse the long phrasing slur from m.\,1 throughout 3 (which I judge no automated engraving system would be able to get right by itself) you will notice that the engraving is completely readable---you could put it on the music stand and play from it right away (which I can confirm from practical experience \dots).
+But if you excuse the long phrasing slur from m.\,1 throughout 3 (which I judge no other automated engraving system would be able to get right by itself either) you will notice that the engraving is completely readable---you could put it on the music stand and play from it right away (which I can confirm from practical experience \dots).
 
 If you compare that to the attempt one of the two “big players” took at the same measures (with the same task description: entering music, assign voices correctly, no further manual tweaks), you will understand what I mean \dots
 
@@ -361,7 +345,7 @@ Probably you'd rather split your day's work into snapshots like
 \begin{inparaenum}[1.)]
 \item “proof-reading choir parts” 
 \item “adding critical notes”
-\item “reorganize directory structure”.
+\item “reorganizing directory structure”.
 \end{inparaenum}
 Note that this concept does work on the project directory and not on single files.
 So a changeset can span a whole set of files, thus linking related work together.
@@ -371,7 +355,7 @@ To “achieve” this you would have to apply some really advanced tools you nor
 You can think of a project under version control like a bag where you put all your stuff in, while the versioning software keeps track of all changes.
 Whenever you want to investigate any earlier state of your project the versioning system uses the content of the bag and its own records to bring your project directory into the form it had at that specific state.
 From there you can revert, modify or reapply any changeset that doesn't create structural conflicts%
-\footnote{Such a conflict would for example arise if you would try to revert changes to some lines in file that has in the meantime been deleted.}.
+\footnote{Such a conflict would for example arise if you would try to revert changes to some lines in a file that has in the meantime been deleted.}.
 
 But you could also create a new \emph{branch} from that state.
 \emph{Branching} is one more important concept of source code versioning.
@@ -382,7 +366,7 @@ A more common application of branches is to start any new work that might get yo
 This is merged with the main line of work only later when it is finished.
 An example for this would be integrating the results of a critical revision into a score---this way the main line would keep its consistent original state up to the moment when you merge in the revision in one single step.
 
-Until now I have omitted mentioning any concrete software that does this ominous versioning.
+I have omitted mentioning any concrete software that does this ominous versioning.
 This is because there are numerous tools in this area, but they more or less share the described concepts.
 In their generic form they all are command line programs that you can tell to perform actions on your project like saving a new changeset, managing branches or inspecting dedicated states of history.
 For all versioning systems there exist graphical front-ends for all major operating systems that aim to ease working with the systems.
@@ -403,8 +387,8 @@ The most basic way to collaborate on a project is to exchange ideas personally, 
 This way the document is guaranteed to be in a consistent state, but the workflow isn't really practical if you don't happen to share an apartment or at least an office.
 
 The next (and quite common) way is to exchange documents by email or on data storage media like disks or \textsc{usb} devices.
-You will surely have already worked that way or do it regularely.
-While this \emph{may} work in simple cases (for example two collaborators and only a very small number of files) it adds complexity that can easily lead to problems:
+You will surely have already worked that way or do it on a regulare basis.
+While this \emph{may} work in simple cases (for example two collaborators and only a very small number of files) it adds a level of complexity that can easily lead to problems:
 \begin{enumerate*}
 \item What do I do with a document returned by a partner?
 Do I replace my original version or do I make a copy (presumably named something like “essay-revision-Michael-2009-12-04” or “essay-v003”)?
@@ -446,24 +430,24 @@ I would like to stress that it is for example even possible that one contributor
 As long as the two people won't modify \emph{the same line} in the same source file, all of this synchronization will work silently without anybody really noticing it. 
 This will even work when person A modifies some content of a file \texttt{foo.txt} while person B \emph{at the same time} renames that file!
 
-Of course this isn't effective because it makes conflicts \emph{unlikely}---this would actually be quite negligent.
-The point is that potential conflicts can be reduced to the conflicting line(s) in the source file.
-If simultaneous changes can't be reconciled because of a conflict the contributor faced with it will find markers in the text file indicating the conflicting versions.
-From there he can decide individually which version to keep (or to mix them) and submit the result to the versioning system.
-So while versioning can't completely prevent conflicts it significantly reduces the hassles to recover from them.
+Of course the point of this isn't to make conflicts \emph{unlikely}---this would actually be quite negligent.
+The advantage is that potential conflicts can be reduced to the conflicting line(s) in the source file.
+If simultaneous changes can't be reconciled automatically there will be markers in the text file showing both conflicting versions.
+From there one can decide individually which version to keep (or to mix them) and submit the result to the versioning system.
+So versioning can't completely prevent conflicts to happen but it makes sure they aren't fatal.
 
 \medskip
 Another feature that has become crucial to my work relies on the way versioning software records changesets.
 As described earlier they keep track of file differences, and they can be inspected later.
-This way I can see exactly what my partner has done to a file without even bothering to compare the files manually or visually%
+This way I can see exactly what others have done to a file without bothering to compare the files manually or visually%
 \footnote{In fact I can even inspect others' changes on the go, as there exist smartphone apps for several hosting providers}.
 Office programs have a feature to record changes (whatever it may be called in a given program and language).
-But once I have accepted or rejected the changes this (visual) indicator has vanished while the changesets are part of the project history and therefore eternally present.
+But once I have accepted or rejected the changes (and of course I can only use the document when I have done so) this (visual) indicator vanishes. Changesets in a versioned project on the other hand are part of the project history and therefore “eternally” present.
 
 \medskip
 To sum up: in a project with version control each contributor has access to and can work simultaneously on the whole data inventory, with very little risk of conflicts and a straightforward way to resolve conflicts that may eventually arise nevertheless.
 This opens up quite a lot of perspectives on collaborative work that I consider very promising.
-In the last \fref{chap:pt_applications} I will describe some of them.
+In \fref{chap:pt_applications} I will describe some of them.
 
 \chapter{LilyPond}
 \label{chap:pt_lilypond}
@@ -513,7 +497,7 @@ If you look at the text editor again (in \fref{fig:pt_fb-main-window}) you will 
 This is a feature that Frescobaldi shares with most programming editors: it “knows” LilyPond's language and highlights the source text according to its structure.
 Once one has got used to that practice it greatly eases reading and writing the necessary text files.
 
-When you start typing a command Frescobaldi can also make suggestions on how to complete them (\fref{fig:pt_fb-code-completion})---also a valuable assistance, not so much because of its time-saving but because it assists you in remembering and efficiently reduces errors.
+When you start typing a command Frescobaldi can also make suggestions on how to complete them (\fref{fig:pt_fb-code-completion})---also a valuable assistance, not so much because of its time-saving but because it assists your memory and efficiently reduces errors.
 
 \begin{figure}
 \centering
@@ -558,16 +542,16 @@ At the most basic level notes are represented by their pitch and duration, as yo
 }
 \end{Verbatim}
 \columnbreak
-\includegraphics{examples/brahms/brahms-1}
+\lilypondSFE{examples/brahms/brahms-1}
 \end{multicols}
 
-The text writes rests (\texttt{\textit{r}}) and pitches (\texttt{\textit{d}} etc.) as well as durations (8, 4, 4., 2.), and everything is enclosed in a pair of curly braces.
+The text writes rests (\texttt{r}) and pitches (\texttt{d} etc.) as well as durations (8, 4, 4., 2.), and everything is enclosed in a pair of curly braces.
 This is LilyPond's notion of a \emph{music expression}.
-A score is represented by one big music expression which can be constructed of arbitrarily nested or chained smaller music expressions.
+A score is represented by one big music expression which can be constructed of (or split into) arbitrarily nested or chained smaller music expressions.
 There are a few things “missing” in the source that LilyPond adds by itself, namely a staff, a clef, and beams.
 
 Two more elements aren't actually figured out automatically, but hidden from the example.
-In fact you have to write down \cmd{key g} \cmd{major} and \cmd{time 6/4} to tell LilyPond about the key and time signatures.
+In fact you have to write down \cmd{key g} \cmd{major} and \cmd{time 6/4 }to tell LilyPond about the key and time signatures.
 But the beaming in the second measure is done automatically according to the time signature.
 Many things can be defined by such \emph{commands}.
 
@@ -584,7 +568,7 @@ Elements like articulations or dynamics are attached to notes or rests by printi
 }
 \end{Verbatim}
 \columnbreak
-\includegraphics{examples/brahms/brahms-2}
+\lilypondSFE{examples/brahms/brahms-2}
 \end{multicols}
 
 We have a few articulations that are attached with a hyphen, the staccato dot written as a dot, the accent as a \texttt{>}, all characters have been chosen to be as intuitive as possible.
@@ -603,7 +587,7 @@ There you can see that you can attach multiple items to a note by just writing t
 }
 \end{Verbatim}
 \columnbreak
-\includegraphics{examples/brahms/brahms-3}
+\lilypondSFE{examples/brahms/brahms-3}
 \end{multicols}
 
 In addition to the slurs you can also see an example of manually setting the beams against the rules for the time signature, which is indicated by the use of square brackets (again \emph{after} the notes they are referring to).
@@ -624,11 +608,11 @@ The \emph{tempo} indication is entered by the \cmd{tempo} command (the non-verba
 \end{Verbatim}
 \columnbreak
 \vspace*{4.5em}
-\includegraphics{examples/brahms/brahms-4}
+\lilypondSFE{examples/brahms/brahms-4}
 \end{multicols}
 
-One thing you may have noticed in the example is that I have broken the first line of music into three.
-LilyPond doesn't care about this \emph{white space} and allows you to lay out your text file as you find appropriate---which usually will mean to keep coherent entities on a single line.
+One thing you may have noticed in this last example is that I have broken the first line of music into three.
+LilyPond doesn't care about this \emph{white space} and allows you to lay out your text file as you find appropriate---which usually will mean to keep coherent entities on a single line so that versioning will work optimally.
 In this case the entity is the \emph{markup}, also an expression enclosed in curly braces.
 You could just throw some text in there, but in this score we format the elements, one using the dynamics font, the other as italic text.
 
@@ -669,13 +653,14 @@ Earlier I wrote about the separation of content and appearance, here we are deal
 Music defined in a variable is used by a score---and it can equally be used by another score.
 Different scores accessing shared music may be a full score and the instrumental parts or different transpositions of the same song.
 In both cases the music is defined only once, and any update to that definition is propagated to all scores automatically.
+This makes the handling of scores and parts very robust in LilyPond.
 
 Being able to reuse variables would only be a partial advantage if one couldn't separate the definitions even one step further, into separate files, and \emph{include} them.
 This way one can create a collection of files, a \emph{library}, and keep them available for further use.
 This is not only useful for reusing work in future projects but also within one project.
 You can organize style and layout templates (i.\,e.\ definitions that influence the page layout and the appearance of the music) in a hierarchical and sophisticated way and have all files share some common styles (like font selections) but have different additional styles for different output formats (full score, part, music example \dots).
 Any change in one of the style files is then automatically propagated to all scores.
-Or you can make use of a technique called \emph{commenting out}---place two alternative includes but make a comment of one of them, like this:
+Or you can make use of a technique called \emph{commenting out}---place two alternative includes but comment one of them out, like this:
 
 \begin{Verbatim}
 \include "draft-layout.ily"
@@ -689,14 +674,14 @@ And if you have this construction in a shared style file this switch will have g
 \section{Comments}
 \label{sec:pt_lilypond-comments}
 The last example of the previous section led us smoothly to the next aspect: \emph{comments}.
-LilyPond---as virtually all plain text formats---allows you to mark parts of a file as comments, text that will be ignored by the typesetting.
-This can for example be used to document what you have done or comment on technical issues you are facing.
+LilyPond---as virtually all plain text formats---allows you to mark parts of a file as comments, i.\,e.\ text that will be ignored by the typesetting.
+This can for example be used to comment on technical issues you are facing.
 You could for example explain why you have decided to implement a certain voice-leading to solve a typographic problem, or leave a mark that some issues will have to be resolved.
 Combine this with the fact that all your manual interventions are written explicitely in the file and compare that with the situation of a graphical score editing program where you can hardly even tell what your manual interventions were \dots
 
 Currently there are plans to greatly enhance this functionality, especially with preparing scholarly editions in mind.
 It will be possible to enter specific comments in the input file---\emph{i.\,e.\ directly beside the music they are referring to}---and a tool that will be called \texttt{lilypond-doc} will output them to a variety of formats.
-This will provide you with nicely formatted lists of 
+This will provide nicely formatted lists of 
 \begin{inparaenum}
 \item \textsc{todo} items,
 \item musicological questions,
@@ -711,18 +696,18 @@ This way you will be able to do all your work \emph{within the actual score} (an
 \label{sec:pt_lilypond-conclusion}
 By now it surely won't make you wonder that I wholeheartedly endorse the use of LilyPond as a notation software.
 I can't recommend highly enough to give it at least a try---but you should give it a fair try and expect some time and effort needed initially.
-From my experience (as a beginner and from seeing other beginners) I may give you some advice on \emph{do}s and \emph{don't}s:
+From my experience (having once been a beginner myself and from seeing other beginners) I may give you some advice on \emph{dos} and \emph{don'ts}:
 
 Do \emph{not} jump right in and try to accomplish a complex project that has to be finished in time, or you will surely run into frustrations.
 Ideally you should first read and follow the „Learning Manual“%
 \footnote{\url{http://www.lilypond.org/doc/v2.16/Documentation/learning/index.html}}
 from LilyPond's excellent documentation which will introduce you smoothly to the basic concepts.
 But you may also tackle a task that is „real“ and on your desktop already.
-This will make it more interesting, but be sure that it isn't too complex and that you won't run into having deliver it urgently.
+This will make it more interesting, but be sure that it isn't too complex and that you won't have to struggle with deadlines.
 
-Be sure \emph{not} to try it completely on your own, alone with you, the documentation and forum entries.
+Be sure \emph{not} to try it completely on your own, alone with you and the documentation.
 The ideal way would be to have someone mentoring you, giving you the right ideas and giving the right answers to the questions that really matter at a time.
-Of course this isn't available for most of the beginners, so be sure to sign up to the lilypond-user mailing list%
+Of course this isn't available for most of the beginners, so be sure to sign up to the \texttt{lilypond-user} mailing list%
 \footnote{\url{https://lists.gnu.org/mailman/listinfo/lilypond-user}}.
 Reading the discussion there (and skipping what seems too complicated for now) will be helpful to get a feeling for it, and the community is usually very responsive and helpful, as long as you show interest and own efforts.
 
@@ -735,12 +720,11 @@ So you should make yourself acquainted with the layout of the documentation as s
 \medskip
 Admittedly it takes some time and effort to get productive with LilyPond.
 But the benefits clearly outweigh that in my opinion.
-
 First of all you instantly get beautiful output that is pleasing the eye.
 LilyPond's very existence is due to the frustration two musicians had with the anemic sheet music they were confronted day to day on their orchestral music stands.
-Therefore LilyPond's first ideal and models are traditional, hand-engraved scores, and you (and your readers) will benefit from that saturated page impression out of the box and in each score.
-Practically this means that you will have \emph{significantly less work} to tune a score to be usable as performance material than when creating it with the known graphical programs (or the other way round: If you don't do that work at all (as obviously many composers do) the resulting material will be vastly superiour).
-If you want to prepare scores for publication you will probably have to spend time with LilyPond too, applying a smaller number of corrections which will take more time each than with the graphical programs.
+Therefore LilyPond's first ideal and models are traditional, hand-engraved scores, and you (and your readers) will benefit from that saturated page impression out-of-the-box and in each score.
+Practically this means that you will have \emph{significantly less work} to tune a score to be usable as performance material than when creating it with the known graphical programs (or the other way round: If you don't do that work at all (as obviously many composers do) the resulting material will be vastly superior).
+If you want to prepare scores for publication you will probably have to spend time with LilyPond too, applying a smaller number of corrections which will each  take more time than with the graphical programs.
 But as explained these corrections are much more robust, can be tracked and modified with a clean interface.
 
 The other aspect of output quality is at least as important:
@@ -771,15 +755,11 @@ It provides typesetting as opposed to mere text processing, providing the usual 
 And it works by compiling plain text input files, so everything I have written about the advantages of using plain text files applies to \LaTeX{} equally.
 Therefore I won't get into details introducing you to the concrete syntax of its input files, but try to introduce you concisely to some of the specifically musical features.
 
-\LaTeX{} is available in form of \emph{distributions} such as \emph{TeXLive} for Linux, \emph{MacTeX} for Mac OS, or \emph{MiKTeX} for Windows.
-These distributions are based on a number of core programs that actually perform the compilation of the input files.
-In addition they contain numerous \emph{packages} that can be used to extend the typesetting capabilities.
 Your interface to \LaTeX{} is the same as to LilyPond:
 The input files can be edited with \emph{any} editor, and the compilers are command line programs.
 But there are (quite numerous) dedictaed editors or IDEs%
 \footnote{Integrated Development Environments}
 that assist you in editing the documents and organizing the compilation process for you.
-
 Earlier in \fref{sec:pt_separation-content-meaning-appearance} I showed you a basic \LaTeX{} document in which you saw the three fundamental elements: the \emph{document class}, \emph{commands} and \emph{environments} (although I didn't explicitely name the latter).
 As mentioned the document class is somewhat comparable to a document template in an office application.
 But it is much more powerful in that it can contain many layout elments, commands and more functionality.
@@ -793,7 +773,7 @@ Such a package might contain anything from a small set of related semantic marku
 When you want a different style for tables or lists, to include images, or add music examples---chances are good that there is a package enabling just what you need.
 
 As I have also mentioned earlier the \emph{commands} and \emph{environments} are roughly similar to character and paragraph styles as used in office documents.
-But they too are much more powerful because they are more like programmer's commands, especially as they use arguments.
+But they too are much more powerful because they are more like programmer's commands, especially as they can use arguments.
 A command can do anything with its arguments which makes it a very versatile tool.
 As a single example I have a command for entries in a revision report that takes arguments for measure number, position in the measure, affected voice/system, and the actual comment.
 This information it then processed to a nice layout, skipping the separator characters when an argument is empty.
@@ -812,7 +792,7 @@ Now that we have seen a \emph{very} short introduction to \LaTeX{} it is time to
 \section{Music Examples}
 \label{sec:pt_music-examples}
 Of course you can embed images in text documents if you want to add music examples to a text.
-\LaTeX{} does a very good job at typesetting these additions with the best possible quality.
+\LaTeX{} does a very good job at determining the best possible layout for them.
 But there are a few dedicated tools that aid you with this specific task, in particular I will talk about \package{lilypond-book} and \package{musicexamples}.
 
 \subsection{lilypond-book}
@@ -827,7 +807,7 @@ But if you have documents with lots of (small) examples you won't find any bette
 \label{subsec:pt_musicexamples}
 Another way to embed music examples in \LaTeX{} documents is \package{musicexamples}, a package that is part of \openlilylib%
 \footnote{\url{http://www.openlilylib.org/musicexamples}}.
-Originally started as an alternative approach to \package{lilypond-book} it can actually work together with it quite well.
+Originally started as an alternative approach to \package{lilypond-book} not requiring intermediate documents it can actually work together with it quite well.
 \package{musicexamples} provides environments and commands to include and manage music examples in \LaTeX{} documents.
 There is support for floating and non-floating environments, single-line or multi-line examples (with the multi-line ones being able to be split on several pages).
 You can also print full-page examples, with special support for examples starting on odd or even pages (you can force an example to start at the next odd or even page).
@@ -841,18 +821,18 @@ Finally there will be%
 helper scripts that keep the music examples up to date (and conditionally recompile missing music example files).
 
 Instead of existing image files (LilyPond generated or not) you can equally embed LilyPond code with \package{lilypond-book} and benefit from both approaches:
-\package{lilypond-book}s in-place example code and \package{musicexamples}' beautiful layout and example management.
+\package{lilypond-book}s in-place example code and \package{musicexamples}' example management.
 
-You can see a comprehensive example document with music examples in the appendix \todo{fref}.
+You can see a comprehensive example document with all sorts of music examples in \fref{xmp:musicexamples-document}.
 
 \subsection{OOoLilyPond}
 \label{subsubsec:pt_ooo-lilypond}
 Finally I have to mention another option to integrate music examples in text documents, although it isn't quite as professional.
-\emph{OOoLilyPond%
-\footnote{\todo{URL}}}
+\emph{OOoLilyPond}%
+\footnote{\url{http://ooolilypond.sourceforge.net/}}
 is an OpenOffice extension which allows to store LilyPond code as embedded objects in Writer documents.
 It can compile them in place and display the corresponding image files while keeping the source code ready for further editing.
-Unfortunately this can only produce bitmaps and no vector graphics, resulting in a rather medium output quality.
+Unfortunately this can only produce bitmaps and no vector graphics, resulting in a rather medium output quality. But for daily use it may be a good compromise.
 
 \section{Notational Elements}
 \label{sec:pt_notational-elements}
@@ -861,7 +841,7 @@ This package allows to include LilyPond's notational elements in the continuous 
 This is significantly different from entering music examples as it will embed them as characters, like \lilyDynamics{mf} for example.
 The main advantage of this package over any other solution I know of is that these elements are readily available, scale well with the surrounding text size, and that you can realize virtually anything you can do with LilyPond.
 
-Elements that are part of LilyPond's OpenType font can be accessed through predefined commands (the above example was written \cmd{lilyDynamics\{mf\}}) or---if there isn't a predefined command yet---through their glyph names from the font, like this \lilyGlyph[scale=1, raise=0.75]{clefs.mensural.c} mensural clef \cmd{lilyGlyph{\{clefs.mensural.c\}}}.
+Elements that are part of LilyPond's OpenType font can be accessed through predefined commands (the above example was written \cmd{lilyDynamics\{mf\}}) or---if there isn't a predefined command yet---through their glyph names from the font, like this \lilyGlyph[scale=1, raise=0.75]{clefs.mensural.c} mensural clef \cmd{lilyGlyph {\{clefs.mensural.c\}}}.
 
 For elements that aren't part of the OpenType font and that are normally drawn by LilyPond \lilyglyphs[scale=1.1] uses small images that have been generated with LilyPond.
 The use is identical if there are predefined commands like this \crotchet[scale=1.1] \cmd{crotchet} or other non-text \crescHairpin  elements.
@@ -883,11 +863,11 @@ If you are already acquainted with LilyPond the learning curve won't be as steep
 
 If you have to deliver documents in other forms than \textsc{pdf} files (usually office files that hopefully are typeset with professional tools afterwards) you still can benefit from the versioning part which improves your efficiency---
 I wouldn't want to work any other way by now.
-Other than LilyPond scores \LaTeX source files can be exported to a variety of formats like \textsc{rtf} or \textsc{html}.
+Other than LilyPond scores \LaTeX{} source files can be exported to a variety of formats like \textsc{rtf} or \textsc{html}.
 This process isn't always guaranteed, though---the more sophisticated your tools and commands are the more problems will arise with export filters.
 Which should be evident: If you design complex custom commands with multiple arguments, how should a converter know to translate them to \textsc{rtf} for example?
-So if you write program notes that have to be delivered as a Word file you can still use \LaTeX{} to author the document but keep it simple in terms of layout or structure.
-But this isn't really a restriction because if you're working in such a context you are usually expected to deliver “raw” material anyway.
+So if you write program notes that have to be delivered as a Word file you can still use \LaTeX{} to author the document but you should keep it simple in terms of layout or structure.
+But this shouldn't really be considered a restriction because if you're working in such a context you are usually expected to deliver “raw” material anyway.
 
 \chapter{Applications}
 \label{chap:pt_applications}
@@ -895,7 +875,13 @@ But this isn't really a restriction because if you're working in such a context 
 \section{Preparing a Musical Edition}
 \label{sec:pt_preparing-edition}
 This is what I actually experienced recently---and what I definitely don't want to miss anymore.
-There are several steps in preparing a scholarly edition, which are partly interdependent and are partly distributed between different team members.
+During the preparation of an edition I'm currently working on we switched our workflow from sharing files in a Dropbox%
+\footnote{Dropbox is a cloud based file hosting provider. See \url{http://www.dropbox.com}}
+to versioning it with Git.
+It was a real revelation to me, and I don't know how we managed before.
+This becomes especially obvious when we are dealing with issues that date from before that time and there isn't any Git history present to inspect them.
+
+There are several steps in preparing a scholarly edition, which are partly interdependent and are partly distributed between different team members:
 \begin{itemize*}
     \item Entering the music
     \item Setting up the score layout and the style sheets
@@ -905,50 +891,191 @@ There are several steps in preparing a scholarly edition, which are partly inter
     \item Authoring critical reports
     \item Layout of the main volume and prepress
 \end{itemize*}
-With the described plain text tools all of these steps can be done within one code base.
-While it would traditionally also be done in one file there is a major difference: the code base is shared and continuously accessible by everybody, the single (binary) score file can only be shared consecutively, with complicated and risky workflows to avoid unrecoverable conflicts.
-The technical infrastructure doesn't impose any restrictions on the workflow and order of the steps beyond what is immanent in the task (it doesn't make sense for example to fine-tune the engraving while there are still revisions in process that might change the content).
-When an editor finds an error just before the edition is sent to the printer he may simply correct it \emph{in the shared code base}, and the engraver can immediately check for side-effects and fix these if necessary.
+
+First of all the complete process can be done within one code base.
+Any collaborator can edit anything at any time, usually without stepping on others' feet, as described in the “Versioning” \fref{chap:pt_version-control}.
+Traditionally one would work with one file (or one for each piece/movement) and would have to take great care about potential version conflicts.
+Basically these files would have to be completely processed by one person before being passed on to the next in the chain.
+
+An important side-effect of this situation is that tasks can be shared in a much more flexible way.
+As anybody can edit everything he can also handle any task he feels able or has time to.
+Most of us aren't completely single-minded and specialised on a single skill.
+My main part in this project is being one of the scholarly editors, but I have also entered parts of the music and can do a lot for pinpointing typographical issues.
+The guy who is responsible for the fine-engraving has a good eye on his own and can also spot questionable issues in the musical text.
+
+We have developed the concept of a “draft mode” that allows us to visualize (i.\,e.\ mostly colorize) issues and have some kind of “in-source” communication through messages that are written to the command line.
+When a piece is finished we just switch to “publication mode” and have our print-ready scores.
+Comments in the source files increase the impact of this concept, but the next project will take this a major step further.
+Currently I'm developing a system that will allow comprehensive annotations inside the source files.
+This way we'll have automatic lists of \textsc{todo}-items, issues and questions etc.\ that are generated while compiling the scores.
+And ultimately we'll have the entries for the critical report right in the source files!
+
+As all general layout and styling is done in central style sheets it isn't an issue at all to keep the different scores consistent. We don't even have to decide upon it before starting work.
+All changes to the layout are automatically propagated to all scores, and it would for example be possible that someone is assigned the task to develop the general appearance of the publication \emph{while the others are working on the edition}, always having the latest version of the musical text as example material.
+That way the edition can also automatically benefit from improvements of LilyPond that are released along the way.
+Only when starting the final beautification would the development of the layout settings have to stop---but that's a restriction that is inherent in the matter and not imposed by the technical infrastructure.
+
+While this isn't that important for small individual scores it is a major “selling point” for ambitious and large-scale projects.
+And I would love to discuss and experience the impact this could have on working on a scholarly edition with numerous volumes and multiple editors.
+Remember what I wrote about plain text files outliving operating systems' lifecycles?
+Such a system could very well be the perfect match for a long-running critical edition.
 
 \section{Book preparation}
 The same is true for the preparation of books, and of compilation books from more than one author in particular.
 All collaborators can seamlessly work together in a shared code base: the author(s), editors, typesetters, and maybe additional specialists preparing figures or music examples.
-A collaborative set-up provides for an efficient workflow between an author and his editor, and it can be particularly useful when proof-reading or documents or polishing them linguistically with many assistants.
+A collaborative set-up provides an efficient workflow between an author and his editor, and it can be particularly useful when proof-reading or documents or polishing them linguistically with many assistants.
+It has to be said that such a work-flow is already standard in many scientific journals in other disciplines.
+
+Of course the musical edition described in the previous section is also a “book” in this sense, as the scores are created with LilyPond and included in a \LaTeX{} document.
+The complete volume can be compiled at any time and reflects the current state of the development of the scores.
+
+
+\section{“Crowd Editing”}
+\label{sec:pt_crowd-editing}
+
+It isn't really common yet because it can exclusively be inspired by the use of workflows that are driven by version control.
+But with the capability to manage contributions by a (practically) unlimited number of participants it is possible to extend the concepts from the the two previous sections and create musical scores with a large community.
+This way the workload can be “clustered” among a potentially great number of people, each one according to his capabilities and special knowledge (about specific instruments for example), and large quantities of music entered in astonishingly little time.
+While this doesn't save actual working hours it can be used to process them in parallel.
+Even in a large-scale symphonic score each single part is quite manageable, and if there is one contributor for each part (or better: two contributors for two parts who do a peer-review before submitting) the score should grow rapidly.
+I know of at least one semi-professional choir that has by now switched to preparing its scores in such a social manner.
+
+In such a context the aspect of programmability may once more become important.
+While the individual contributors don't have to be programmers at all the “project” can be extensively programmed.
+It can gain advanced and specialized functionality, benefit from automatic project management or just from giving the “ordinary engraver” an easy-to-use interface.
 
 \section{Single-source Publishing}
 \label{sec:pt_single-source-publishing}
 
 Plain text files are a good starting point for creating documents for different output formats.
 One example already discussed is the possibility to create several different scores (or parts) with LilyPond from a single set of input files.
-But this can quite easily be extended to generating documents for printing, beamer presentation, mobile devices and web pages from single sources.
-
-\todo{more/better examples?}
-
-\section{“Crowd Editing”}
-\label{sec:pt_crowd-editing}
-
-A last use case is something that isn't really common yet because it can exclusively be inspired by the use of workflows that are driven by version control.
-With the capability to manage contributions by a (practically) unlimited number of participants it is possible to create musical scores with a large community.
-This way the workload can be “clustered” among a potentially great number of people, each one according to his capabilities and special knowledge (about specific instruments for example), and large quantities of music entered in astonishingly little time.
-While this doesn't save actual working hours it can be used to process them in parallel.
-Even in a large-scale symphonic score each single part is quite manageable, and if there is one contributor for each part (or better: two contributors for two parts who do a peer-review before submitting) the score should grow rapidly.
-In such a context the aspect of programmability may once more become important.
-The “project” may be supported by extensive programming without the individual contributor knowing anything about it---it may even be explicitely programmed to expose the individual to a quite simple interface.
+I don't have concrete experiences to present but it's inherent in the nature of plain text files that they are good for use in single-source publishing.
+This can easily apply to generating documents for printing, beamer presentation, mobile devices and web pages from single sources, to name just a few.
+I think---and hope---that this can also be made very fruitful in the light of current discussions to present scholarly editions in modern ways beyound printed scores.
 
 
 \chapter{Where To Go From Here?}
 \label{chap:pt_where-to-go-from-here}
 
-\todo{Recommended introductory material for the individual aspects}
+What I've laid out for you over the previous few dozen pages of course only slightly scratches the surface.
+You have seen a few examples that were necessary to get an impression of the material, but in general I talked on a rather conceptual level.
+This document isn't intended for and can't be used to actually start working with the tools in question.
+It could be the opening chapter of a valuable book on document authoring but I don't see anybody having spare time to write the rest of it \dots
+
+Therefore I'm going to provide you with references to further reading on the different subjects.
+If you know of or find interesting introductions on any level feel free to tell me so I can extend the list.
+
+\section*{Plain Text}
+
+\sloppy \url{http://www.terminally-incoherent.com/blog/2012/05/21/why-plain-text/} is a blog post that I have read only after having written this document. I think it tells you everything that I have written on the characteristics of plain text files, but from a different perspective and maybe even more urgent and convincing.
+
+\section*{Version Control}
+
+\url{http://pages.cs.wisc.edu/~driscoll/software/vcs/index.html} gives a visually rich introduction to the concepts of version control.
+
+\paragraph*{Git}
+\begin{itemize*}
+\item \url{http://git-scm.com/book}\\
+The official documentation
+\item \url{http://sixrevisions.com/resources/git-tutorials-beginners/}\\
+List with presumably easy introductions
+\item \url{http://www.vogella.com/articles/Git/article.html}\\
+Long introduction with comprehensive usage examples
+\end{itemize*}
+You get Git at:
+\begin{itemize*}
+\item \url{http://git-scm.com}\\
+The official source.\\
+On Linux you will probably have it in your software repositories\\
+On Windows and Mac you can also get it bundled with one of the GUI tools, for example from \url{https://github.com} or \url{https://www.bitbucket.org}.
+\end{itemize*}
+There are numerous GUI tools around, a number of them collected on \url{http://git-scm.com/downloads/guis}.
+But I recommend starting to use it on the command line because this way you will get a better understanding of what's happening exactly.
+
+\section*{LilyPond}
+
+The main resource for LilyPond is its website \url{http://www.lilypond.org}. 
+There you'll find the software as well as a truly huge manual.
+Of particular interest for now are the Introduction%
+\footnote{\url{http://www.lilypond.org/introduction.html}}
+and the Learning Manual%
+\footnote{\url{http://www.lilypond.org/doc/v2.16/Documentation/learning/index.html}}.
+
+A most welcome resource is the \texttt{lilypond-user} mailing list%
+\footnote{\url{https://lists.gnu.org/mailman/listinfo/lilypond-user}}
+where you can find tons of information and get help with your current problems.
+Two new resources are the openLilyLib project%
+\footnote{\url{http://www.openlilylib.org}}
+(where you'll also find information on \texttt{musicexamples}, \lilyglyphs and \texttt{lilypond-doc}),
+and the \emph{Scores of Beauty} blog%
+\footnote{\url{http://lilypondblog.org}}.
+
+\section*{\LaTeX}
+
+Given the age of the \LaTeX{} project it is not surprising that there exists a wealth of documentation and tutorials about using it.
+Therefore I will only direct you to the project's homepage \url{http://latex-project.org} and especially the page \url{http://latex-project.org/guides/} there which is a collection of links to resources that have been selected by the project members themselves.
+
+For German readers I can additionally recommend one book: Joachim Schlosser, \emph{Wissenschaftliche Arbeiten schreiben mit \LaTeX} (\url{http://www.latexbuch.de}).
+It has helped me getting into the spirit of \LaTeX{} by taking the perspective of an academic writer and providing information (with the necessary amount and complexity) to start authoring scholarly documents.
 
 \appendix
 \chapter{Appendix}
 
+\section{Comparison of File Formats}
+\label{sec:pt_comparison-of-file-formats}
+In this appendix I'd like you to contemplate a little bit over a few raw listings of file contents of different programs.
+We start with a minimal score created with LilyPond
+
+\begin{musicExampleNonFloat}
+\lilypondSFE{examples/fileformats/c1-lilypond}
+\caption{A minimal LilyPond score, with its \emph{full} listing: \texttt{\{ c' \}}}
+\end{musicExampleNonFloat}
+
+On the following two pages you see the beginning of the printouts of the files that form a comparable mini-score in Finale\texttrademark{} and Sibelius\texttrademark.
+I restricted it to the first of 15 and 11 pages.
+
+\bigskip
+After that we'll do the same with a text document whose \LaTeX{} source looks like this:
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\documentclass{article}
+\begin{document}
+	\section*{Überschrift}
+	Das ist ein Text mit \emph{hervorgehobenem} Element.
+\end{document}
+\end{lstlisting}
+
+So after the score files you'll see the text document and then its corresponding document files (first pages) from:
+
 \begin{itemize}
-\item \todo{Binary/plain text file comparisons}
-\item \todo{\lilyglyphs example document}
-\item \texttt{musicexamples} example document
-\end{itemize}
-\includepdf[%
-	pages=-]{../../../musicexamples/documentation/example-document/xmp-Example}
+\item Word 2007 (.docx)
+\item Word 1997--2003 (.doc)
+\item Word 2003 XML (.xml)
+\item OpenOffice (.odt)
+\item OpenOffice „Flat XML“ (.fodt)
+\end{itemize} 
+
+You may notice that both Word and OpenOffice provide \textsc{xml} files that somehow qualify as plain text files in that they \emph{can} be read by a human.
+But you also see that the content information is really buried inside all that markup, so it isn't realy usable as a plain text format.
+Besides these formats aren't practical for versioning as they contain lots of “volatile” information like timestamps or window positionings. 
+In my experience such a file may be modified considerably just by opening it on another computer.
+
+\includepdf{examples/fileformats/finale}
+
+\includepdf{examples/fileformats/sibelius}
+\includepdf{examples/fileformats/minimal-text}
+\includepdf{examples/fileformats/c1-word-docx}
+\includepdf{examples/fileformats/c1-word1997-2003-doc}
+\includepdf{examples/fileformats/c1-word2003-xml}
+\includepdf{examples/fileformats/c1-OOo}
+\includepdf{examples/fileformats/c1-OOo-flat-xml}
+
+\section{musicexamples Document}
+
+On the following pages you'll see a complete document with all sorts of music examples in it.
+
+\fullPageLilypondExample{../../../musicexamples/documentation/example-document/xmp-Example}
+    {\texttt{musicexamples} example document}
+    {\label{xmp:musicexamples-document}}
+
 \end{document}
