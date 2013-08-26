@@ -25,32 +25,26 @@
 \documentclass[../../LilyPond-Tutorials]{subfiles}
 
 \begin{document}
-\parttitle[Urs Liska]{Plain Text Files in Music}
+\parttitle[Urs Liska]{Arbeiten mit Textdateien für Musiker und Musikwissenschaftler}
 \begin{authorAbstract}{Urs Liska}
-Most musicians and musicologists are used to editing text documents and musical scores with graphical \textsc{wysiwyg} tools%
-\footnote{What You See Is What You Get---such programs provide an editing environment where the document is displayed identically to the way it will be printed.}.
-and wouldn't even consider a different option at all.
-This paper discusses an approach to authoring musical documents that is based on editing \emph{plain text files} instead.
-The described concepts, tools, and workflows have significantly changed my life as a document author, and I  wholeheartedly endorse them because I strongly believe in their unique and substantial advantages.
+Die meisten Musiker und Musikwissenschaftler bearbeiten Textdokumente und Partituren oder Notenbeispiele mit grafischen Programmen, ohne eine grundsätzliche Alternative überhaupt in Erwägung zu ziehen.
+Der vorliegende Aufsatz zeigt demgegenüber einen Ansatz, der auf der Bearbeitung reiner Textdateien basiert.
+Dieser Ansatz ermöglicht neuartige Wege gemeinschaftlichen Arbeitens, Forschens und Publizierens, indem jahrzehntelange Erfahrungen aus der Softwareentwicklung fruchtbar gemacht werden können.
+Die beschriebenen Konzepte, Werkzeuge und Workflows haben mein Leben als Autor von Text- und Partiturdokumenten grundlegend verändert, und es ist mir ein großes Anliegen, sie der musikwissenschaftlichen Gemeinschaft zur Diskussion zu stellen.
 
-The plain text approach is practically non-existent in the humanist disciplines or in the music business, while being de facto standard in many natural and computer sciences.
-Working with plain text based tools indeed requires a certain shift in mind-set for people who aren't already familiar with the corresponding working paradigms.
-And it can't be denied that the learning curve is considerable.
-But this investment is absolutely justified because on the long run it greatly benefits productivity ---starting from superior result quality, extending through robust and reliable storage forms, up to workflow options unimaginable otherwise.
-Reading and writing music, playing an instrument, investigating a manuscript source---all this involves a very long and intense learning curve, and we mastered them as a matter of course in order to become the professionals we are.
-So don't be afraid!
+\sloppy In den Geisteswissenschaften ist textbasiertes Arbeiten praktisch unbekannt, während es in vielen natur- und computerwissenschaftlichen Disziplinen zum Standard gehört.
+Tatsächlich erfordert das Arbeiten mit Textdateien ein grundlegendes Umdenken, und es kann nicht geleugnet werden, dass dies mit einer nennenswerten Lernkurve verbunden ist.
+Diese Investition erscheint mir jedoch mehr als gerechtfertigt, da sie auf lange Sicht die Produktivität ebenso erhöht wie die Qualität der Ergebnisse.
 
-This document aims to give you an overview of the
-power that text based approaches can give you.
-It is not meant as a detailed description or a guide
-to using the software mentioned --- for that, please refer
-to the suggested reading at the end.
+Der vorliegende Text ist eine stark verkürzte Fassung des englischen Originals, das unter \url{http://lilypondblog.org/2013/07/plain-text-files-in-music/} erhältlich ist.
+Er verzichtet nach Möglichkeit auf ausführliche Erläuterungen (die im Original nachvollziehbar sind) und spitzt die Argumentation deutlicher auf die musikwissenschaftliche Perspektive zu.
 
-The software packages I will introduce you to on the following pages are:
+Die wesentlichen Softwaresysteme, die ich auf den folgenden Seiten vorstellen -- in deren Benutzung ich aber nicht einführen -- werde, sind:
+
 \begin{itemize*}
-\item \emph{Version Control Systems} -- that keep your work under control
-\item \emph{LilyPond} -- the program that lets you engrave beautiful scores
-\item \emph{\LaTeX} -- the professional typesetting engine for text documents
+\item \emph{Versionsverwaltung} -- behält die Übersicht über Ihre Arbeit
+\item \emph{LilyPond} -- das Notensatzprogramm
+\item \emph{\LaTeX} -- das professionelle Textsatzsystem
 \end{itemize*}
 
 \end{authorAbstract}
