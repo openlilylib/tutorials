@@ -49,256 +49,127 @@ Die wesentlichen Softwaresysteme, die ich auf den folgenden Seiten vorstellen --
 
 \end{authorAbstract}
 
-\chapter{Plain Text Format}
+\chapter{Textdateien als Grundlage}
 \label{chap:pt_plain-text-format}
-Who on earth would voluntarily enter music as a text file?
-Aren't these people just nerds who think that only what hurts can be good?
-Isn't it \emph{natural} to edit musical scores within a graphical user interface?
+Im Gegensatz zu \textsc{wysiwig}-Programmen, die eine grafische Ansicht von Dokumenten bieten, ist bei der Bearbeitung von Textdateien das Ergebnis nicht unmittelbar ersichtlich -- der „Quelltext“ muss erst in ein grafisches Dateiformat „übersetzt“ oder „kompiliert“ werden.
+Weshalb sollte man sich nun diese Abstraktionsebene aufbürden, wo es doch offensichtlich schnell, einfach und effizient ist, ein Dokument in seinem endgültigen Erscheinungsbild zu bearbeiten?
+Ist es nicht nachgerade \emph{natürlich}, eine Partitur grafisch mit einer Maus zu bearbeiten?
 
-Well, using graphical user interfaces to edit a document with a mouse or other pointing device is obviously quick, effective and easy.
-However, there are lots of reasons why it \emph{is} a good idea to edit and store documents in text files.
-Text based work avoids several fundamental problems that other approaches share, and it opens up a whole range of advanced options that are only available in this context.
-And it is good to know that nowadays there are editors available that significantly streamline your work with text files.
+Nun, es gibt eine Reihe guter Gründe, Dokumente als Textdateien zu speichern und zu bearbeiten.
+Textbasiertes Arbeiten umgeht einige grundlegende Probleme anderer Ansätze, und es eröffnet Perspektiven auf ein breites Spektrum erweiterter Möglichkeiten.
+Und schließlich gibt es heutzutage Bearbeitungsprogramme, welche den Umgang mit Textdateien erheblich vereinfachen.
 
-Firstly, let us consider a number of features working with plain text files offers.
+Einleitend werde ich einige grundlegende Aspekte der Verwendung von Reintextformaten erläutern.
 
-\section{Transparency and Control}
+\section*{Transparenz und Kontrolle}
 \label{sec:pt_transparency-and-control}
-Have you ever wondered how your notation program internally manages the contents you entered, especially when you had the impression it maliciously made fun of you?
-One of the reasons I turned my back on graphical notation programs was my frustration with being completely at the mercy of the software with regard to my personal layout decisions.
-I can't recall (and actually don't want to) how often I ran through the loop of
-\begin{inparaenum}[1.)]
-\item entering music,
-\item moving items around ,
-\item applying some manual tweaks like flipping stems, breaking beams, suppressing or parenthesizing cautionary accidentals,
-\item hitting “Update Layout” and finally
-\item tearing my hair out because at least one third of my manual settings mysteriously vanished.
+Grafische Programme (insbesondere solche mit proprietären Dateiformaten) lassen sich hinsichtlich der Speicherung und Interpretation eingegebener Inhalte i.\,d.\,R. nicht in die Karten sehen.
+Einer der Hauptgründe, meinem grafischen Notationsprogramm den Rücken zu kehren, war dessen Angewohnheit, scheinbar willkürlich meine manuellen Änderungen zu überschreiben.
+
+Etwas grundsätzlicher formuliert: Bei einem grafischen Programm habe ich keinen Einblick, 
+\begin{inparaenum}[1)]
+\item in welcher Form ein mit der Maus verschobenes Element gespeichert wird,
+\item auf welche Referenz sich die Änderung bezieht und
+\item wie das Programm meine Änderung bei einer Layoutanpassung (etwa auf Grund eines neuen Zeilenumbruchs oder Papierformats) behandeln wird.
 \end{inparaenum}
+Darüber hinaus ist insgesamt nicht ersichtlich, welche Elemente manuell angepasst wurden und welche dem automatischen Ergebnis entsprechen.
 
-It's been a long while since I had used graphical software, so maybe things have improved a lot, but the fundamental fault is still valid: 
-I am at the mercy of the software and can't see or control how it represents the content internally.
-A friend finally stopped using (a later version of) the same graphical program when he fixed one missing accidental in a score he had earlier tweaked to perfection---and this accidental caused the whole layout to break irreversibly.
-With a graphical program there is no notion of the manual changes against the default result, so the only resort is to “undo” and hope this will fix it \dots
+In einer Quelltextdatei hingegen ist unzweideutig definiert, welche manuellen Änderungen beabsichtigt sind, diese sind von Jedermann nachzulesen.
+Und sollte einmal eine Änderung erhebliche Nebenwirkungen auf das Layout haben, so kann jede einzelne Modifikation gezielt verändert oder zurückgenommen werden -- während ich im grafischen Programm lediglich die Wahl habe, mein Glück mit einer \emph{Undo-}Funktion zu versuchen oder das Problem durch \emph{weitere} Korrekturen in den Griff zu bekommen.
 
-Besides this risk of losing work I also can't usually tell how the program interprets changes I've made.
-For example, if I add a description text somewhere near the violin staff, will it follow the music when the page layout changes or will it stay in the same position relative to the corner of the page?
+Der Preis dafür ist die Notwendigkeit, den Quellcode händisch einzugeben und dies zunächst zu erlernen.
+Doch lohnt sich der Aufwand auf lange Sicht.
 
- If I edit a plain text file instead I'm completely in control over all these issues.
-If I tell the program to break a beam or to draw a slur above the note it is explicitely and reproducibly defined and readable by anybody.
-There is nothing hidden in “settings” dialogs or even unreadably buried somewhere in the file as the result of dragging something with the mouse.
-If I manage to break something (which of course happens) I can review what I did, compare to the last working version%
-\footnote{See the “version control” \fref{chap:pt_version-control}}
-and understand and fix the issue.
-
-There is a price for this, namely having to enter code by hand and learning how to do that, but it is very rewarding on the long run.
-And being in control just \emph{feels} better \dots
-
-\section{Content, Meaning and Appearance}
+\section*{Inhalt, Bedeutung und Erscheinungsbild}
 \label{sec:pt_separation-content-meaning-appearance}
-Through the overwhelming presence of \textsc{wysiwyg} applications we have got used to the impression that the \emph{visual appearance} of a document is identical to its \emph{content}.
-But this is actually a quite shortsighted assumption.
+Die auf Grund der Allgegenwart grafischer Programme verbreitete Vorstellung, das \emph{visuelle Erscheinungsbild} eines Dokuments sei gleichbedeutend mit seinem \emph{Inhalt}, ist ein Trugschluss.
+Tatsächlich handelt es sich dabei um zwei verschiedene Ebenen, die nur üblicherweise unter einer Benutzeroberfläche vereint sind.
+Ein Text in einer Schriftgröße von 16\,Punkt etwa, der fett und kursiv dargestellt ist, kann auf verschiedenste Weise formatiert sein:
+\begin{inparaenum}[1)]
+\item als Absatzvorlage,
+\item als Zeichenvorlage,
+\item als manuelle Formatierung,
+\item als Absatz- mit zusätzlicher Zeichenvorlage oder
+\item als beliebige Mischung dieser Optionen.
+\end{inparaenum}
+Je nach Kontext können unterschiedliche Methoden adäquat sein, aus dem Erscheinungsbild einer grafischen Benutzeroberfläche wird jedoch die verwendete Formatierungsart nicht deutlich.
 
-If you look at that text document:
+Im Quelldokument eines textbasierten Programms hingegen wird der Text explizit \emph{ausgezeichnet}.
+Der Vorteil der strikten und sauberen Trennung zwischen dem Inhalt und dessen Erscheinungsbild überwiegt den Umstand, dass das Erfassen des Inhalts scheinbar schwieriger ist, wenn man bei einem Konstrukt wie „\texttt{Schuberts \textbackslash werktitel\{Winterreise\}}“ den Auszeichnungsbefehl mental ausblenden muss.
 
-\begin{center}
-\noindent\shadowbox{\parbox{.8\textwidth}{%
-\Large \textbf{\textsf{My new chapter}}
+Im Falle von Partituren ist die Sache ähnlich gelagert:
+Eine textbasierte Partitur-Eingabedatei enthält eine Repräsentation des musikalischen \emph{Inhalts}, während das \emph{Erscheinungsbild} erst während des Übersetzungsvorgangs entsteht und in der resultierenden \textsc{pdf}-Datei zur Verfügung steht.
+Diese Kontrolle über die Trennung von Inhalt, Bedeutung und Erscheinung ist eine wichtige Grundlage für die Arbeitstechniken, auf die ich im weiteren Verlauf näher eingehen werde.
 
-\medskip
-\normalsize \textbf{\textsf{With a section}}
-
-\medskip
-\small This is the \textbf{\textsf{continuous}} text with some \textbf{\textsf{emphasized}} words.}
-}\end{center}
-
-\noindent you will notice that there are several parts formatted in sans-serif bold face of different sizes.
-You may guess that the author has applied several style sheets to get this appearance, but to verify it you'd actually have to select the texts and look into the corresponding dialogs or toolbox elements.
-Only then you can see whether the author manually formatted the text, applied paragraph styles or character styles.
-He may even have applied character instead of paragraph styles to format the headings.
-
-The corresponding \LaTeX{} source file would look like:
-
-\begin{lstlisting}[language={[LaTeX]TeX}]
-\documentclass{article}
-\newcommand{\terminus}{\textbf{\textsf{#1}}}
-\begin{document}
-    \chapter{My new chapter}
-    \section{with a section}
-    This is the \terminus{continuous} text with
-    some \textbf{\textsf{emphasized}} words.
-\end{document}
-\end{lstlisting}
-
-While this may look complicated on first sight it actually is much clearer because it distinctly shows you the content \emph{and} the author's intentions.
-The \cmd{documentclass} is something like a document template, but much more powerful.
-\cmd{terminus} is defined as a character style applying bold (“\dots bf” for BoldFace) and sans-serif (“\dots sf” for Sans-Serif) to its content (“\#1”).
-Inside the document body (enclosed by the \cmd{begin} and \cmd{end} statements) you can see the \emph{content} along with \emph{semantic markup}.
-The two headings use explicit sectioning commands which are (for now) equivalent to paragraph styles.
-The two bold words in the text line are formatted differently: 
-the first one  is enclosed by our \cmd{terminus\{\}} character style while the second one is manually formatted as bold and sans-serif.
-This mixture of formatting techniques is highly disadvised and only used for the sake of the example.
-But you may notice that in the plain text file this “problem” is immediately obvious while the graphical program actually hides away such inconsistencies.
-
-\medskip
-If we think about musical scores we have to come to a very similar conclusion.
-I began this chapter with the rhethorical pretention that it is “natural” to edit a score in a graphical way.
-But in fact that's not entirely true because a score isn't a graphical object like a painting
-but rather a graphical \emph{representation} of the musical \emph{content}.
-
-If you consider the following minimal score and its (complete) LilyPond input file:
-\begin{multicols}{2}
-\vfill
-\begin{musicExampleNonFloat}
-\begin{quote}
-\lilypondSFE{examples/minimal-score}
-\end{quote}
-\end{musicExampleNonFloat}
-\vfill
-\columnbreak
-
-\begin{centering}
-\begin{lstlisting}[language={[LaTeX]TeX}]
-{
-  \time 3/4
-  \key es \major
-  \clef bass
-  es8 f8 g8 as8 f8 es8
-}
-\end{lstlisting}
-\end{centering}
-\end{multicols}
-
-\noindent you can see that the source on the right side completely defines the \emph{musical content} of the score:
-a time signature, a key definition, a clef, and a few notes with durations.
-Of course the page layout is also an inseparable part of the score document, but on a conceptual level it is completely separate from the musical content.
-Without going into more detail here you should note that in LilyPond's plain text file you have complete control over the separation of content, meaning and appearance.
-While this at first may seem somewhat abstract it is actually a very important point when it comes to preparing different output from one source.
-
-\section{Readability and Stability of Text and Binary Files}
+\section*{Lesbarkeit und Stabilität von Text- und Binärdateien}
 \label{sec:pt_readability-stability}
-In the previous section you have seen examples of plain text files for a text and a score document.
-OK, I admit that it takes some time getting used to filtering out the markup commands in a text file mentally.
-But I can't emphasize enough that you actually can \emph{read} that file \emph{at all}.
+Textdateien sind lesbar, Binärdateien nicht -- diese schlichte Feststellung hat grundlegende Implikationen für den Umgang mit digitalen Dokumenten.
 
-Does this bold statement surprise you?
-Don't you think that you can immediately conceive the content of the graphical score, much faster and easier than the source file that you first have to read and interpret?
-Well, then you are again exchanging the real document file and the graphical representation the graphical programs expose to you.
+Während die Eingabedatei eines (guten) Reintextformats präzise und lesbar den Inhalt des Dokuments beschreibt, enthält die proprietäre Binärdatei eines kommerziellen Programms einen unverständlichen Datenstrom, der nur von dem entsprechenden Programm oder einem geeigneten Importfilter eines anderen Programms interpretiert werden kann.
+Inzwischen bieten zwar viele Programme (so auch \emph{Word} und \emph{OpenOffice}) die Möglichkeit, Dokumente in \textsc{xml}-Formaten abzuspeichern, die ebenfalls zur Gruppe der Textdateien gehören.
+Das Verhältnis von tatsächlichem Inhalt und zusätzlichem \emph{Markup} ist dabei jedoch so ungünstig, dass diese praktisch nicht mehr lesbar sind%
+\footnote{Im Anhang der englischen Fassung dieses Aufsatzes sind eine Reihe von Rohdateien einfacher Text- und Partiturdokumente abgedruckt, deren Studium an dieser Stelle nachdrücklich empfohlen wird.}.
 
-Please take the time and have a look at \fref{sec:pt_comparison-of-file-formats}.
-That's what the file contents from the previous examples actually look like.
-After skimming through the Word\texttrademark, OpenOffice\texttrademark, Finale\texttrademark{} and Sibelius\texttrademark{} files you should reconsider the “overly complex” \emph{source code listings} of the previous section.
-Now you'll probably see why I emphasize that you can \emph{read} \LaTeX{} and LilyPond files, isn't it?
-You may have noticed that both Word\texttrademark{} and OpenOffice\texttrademark{} also have an alternative file format that is stored in “plain \textsc{xml}”.
-While a human actually \emph{can} read these files the actual content is very deeply buried inside them and practically inaccessible to the human eye.
-	
-The fact that plain text files are human readable has two major implications:
+Die Tatsache, dass Textdateien menschenlesbar sind, hat zwei wesentliche Implikationen:
 
-\paragraph{Recovery after file corruption}
-There are several ways that can make a file unusable, the most common being accidental deletion, a general disk failure or the crash of a program leading to an inconsistent state of the file (the latter fortunately becoming increasingly rare nowadays).
-Usually such files can be partially retrieved with special tools, but the picky thing is the “partially”.
-If you have a binary file that can only be read by its original program the whole file is now unusable, even if the corrupted portion is very small.
-From a corrupted plain text file on the other hand you will be able to retrieve everything \emph{as content} that is still there at all.
-And with some luck you may even guess the missing pieces.
-Sometimes it will still be more efficient to start again from scratch, but depending on the nature of your project this characteristic of plain text files may actually be a life-saver.
+\paragraph{Datenrettung}
+Beschädigte Dateien können heutzutage auch dann \emph{teilweise} wiederhergestellt werden, wenn das Dateisystem zerstört wurde oder die Daten versehentlich gelöscht wurden.
+Binärdateien jedoch, die nicht \emph{vollständig} rekonstruiert werden können, sind i.\,d.\,R. komplett verloren, selbst wenn nur ein Bruchteil der Datei beschädigt ist.
 
-\paragraph{Restoring “ancient” files}
-As programs mature they modify their file formats.
-Usually programs can still open the files from older program versions, but that isn't an endless option.
-With the majority of programs you would need to have some older version around to be able to open “ancient” files.
-And with new operating systems chances become increasingly worse to find one.
-Generally speaking, when software becomes unsupported its documents tend to become unusable.
+Bei der Wiederherstellung korrupter Textdateien hingegen kann praktisch alles, was rekonstruierbar ist, auch wiederverwendet werden, selbst, wenn man nur noch die bloßen Bytes der Datenträgeroberfläche abscannen konnte.
+Mit etwas Glück lassen sich die fehlenden Puzzleteile leicht ergänzen.
 
-This may also happen with programs that store their data in plain text files.
-But as the file format is usually much better documented it is more likely that you will find a conversion option still available.
-And if everything fails and you have a file but no dedicated editor you still have the plain text and free access to it.
+\paragraph{Verwendung „antiker“ Dateien}
+Mit der Weiterentwicklung von Software ändern sich deren Dateiformate.
+Auch wenn Programme üblicherweise Dateien ihrer Vorgängerversionen öffnen können, wird deren Unterstützung irgendwann eingestellt, so dass zum Bearbeiten alter Dateien eine ältere Version des Programms erforderlich ist.
+Bei einem Wechsel des Betriebssystems verschärft sich dieses Problem erheblich.
+Daten werden in aller Regel irgendwann unbenutzbar.
 
-\section{Editor Independence}
+Programme, die mit Textdateien arbeiten, unterliegen dieser Gesetzmäßigkeit ebenso, doch sind diese Dateiformate meist wesentlich besser dokumentiert, so dass die Wahrscheinlichkeit einer verfügbaren Konvertierungsmöglichkeit erheblich größer ist.
+Und sollte alles nichts helfen, bleibt zumindest noch die „rohe“, menschenlesbare und frei zugängliche Datei, für die prinzipiell jederzeit ein neues Bearbeitungs- oder Konvertierungsprogramm geschrieben werden kann.
+
+Textdatei-basierte Projekte können auf diese Weise -- insbesondere in Verbindung mit Versionskontrolle (siehe das nächste Kapitel) -- ungeahnte Zeiträume einer Vielzahl von Computergenerationen umspannen.
+Dies macht diese Herangehensweise besonders geeignet für akademische Zwecke.
+
+\section*{Editor-Unabhängigkeit}
 \label{sec:pt_editor-independence}
-Plain text workflows separate the tasks of editing, processing and displaying documents.
-This way you are not restricted to \emph{the one} application the (commercial) vendor imposes on you, but you are free to chose any editing environment you like, consider appropriate or just feel comfortable with.
-There are programs that try to integrate all parts of a workflow, just like the \textsc{wysiwyg} tools do---but it is your free choice to use them or not.
-
-You can even edit a project with different tools at a time.
-For example it might be handy to be able to edit a document with any text editor on your smartphone, or just going to a public internet access point and send yourself an email with a sketch---both of which you would then process to a pdf document when you are home again.
-
-Another interesting application is the use of plain text as input to web forms.
-Many web forms, e.\,g.\ in forums, allow you to enter your posts in \emph{Markdown}%
-\footnote{\url{http://daringfireball.net/projects/markdown/}},
-a minimalist plain text language, and convert them to formatted \textsc{html}.
-And recently \emph{Wikipedia} added support for LilyPond code that will be rendered as music examples%
+Textbasierte Arbeitsumgebungen trennen das Bearbeiten, Verarbeiten und Anzeigen von Dokumenten.
+Auf diese Weise ist man nicht an \emph{die eine} Anwendung gebunden, die vom (kommerziellen) Hersteller vorgegeben ist, sondern kann je nach Kontext beliebige Bearbeitungsprogramme verwenden.
+Beispielsweise kann an einem Projekt gleichzeitig mit verschiedenen Werkzeugen gearbeitet werden, so können Skizzen ohne Weiteres auf dem Smartphone oder in einem Internetcafé notiert und später mit den Hauptdokumenten verbunden werden.
+Ebenso ist das Textformat ein geeignetes Mittel, um Dokumente in einem Internetbrowser notieren zu können.
+So gibt es inzwischen eine Reihe von Projekten, die aus Texteingabe im Browser Notation erzeugen können, am prominentesten die neue Wikipedia-Erweiterung%
 \footnote{\url{http://en.wikipedia.org/wiki/Help:Score}}.
 
-\section{Programmability}
+\section*{Programmierbarkeit}
 \label{sec:pt_programmability}
-Plain text files can be edited not only by any text editor but by \emph{anything} that can edit text files---which makes it accessible to about any programming language you may think of.
-You are not restricted to any scripting interface the vendor graciously provides you, but you can apply any imaginable operations to your source files: 
-analyze them,
-process them,
-or even computationally generate them from scratch.
-There are many possible applications, from applying contrapuntal operations or algorithmic composition up to managing music examples in a database.
+Textdateien können nicht nur mit jedem Texteditor, sondern auch mit jeder Programmiersprache bearbeitet werden.
+Die meisten Anwendungsprogramme bieten heute Schnittstellen für Skriptsprachen, mit deren Hilfe zusätzliche Funktionalität ergänzt werden kann.
+Im Gegensatz zu diesen, vom Hersteller explizit vorgegebenen, Möglichkeiten können Textdateien jedoch in jeder nur erdenklichen Weise programmatisch bearbeitet werden: Man kann den Inhalt analysieren oder verändern, oder sie auch gänzlich neu generieren.
+Die Liste möglicher Anwendungen ist lang und reicht (bei Partituren) von kontrapunktischen Operationen über algorithmische Komposition bis hin zur Verwaltung umfangreicher Beispielsammlungen in einer Datenbank (mit Internetzugriff).
 
-If you have never programmed and don't intend to learn it you may think that's a rather academic feature.
-But this isn't true at all.
-For example I'm currently working on the infrastructure for a large orchestral score where those who enter the music are only exposed to small segments of individual instrumental parts.
-The full score (which is initially filled with rests) will automagically build itself and use whatever segments have already been entered.
-This is an example of an approach where the administrators of a project \emph{explicitely} use programming to allow sophisticated logic in the project while at the same time \emph{hiding the complexity} from the regular contributors.
+Von dieser Option können auch Nutzer profitieren, die selbst nie programmiert haben und es auch nicht lernen wollen.
+So kann in größeren Projekten mit Hilfe von Programmierung eine Infrastruktur geschaffen werden, welche die Komplexität vor dem Einzelnen gerade \emph{verbirgt}.
 
-
-\section{Compiling Files vs.\ Instant Feedback}
+\section*{Unmittelbares Feedback vs. Übersetzung}
 \label{sec:pt_compiling-instant}
-One thing the average \textsc{wysiwyg} user needs to get used to is \emph{not} to get instant feedback.
-Graphical programs immediately display any updates in their graphical user interface, while the text files first have to be \emph{compiled} before you can see the results of your modification.
+Einer der Aspekte textbasierten Arbeitens, an den sich Benutzer am meisten gewöhnen müssen, ist das Fehlen eines unmittelbaren visuellen Feedbacks eingegebener Änderungen.
+Grafische Programme reflektieren jegliche Änderung sofort, während die Eingabedatei des textbasierten Programms zunächst kompiliert werden muss.
 
-While this may seem cumbersome, it actually isn't a problem but an inherent advantage, and a big one!
-Other than a graphical program the compiling program can first read the input file, get a solid internal representation of the content and structure, and finally take its time to produce the best possible layout for the given content.
-It can judge the implication of a modification for the whole document and rethink the layout completely.
-The problems graphical programs are encountering are immediately visible when you (for example) try to move a figure in a 250 pages text document containing 80 figures, or when you insert some music in the middle of a longer score---tasks that don't upset text based programs at all.
+Obwohl dies zunächst umständlich erscheint, ist es ein inhärenter bedeutender Vorteil.
+Während der Arbeit im Dokumenteninhalt kann und \emph{muss} der Autor sich nicht mit Fragen des Layouts befassen, und das Programm muss nicht jede minimale Änderung sofort mit einem brauchbaren Ergebnis quittieren (was etwa bei einem größeren Textdokument mit vielen eingebetteten Abbildungen durchaus eine große Herausforderung ist und die Flüssigkeit des Arbeitens einschränken kann).
+Dafür kann sich das Programm beim eigentlichen Übersetzungsvorgang genügend Zeit nehmen, um zunächst eine interne Repräsentation der \emph{Struktur} zu erzeugen und schließlich das Layout bestmöglich zu erstellen.
 
-As a logical result from this different approach text based programs (I'm speaking of LilyPond and \LaTeX{} in particular) produce \emph{default output} of significantly superior quality than their graphical counterparts.
-While it is obviously possible to produce publication quality output with Finale\texttrademark{} or Sibelius\texttrademark{} (but not with Word\texttrademark{} or OpenOffice\texttrademark) the default output of Lilypond is practically always \emph{readable} and \emph{usable} without any further intervention.
-As a rule of thumb I'd say that you can use LilyPond scores (and \LaTeX{} documents) without bothering about layout details as long as you don't want to publish them.
-This is a significant improvement for the development process of documents and editions as you can concentrate on the real \emph{content} up to the final stage of print preparation.
+Die Konsequenz hieraus ist eine Standard-Ausgabe von erheblich höherer Qualität als bei grafischen Programmen%
+\footnote{Für einige Beispiele siehe die englische Fassung des Aufsatzes}.
+Als Faustregel kann man bei textbasierten Programmen (wie LilyPond und \LaTeX) davon ausgehen, sich erst dann mit Formatierungsdetails befassen zu müssen, wenn tatsächlich eine Veröffentlichung vorbereitet werden muss.
+Dies ist auf lange Sicht ein erheblicher Vorteil, da man sich als Autor bis zur eigentlichen Druckvorbereitung auf den eigentlichen \emph{Inhalt} des Dokuments konzentrieren kann.
 
-Look at the following example of a complex score%
-\footnote{Arnold Schönberg: Excerpt from “Gethsemane” (fragment).
-\textcopyright\,Belmont Music Publishers, permission granted for use in this tutorial.
-You may use and redistribute the example unchanged provided you keep this copyright notice in place.
-}
-and note that there isn't a single manual intervention.
-All I did to help LilyPond do its job was assigning the musical lines to the right voice numbers (1--4) so it knew whether to place stems up- or downwards and how to move items to avoid clashes.
+\bigskip
+\hrule
+\bigskip
 
-\begin{musicExampleNonFloat}
-\lilypondSFE{examples/gethsemane-1}
-\lilypondSFE{examples/gethsemane-2}
-\caption{Arnold Schönberg: Excerpt from “Gethsemane”}
-\end{musicExampleNonFloat}
-
-It is really amazing how LilyPond manages to do most things immediately right.
-While the score isn't perfect to publication quality there is \emph{nothing} that hampers reading the music when placed on the music stand.
-
-Now have a look at the following example of another complex score%
-\footnote{Arnold Schönberg: Excerpt from: “Nie ward ich, Herrin, müd” | Nr. 4 aus “6 Orchesterlieder" | für Gesang und Orchester | op. 8/1, \copyright{} 1911 by Universal Edition A.\,G., Wien/UE 3041, \href{http://www.universaledition.com/}{www.universaledition.com} [permission granted for use in this tutorial. You may redistribute the example provided you keep this copyright notice and the hyperlink in place]}
-that LilyPond did \emph{not} manage to engrave perfectly without assistance:
-
-\begin{musicExampleNonFloat}
-\lilypondSFE{examples/schoenberg-opus-8-4}
-\caption{Arnold Schönberg: Excerpt from “Nie ward ich, Herrin, müd” op.\,8,\,4}
-\end{musicExampleNonFloat}
-
-Please note that there isn't any single manual tweak to that engraving either.
-I just entered the music as in the previous example.
-Of course this is far from perfect, and the LilyPond developers would surely take this example as a source of inspiration for improvements of the engraving engine.
-But if you excuse the long phrasing slur from m.\,1 throughout 3 (which I judge no other automated engraving system would be able to get right by itself either) you will notice that the engraving is completely readable---you could put it on the music stand and play from it right away (which I can confirm from practical experience \dots).
-
-If you compare that to the attempt one of the two “big players” took at the same measures (with the same task description: entering music, assign voices correctly, no further manual tweaks), you will understand what I mean \dots
-
-\begin{musicExampleNonFloat}
-    \musicSFE[trim=2.6cm 21.5cm 1.3cm 2.9cm, clip]{examples/schoenberg-opus-8-4-finale}
-\end{musicExampleNonFloat}
-
-
-There are a few more features about working with text files that I'll write about in the LilyPond \fref{chap:pt_lilypond}, namely the potentials of using \emph{variables}, of being able to \emph{include} files and design sophisticated cascading set-ups, and finally of \emph{commenting} and \emph{documenting} source files.
-But first let's take the time to learn about what is maybe the single most important feature of plain text files: their accessibility to \emph{version control}.
+Einige weitere Vorzüge der Arbeit mit Textdateien, insbesondere die Verwendung von \emph{Variablen}, kaskadierenden Set-ups durch \emph{Inklusion} von Dateien sowie die \emph{Kommentierung} und \emph{Dokumentation} von Quelldateien, werde ich im Kapitel \ref{chap:pt_lilypond} über LilyPond (ab S.\,\pageref{chap:pt_lilypond}) vorstellen.
+Doch zunächst werde ich auf den vielleicht wichtigsten Aspekt textbasierten Arbeitens eingehen: \emph{Versionskontrolle}.
 
 \chapter{Version Control}
 \label{chap:pt_version-control}
