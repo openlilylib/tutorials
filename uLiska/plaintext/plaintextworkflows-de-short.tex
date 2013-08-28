@@ -1,38 +1,78 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                                         %
-%      This file is part of the 'openLilyLib' library.                    %
-%                                ===========                              %
-%                                                                         %
-%              https://github.com/lilyglyphs/openLilyLib                  %
-%                                                                         %
-%  Copyright 2012-13 by Urs Liska, lilyglyphs@ursliska.de                 %
-%                                                                         %
-%  'openLilyLib' is free software: you can redistribute it and/or modify  %
-%  it under the terms of the GNU General Public License as published by   %
-%  the Free Software Foundation, either version 3 of the License, or      %
-%  (at your option) any later version.                                    %
-%                                                                         %
-%  This program is distributed in the hope that it will be useful,        %
-%  but WITHOUT ANY WARRANTY; without even the implied warranty of         %
-%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the           %
-%  GNU General Public License for more details.                           %
-%                                                                         %
-%  You should have received a copy of the GNU General Public License      %
-%  along with this program.  If not, see <http://www.gnu.org/licenses/>.  %
-%                                                                         %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of the openLilyLib project
+% Copyright Urs Liska 2013
+% This file and the resulting PDF document aren't distributed under a free license.
+% You may freely redistribute both the source and the pdf 
+% without modifications, however.
 
-\documentclass[../../LilyPond-Tutorials]{subfiles}
+\documentclass[DIV=12]{scrreprt}
+
+\usepackage{fontspec}
+
+% Language settings
+\usepackage{polyglossia}
+\setdefaultlanguage{german}
+\frenchspacing
+
+% fontspec base settings
+\defaultfontfeatures{%
+	Ligatures=TeX
+}
+\setmainfont[%
+	Numbers=OldStyle,
+	]{Minion Pro}
+\setsansfont[Scale=MatchLowercase,]{Cronos Pro}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+
+% Typographical improvements
+\RequirePackage{microtype}
+\RequirePackage[ngerman]{selnolig}
+
+\linespread{1.05}
+
+\RequirePackage{lilyglyphs}
+
+\RequirePackage{xmpFancyref}
+\RequirePackage{musicexamples}
+
+% Do not restart footnote numbering for each chapter
+\RequirePackage{chngcntr}
+\counterwithout*{footnote}{chapter}
+
+% Enhanced lists
+\RequirePackage{mdwlist}
+\RequirePackage{paralist}
+
+% Multicolumn texts
+\RequirePackage{multicol}
+
+% Extended verbatim (listing) texts
+\RequirePackage{fancyvrb}
+\usepackage{listings}
+\usepackage{OLLstyles}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Options for use of hyperlinks
+% (make sure this is included last)
+\RequirePackage[%
+	colorlinks,
+	urlcolor=blue,
+	bookmarks=true,
+	bookmarksnumbered=true]{hyperref}
+
+
 
 \begin{document}
-\parttitle[Urs Liska]{Arbeiten mit Textdateien für Musiker und Musikwissenschaftler}
-\begin{authorAbstract}{Urs Liska}
+\title{Arbeiten mit Textdateien für Musiker und Musikwissenschaftler}
+\author{Urs Liska}
+\maketitle
+
+\subsection*{Vorbemerkung}
 Die meisten Musiker und Musikwissenschaftler bearbeiten Textdokumente und Partituren oder Notenbeispiele mit grafischen Programmen, ohne eine grundsätzliche Alternative überhaupt in Erwägung zu ziehen.
 Der vorliegende Aufsatz zeigt demgegenüber einen Ansatz, der auf der Bearbeitung reiner Textdateien basiert.
 Dieser Ansatz ermöglicht neuartige Wege gemeinschaftlichen Arbeitens, Forschens und Publizierens, indem jahrzehntelange Erfahrungen aus der Softwareentwicklung fruchtbar gemacht werden können.
 Die beschriebenen Konzepte, Werkzeuge und Workflows haben mein Leben als Autor von Text- und Partiturdokumenten grundlegend verändert, und es ist mir ein großes Anliegen, sie der musikwissenschaftlichen Gemeinschaft zur Diskussion zu stellen.
 
-\sloppy In den Geisteswissenschaften ist textbasiertes Arbeiten praktisch unbekannt, während es in vielen natur- und computerwissenschaftlichen Disziplinen zum Standard gehört.
+In den Geisteswissenschaften ist textbasiertes Arbeiten praktisch unbekannt, während es in vielen natur- und computerwissenschaftlichen Disziplinen zum Standard gehört.
 Tatsächlich erfordert das Arbeiten mit Textdateien ein grundlegendes Umdenken, und es kann nicht geleugnet werden, dass dies mit einer nennenswerten Lernkurve verbunden ist.
 Diese Investition erscheint mir jedoch mehr als gerechtfertigt, da sie auf lange Sicht die Produktivität ebenso erhöht wie die Qualität der Ergebnisse.
 
@@ -47,7 +87,12 @@ Die wesentlichen Softwaresysteme, die ich auf den folgenden Seiten vorstellen --
 \item \emph{\LaTeX} -- das professionelle Textsatzsystem
 \end{itemize*}
 
-\end{authorAbstract}
+\vfill
+\hrule
+\medskip
+\textcopyright{} Urs Liska 2013 -- Weitergabe des unveränderten Dokuments gestattet.
+
+\tableofcontents
 
 \chapter{Textdateien als Grundlage}
 \label{chap:pt_plain-text-format}
