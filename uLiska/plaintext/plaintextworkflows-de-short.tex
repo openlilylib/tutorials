@@ -300,304 +300,128 @@ Und bei Partituren wüsste ich nicht, wie ich außer mit einem -- fehleranfälli
 Zusammenfassend kann man sagen, dass in einem Projekt unter Versionskontrolle eine beliebige Anzahl von Mitarbeitern auf einen beliebig großen gemeinsamen Datenbestand zugreifen kann.
 Versionskontrolle garantiert die Minimierung von Zusammenführungskonflikten, bietet einfache Mittel, diese im Fall des Falles aufzulösen und verwaltet die Projekt-History sauber und transparent, notfalls auch über Jahrzehnte.
 Dies eröffnet vielversprechende Perspektiven für akademische Projekte und Arbeitsweisen, von denen ich im abschließenden Kapitel ab S.\,\pageref{chap:pt_applications} einige näher vorstellen werde.
+Doch zunächst werde ich auf die zwei hauptsächlichen Softwareprogramme eingehen, die ich für musikwissenschaftliches Arbeiten empfehlen möchte:
+Das Notensatzprogramm LilyPond und
+das Textsatzsystem \LaTeX.
 
 \chapter{LilyPond}
 \label{chap:pt_lilypond}
-When it comes to engraving musical scores my tool of choice is \emph{GNU LilyPond}%
+Mein persönlicher Favorit für Notensatz jeglicher Art ist das freie Programm \emph{GNU LilyPond}%
 \footnote{\url{http://www.lilypond.org}}.
-Not only do I love its beautiful score output, but I really value how seamlessly and professionally I can integrate scores with (\LaTeX) text documents, and I have come to absolutely rely on the workflows and concepts based on the plain text approach that it allows.
+Neben dem hervorragenden Notenbild im Allgemeinen -- das jeglichen verlegerischen Qualitätsanspruch zu erfüllen vermag -- möchte ich einige weitere Vorteile hervorheben, die insbesondere für die vorgeschlagene Verwendung im akademischen Bereich relevant sind:
 
-Of course I would love to give you a thorough introduction to this amazing software but that would be quite pretentious and especially out of scope of this article.
-Therefore I will keep my focus on the potentials of the text based approach, giving you just enough information to get an impression on how it would “feel” to work with it and to get the necessary foundation for the following ideas.
+\begin{itemize*}
+\item die saubere Trennung von musikalischer Struktur und notentypografischen Anpassungen,
+\item die Qualität der unbearbeiteten Standard-Ausgabe, die eine Konzentration auf den \emph{Inhalt} fördert,
+\item die hervorragende Integrierbarkeit in Textdokumente,
+\item die Möglichkeit der Versionierung sowie
+\item weitere aus dem textbasierten Zugang resultierende Aspekte, die im Folgenden näher ausgeführt werden.
+\end{itemize*}
 
-As you know quite well by now LilyPond works by reading in text files and processing them to engraved scores.
-So one effectively \emph{has} to learn how music is represented in LilyPond's input language.
-But it may be good to know that while it is actually possible to edit the text files with any plain text editor there actually \emph{are} graphical programs assisting you heavily in dealing with the text files.
-Although there are a few I will only show you one.
+Da LilyPond Partituren setzt, indem es \emph{Eingabedateien} übersetzt, die nach bestimmten Syntax-Vorgaben geschrieben werden müssen, ist es tatsächlich erforderlich, die Eingabesprache zu erlernen.
+Eine Einführung in diese kann natürlich nicht Gegenstand des vorliegenden Überblicks sein.
+Um eine konkrete Vorstellung von LilyPonds Texteingabe zu erhalten, empfehle ich den Einführungsaufsatz auf der Webseite%
+\footnote{\url{http://www.lilypond.org/introduction.html}}, und in der englischen Fassung meines Texts finden sich ebenfalls einige Seiten hierzu.
 
-\section{Frescobaldi}
-\label{sec:pt_frescobaldi}
-
-\textit{Frescobaldi%
+\bigskip
+Glücklicherweise ist man heutzutage nicht mehr darauf angewiesen, den Quelltext auf sich allein gestellt in einem simplen Texteditor zu verfassen.
+Es existieren eine Reihe von Programmen für verschiedenste Betriebssysteme, die den Autor in vielfältiger Weise unterstützen.
+Als Beispiel sei \textit{Frescobaldi%
 \footnote{\url{http://www.frescobaldi.org}}}
-is a complete editing environment that allows you to do everything you need within one interface.
-In that it is quite similar to the graphical programs I have earlier dismissed as conceptually flawed.
-But there is a big difference, as Frescobaldi presumably offers the best of both worlds:
-it gives you the greatest possible graphical access to the editing process while in its core still being a---sophisticated---text editor.
+genannt, das derzeit vermutlich umfangreichste Programm zur komfortablen Bearbeitung von LilyPond-Partituren.
+Wie in Abb.\,\ref{fig:pt_fb-main-window} mit einer kleinen Partitur zu sehen ist, bietet das Programm neben einer Partituransicht einen Quelltexteditor, zahlreiche Werkzeugleisten und -- nicht zu sehen -- weitere Assistenten und hilfreiche Details.
+	\begin{figure}
+	\includegraphics[max width=\textwidth]{examples/frescobaldi/main-window}
+	\caption{Hauptfenster von Frescobaldi, mit Partituranzeige, Quelltext-Editor und Werkzeugleisten}
+	\label{fig:pt_fb-main-window}
+	\end{figure}
+Der Editor vereinfacht die Arbeit durch farbige Auszeichnung der Struktur (\emph{syntax highlighting}) und bietet Features wie die automatische Vervollständigung von Befehlen oder der Navigation im Quelltext.
+Besonders wichtig ist jedoch die automatische Verknüpfung zwischen Quelltext und Partitur, die es ermöglicht, in der Partitur ein Element anzuklicken, wodurch die Einfügemarke automatisch an die entsprechende Stelle im Quelltext gebracht wird.
+Daher ist es inzwischen nicht mehr problematisch, in komplexen Dateien die Übersicht zu behalten.
 
-Its main window presents itself like many programs that allow to edit textual source files of graphical documents: it is split in a \emph{text editor} and a \emph{music view} (see \fref{fig:pt_fb-main-window}).
-In the music view on the right hand you see (surprise) the music.
-Please note that a) Frescobaldi isn't responsible for generating the engraving in this view and b) this view doesn't have a  “live“ connection to the source but is only updated when LilyPond is run.
-So you could actually call Frescobaldi a \textsc{wysiwyg} editor because what you see actually \emph{is} what you finally get---but you can't (yet) edit the score in a graphical way in this music view.
-On the left side of the screen shot you can see the \emph{Quick Insert} widget, one of the tools that simplify your life by “remembering” how to insert all sorts of graphical symbols for you---but again: they won't insert them “into the score” but as text into your input file.
+Ein Fokus der Entwicklung von Frescobaldi liegt derzeit darin, der Partiturdarstellung größere Funktionalität zu vermitteln.
+So wird beispielsweise daran gearbeitet, Tonhöhen direkt in der Partitur  korrigieren oder Bögen und ähnliche Elemente grafisch anpassen zu können.
+Die Tendenz geht allgemein dahin, die Arbeit mit Partituren komfortabler zu gestalten und dabei die Vorzüge des textbasierten Ansatzes nicht zu verlieren.
 
-\begin{figure}
-\includegraphics[max width=\textwidth]{examples/frescobaldi/main-window}
-\caption{Frescobaldi's Main Window}
-\label{fig:pt_fb-main-window}
-\end{figure}
-
-Another example of the useful tools is the \emph{Score Setup Wizard} that allows you to graphically configure a score of arbitrary complexity (just like in other programs) and that generates the text used for the corresponding score for you (see \fref{fig:pt_fb-score-setup-wizard}).
-
-\begin{figure}
-\includegraphics[max width=\textwidth]{examples/frescobaldi/score-wizard}
-\caption{Frescobaldi: Score Setup Wizard}
-\label{fig:pt_fb-score-setup-wizard}
-\end{figure}
-
-If you look at the text editor again (in \fref{fig:pt_fb-main-window}) you will see that the text is colored a lot (I will talk about the actual text soon).
-This is a feature that Frescobaldi shares with most programming editors: it “knows” LilyPond's language and highlights the source text according to its structure.
-Once one has got used to that practice it greatly eases reading and writing the necessary text files.
-
-When you start typing a command Frescobaldi can also make suggestions on how to complete them (\fref{fig:pt_fb-code-completion})---also a valuable assistance, not so much because of its time-saving but because it assists your memory and efficiently reduces errors.
-
-\begin{figure}
-\centering
-\includegraphics[width=8cm]{examples/frescobaldi/code-completion}
-\caption{Frescobaldi: Suggestions for available commands}
-\label{fig:pt_fb-code-completion}
-\end{figure}
-
-But maybe the most important feature for daily work is that you can click on an element in the music view and will be taken to the corresponding place in the input file.
-In \fref{fig:pt_fb-point-and-click} you can see the slur highlighted in purple in the music view and the highlighted text in line 8 in the text editor.
-\begin{figure}
-\centering
-\includegraphics[max width=\textwidth]{examples/frescobaldi/point-and-click}
-\caption{Frescobaldi: Two-way link between input file and score}
-\label{fig:pt_fb-point-and-click}
-\end{figure}
-This also works in the other direction: If you select text in the editor the corresponding notation elements are highlighted in the score.
-This lets you easily navigate your text file(s) and removes a handicap one could have seen in editing plain text files in the past.
-
-One focus of current Frescobaldi development is the enhancement of the music view's functionality.
-So it will soon be possible to partially “edit” the score with the mouse---of course in fact you will be able to tweak something visually and Frescobaldi will insert the appropriate text in the source file, possibly giving you the option to select from different approaches.
-Currently there are plans to implement (e.\,g.) correcting pitches, drawing and shaping curves, and annotating objects (see also \fref{sec:pt_lilypond-comments}).
-This will make “working with text files” even more comfortable.
-
-Of course these remarks were only a very cursory overview of Frescobaldi.
-A thorough introduction can't be the intention of this paper, but I wanted to give you a feeling to what extent current and smart editors can smoothen your editing experience.
-Now you are ready to learn something about how LilyPond input files actually work.
-
-\section{Textual Representation of Music}
-\label{sec:pt_textual-representation}
-In \fref{fig:pt_fb-main-window} (and \fref{fig:pt_fb-point-and-click}) you have seen a short score excerpt from Brahms' first violin sonata, along with the LilyPond code that produced it.
-Now I'll use that example to show you a little bit about the basic elements in a LilyPond score.
-
-At the most basic level notes are represented by their pitch and duration, as you can see in this “bare” example:
-
-\begin{multicols}{2}
-\begin{Verbatim}[samepage=true,
-				   commandchars=|„“]
-{
-  r2. r4 d r8 d
-  d4. c8 b g d2.
-}
-\end{Verbatim}
-\columnbreak
-\lilypondSFE{examples/brahms/brahms-1}
-\end{multicols}
-
-The text writes rests (\texttt{r}) and pitches (\texttt{d} etc.) as well as durations (8, 4, 4., 2.), and everything is enclosed in a pair of curly braces.
-This is LilyPond's notion of a \emph{music expression}.
-A score is represented by one big music expression which can be constructed of (or split into) arbitrarily nested or chained smaller music expressions.
-There are a few things “missing” in the source that LilyPond adds by itself, namely a staff, a clef, and beams.
-
-Two more elements aren't actually figured out automatically, but hidden from the example.
-In fact you have to write down \cmd{key g} \cmd{major} and \cmd{time 6/4 }to tell LilyPond about the key and time signatures.
-But the beaming in the second measure is done automatically according to the time signature.
-Many things can be defined by such \emph{commands}.
-
-Elements like articulations or dynamics are attached to notes or rests by printing them after the reference item, like in this fake example:
-
-\newcommand{\hilite}[1]{\textcolor{red}{\textbf{#1}}}
-
-\begin{multicols}{2}
-\begin{Verbatim}[samepage=true,
-				   commandchars=|„“]
-{
-  r2. r4 d|hilite„-.“ r8 d|hilite„-.“ 
-  d4.|hilite„\sf“ c8|hilite„\>“ b g|hilite„\!“ d2.|hilite„->“
-}
-\end{Verbatim}
-\columnbreak
-\lilypondSFE{examples/brahms/brahms-2}
-\end{multicols}
-
-We have a few articulations that are attached with a hyphen, the staccato dot written as a dot, the accent as a \texttt{>}, all characters have been chosen to be as intuitive as possible.
-Dynamics are attached by a backslash, in the example we have the \lilyDynamics{sf} with \cmd{sf}, the \decrescHairpin with \cmd{>}, and (as the only unusual item) the \cmd{!} which represents the \emph{end} of the hairpin.
-
-We can attach \emph{spanners} to pairs of notes, e.\,g.\ the slurs in the following example.
-Slurs are written as opening and closing round brackets (\emph{after} the note they are referring to)
-There you can see that you can attach multiple items to a note by just writing them one after another
-
-\begin{multicols}{2}
-\begin{Verbatim}[samepage=true,
-				   commandchars=|„“]
-{
-  r2. r4 d-.|hilite„(“ r8 d-.|hilite„)“
-  d4.|hilite„(“ c8|hilite„[“ b|hilite„]“ g|hilite„)“ d2.
-}
-\end{Verbatim}
-\columnbreak
-\lilypondSFE{examples/brahms/brahms-3}
-\end{multicols}
-
-In addition to the slurs you can also see an example of manually setting the beams against the rules for the time signature, which is indicated by the use of square brackets (again \emph{after} the notes they are referring to).
-
-In the last example of this \emph{very} short introduction to LilyPond files we'll add the necessary text elements to the score.
-The \emph{tempo} indication is entered by the \cmd{tempo} command (the non-verbal part is here as an example only), while the \lilyDynamics{p} \emph{mezza voce} is a \cmd{markup}---a text that is attached to a note like any articulation or dynamic sign.
-
-\begin{multicols}{2}
-\begin{Verbatim}[samepage=true,
-				   commandchars=|„“]
-{
-  |hilite„\tempo“ "Vivace ma non troppo" |hilite„2. = 60“
-  r2. r4 d-.(|hilite„-\markup“
-    { \dynamic "p" \italic "mezza voce" } 
-    r8 d-.) 
-  d4.( c8 b g) d2.
-}
-\end{Verbatim}
-\columnbreak
-\vspace*{4.5em}
-\lilypondSFE{examples/brahms/brahms-4}
-\end{multicols}
-
-One thing you may have noticed in this last example is that I have broken the first line of music into three.
-LilyPond doesn't care about this \emph{white space} and allows you to lay out your text file as you find appropriate---which usually will mean to keep coherent entities on a single line so that versioning will work optimally.
-In this case the entity is the \emph{markup}, also an expression enclosed in curly braces.
-You could just throw some text in there, but in this score we format the elements, one using the dynamics font, the other as italic text.
-
-\medskip
-Now you've seen your first real-world example of a LilyPond score.
-Of course the complexity of these text files increases when the music gets longer or more complex.
-But when looking at an input file you should always keep in mind that it is built from very small and rather simple units.
-And you should feel comfortable with knowing that there are editors at hand that really help you navigating and editing them.
-
-\section{Variables and Includes}
+\section{Variablen und Inklusion}
 \label{sec:pt_variables-includes}
-In the previous section I wrote that LilyPond adds necessary elements to what you have entered.
-In the case of a file just consisting of a music expression as in our example it will actually add the necessary context for a staff, the score, and a “book” which represents the output file.
-This works only for simple scores such as music examples or maybe plain chants, but for most real scores you will have to define the score structure explicitely.
-While one would perhaps start with writing the music expressions directly inside the score set-up, there is the concept of \emph{variables} that proves infinitely useful for any project of some dimensions.
+In einer LilyPond-Eingabedatei wird die Struktur der Partitur (natürlich) textlich definiert.
+Ein grundlegender \cmd{score}-Block sieht etwa folgendermaßen aus:
 
-The basic structure of a score looks like this:
 \begin{quote}
+\begin{minipage}{\textwidth}
 \begin{verbatim}
 \score {
-  \new Staff { ... music expression ... }
-  \layout{}
-  \midi{}
+  \new Staff { ... Musik ... }
+  ...
 }
 \end{verbatim}
+\end{minipage}
 \end{quote}
 
-Inside the score block there is one \emph{Staff} that contains a music expression (I could have pasted the code from the previous examples here). \cmd{layout\{\}} tells LilyPond to create a score, the optional \cmd{midi\{\}} block additionally creates a \textsc{midi} file.
-Instead of just \cmd{new Staff} there would be the complete structure of all (potentially nested) staves of the score, so the file would soon become very complex and confusing.
-To avoid this one wraps up the music definition in a variable (e.\,g.\ \texttt{violin = \{ ... music ... \}}) and simply writes \verb+\new Staff \violin+ in the score block.
+Anstatt nun den musikalischen Inhalt direkt in die Definition des Notensystems einzufügen, wird man diesen in aller Regel in einer \emph{Variablen} notieren und im Notensystem lediglich darauf \emph{verweisen}.
+Dies mag auf den ersten Blick wie ein syntaktisches Detail wirken, hat aber ganz erhebliche Auswirkungen auf die Arbeit mit dem Material:
+Habe ich weiter oben über die Unterscheidung von \emph{Inhalt} und \emph{Erscheinungsbild} gesprochen, so geht es hier um die Unterscheidung von \emph{Definition} und (Wieder-)\emph{Verwendung} des musikalischen Inhalts.
+Musik, die in einer Variablen definiert ist, wird in einer Partitur verwendet.
+Und sie kann ebenso in einer anderen Partitur verwendet werden.
+Durch diese grundsätzliche Herangehensweise kann eine anders kaum mögliche Stabilität beim Herstellen von Einzelstimmen oder Transposition erreicht werden.
+Einmal definiertes Material kann beliebig wiederverwendet werden.
 
-\medskip
-Reading this you might consider it just a detail of the input file structure and wonder how this relates to you.
-But packaging musical expressions in variables isn't only useful to reduce the complexity of the score block but serves many more goals.
-It is a way for transparently and robustly store, use \emph{and reuse} blocks of music.
-Reusing music is very useful, not only for the---admittedly quite specific---case of musical snippets or patterns, but also for the fundamental handling of the needs of musical engraving.
-Earlier I wrote about the separation of content and appearance, here we are dealing with separation of the \emph{definition} and \emph{use} of music.
-Music defined in a variable is used by a score---and it can equally be used by another score.
-Different scores accessing shared music may be a full score and the instrumental parts or different transpositions of the same song.
-In both cases the music is defined only once, and any update to that definition is propagated to all scores automatically.
-This makes the handling of scores and parts very robust in LilyPond.
+\bigskip
+Eine erhebliche Erweiterung ihres Potenzials erhalten Variablen durch die Möglichkeit, in separate Dateien ausgelagert zu werden, die durch einen \cmd{include}-Befehl in das zentrale Partiturdokument integriert werden.
+Nicht nur Musik, auch Formatierungsbefehle oder manuelle Layoutanpassungen können auf diese Weise \emph{wiederverwendet} werden, und es können -- ähnlich den bekannten \emph{Cascading Style Sheets (\textsc{css})} im Webdesign -- komplexe und mächtige Szenarien entwickelt werden.
+So können etwa Stildefinitionen hierarchisch auf globaler, Haus-, Projekt- und Dateiebene verwaltet werden -- Änderungen etwa der Projekt-Stilvorlage wirken sich dann automatisch auf alle Partituren des Projekts aus.
+Ebenso kann etwa durch den Austausch einer einzigen \cmd{include}-Anweisung zwischen Layouteinstellungen für Partitur, Einzelstimme, Studienpartitur oder Projektor gewechselt werden.
+Denkbar und nützlich ist beispielsweise auch ein Entwurfsmodus, bei dem während der Entwicklung der Partitur Herausgeberzusätze farblich hervorgehoben werden und der Zeilen- und Seitenumbruch der Originalvorlage übernommen wird.
+Darüber hinaus können hauseigene oder projektbezogene Funktionsbibliotheken erstellt und gepflegt werden.
 
-Being able to reuse variables would only be a partial advantage if one couldn't separate the definitions even one step further, into separate files, and \emph{include} them.
-This way one can create a collection of files, a \emph{library}, and keep them available for further use.
-This is not only useful for reusing work in future projects but also within one project.
-You can organize style and layout templates (i.\,e.\ definitions that influence the page layout and the appearance of the music) in a hierarchical and sophisticated way and have all files share some common styles (like font selections) but have different additional styles for different output formats (full score, part, music example \dots).
-Any change in one of the style files is then automatically propagated to all scores.
-Or you can make use of a technique called \emph{commenting out}---place two alternative includes but comment one of them out, like this:
-
-\begin{Verbatim}
-\include "draft-layout.ily"
-%\include "publish-layout.ily"
-\end{Verbatim}
-
-The second line of this is a \emph{comment}, so only the draft-layout file will be included (and may color editorial additions red, print additional information about the date or whatever you like to define) as long as you are working on the score.
-When you're finished and prepare the final printout you can just move the percent sign one line up and get your final publication layout.
-And if you have this construction in a shared style file this switch will have global affect to all scores that are part of your project.
-
-\section{Comments}
+\section{Kommentare}
 \label{sec:pt_lilypond-comments}
-The last example of the previous section led us smoothly to the next aspect: \emph{comments}.
-LilyPond---as virtually all plain text formats---allows you to mark parts of a file as comments, i.\,e.\ text that will be ignored by the typesetting.
-This can for example be used to comment on technical issues you are facing.
-You could for example explain why you have decided to implement a certain voice-leading to solve a typographic problem, or leave a mark that some issues will have to be resolved.
-Combine this with the fact that all your manual interventions are written explicitely in the file and compare that with the situation of a graphical score editing program where you can hardly even tell what your manual interventions were \dots
+Wie bei jedem Texteingabeformat können auch in LilyPond-Dateien \emph{Kommentare} in den Quelltext eingefügt werden, die bei der Übersetzung ignoriert werden.
+Diese dienen zunächst der Dokumentation und Erläuterung des Quelltextes, können aber auch zur Kommentierung und Diskussion des Inhalts verwendet werden und beispielsweise offene Fragen festhalten.
 
-Currently there are plans to greatly enhance this functionality, especially with preparing scholarly editions in mind.
-It will be possible to enter specific comments in the input file---\emph{i.\,e.\ directly beside the music they are referring to}---and a tool that will be called \texttt{lilypond-doc} will output them to a variety of formats.
-This will provide nicely formatted lists of 
-\begin{inparaenum}
-\item \textsc{todo} items,
-\item musicological questions,
-\item typographical questions, and finally
-\item critical remarks.
-\end{inparaenum}
-The items in the list will be smartly linked, so that clicking on them will point you directly to the corresponding place in the source file.
-\emph{Frescobaldi} will probably be able to allow you to insert such comments directly from within the music view, so you can click on a note and enter the comment.
-This way you will be able to do all your work \emph{within the actual score} (and collectively with your collaborators), and finally you will get the entries for the critical report nicely sorted and formatted as source text to be used in the corresponding \LaTeX{} document!
+Derzeit wird an einer erheblichen Ausweitung dieses Konzepts mit Blick auf kritische Ausgaben gearbeitet.
+In Kürze wird es möglich sein, explizite Kommentare in den Quelltext -- \emph{d.\,h. in unmittelbarer Nähe der Definition des Notentexts} -- einzufügen und von einem Hilfsprogramm zu verschiedenartigen Listen aufbereiten zu lassen.
+Auf diese Weise können unmittelbar aus dem Partiturdokument heraus Listen mit \textsc{todo}s, editorischen und typografischen Fragen und schließlich auch kritischen Anmerkungen erzeugt werden.
+Von den Listeneinträgen führen Links direkt an die entsprechende Stelle im Quelltext.
+Geplant ist darüber hinaus, die Kommentare direkt in Frescobaldis Partituransicht bearbeiten zu können -- somit wird es möglich, die gesamte Vorbereitung einer kritischen Ausgabe \emph{innerhalb der konkreten Partitur} durchführen zu können!
+Die Krönung wird schließlich die Möglichkeit sein, die in der Partitur gespeicherten Einträge zum kritischen Bericht direkt in eine schriftliche Fassung exportieren zu lassen.
 
-\section{Conclusion}
-\label{sec:pt_lilypond-conclusion}
-By now it surely won't make you wonder that I wholeheartedly endorse the use of LilyPond as a notation software.
-I can't recommend highly enough to give it at least a try---but you should give it a fair try and expect some time and effort needed initially.
-From my experience (having once been a beginner myself and from seeing other beginners) I may give you some advice on \emph{dos} and \emph{don'ts}:
+\section{Programmierbarkeit}
+\label{sec:pt_lilypond-programmability}
+Weiter oben auf S.\,\pageref{sec:pt_programmability} habe ich über den programmatischen Zugriff auf Textdateien gesprochen.
+Dies trifft selbstverständlich auch auf LilyPond-Dateien zu, wobei auf zwei Ebenen programmiert werden kann:
+Einerseits verfügt LilyPond mit Scheme%
+\footnote{\url{http://de.wikipedia.org/wiki/Scheme}}
+über eine mächtige und praktisch unbeschränkte Erweiterungssprache, mit der die Funktionalität des Programms fundamental erweitert werden kann (ein Großteil der eingebauten Funktionalität basiert auf Scheme)%
+\footnote{So zeigt etwa Nicolas Sceaux in einer Reihe von Blog-Beiträgen, wie LilyPonds Notation um historische Ornamente erweitert werden kann, die dann als Befehle genauso wie die eingebauten zur Verfügung stehen: \url{http://lilypondblog.org/2013/08/adding-ornamentations-to-note-heads-part-1/}}.
+Andererseits können die Eingabedateien selbst mit beliebigen Programmiersprachen bearbeitet oder generiert werden.
 
-Do \emph{not} jump right in and try to accomplish a complex project that has to be finished in time, or you will surely run into frustrations.
-Ideally you should first read and follow the „Learning Manual“%
-\footnote{\url{http://www.lilypond.org/doc/v2.16/Documentation/learning/index.html}}
-from LilyPond's excellent documentation which will introduce you smoothly to the basic concepts.
-But you may also tackle a task that is „real“ and on your desktop already.
-This will make it more interesting, but be sure that it isn't too complex and that you won't have to struggle with deadlines.
+Für den normalen Umgang mit LilyPond sind selbstverständlich keine Programmierkenntnisse erforderlich, jedoch öffnet die Programmierbarkeit Perspektiven für größere Projekte.
+Und in solchen kann die komplexe Programmierung von wenigen Spezialisten übernommen werden, um der Mehrzahl der normalen Mitarbeiter eine einfachere Arbeitsumgebung zu bieten.
+Derzeit arbeite ich zum Beispiel an der Edition eines großen Orchesterwerks%
+\footnote{Oskar Fried: \emph{Das trunkne Lied}, siehe \url{http://lilypondblog.org/2013/06/das-trunkne-lied/}}.
+Dieses Projekt is so eingerichtet, dass der einzelne Bearbeiter jeweils nur mit einem kurzen Segment (d.\,h. dem Inhalt einer Stimme im Umfang einer Probenziffer) konfrontiert ist.
+Die Partitur und die Einzelstimmen können zu jedem Zeitpunkt erzeugt werden und verwenden in einer von Pausen erfüllten Partitur alle bereits eingegebenen Segmente.
+Die Arbeit kann so einerseits beliebig „parallelisiert“ werden und andererseits von Personen erledigt werden, die möglicherweise mit der Bearbeitung einer ganzen Partitur überfordert wären.
 
-Be sure \emph{not} to try it completely on your own, alone with you and the documentation.
-The ideal way would be to have someone mentoring you, giving you the right ideas and giving the right answers to the questions that really matter at a time.
-Of course this isn't available for most of the beginners, so be sure to sign up to the \texttt{lilypond-user} mailing list%
-\footnote{\url{https://lists.gnu.org/mailman/listinfo/lilypond-user}}.
-Reading the discussion there (and skipping what seems too complicated for now) will be helpful to get a feeling for it, and the community is usually very responsive and helpful, as long as you show interest and own efforts.
+\bigskip
+\hrule
+\bigskip
 
-Be sure to get used to using the documentation.
-As mentioned it is excellent, but apart from the Learning Manual it is a \emph{reference} that mostly won't guide you through the concepts.
-You will have to read things more than once, and for the starting time you will need to lookup things quite often.
-Even later you will need to have good access to that reference.
-So you should make yourself acquainted with the layout of the documentation as soon as possible.
+Durch die in diesem Kapitel beschriebenen Eigenschaften bietet sich LilyPond in hervorragender Weise für die musikwissenschaftliche Editionspraxis an.
+Dabei wurden die Integrationsmöglichkeiten mit Textsatz durch \LaTeX{} noch nicht einmal näher erläutert und das Potenzial der Versionskontrolle nicht erneut hervorgehoben.
 
-\medskip
-Admittedly it takes some time and effort to get productive with LilyPond.
-But the benefits clearly outweigh that in my opinion.
-First of all you instantly get beautiful output that is pleasing the eye.
-LilyPond's very existence is due to the frustration two musicians had with the anemic sheet music they were confronted day to day on their orchestral music stands.
-Therefore LilyPond's first ideal and models are traditional, hand-engraved scores, and you (and your readers) will benefit from that saturated page impression out-of-the-box and in each score.
-Practically this means that you will have \emph{significantly less work} to tune a score to be usable as performance material than when creating it with the known graphical programs (or the other way round: If you don't do that work at all (as obviously many composers do) the resulting material will be vastly superior).
-If you want to prepare scores for publication you will probably have to spend time with LilyPond too, applying a smaller number of corrections which will each  take more time than with the graphical programs.
-But as explained these corrections are much more robust, can be tracked and modified with a clean interface.
+Es gibt allerdings derzeit einen Schönheitsfehler, der an dieser Stelle nicht unterschlagen werden kann: den Datenaustausch mit anderen Programmen.
+Momentan ist die Verwendung von LilyPond noch eine Einbahnstraße, deren einziger Ausgang die verschiedenen grafischen Partiturformate sind.
+Leider ist es nicht möglich, eine in LilyPond eingegebene Partitur in Formate zu exportieren, die von anderen Notationsprogrammen gelesen werden können.
+Dies ist insofern ein großes Problem (abgesehen davon, dass unkooperatives Verhalten ohnehin problematisch ist), als die Mehrzahl der Verlage auf Dateien der beiden großen grafischen Programme besteht und LilyPond-Dateien nicht akzeptiert.
 
-The other aspect of output quality is at least as important:
-Since you get \emph{usable} results by default you can concentrate on the content much longer and only care about engraving details when actually preparing the final printout for publication.
-But \emph{if} you want to apply manual modifications while still working on the content you have them in a clean and traceable way, and they won't step in the way when the final beautification takes place.
+Die Vorbereitung von Notenausgaben mit LilyPond wäre auch äußerst sinnvoll, wenn die endgültige Druckvorbereitung mit \emph{Fin}ale oder \emph{Sibelius} durchgeführt würde.
+Daher ist die Ergänzung einer Exportmöglichkeit in das gebräuchliche Austauschformat MusicXML eines der wichtigsten Desiderata aus musikwissenschaftlicher Perspektive.
+Diese scheint kein grundsätzliches technisches Problem, sondern „nur“ eine Frage der Ressourcen zu sein -- für eine grundlegende Implementierung wären wohl lediglich einige Wochen Arbeit eines einzelnen Programmiers erforderlich.
+\emph{Ein} größeres Projekt wäre möglicherweise genug, um sowohl den MusicXML-Export als auch die zuvor beschriebene Erweiterung der Quelltextkommentierung zufriedenstellend zu realisieren \dots
 
-But what really sets working with LilyPond apart is the potential of new workflows powered by the plain text approach, as I have described in the previous chapters.
-Seamlessly integrating work with others through versioning, documenting your work \emph{in situ}, setting up sophisticated and cascading style sheets on „house“, project or file level are the keywords to be mentioned here.
-Interfacing scores or examples with \LaTeX{} documents will be one more topic, to be discussed in the next chapter.
-
-\medskip
-It wouldn't be honest to conceal one issue that I haven't touched so far: LilyPond's behaviour towards exchanging documents with other software.
-Currently using LilyPond is kind of a one-way street with the only exit being the score in one of the various graphical output formats.
-There are several ways to export/convert documents from other programs to be engraved by LilyPond (although you should expect some manual work to be done), but you can't simply export LilyPond input files to formats that can be used by other programs.
-This usually isn't an issue when you are just creating scores to be printed, such as performance or teaching material, or music examples for books.
-But it can be a show-stopper if you are preparing editions for commercial publishing houses because the majority of them has their established workflows and insists on getting the scores delivered as Finale\texttrademark{} or Sibelius\texttrademark{} files.
-As you surely can imagine by now I wouldn't ever want to miss the plain text approach in preparing editions, so I would prefer doing it that way even if I knew (and felt sorry about it) that the score would end up being printed by one of the two programs.
-So at least for this application it is a big desideratum to get LilyPond to export to MusicXML, a common interchange format.
-As it stands, it doesn't even seem to be a major rewrite of the program but rather a few months of programmer's work.
-Maybe \emph{one} rather large project with a sufficiently large organisation capable of bringing up some money would be enough to fix the situation.
-But unfortunately there can't be any promises when (and if at all) this hole will be closed.
 
 \chapter{\LaTeX}
 \label{chap:pt_latex}
