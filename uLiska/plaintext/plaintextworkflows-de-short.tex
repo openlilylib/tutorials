@@ -475,88 +475,68 @@ Das Schöne daran ist, dass man mit dem Paket den \emph{gesamten} Notationsvorra
 \bigskip
 Ideen für weitere Pakete, die bei konkretem Bedarf jederzeit in Angriff genommen werden können, umfassen beispielsweise funktionsharmonische Analysesymbole oder Generalbassbezifferungen.
 
-\chapter{Applications}
+\chapter{Anwendungsbeispiele}
 \label{chap:pt_applications}
 
-\section{Preparing a Musical Edition}
+Die Anwendungsbeispiele erörtern abschließend die beschriebenen Programme und Konzepte in ihrem Zusammenspiel.
+Selbstverständlich lassen sich textbasierte Ansätze auch in anderen Bereichen fruchtbar machen, doch ist ihre Relevanz für konkret musikwissenschaftliches Arbeiten das Hauptanliegen dieses Aufsatzes.
+
+\section{Vorbereiten einer Notenedition}
 \label{sec:pt_preparing-edition}
-This is what I actually experienced recently---and what I definitely don't want to miss anymore.
-During the preparation of an edition I'm currently working on we switched our workflow from sharing files in a Dropbox%
-\footnote{Dropbox is a cloud based file hosting provider. See \url{http://www.dropbox.com}}
-to versioning it with Git.
-It was a real revelation to me, and I don't know how we managed before.
-This becomes especially obvious when we are dealing with issues that date from before that time and there isn't any Git history present to inspect them.
+Die Erarbeitung einer Notenedition werde ich als ausführlichsten Anwendungsfall beschreiben, da dieser mir am nächsten liegt.
+Die meisten angesprochenen Aspekte sind jedoch für die anschließend genannten, nur oberflächlicher erläuterten Anwendungen ebenso relevant.
 
-There are several steps in preparing a scholarly edition, which are partly interdependent and are partly distributed between different team members:
-\begin{itemize*}
-    \item Entering the music
-    \item Setting up the score layout and the style sheets
-    \item Proof-reading the music
-    \item Scholarly revision
-    \item Fine-tuning the engraving
-    \item Authoring critical reports
-    \item Layout of the main volume and prepress
-\end{itemize*}
+\medskip
+ 
+Der Hauptgedanke, der allen weiteren zugrunde liegt, ist das \emph{gemeinschaftliche} Bearbeiten einer geteilten \emph{Datenbasis} von der ersten Skizze über Noteneingabe und kritische Revision bis zu den Druckvorlagen.
+Da das Versionskontrollsystem alle Bearbeitungsschritte lückenlos und nachvollziehbar dokumentiert, können die im Rahmen des Projekts anfallenden Aufgaben flexibler verteilt werden als in traditionellen Arbeitsprozessen.
+Während es nach wie vor für jedes Fachgebiet Spezialisten geben sollte, können diese ihre Kompetenz auch anderen Teilaufgaben zur Verfügung stellen.
+Das verteilte Arbeiten erhöht die Effizienz, da häufig Wartezeiten durch „Dateisperren“ bzw. das Warten auf die Fertigstellung einer Teilaufgabe durch einen anderen Mitarbeiter entfallen.
+Gleichzeitig kann aber auch der kreative Austausch angeregt werden, wenn beispielsweise der Notensetzer einen Blick auf editorische Fragen wirft, während sich der Herausgeber an notentypografischen Problemstellungen versuchen kann.
+Darüber hinaus stellt Versionskontrolle auch explizit Werkzeuge zur Verfügung, die verschiedene Modelle von \emph{peer review} befördern.
 
-First of all the complete process can be done within one code base.
-Any collaborator can edit anything at any time, usually without stepping on others' feet, as described in the “Versioning” \fref{chap:pt_version-control}.
-Traditionally one would work with one file (or one for each piece/movement) and would have to take great care about potential version conflicts.
-Basically these files would have to be completely processed by one person before being passed on to the next in the chain.
+Als sehr fruchtbar hat sich die Entwicklung eines „Entwurfsmodus“ bei der Partiturausarbeitung erwiesen.
+Gemeinsam mit der Möglichkeit, durch Quelltextkommentare einen Kommunikationskanal zwischen den Projektbeteiligten zu eröffnen, verbessert der Entwurfsmodus den Überblick über das Projekt erheblich.
+Die Entwicklung der erweiterten Anmerkungen im Rahmen des \package{lilypond-doc}-Projekts werden diesen Vorteil noch einmal deutlich ausweiten.
 
-An important side-effect of this situation is that tasks can be shared in a much more flexible way.
-As anybody can edit everything he can also handle any task he feels able or has time to.
-Most of us aren't completely single-minded and specialised on a single skill.
-My main part in this project is being one of the scholarly editors, but I have also entered parts of the music and can do a lot for pinpointing typographical issues.
-The guy who is responsible for the fine-engraving has a good eye on his own and can also spot questionable issues in the musical text.
+Da sich die gesamte Layoutgestaltung in \cmd{include}-Dateien abspielt, ist es annähernd egal, in welcher Projektphase das äußere Erscheinungsbild entwickelt wird, es gibt in dieser Hinsicht kaum Einschränkungen.
+Es ist beispielsweise möglich, das Layout der Edition \emph{parallel} zur inhaltlichen Ausarbeitung zu entwickeln, oder aber, für die Arbeitsphasen der Noteneingabe, kritischen Revision und Druckvorbereitung ganz unterschiedlich angepasste Partiturlayouts zu verwenden.
 
-We have developed the concept of a “draft mode” that allows us to visualize (i.\,e.\ mostly colorize) issues and have some kind of “in-source” communication through messages that are written to the command line.
-When a piece is finished we just switch to “publication mode” and have our print-ready scores.
-Comments in the source files increase the impact of this concept, but the next project will take this a major step further.
-Currently I'm developing a system that will allow comprehensive annotations inside the source files.
-This way we'll have automatic lists of \textsc{todo}-items, issues and questions etc.\ that are generated while compiling the scores.
-And ultimately we'll have the entries for the critical report right in the source files!
+Die Vorbereitung des endgültigen Notenbandes als LaTeX-Dokument(e) kann selbstverständlich ebenfalls in derselben Datenbasis durchgeführt werden.
+Als sehr hilfreich erweist sich hierbei die guten Integrationsmöglichkeiten von Text- und Partiturteilen, seien es ganzseitige Partituren oder kleine Notenbeispiele.
 
-As all general layout and styling is done in central style sheets it isn't an issue at all to keep the different scores consistent. We don't even have to decide upon it before starting work.
-All changes to the layout are automatically propagated to all scores, and it would for example be possible that someone is assigned the task to develop the general appearance of the publication \emph{while the others are working on the edition}, always having the latest version of the musical text as example material.
-That way the edition can also automatically benefit from improvements of LilyPond that are released along the way.
-Only when starting the final beautification would the development of the layout settings have to stop---but that's a restriction that is inherent in the matter and not imposed by the technical infrastructure.
+\section{Bücher und Periodika}
+\label{sec:pt_books-periodicals}
+Was für Noteneditionen gilt, ist für schriftliche Publikation ebenso relevant.
+Tatsächlich ist in vielen natur- und computerwissenschaftlichen Disziplinen \LaTeX{} der de-facto-Standard der Einreichung von Texten für Zeitschriften oder Sammelbände.
+Beim Abfassen und veröffentlichen schriftlicher Arbeiten erweist sich die Versionskontrolle als perfektes Instrument der Qualitätssicherung und der Kommunikation zwischen Autor und Lektor oder zwischen mehreren Autoren.
+Änderungsvorschläge sind -- als \emph{commit} aufbereitet -- unmittelbar verständlich und können übernommen, verworfen oder überarbeitet werden.
+Ein gemeinsamer Datenbestand motiviert den Autor, auch nach der ursprünglichen Abgabe aktiv an der Perfektionierung des Texts mitzuwirken.
+Und überhaupt erhöht ein ständiger Austausch nicht nur die Perfektion im Detail, sondern auch das kreative Potenzial des/der Autoren.
 
-While this isn't that important for small individual scores it is a major “selling point” for ambitious and large-scale projects.
-And I would love to discuss and experience the impact this could have on working on a scholarly edition with numerous volumes and multiple editors.
-Remember what I wrote about plain text files outliving operating systems' lifecycles?
-Such a system could very well be the perfect match for a long-running critical edition.
-
-\section{Book preparation}
-The same is true for the preparation of books, and of compilation books from more than one author in particular.
-All collaborators can seamlessly work together in a shared code base: the author(s), editors, typesetters, and maybe additional specialists preparing figures or music examples.
-A collaborative set-up provides an efficient workflow between an author and his editor, and it can be particularly useful when proof-reading or documents or polishing them linguistically with many assistants.
-It has to be said that such a work-flow is already standard in many scientific journals in other disciplines.
-
-Of course the musical edition described in the previous section is also a “book” in this sense, as the scores are created with LilyPond and included in a \LaTeX{} document.
-The complete volume can be compiled at any time and reflects the current state of the development of the scores.
+\section{Längerfristige Projekte}
+\label{sec:pt_longrunning-projects}
+Auf Grund der langfristigen Stabilität eines textbasierten Datenbestands sowie der guten Integrationsmöglichkeiten der verschiedenen Komponenten bieten sich textbasierte Ansätze auch für langfristige akademische Unternehmungen wie Forschungsprojekte oder Gesamtausgaben an.
+Gerade diese können von den Implikationen gemeinschaftlichen (Be-)Arbeitens profitieren, und auch personelle Änderungen können leichter aufgefangen werden, wenn nicht jeder Mitarbeiter sein privates Ordnungssystem hat.
+So ist es -- zumindest von der technischen und logistischen Seite her betrachtet -- ohne Weiteres möglich, die Arbeit eines Herausgebers zu übernehmen und nahtlos fortzusetzen.
 
 
-\section{“Crowd Editing”}
-\label{sec:pt_crowd-editing}
-
-It isn't really common yet because it can exclusively be inspired by the use of workflows that are driven by version control.
-But with the capability to manage contributions by a (practically) unlimited number of participants it is possible to extend the concepts from the the two previous sections and create musical scores with a large community.
-This way the workload can be “clustered” among a potentially great number of people, each one according to his capabilities and special knowledge (about specific instruments for example), and large quantities of music entered in astonishingly little time.
-While this doesn't save actual working hours it can be used to process them in parallel.
-Even in a large-scale symphonic score each single part is quite manageable, and if there is one contributor for each part (or better: two contributors for two parts who do a peer-review before submitting) the score should grow rapidly.
-I know of at least one semi-professional choir that has by now switched to preparing its scores in such a social manner.
-
-In such a context the aspect of programmability may once more become important.
-While the individual contributors don't have to be programmers at all the “project” can be extensively programmed.
-It can gain advanced and specialized functionality, benefit from automatic project management or just from giving the “ordinary engraver” an easy-to-use interface.
-
-\section{Single-source Publishing}
+\section{„Single Source Publishing“}
 \label{sec:pt_single-source-publishing}
+Bedenkenswert (wenn auch an dieser Stelle nicht näher ausgeführt) ist in diesem Zusammenhang auch, dass neben Text- und Notensatz natürlich auch andere Techniken zum Zuge kommen können, so etwa Datenspeicherung in Datenbanken sowie deren Aufbereitung in Netzwerk- und Internettechnologien.
+Das zukunftsträchtige Schlagwort des \emph{Single Source} oder \emph{Cross Media Publishing} ist hierbei eine fast zwangsläufig auftretende Assoziation.
+Textbasierte Arbeitsprozesse bieten eine hervorragende Materialgrundlage für die Verarbeitung allgemeiner Inhalte für verschiedene Medien.
+Das mag von der Aufbereitung eines kritischen Berichts für eine Web-Abfrage bis zu interaktiven Partituren reichen.
 
-Plain text files are a good starting point for creating documents for different output formats.
-One example already discussed is the possibility to create several different scores (or parts) with LilyPond from a single set of input files.
-I don't have concrete experiences to present but it's inherent in the nature of plain text files that they are good for use in single-source publishing.
-This can easily apply to generating documents for printing, beamer presentation, mobile devices and web pages from single sources, to name just a few.
-I think---and hope---that this can also be made very fruitful in the light of current discussions to present scholarly editions in modern ways beyound printed scores.
+\section{„Crowd Editing“}
+\label{sec:pt_crowd-editing}
+Ein bislang weitgehend unbekanntes Phänomen lässt sich mit dem künstlich geprägten \emph{Crowd Editing} beschreiben.
+Wie bereits weiter oben angesprochen wurde, lassen sich mit Hilfe von Versionskontrolle viele Aufgaben auf eine beliebige Anzahl von Teilnehmern verteilen.
+So wird man zwar eine kritische Revision nicht beliebig „clustern“ können, da es selbstverständlich erforderlich ist, den geistigen Zusammenhang zu bewahren.
+Tätigkeiten wie Noteneingabe oder Fehlerkorrektur können ohne weiteres in kleine Portionen aufgeteilt werden.
+
+Ein erfolgreiches Beispiel derartigen Arbeitens ist eine holländische Gesangbuch-Ausgabe%
+\footnote{\url{http://www.liedboek.nl}},
+die kürzlich mit einer Vielzahl unabhängiger Beitragender einen 1.600 Seiten umfassenden Notenband in nur einem Jahr fertigstellte.
 
 \end{document}
