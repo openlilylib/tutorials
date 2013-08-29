@@ -34,6 +34,8 @@
 \RequirePackage{xmpFancyref}
 \RequirePackage{musicexamples}
 
+\RequirePackage{hologo}
+
 % Do not restart footnote numbering for each chapter
 \RequirePackage{chngcntr}
 \counterwithout*{footnote}{chapter}
@@ -94,7 +96,7 @@ Die wesentlichen Softwaresysteme, die ich auf den folgenden Seiten vorstellen --
 
 \tableofcontents
 
-\chapter{Textdateien als Grundlage}
+\chapter{Textformate}
 \label{chap:pt_plain-text-format}
 Im Gegensatz zu \textsc{wysiwig}-Programmen, die eine grafische Ansicht von Dokumenten bieten, ist bei der Bearbeitung von Textdateien das Ergebnis nicht unmittelbar ersichtlich -- der „Quelltext“ muss erst in ein grafisches Dateiformat „übersetzt“ oder „kompiliert“ werden.
 Weshalb sollte man sich nun diese Abstraktionsebene aufbürden, wo es doch offensichtlich schnell, einfach und effizient ist, ein Dokument in seinem endgültigen Erscheinungsbild zu bearbeiten?
@@ -106,7 +108,7 @@ Und schließlich gibt es heutzutage Bearbeitungsprogramme, welche den Umgang mit
 
 Einleitend werde ich einige grundlegende Aspekte der Verwendung von Reintextformaten erläutern.
 
-\section*{Transparenz und Kontrolle}
+\section{Transparenz und Kontrolle}
 \label{sec:pt_transparency-and-control}
 Grafische Programme (insbesondere solche mit proprietären Dateiformaten) lassen sich hinsichtlich der Speicherung und Interpretation eingegebener Inhalte i.\,d.\,R. nicht in die Karten sehen.
 Einer der Hauptgründe, meinem grafischen Notationsprogramm den Rücken zu kehren, war dessen Angewohnheit, scheinbar willkürlich meine manuellen Änderungen zu überschreiben.
@@ -125,7 +127,7 @@ Und sollte einmal eine Änderung erhebliche Nebenwirkungen auf das Layout haben,
 Der Preis dafür ist die Notwendigkeit, den Quellcode händisch einzugeben und dies zunächst zu erlernen.
 Doch lohnt sich der Aufwand auf lange Sicht.
 
-\section*{Inhalt, Bedeutung und Erscheinungsbild}
+\section{Inhalt, Bedeutung und Erscheinungsbild}
 \label{sec:pt_separation-content-meaning-appearance}
 Die auf Grund der Allgegenwart grafischer Programme verbreitete Vorstellung, das \emph{visuelle Erscheinungsbild} eines Dokuments sei gleichbedeutend mit seinem \emph{Inhalt}, ist ein Trugschluss.
 Tatsächlich handelt es sich dabei um zwei verschiedene Ebenen, die nur üblicherweise unter einer Benutzeroberfläche vereint sind.
@@ -146,7 +148,7 @@ Im Falle von Partituren ist die Sache ähnlich gelagert:
 Eine textbasierte Partitur-Eingabedatei enthält eine Repräsentation des musikalischen \emph{Inhalts}, während das \emph{Erscheinungsbild} erst während des Übersetzungsvorgangs entsteht und in der resultierenden \textsc{pdf}-Datei zur Verfügung steht.
 Diese Kontrolle über die Trennung von Inhalt, Bedeutung und Erscheinung ist eine wichtige Grundlage für die Arbeitstechniken, auf die ich im weiteren Verlauf näher eingehen werde.
 
-\section*{Lesbarkeit und Stabilität von Text- und Binärdateien}
+\section{Lesbarkeit und Stabilität von Text- und Binärdateien}
 \label{sec:pt_readability-stability}
 Textdateien sind lesbar, Binärdateien nicht -- diese schlichte Feststellung hat grundlegende Implikationen für den Umgang mit digitalen Dokumenten.
 
@@ -176,7 +178,7 @@ Und sollte alles nichts helfen, bleibt zumindest noch die „rohe“, menschenle
 Textdatei-basierte Projekte können auf diese Weise -- insbesondere in Verbindung mit Versionskontrolle (siehe das nächste Kapitel) -- ungeahnte Zeiträume einer Vielzahl von Computergenerationen umspannen.
 Dies macht diese Herangehensweise besonders geeignet für akademische Zwecke.
 
-\section*{Editor-Unabhängigkeit}
+\section{Editor-Unabhängigkeit}
 \label{sec:pt_editor-independence}
 Textbasierte Arbeitsumgebungen trennen das Bearbeiten, Verarbeiten und Anzeigen von Dokumenten.
 Auf diese Weise ist man nicht an \emph{die eine} Anwendung gebunden, die vom (kommerziellen) Hersteller vorgegeben ist, sondern kann je nach Kontext beliebige Bearbeitungsprogramme verwenden.
@@ -185,7 +187,7 @@ Ebenso ist das Textformat ein geeignetes Mittel, um Dokumente in einem Internetb
 So gibt es inzwischen eine Reihe von Projekten, die aus Texteingabe im Browser Notation erzeugen können, am prominentesten die neue Wikipedia-Erweiterung%
 \footnote{\url{http://en.wikipedia.org/wiki/Help:Score}}.
 
-\section*{Programmierbarkeit}
+\section{Programmierbarkeit}
 \label{sec:pt_programmability}
 Textdateien können nicht nur mit jedem Texteditor, sondern auch mit jeder Programmiersprache bearbeitet werden.
 Die meisten Anwendungsprogramme bieten heute Schnittstellen für Skriptsprachen, mit deren Hilfe zusätzliche Funktionalität ergänzt werden kann.
@@ -195,7 +197,7 @@ Die Liste möglicher Anwendungen ist lang und reicht (bei Partituren) von kontra
 Von dieser Option können auch Nutzer profitieren, die selbst nie programmiert haben und es auch nicht lernen wollen.
 So kann in größeren Projekten mit Hilfe von Programmierung eine Infrastruktur geschaffen werden, welche die Komplexität vor dem Einzelnen gerade \emph{verbirgt}.
 
-\section*{Unmittelbares Feedback vs. Übersetzung}
+\section{Unmittelbares Feedback vs. Übersetzung}
 \label{sec:pt_compiling-instant}
 Einer der Aspekte textbasierten Arbeitens, an den sich Benutzer am meisten gewöhnen müssen, ist das Fehlen eines unmittelbaren visuellen Feedbacks eingegebener Änderungen.
 Grafische Programme reflektieren jegliche Änderung sofort, während die Eingabedatei des textbasierten Programms zunächst kompiliert werden muss.
@@ -426,124 +428,52 @@ Diese scheint kein grundsätzliches technisches Problem, sondern „nur“ eine 
 \chapter{\LaTeX}
 \label{chap:pt_latex}
 
-\LaTeX{} is for typesetting text documents what LilyPond is for typesetting scores.
-It provides typesetting as opposed to mere text processing, providing the usual document author---who doesn't know too much about the rules of typography---with the necessary expertise to produce professionally typeset documents.
-And it works by compiling plain text input files, so everything I have written about the advantages of using plain text files applies to \LaTeX{} equally.
-Therefore I won't get into details introducing you to the concrete syntax of its input files, but try to introduce you concisely to some of the specifically musical features.
+\LaTeX{} ist für Textdokumente, was LilyPond für Partituren ist:
+es bietet Text\emph{satz}, im Gegensatz zu bloßer Text\emph{verarbeitung}.
+Wem an guter Typografie gelegen ist, wird \LaTeX{} lieben, wer ihr aber keine Bedeutung beimisst, sollte bedenken, dass „keine Typografie“ nicht möglich ist -- sie wirkt \emph{immer}. 
 
-Your interface to \LaTeX{} is the same as to LilyPond:
-The input files can be edited with \emph{any} editor, and the compilers are command line programs.
-But there are (quite numerous) dedictaed editors or IDEs%
-\footnote{Integrated Development Environments}
-that assist you in editing the documents and organizing the compilation process for you.
-Earlier in \fref{sec:pt_separation-content-meaning-appearance} I showed you a basic \LaTeX{} document in which you saw the three fundamental elements: the \emph{document class}, \emph{commands} and \emph{environments} (although I didn't explicitely name the latter).
-As mentioned the document class is somewhat comparable to a document template in an office application.
-But it is much more powerful in that it can contain many layout elments, commands and more functionality.
-The LaTeX{} distribution contains many document classes for many purposes (from standard articles over beamer presentations to classes specific to fields of research), but you can also download classes from other sources, and you can (and will) write your own.
-One important aspect of document classes is the selection of \emph{packages} to be included.
+Mit Textverarbeitungsprogrammen wie Word oder OpenOffice ist es unmöglich, professionell gesetzte Dokumente zu erstellen, insofern ist \LaTeX{} eher in Konkurrenz zu \textsc{dtp}-Programmen wie InDesign QuarkXPress zu sehen.
+Hinsichtlich der Qualität zumindest bei Textdokumenten muss man bei der freien Software keine Abstriche machen.
+Da \LaTeX{} ursprünglich für den Buchsatz entwickelt und seit Jahrzehnten verbessert wurde, bietet es selbstverständlich weitestgehende Möglichkeiten für Literaturverwaltung, Zitate, Indizes etc.
+Darüber hinaus bietet \LaTeX{} alle Vorzüge, die ich für textbasierte Softwaresysteme im Allgemeinen  beschrieben habe.
 
-When run on a basic document as in our example \LaTeX{} only loads a small subset of its possibilities in order to save time and memory.
-If you need additional functionality you can include it through the use of \emph{packages}.
-Such a package might contain anything from a small set of related semantic markup commands up to sophisticated bibliographic functionality%
-\footnote{See \url{http://en.wikibooks.org/wiki/LaTeX/Package_Reference} for a list of some packages with short comments on their functionality}.
-When you want a different style for tables or lists, to include images, or add music examples---chances are good that there is a package enabling just what you need.
+Die Schnittstelle zu \LaTeX{} ist ähnlich wie bei LilyPond:
+Eingabedateien mit einer ähnlichen Syntax werden in \textsc{pdf}-Dateien \emph{übersetzt}.
+Auf Grund des Alters des Systems existieren zahllose Bearbeitungsprogramme unterschiedlichen Zuschnitts und Komforts.
+Die Eingabesprache bietet \emph{Befehle} und \emph{Umgebungen}, die entfernt mit Text- und Absatzvorlagen von Textverarbeitungsprogrammen vergleichbar, jedoch ungleich mächtiger sind:
+Sie reichen von einfacher semantischer Auszeichnung über (etwa) Abbildungen, die nach traditionellen Satzregeln im Text positioniert werden bis hin zu komplexen Befehlen mit mehreren Argumenten.
 
-As I have also mentioned earlier the \emph{commands} and \emph{environments} are roughly similar to character and paragraph styles as used in office documents.
-But they too are much more powerful because they are more like programmer's commands, especially as they can use arguments.
-A command can do anything with its arguments which makes it a very versatile tool.
-As a single example I have a command for entries in a revision report that takes arguments for measure number, position in the measure, affected voice/system, and the actual comment.
-This information it then processed to a nice layout, skipping the separator characters when an argument is empty.
-If I should decide upon a completely different layout I just have to update the command to propagate it to the whole document---or a complete set of documents if I have defined it in a package.
-And of course I will soon be able to incorporate the report entries that \texttt{lilypond-doc} will give me from within the LilyPond scores \dots
+Eine noch so oberflächliche Einführung in \LaTeX{} würde den Rahmen dieses Textes sprengen, daher beschränke ich mich auf einige Hinweise zu spezifisch musikalischen Aspekten.
 
-\emph{Environments} are somewhat similar, with the difference that the commands are a one-time event while environments have a begin and an end (like the \emph{document environment} seen in the initial example).
-Environments like \env{figure} or \env{table} allow you to place graphical items as \emph{floating} objects.
-This allows \LaTeX{} to place them at the best position concerning the page breaking.
-While this is something one has to get used to it is actually a big enhancement towards a \emph{professional} typesetting, especially of books and similar documents.
-As producing books is the basic motivation for \LaTeX{} you also can expect professional tools with regard to bibliography, indices or figure lists etc.
 
-\medskip
-Now that we have seen a \emph{very} short introduction to \LaTeX{} it is time to consider some specifically \emph{musical} aspects to authoring text documents.
-
-\section{Music Examples}
+\section{Musikbeispiele}
 \label{sec:pt_music-examples}
-Of course you can embed images in text documents if you want to add music examples to a text.
-\LaTeX{} does a very good job at determining the best possible layout for them.
-But there are a few dedicated tools that aid you with this specific task, in particular I will talk about \package{lilypond-book} and \package{musicexamples}.
 
-\subsection{lilypond-book}
-\label{subsec:pt_lilypond-book}
-The program \package{lilypond-book} is part of the LilyPond distribution and allows to embed LilyPond source code directly in \LaTeX{} documents.
-First you run \package{lilypond-book} on the document, which will call LilyPond to generate all (necessary) examples and create a copy of the document including these generated files.
-Then you run \LaTeX{} to compile this processed copy.
-This procedure has some overhead due to the large number of intermediate files, and many people using \package{lilypond-book} with complex documents or on a regular basis actually approach this using self-made scripts.
-But if you have documents with lots of (small) examples you won't find any better solution to manage your music sources \emph{in situ}.
+\LaTeX{} ist in der Lage, Abbildungen satztechnisch hochwertig einzufügen und hat auch keine Schwierigkeiten mit einer Vielzahl von Bildern in langen Dokumenten.
+Zur Verwaltung von Notenbeispielen gibt es jedoch einige speziellere Werkzeuge, insbesondere \package{lilypond-book} and \package{musicexamples}.
 
-\subsection{musicexamples}
-\label{subsec:pt_musicexamples}
-Another way to embed music examples in \LaTeX{} documents is \package{musicexamples}, a package that is part of \openlilylib%
-\footnote{\url{http://www.openlilylib.org/musicexamples}}.
-Originally started as an alternative approach to \package{lilypond-book} not requiring intermediate documents it can actually work together with it quite well.
-\package{musicexamples} provides environments and commands to include and manage music examples in \LaTeX{} documents.
-There is support for floating and non-floating environments, single-line or multi-line examples (with the multi-line ones being able to be split on several pages).
-You can also print full-page examples, with special support for examples starting on odd or even pages (you can force an example to start at the next odd or even page).
-All examples in a document share the same counter and can be exported to a contigious list of music examples.
+\package{lilypond-book} ist ein Hilfsprogramm, das gemeinsam mit LilyPond ausgeliefert wird und ermöglicht, LilyPond-Code direkt in \LaTeX-Dokumente einzufügen.
+Beim Durchlauf werden die Notenbeispiele bei Bedarf neu erzeugt und der Quellcode durch entsprechende Bilddateien ersetzt.
+Der potenzielle Nachteil an diesem Ansatz ist, dass die zu bearbeitende Datei nicht direkt von \LaTeX{} übersetzt werden kann, sondern zunächst \package{lilypond-book} durchlaufen muss.
+Für Dokumente mit vielen kurzen Notenbeispielen kann es jedoch die effektivste Möglichkeit sein, die Noten \emph{in situ} zu verwalten.
 
-It is possible to use \emph{any} images for your music examples, but there is special support for using LilyPond (of course).
-There are tools compiling your LilyPond files to files that can directly be used in the \LaTeX{} document, especially taking care of the odd/even issue.
-This may be the way for you if you want to manage your scores separately from the text document.
-Finally there will be%
-\footnote{This part of the package hasn't been implemented yet.}
-helper scripts that keep the music examples up to date (and conditionally recompile missing music example files).
+Demgegenüber versteht sich \package{musicexamples}%
+\footnote{\url{http://www.openlilylib.org/musicexamples}} 
+als ein Werkzeug, das sich mehr der Einbettung und konsistenten Verwaltung von Notenbeispielen widmet.
+Besonderes Augenmerk wurde auf den Umgang mit ganz- und mehrseitigen Notenbeispielen gelegt, für eine weitergehende Integration speziell von LilyPond-Partituren existieren konkrete Pläne.
+Insbesondere ist mittelfristig vorgesehen, mit Hilfe der in \hologo{LuaLaTeX} verwendeten Programmiersprache \emph{Lua} ebenfalls die Einbettung von LilyPond-Quellcode zu ermöglichen -- allerdings dann ohne den Umweg über ein zwischengeschaltetes Hilfsdokument.
 
-Instead of existing image files (LilyPond generated or not) you can equally embed LilyPond code with \package{lilypond-book} and benefit from both approaches:
-\package{lilypond-book}s in-place example code and \package{musicexamples}' example management.
-
-You can see a comprehensive example document with all sorts of music examples in \fref{xmp:musicexamples-document}.
-
-\subsection{OOoLilyPond}
-\label{subsubsec:pt_ooo-lilypond}
-Finally I have to mention another option to integrate music examples in text documents, although it isn't quite as professional.
-\emph{OOoLilyPond}%
-\footnote{\url{http://ooolilypond.sourceforge.net/}}
-is an OpenOffice extension which allows to store LilyPond code as embedded objects in Writer documents.
-It can compile them in place and display the corresponding image files while keeping the source code ready for further editing.
-Unfortunately this can only produce bitmaps and no vector graphics, resulting in a rather medium output quality. But for daily use it may be a good compromise.
-
-\section{Notational Elements}
+\section{Notationselemente}
 \label{sec:pt_notational-elements}
-Another member of our family of resources is \lilyglyphs[scale=1.1].
-This package allows to include LilyPond's notational elements in the continuous text of \LaTeX{} documents.
-This is significantly different from entering music examples as it will embed them as characters, like \lilyDynamics{mf} for example.
-The main advantage of this package over any other solution I know of is that these elements are readily available, scale well with the surrounding text size, and that you can realize virtually anything you can do with LilyPond.
+Mit Hilfe des Pakets \lilyglyphs%
+\footnote{\url{http://www.openlilylib.org/lilyglyphs}}
+ist es möglich, \emph{jegliche} mit LilyPond realisierbare Notationselemente auf Zeichenebene in \LaTeX-Dokumente einzubetten.
+Dies können etwa dynamische Zeichen wie \lilyDynamics{mf}, Vorzeichen wie \flatflat{} oder auch grafische Zeichen wie \crescHairpin{} oder Taktbezeichnungen (\lilyTimeSignature{4+3}{8} oder \lilyTimeCHalf) sein.
+Mit etwas größerem Aufwand kann man auch individuelle Notationen erstellen und einbinden.
+Das Schöne daran ist, dass man mit dem Paket den \emph{gesamten} Notationsvorrat von LilyPond in dessen hervorragender Qualität zur Verfügung hat und die verwendeten Zeichen als Zeichen problemlos im Text fließen und sich leicht in Größe und Positionierung anpassen lassen.
 
-Elements that are part of LilyPond's OpenType font can be accessed through predefined commands (the above example was written \cmd{lilyDynamics\{mf\}}) or---if there isn't a predefined command yet---through their glyph names from the font, like this \lilyGlyph[scale=1, raise=0.75]{clefs.mensural.c} mensural clef \cmd{lilyGlyph {\{clefs.mensural.c\}}}.
-
-For elements that aren't part of the OpenType font and that are normally drawn by LilyPond \lilyglyphs[scale=1.1] uses small images that have been generated with LilyPond.
-The use is identical if there are predefined commands like this \crotchet[scale=1.1] \cmd{crotchet} or other non-text \crescHairpin  elements.
-If there isn't a predefined command or if you need a very non-standard symbol, \lilyglyphs[scale=1.1] assists you in creating your own predefined commands with a relatively easy to use interface:
-You will provide a small “template file”, and a tool will manage the process for you up to generating the necessary \LaTeX{} command.
-This way you can include arbitrary notational elements as characters in your text documents, with perfect control over the scaling and positioning.
-
-\section{Conclusion}
-\label{sec:pt_latex-conclusion}
-
-If you care at all about typography and write text documents you should love \LaTeX. 
-If you don't care about typography you should know that typography \emph{is} effective even if you didn't intend it.
-Typography can't be absent, usually it's just \emph{bad} typography then.
-Therefore documents should be created with good tools.
-\LaTeX{} produces good typography, word processors don't, period.
-DTP programs like InDesign\texttrademark{} or QuarkXPress\texttrademark{} can be used to create good-looking documents, but they are very expensive, and especially for long documents they are significantly less efficient.
-If you add to that the described possibilities to integrate text and music and especially the potentials of versioning and collaboration you should see that \LaTeX{} is definitely worth giving a try.
-If you are already acquainted with LilyPond the learning curve won't be as steep anymore, although it surely needs some change of mind when coming from office applications.
-
-If you have to deliver documents in other forms than \textsc{pdf} files (usually office files that hopefully are typeset with professional tools afterwards) you still can benefit from the versioning part which improves your efficiency---
-I wouldn't want to work any other way by now.
-Other than LilyPond scores \LaTeX{} source files can be exported to a variety of formats like \textsc{rtf} or \textsc{html}.
-This process isn't always guaranteed, though---the more sophisticated your tools and commands are the more problems will arise with export filters.
-Which should be evident: If you design complex custom commands with multiple arguments, how should a converter know to translate them to \textsc{rtf} for example?
-So if you write program notes that have to be delivered as a Word file you can still use \LaTeX{} to author the document but you should keep it simple in terms of layout or structure.
-But this shouldn't really be considered a restriction because if you're working in such a context you are usually expected to deliver “raw” material anyway.
+\bigskip
+Ideen für weitere Pakete, die bei konkretem Bedarf jederzeit in Angriff genommen werden können, umfassen beispielsweise funktionsharmonische Analysesymbole oder Generalbassbezifferungen.
 
 \chapter{Applications}
 \label{chap:pt_applications}
