@@ -74,21 +74,25 @@
 \maketitle
 
 \subsection*{Vorbemerkung}
-Die meisten Musiker und Musikwissenschaftler bearbeiten Textdokumente und Partituren oder Notenbeispiele mit grafischen Programmen, ohne eine grundsätzliche Alternative überhaupt in Erwägung zu ziehen.
-Der vorliegende Text zeigt demgegenüber einen Ansatz, der auf der Bearbeitung reiner Textdateien basiert.
-Dieser Ansatz ermöglicht neuartige Wege gemeinschaftlichen Arbeitens, Forschens und Publizierens, indem jahrzehntelange Erfahrungen aus der Softwareentwicklung für unsere Disziplinen fruchtbar gemacht werden können.
-Die beschriebenen Konzepte, Werkzeuge und Workflows haben mein Leben als Autor von Text- und Partiturdokumenten grundlegend verändert, und es ist mir ein großes Anliegen, sie der musikwissenschaftlichen Gemeinschaft vorstellen.
+Eine große Mehrheit an Partituren und musikwissenschaftlichen Textdokumenten entsteht mit Hilfe grafischer Anwendungsprogramme, und den meisten Autoren dürfte die Existenz einer grundsätzlichen Alternative überhaupt nicht bewusst sein.
+Der vorliegende Aufsatz zeigt demgegenüber einen Ansatz, der auf der Bearbeitung reiner Textdateien basiert.
+Dieser Ansatz, der Erfahrungen und Strategien aus der Softwareentwicklung für unsere Disziplinen fruchtbar macht, ermöglicht neuartige Wege gemeinschaftlichen Arbeitens, Forschens und Publizierens.
+Die beschriebenen Konzepte, Werkzeuge und Arbeitsprozesse haben mein Leben als Autor von Text- und Partiturdokumenten grundlegend verändert, und es ist mir ein großes Anliegen, sie der musikwissenschaftlichen Gemeinschaft vorstellen.
 
-In den Geisteswissenschaften ist textbasiertes Arbeiten praktisch unbekannt, während es in vielen natur- und computerwissenschaftlichen Disziplinen zum Standard gehört.
-Tatsächlich erfordert das Arbeiten mit Textdateien ein grundlegendes Umdenken, und es kann nicht geleugnet werden, dass dies mit einer nennenswerten Lernkurve verbunden ist.
-Dies ist wohl auch der Grund, weshalb es so schwierig erscheint, Musiker und Musikwissenschaftler für das Konzept zu interessieren.
-Allerdings erscheint mir diese Zurückhaltung irrational, denn die Konzepte, mit denen wir uns berufsbedingt auseinandersetzen -- seien es Fingersätze oder philologische Terminologie -- sind nicht weniger komplex.
-Insgesamt erscheint mir die Auseinandersetzung mit textbasierten Programmen und Ansätzen eine überaus lohnende und gerechtfertigte Investition zu sein, insbesondere, wenn sie als Gesamtpaket betrachtet wird.
-Wie sie auf lange Sicht in der Lage sein kann, die Produktivität ebenso wie die Qualität der Ergebnisse zu erhöhen, möchte ich mit diesem Aufsatz zur Diskussion stellen.
+In den Geisteswissenschaften ist textbasiertes Arbeiten weitgehend unbekannt, während es in vielen natur- und computerwissenschaftlichen Disziplinen zum Standard gehört.
+Tatsächlich erfordert das Arbeiten mit Reintextdateien ein grundlegendes Umdenken, was wohl auch die erheblichen Vorbehalte erklärt, mit denen die entsprechenden Techniken meist zur Kenntnis genommen werden.
+Allerdings erscheint mir diese Zurückhaltung nur bedingt gerechtfertigt, denn die Konzepte, mit denen wir uns berufsbedingt auseinandersetzen -- seien es Fingersätze oder Quellenbeschreibungen -- sind nicht weniger komplex.
+Insgesamt betrachte ich die Auseinandersetzung mit textbasierten Programmen und Ansätzen als eine überaus lohnende und gerechtfertigte Investition, insbesondere, wenn sie nicht als Einzelaspekt, sondern im Zusammenhang betrachtet werden.
+Auf lange Sicht kann textbasiertes Arbeiten die musikwissenschaftliche Produktivität sowie die Qualität der Ergebnisse erhöhen.
+Ein grundlegendes Interesse hier- sowie Verständnis dafür möchte ich mit diesem Aufsatz herstellen.
 
 \medskip
-Der vorliegende Text ist eine stark verkürzte Fassung des englischen Originals, das unter \url{http://lilypondblog.org/2013/07/plain-text-files-in-music/} erhältlich ist.
-Er verzichtet nach Möglichkeit auf ausführliche Erläuterungen (die im Original nachvollziehbar sind) und spitzt die Argumentation deutlicher auf die musikwissenschaftliche Perspektive zu.
+Das vorliegende Dokument ist die stark verkürzte Fassung eines englischen Beitrags, der in dem Blog \emph{Scores of Beauty} veröffentlicht wurde%
+\footnote{\url{http://lilypondblog.org/2013/07/plain-text-files-in-music/}}.
+Die Idee des Originals ist eine möglichst behutsame Einführung in das Thema für jeden, der mit der Erstellung von Musik-Texten und Partituren befasst ist, während die Kurzversion deutlicher auf die musikwissenschaftliche Perspektive zugespitzt ist.
+Insbesondere möchte ich die komplexeren Aspekte und Potenziale bei institutionellen Rahmen- und Arbeitsbedingungen herausarbeiten.
+Bei Verständnisfragen empfehle ich daher, auf die nahezu gleich strukturierte englische 
+Fassung zurückzugreifen.
 
 Die wesentlichen Softwaresysteme, die ich auf den folgenden Seiten vorstellen -- in deren Benutzung ich aber nicht einführen -- werde, sind:
 
@@ -97,6 +101,8 @@ Die wesentlichen Softwaresysteme, die ich auf den folgenden Seiten vorstellen --
 \item \emph{LilyPond} -- das Notensatzprogramm
 \item \emph{\LaTeX} -- das professionelle Textsatzsystem
 \end{itemize*}
+
+Außer dem Verfassen von Text- und Partiturdokumenten spielen im Zusammenhang mit musikwissenschaftlichem Arbeiten noch weitere Technologien (wie etwa Datenbanken und Webserver) eine Rolle, die an dieser Stelle jedoch nicht erörtert werden.
 
 \vfill
 \hrule
@@ -184,7 +190,7 @@ Daten werden in aller Regel irgendwann unbenutzbar.
 Programme, die mit Textdateien arbeiten, unterliegen dieser Gesetzmäßigkeit ebenso, doch sind diese Dateiformate meist wesentlich besser dokumentiert, so dass die Wahrscheinlichkeit einer verfügbaren Konvertierungsmöglichkeit erheblich größer ist.
 Und sollte alles nichts helfen, bleibt zumindest noch die „rohe“, menschenlesbare und frei zugängliche Datei, für die prinzipiell jederzeit ein neues Bearbeitungs- oder Konvertierungsprogramm geschrieben werden kann.
 
-Textdatei-basierte Projekte können auf diese Weise -- insbesondere in Verbindung mit Versionskontrolle (siehe das nächste Kapitel) -- ungeahnte Zeiträume einer Vielzahl von Computergenerationen umspannen.
+Textdatei-basierte Projekte können auf diese Weise -- insbesondere in Verbindung mit Versionskontrolle (siehe das nächste Kapitel) -- eine Vielzahl von Computergenerationen umspannen.
 Dies macht diese Herangehensweise besonders geeignet für akademische Zwecke.
 
 \section{Editor-Unabhängigkeit}
@@ -193,7 +199,7 @@ Textbasierte Arbeitsumgebungen trennen das Bearbeiten, Verarbeiten und Anzeigen 
 Auf diese Weise ist man nicht an \emph{die eine} Anwendung gebunden, die vom (kommerziellen) Hersteller vorgegeben ist, sondern kann je nach Kontext beliebige Bearbeitungsprogramme verwenden.
 Beispielsweise kann an einem Projekt gleichzeitig mit verschiedenen Werkzeugen gearbeitet werden, so können Skizzen ohne Weiteres auf dem Smartphone oder in einem Internetcafé notiert und später mit den Hauptdokumenten verbunden werden.
 Ebenso ist das Textformat ein geeignetes Mittel, um Dokumente in einem Internetbrowser notieren zu können.
-So gibt es inzwischen eine Reihe von Projekten, die aus Texteingabe im Browser Notation erzeugen können, am prominentesten die neue Wikipedia-Erweiterung%
+So gibt es inzwischen eine Reihe von Projekten, die Noten aus Texteingabe im Browser  erzeugen können, am prominentesten die neue Wikipedia-Erweiterung%
 \footnote{\url{http://en.wikipedia.org/wiki/Help:Score}}.
 
 \section{Programmierbarkeit}
