@@ -113,124 +113,147 @@ Außer dem Verfassen von Text- und Partiturdokumenten spielen im Zusammenhang mi
 
 \chapter{Textformate}
 \label{chap:pt_plain-text-format}
-Im Gegensatz zu \textsc{wysiwig}-Programmen, die eine grafische Ansicht von Dokumenten bieten, ist bei der Bearbeitung von Textdateien das Ergebnis nicht unmittelbar ersichtlich -- der „Quelltext“ muss erst in ein grafisches Dateiformat „übersetzt“ oder „kompiliert“ werden.
+„Traditionelle“, grafische Programme bilden den gesamten Arbeitsprozess bei der Erstellung von Dokumenten in einer \textsc{wysiwig%
+\footnote{What You See Is What You Get -- die Bildschirmdarstellung gleicht der endgültigen Ausgabe auf Papier}}-Umgebung ab.
+Demgegenüber ist bei der Bearbeitung von Textdateien das Ergebnis nicht unmittelbar ersichtlich -- der „Quelltext“ muss erst in ein grafisches Dateiformat „übersetzt“ oder „kompiliert“ werden.
 Weshalb sollte man sich nun diese Abstraktionsebene aufbürden, wo es doch offensichtlich schnell, einfach und effizient ist, ein Dokument in seinem endgültigen Erscheinungsbild zu bearbeiten?
-Ist es nicht nachgerade \emph{natürlich}, eine Partitur grafisch mit einer Maus zu bearbeiten?
+Ist es nicht nachgerade \emph{natürlich}, eine Partitur grafisch zu bearbeiten?
 
 Nun, es gibt eine Reihe guter Gründe, Dokumente als Textdateien zu speichern und zu bearbeiten.
 Textbasiertes Arbeiten umgeht einige grundlegende Probleme anderer Ansätze, und es eröffnet Perspektiven auf ein breites Spektrum erweiterter Möglichkeiten.
 Und schließlich gibt es heutzutage Bearbeitungsprogramme, welche den Umgang mit Textdateien erheblich vereinfachen.
 
-Einleitend werde ich einige grundlegende Aspekte der Verwendung von Reintextformaten erläutern.
-
-\section{Transparenz und Kontrolle}
-\label{sec:pt_transparency-and-control}
-Grafische Programme (insbesondere solche mit proprietären Dateiformaten) lassen sich hinsichtlich der Speicherung und Interpretation eingegebener Inhalte i.\,d.\,R. nicht in die Karten sehen.
-Einer der Hauptgründe, meinem grafischen Notationsprogramm den Rücken zu kehren, war dessen Angewohnheit, scheinbar willkürlich meine manuellen Änderungen zu überschreiben.
-
-Etwas grundsätzlicher formuliert: Bei einem grafischen Programm habe ich keinen Einblick, 
-\begin{inparaenum}[1)]
-\item in welcher Form ein mit der Maus verschobenes Element gespeichert wird,
-\item auf welche Referenz sich die Änderung bezieht und
-\item wie das Programm meine Änderung bei einer Layoutanpassung (etwa auf Grund eines neuen Zeilenumbruchs oder Papierformats) behandeln wird.
-\end{inparaenum}
-Darüber hinaus ist insgesamt nicht ersichtlich, welche Elemente manuell angepasst wurden und welche dem automatischen Ergebnis entsprechen.
-
-In einer Quelltextdatei hingegen ist unzweideutig definiert, welche manuellen Änderungen beabsichtigt sind, diese sind von Jedermann nachzulesen.
-Und sollte einmal eine Änderung erhebliche Nebenwirkungen auf das Layout haben, so kann jede einzelne Modifikation gezielt verändert oder zurückgenommen werden -- während ich im grafischen Programm lediglich die Wahl habe, mein Glück mit einer \emph{Undo-}Funktion zu versuchen oder das Problem durch \emph{weitere} Korrekturen in den Griff zu bekommen.
-
-Der Preis dafür ist die Notwendigkeit, den Quellcode händisch einzugeben und dies zunächst zu erlernen.
-Doch lohnt sich der Aufwand auf lange Sicht.
+Einleitend werde ich einige grundlegende Aspekte der Verwendung von Reintextformaten erläutern, doch vorab eine Bemerkung zur Terminologie.
+Da es bei diesem Thema eine Reihe von Mehrdeutigkeiten gibt, werde ich im Folgenden einige selbstgewählte Regeln beachten:
+Wenn ich von \emph{Dateien} spreche, meine ich die physische Speicherung auf einer Festplatte, während \emph{Dokument} die konzeptionelle Einheit bezeichnet.
+Ein \emph{Textdokument} ist somit beispielsweise der vorliegende Aufsatz, unabhängig von dem Dateiformat, in dem er gespeichert ist.
+\emph{Textdatei} (oder auch \emph{Reintextdatei}) bezeichnet dagegen eine physische Datei, in der ausschließlich Reintext gespeichert ist.
+Auf das zweideutige „Text“ versuche ich nach Möglichkeit zu verzichten.
 
 \section{Inhalt, Bedeutung und Erscheinungsbild}
 \label{sec:pt_separation-content-meaning-appearance}
-Die auf Grund der Allgegenwart grafischer Programme verbreitete Vorstellung, das \emph{visuelle Erscheinungsbild} eines Dokuments sei gleichbedeutend mit seinem \emph{Inhalt}, ist ein Trugschluss.
-Tatsächlich handelt es sich dabei um zwei verschiedene Ebenen, die nur üblicherweise unter einer Benutzeroberfläche vereint sind.
-Ein Text in einer Schriftgröße von 16\,Punkt etwa, der fett und kursiv dargestellt ist, kann auf verschiedenste Weise formatiert sein:
+Die auf Grund der Allgegenwart grafischer Programme verbreitete Vorstellung, das \emph{Erscheinungsbild} eines Dokuments sei gleichbedeutend mit seinem \emph{Inhalt}, ist ein Trugschluss.
+Tatsächlich handelt es sich dabei um verschiedene Ebenen, die unter einer Benutzeroberfläche nur scheinbar vereint sind.
+So kann etwa ein Text in einer Schriftgröße von 16\,Punkt, der fett und kursiv gesetzt ist und einen Abstand von 8\,Punkt zum folgenden Absatz aufweist, auf unterschiedliche Weise formatiert sein und verschiedene strukturelle Bedeutungen haben.
+Üblicherweise wird es sich dabei um eine Überschrift handeln, die mit einer entsprechenden Absatzvorlage formatiert wurde.
+Es ist aber nicht sichtbar, ob der Autor statt dessen mit einer
 \begin{inparaenum}[1)]
-\item als Absatzvorlage,
-\item als Zeichenvorlage,
-\item als manuelle Formatierung,
-\item als Absatz- mit zusätzlicher Zeichenvorlage oder
-\item als beliebige Mischung dieser Optionen.
+\item Zeichenvorlage,
+\item manuellen Formatierung,
+\item Absatz- mit zusätzlicher Zeichenvorlage oder
+\item einer beliebigen Mischung dieser Optionen.
 \end{inparaenum}
-Je nach Kontext können unterschiedliche Methoden adäquat sein, aus dem Erscheinungsbild einer grafischen Benutzeroberfläche wird jedoch die verwendete Formatierungsart nicht deutlich.
+gearbeitet hat.
 
-Im Quelldokument eines textbasierten Programms hingegen wird der Text explizit \emph{ausgezeichnet}.
-Der Vorteil der strikten und sauberen Trennung zwischen dem Inhalt und dessen Erscheinungsbild überwiegt den Umstand, dass das Erfassen des Inhalts scheinbar schwieriger ist, wenn man bei einem Konstrukt wie „\texttt{Schuberts \textbackslash werktitel\{Winterreise\}}“ den Auszeichnungsbefehl mental ausblenden muss.
+Im Quelldokument eines textbasierten Programms hingegen wird der Text mit \emph{Auszeichnungsbefehlen}%
+\footnote{„Semantisches Markup“}
+versehen, Missverständnisse sind ausgeschlossen.
+Das Quelltextfragment „\texttt{Schuberts \textbackslash werktitel\{Winterreise\}}“ trennt beispielsweise strikt zwischen dem Inhalt („Winterreise“), der strukturellen Bedeutung („es ist ein Werktitel“) und der Darstellung, die in einer separaten Formatvorlage definiert ist.
+Der Vorteil dieser konsequenten Trennung überwiegt nach einer Gewöhnungsphase den Umstand, dass die Auszeichnungsbefehle dem Erfassen des Inhalts (im Quelltextdokument) etwas im Wege stehen und gewissermaßen mental ausgeblendet werden müssen.
 
 Im Falle von Partituren ist die Sache ähnlich gelagert:
-Eine textbasierte Partitur-Eingabedatei enthält eine Repräsentation des musikalischen \emph{Inhalts}, während das \emph{Erscheinungsbild} erst während des Übersetzungsvorgangs entsteht und in der resultierenden \textsc{pdf}-Datei zur Verfügung steht.
-Diese Kontrolle über die Trennung von Inhalt, Bedeutung und Erscheinung ist eine wichtige Grundlage für die Arbeitstechniken, auf die ich im weiteren Verlauf näher eingehen werde.
+Eine textbasierte Partitur-Eingabedatei enthält eine textliche Repräsentation des musikalischen \emph{Inhalts} in strukturierter Form, während das \emph{Erscheinungsbild} erst durch den Übersetzungsvorgang in ein grafisches Dateiformat entsteht.
+
+Diese Kontrolle über die Trennung von Inhalt, struktureller Bedeutung und äußerer Erscheinung ist eine wichtige Grundlage für die Arbeitstechniken, auf die ich im weiteren Verlauf näher eingehen werde.
+
+\section{Transparenz und Kontrolle}
+\label{sec:pt_transparency-and-control}
+Grafische Programme lassen sich hinsichtlich der Speicherung und Interpretation eingegebener Inhalte nicht in die Karten sehen.
+Einer der Hauptgründe, meinem grafischen Notationsprogramm den Rücken zu kehren, war dessen Angewohnheit, meine manuellen Änderungen willkürlich zu überschreiben.
+
+Etwas grundsätzlicher formuliert: Ein grafisches Programm gibt keinen Einblick, 
+\begin{inparaenum}[1)]
+\item in welcher Form ein manuell verschobenes Element gespeichert wird,
+\item auf welche Referenz die Änderung bezogen wird und
+\item wie das Programm diese Änderung bei einer Layoutanpassung (etwa auf Grund eines neuen Zeilenumbruchs oder Papierformats) behandeln wird.
+\end{inparaenum}
+Darüber hinaus ist insgesamt nicht ersichtlich, welche Elemente überhaupt manuell verändert wurden.
+
+In einer Quelltextdatei hingegen ist unzweideutig definiert, welche manuellen Änderungen beabsichtigt sind, diese sind jederzeit nachvollziebar.
+Und sollte einmal eine Änderung erhebliche Nebenwirkungen auf das Layout haben, so kann jede einzelne Modifikation gezielt verändert oder zurückgenommen werden -- während das grafische Programm lediglich die Wahl bietet, das Glück mit einer \emph{Undo-}Funktion herauszufordern oder das Problem durch \emph{weitere} Korrekturen in den Griff zu bekommen.
+
+Der Preis für diese Kontrolle ist die Notwendigkeit, den Quellcode von Hand einzutippen und dies zunächst auch zu erlernen.
+Dieser Aufwand lohnt sich allerdings meines Erachtens auf lange Sicht.
+
 
 \section{Lesbarkeit und Stabilität von Text- und Binärdateien}
 \label{sec:pt_readability-stability}
 Textdateien sind lesbar, Binärdateien nicht -- diese schlichte Feststellung hat grundlegende Implikationen für den Umgang mit digitalen Dokumenten.
 
-Während die Eingabedatei eines (guten) Reintextformats präzise und lesbar den Inhalt des Dokuments beschreibt, enthält die proprietäre Binärdatei eines kommerziellen Programms einen unverständlichen Datenstrom, der nur von dem entsprechenden Programm oder einem geeigneten Importfilter eines anderen Programms interpretiert werden kann.
+Während die Eingabedatei eines (guten) Reintextformats präzise und lesbar den Inhalt und die Struktur des Dokuments beschreibt, enthält die proprietäre Binärdatei eines kommerziellen Programms einen für Menschen unverständlichen Datenstrom, der nur von dem entsprechenden Programm oder einem geeigneten Importfilter eines anderen Programms interpretiert werden kann.
 Inzwischen bieten zwar viele Programme (so auch \emph{Word} und \emph{OpenOffice}) die Möglichkeit, Dokumente in \textsc{xml}-Formaten abzuspeichern, die ebenfalls zur Gruppe der Textdateien gehören.
 Das Verhältnis von tatsächlichem Inhalt und zusätzlichem \emph{Markup} ist dabei jedoch so ungünstig, dass diese praktisch nicht mehr lesbar sind%
 \footnote{Im Anhang der englischen Fassung dieses Aufsatzes sind eine Reihe von Rohdateien einfacher Text- und Partiturdokumente abgedruckt, deren Studium an dieser Stelle nachdrücklich empfohlen wird.}.
 
-Die Tatsache, dass Textdateien menschenlesbar sind, hat zwei wesentliche Implikationen:
+Die Tatsache, dass Textdateien für Menschen lesbar sind, hat zwei wesentliche Implikationen:
 
 \paragraph{Datenrettung}
-Beschädigte Dateien können heutzutage auch dann \emph{teilweise} wiederhergestellt werden, wenn das Dateisystem zerstört wurde oder die Daten versehentlich gelöscht wurden.
+Beschädigte oder versehentlich gelöschte Dateien können meist \emph{teilweise} wiederhergestellt werden, sogar wenn das Dateisystem vollständig zerstört wurde.
 Binärdateien jedoch, die nicht \emph{vollständig} rekonstruiert werden können, sind i.\,d.\,R. komplett verloren, selbst wenn nur ein Bruchteil der Datei beschädigt ist.
 
 Bei der Wiederherstellung korrupter Textdateien hingegen kann praktisch alles, was rekonstruierbar ist, auch wiederverwendet werden, selbst, wenn man nur noch die bloßen Bytes der Datenträgeroberfläche abscannen konnte.
-Mit etwas Glück lassen sich die fehlenden Puzzleteile leicht ergänzen.
+Mit etwas Glück lassen sich somit die fehlenden Puzzleteile leicht ergänzen.
 
 \paragraph{Verwendung „antiker“ Dateien}
 Mit der Weiterentwicklung von Software ändern sich deren Dateiformate.
 Auch wenn Programme üblicherweise Dateien ihrer Vorgängerversionen öffnen können, wird deren Unterstützung irgendwann eingestellt, so dass zum Bearbeiten alter Dateien eine ältere Version des Programms erforderlich ist.
 Bei einem Wechsel des Betriebssystems verschärft sich dieses Problem erheblich.
-Daten werden in aller Regel irgendwann unbenutzbar.
+In aller Regel werden Daten und Dateien irgendwann unbenutzbar.
 
-Programme, die mit Textdateien arbeiten, unterliegen dieser Gesetzmäßigkeit ebenso, doch sind diese Dateiformate meist wesentlich besser dokumentiert, so dass die Wahrscheinlichkeit einer verfügbaren Konvertierungsmöglichkeit erheblich größer ist.
-Und sollte alles nichts helfen, bleibt zumindest noch die „rohe“, menschenlesbare und frei zugängliche Datei, für die prinzipiell jederzeit ein neues Bearbeitungs- oder Konvertierungsprogramm geschrieben werden kann.
+Programme, die mit Textdateien arbeiten, sind dieser Problematik ebenso ausgesetzt, doch sind deren Dateiformate meist wesentlich besser dokumentiert.
+Die Wahrscheinlichkeit, eine verfügbare Konvertierungsmöglichkeit zu finden, ist daher erheblich größer.
+Und sollte alles nichts helfen, ist zumindest noch die „rohe“ Reintextdatei offen zugänglich.
+Ihr Inhalt kann prinzipiell jederzeit verarbeitet und/oder ein neues Editorprogramm dafür entwickelt werden.
 
-Textdatei-basierte Projekte können auf diese Weise -- insbesondere in Verbindung mit Versionskontrolle (siehe das nächste Kapitel) -- eine Vielzahl von Computergenerationen umspannen.
-Dies macht diese Herangehensweise besonders geeignet für akademische Zwecke.
+Textdatei-basierte Projekte können auf diese Weise -- insbesondere in Verbindung mit Versionskontrolle (siehe das nächste Kapitel) -- eine Vielzahl von Computer- und sogar Betriebssystemgenerationen umspannen.
+Dies macht diese Herangehensweise besonders geeignet für langfristige Projekte, etwa im akademischen Bereich.
 
 \section{Editor-Unabhängigkeit}
 \label{sec:pt_editor-independence}
-Textbasierte Arbeitsumgebungen trennen das Bearbeiten, Verarbeiten und Anzeigen von Dokumenten.
-Auf diese Weise ist man nicht an \emph{die eine} Anwendung gebunden, die vom (kommerziellen) Hersteller vorgegeben ist, sondern kann je nach Kontext beliebige Bearbeitungsprogramme verwenden.
-Beispielsweise kann an einem Projekt gleichzeitig mit verschiedenen Werkzeugen gearbeitet werden, so können Skizzen ohne Weiteres auf dem Smartphone oder in einem Internetcafé notiert und später mit den Hauptdokumenten verbunden werden.
-Ebenso ist das Textformat ein geeignetes Mittel, um Dokumente in einem Internetbrowser notieren zu können.
-So gibt es inzwischen eine Reihe von Projekten, die Noten aus Texteingabe im Browser  erzeugen können, am prominentesten die neue Wikipedia-Erweiterung%
+Wie bereits gesagt trennen textbasierte Arbeitsumgebungen das Bearbeiten der Eingabedatei, deren Übersetzung und schließlich das Anzeigen des Dokuments.
+Dies hebt die Bindung an \emph{die eine}, vom (kommerziellen) Hersteller vorgegebene, Anwendung auf, und man kann je nach Kontext beliebige Bearbeitungsprogramme verwenden.
+Beispielsweise kann an einem Projekt gleichzeitig mit verschiedenen Werkzeugen gearbeitet werden, so können Skizzen ohne Weiteres auf dem Smartphone oder in einem Email-Programm notiert und später in die eigentlichen Dateien eingefügt werden.
+Ein weiteres Beispiel für die geräte- und ortsunabhängige Bearbeitung von Textdateien ist der Internetbrowser.
+So gibt es inzwischen eine Reihe von Projekten, die im Browser eingegebenen Quelltext in Noten oder formatierten Text umwandeln -- so auch seit kurzem eine neue Wikipedia-Erweiterung%
 \footnote{\url{http://en.wikipedia.org/wiki/Help:Score}}.
 
 \section{Programmierbarkeit}
 \label{sec:pt_programmability}
 Textdateien können nicht nur mit jedem Texteditor, sondern auch mit jeder Programmiersprache bearbeitet werden.
-Die meisten Anwendungsprogramme bieten heute Schnittstellen für Skriptsprachen, mit deren Hilfe zusätzliche Funktionalität ergänzt werden kann.
-Im Gegensatz zu diesen, vom Hersteller explizit vorgegebenen, Möglichkeiten können Textdateien jedoch in jeder nur erdenklichen Weise programmatisch bearbeitet werden: Man kann den Inhalt analysieren oder verändern, oder sie auch gänzlich neu generieren.
-Die Liste möglicher Anwendungen ist lang und reicht (bei Partituren) von kontrapunktischen Operationen über algorithmische Komposition bis hin zur Verwaltung umfangreicher Beispielsammlungen in einer Datenbank (mit Internetzugriff).
+Zwar bieten die meisten Anwendungsprogramme heute Schnittstellen für Skriptsprachen, mit deren Hilfe zusätzliche Funktionalität ergänzt werden kann.
+Doch sind diese zumeist auf die vom Hersteller explizit vorgegebenen Möglichkeiten beschränkt.
+Textdateien hingegen können in jeder nur erdenklichen Weise programmatisch bearbeitet werden: Man kann den Dateiinhalt analysieren oder verändern, oder sie auch gänzlich neu generieren.
+Die Liste möglicher Anwendungen ist lang und reicht (bei Partituren) von kontrapunktischen Operationen über algorithmische Komposition bis hin zur Verwaltung umfangreicher Beispielsammlungen in einer Datenbank (gegebenenfalls mit Internetzugriff).
 
-Von dieser Option können auch Nutzer profitieren, die selbst nie programmiert haben und es auch nicht lernen wollen.
-So kann in größeren Projekten mit Hilfe von Programmierung eine Infrastruktur geschaffen werden, welche die Komplexität vor dem Einzelnen gerade \emph{verbirgt}.
+Von dieser Option können auch Nutzer profitieren, die selbst nie programmiert haben und es auch nicht zu lernen beabsichtigen.
+Gerade in größeren Projekten kann es sich als äußerst fruchtbar erweisen, mit Hilfe von Programmierung eine komplexe Infrastruktur zu schaffen, die etwa den gesamten Projekt- und Produktionsablauf integriert.
+Der einzelne Mitarbeiter hingegen muss damit überhaupt nicht konfrontiert werden, im Gegenteil kann ihm durch Programmierung auch eine besonders einfache und übersichtliche Schnittstelle präsentiert werden.
+
 
 \section{Unmittelbares Feedback vs. Übersetzung}
 \label{sec:pt_compiling-instant}
 Einer der Aspekte textbasierten Arbeitens, an den sich Benutzer am meisten gewöhnen müssen, ist das Fehlen eines unmittelbaren visuellen Feedbacks eingegebener Änderungen.
-Grafische Programme reflektieren jegliche Änderung sofort, während die Eingabedatei des textbasierten Programms zunächst kompiliert werden muss.
+Grafische Programme reflektieren jegliche Änderung sofort, während die Eingabedatei des textbasierten Programms zunächst kompiliert werden muss, sich also während des eigentlichen Eingabevorgangs nicht aktualisiert.
 
-Obwohl dies zunächst umständlich erscheint, ist es ein inhärenter bedeutender Vorteil.
-Während der Arbeit im Dokumenteninhalt kann und \emph{muss} der Autor sich nicht mit Fragen des Layouts befassen, und das Programm muss nicht jede minimale Änderung sofort mit einem brauchbaren Ergebnis quittieren (was etwa bei einem größeren Textdokument mit vielen eingebetteten Abbildungen durchaus eine große Herausforderung ist und die Flüssigkeit des Arbeitens einschränken kann).
-Dafür kann sich das Programm beim eigentlichen Übersetzungsvorgang genügend Zeit nehmen, um zunächst eine interne Repräsentation der \emph{Struktur} zu erzeugen und schließlich das Layout bestmöglich zu erstellen.
+Auch wenn dies zunächst umständlich erscheint, ist es doch ein inhärenter bedeutender Vorteil.
+Das grafische Programm ist gezwungen, jede Änderung des Dokumenteninhalts \emph{unmittelbar} mit einem brauchbaren Ergebnis zu quittieren.
+So kann etwa das Löschen eines Satzes in einem Buchdokument mit zahlreichen Abbildungen ein Textverarbeitungsprogramm ohne weiteres in die Knie zwingen, da es den augenblicklich aktualisierten Seitenumbruch des verbleibenden Dokuments erforderlich macht.
+Abgesehen von der Unterbrechung des Arbeitsflusses geht dies auch zu Lasten der Ausgabequalität.
+Der Reintexteditor hingegen kann sich auf die Bearbeitung des reinen Texts beschränken, was in aller Regel erheblich geringere Ansprüche an die Rechenleistung stellt.
+Das eigentliche Übersetzungsprogramm kann sich dann genügend Zeit nehmen, um zunächst eine interne Repräsentation der \emph{Struktur} zu erzeugen und schließlich das Layout bestmöglich zu erstellen.
 
 Die Konsequenz hieraus ist eine Standard-Ausgabe von erheblich höherer Qualität als bei grafischen Programmen%
 \footnote{Für einige Beispiele siehe die englische Fassung des Aufsatzes}.
+Für die weitere Bearbeitung und Verwendung ist es zumeist nicht nötig, in die Layout\-entscheidungen einzugreifen.
 Als Faustregel kann man bei textbasierten Programmen (wie LilyPond und \LaTeX) davon ausgehen, sich erst dann mit Formatierungsdetails befassen zu müssen, wenn tatsächlich eine Veröffentlichung vorbereitet werden muss.
-Dies ist auf lange Sicht ein erheblicher Vorteil, da man sich als Autor bis zur eigentlichen Druckvorbereitung auf den eigentlichen \emph{Inhalt} des Dokuments konzentrieren kann.
+Dies ist auf lange Sicht ein erheblicher Vorteil, da man sich als Autor oder Herausgeber bis zur eigentlichen Druckvorbereitung auf den eigentlichen \emph{Inhalt} des Dokuments konzentrieren kann.
 
 \bigskip
 \hrule
 \bigskip
 
-Einige weitere Vorzüge der Arbeit mit Textdateien, insbesondere die Verwendung von \emph{Variablen}, kaskadierenden Set-ups durch \emph{Inklusion} von Dateien sowie die \emph{Kommentierung} und \emph{Dokumentation} von Quelldateien, werde ich im Kapitel \ref{chap:pt_lilypond} über LilyPond (ab S.\,\pageref{chap:pt_lilypond}) vorstellen.
+Neben diesen grundlegenden Charakteristika textbasierten Arbeitens gibt es noch weitere, mehr ins programmatische Detail gehende Punkte.
+Diese, insbesondere die Verwendung von \emph{Variablen}, kaskadierenden Set-ups durch \emph{Inklusion} von Dateien sowie die \emph{Kommentierung} und \emph{Dokumentation} von Quelldateien, werde ich im Kapitel \ref{chap:pt_lilypond} ab S.\,\pageref{chap:pt_lilypond} am Beispiel von LilyPond vorstellen.
 Doch zunächst werde ich auf den vielleicht wichtigsten Aspekt textbasierten Arbeitens eingehen: \emph{Versionskontrolle}.
 
 \chapter{Versionskontrolle}
