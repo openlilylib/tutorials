@@ -382,7 +382,7 @@ Ein Fokus der Entwicklung von Frescobaldi liegt derzeit darin, der Partiturdarst
 So wird beispielsweise daran gearbeitet, Tonhöhen direkt in der Partitur  korrigieren oder Bögen und ähnliche Elemente grafisch anpassen zu können.
 Die Tendenz geht allgemein dahin, die Arbeit mit Partituren komfortabler zu gestalten und dabei die Vorzüge des textbasierten Ansatzes nicht zu verlieren.
 
-\section{Variablen und Inklusion}
+\section{Variablen und eingebundene Dateien}
 \label{sec:pt_variables-includes}
 In einer LilyPond-Eingabedatei wird die Struktur der Partitur textlich definiert.
 Ein grundlegender \cmd{score}-Block sieht etwa folgendermaßen aus:
@@ -398,15 +398,15 @@ Ein grundlegender \cmd{score}-Block sieht etwa folgendermaßen aus:
 \end{minipage}
 \end{quote}
 
-Anstatt nun den musikalischen Inhalt direkt in die Definition des Notensystems einzufügen, wird man diesen in aller Regel in einer \emph{Variablen} notieren und im Notensystem lediglich darauf \emph{verweisen}.
+Anstatt nun -- wie im Screenshot zu sehen -- den musikalischen Inhalt direkt in die Definition des Notensystems einzufügen, wird man diesen in aller Regel in einer \emph{Variablen} notieren und im Notensystem lediglich darauf \emph{verweisen}.
 Dies mag auf den ersten Blick wie ein syntaktisches Detail wirken, hat aber ganz erhebliche Auswirkungen auf die Arbeit mit dem Material:
-Habe ich weiter oben über die Unterscheidung von \emph{Inhalt} und \emph{Erscheinungsbild} \todo{gesprochen}, so geht es hier um die Unterscheidung von \emph{Definition} und (Wieder-)\emph{Verwendung} des musikalischen Inhalts.
+Ging es weiter oben (Abschnitt \ref{sec:pt_separation-content-meaning-appearance} auf S.\,\pageref{sec:pt_separation-content-meaning-appearance}) um die Unterscheidung von \emph{Inhalt} und \emph{Erscheinungsbild}, so handelt es sich hier um die \emph{Definition} und (Wieder-)\emph{Verwendung} des musikalischen Inhalts.
 Musik, die in einer Variablen definiert ist, wird in einer Partitur verwendet.
 Und sie kann ebenso in einer anderen Partitur verwendet werden.
 Durch diese grundsätzliche Herangehensweise kann eine anders kaum mögliche Stabilität beim Herstellen von Einzelstimmen oder Transposition erreicht werden.
 Einmal definiertes Material kann beliebig wiederverwendet werden.
 
-\bigskip
+\medskip
 Eine erhebliche Erweiterung ihres Potenzials erhalten Variablen durch die Möglichkeit, in separate Dateien ausgelagert zu werden, die durch einen \cmd{include}-Befehl in das zentrale Partiturdokument integriert werden.
 Nicht nur Musik, auch Formatierungsbefehle oder manuelle Layoutanpassungen können auf diese Weise \emph{wiederverwendet} werden, und es können -- ähnlich den bekannten \emph{Cascading Style Sheets (\textsc{css})} im Webdesign -- komplexe und mächtige Szenarien entwickelt werden.
 So können etwa Stildefinitionen hierarchisch auf globaler, Haus-, Projekt- und Dateiebene verwaltet werden -- Änderungen etwa der Projekt-Stilvorlage wirken sich dann automatisch auf alle Partituren des Projekts aus.
@@ -424,7 +424,7 @@ In Kürze wird es möglich sein, explizite Kommentare in den Quelltext -- \emph{
 Auf diese Weise können unmittelbar aus dem Partiturdokument heraus Listen mit \textsc{todo}s, editorischen und typografischen Fragen und schließlich auch kritischen Anmerkungen erzeugt werden.
 Von den Listeneinträgen führen Links direkt an die entsprechende Stelle im Quelltext.
 Geplant ist darüber hinaus, die Kommentare direkt in Frescobaldis Partituransicht bearbeiten zu können -- somit wird es möglich, die gesamte Vorbereitung einer kritischen Ausgabe \emph{innerhalb der konkreten Partitur} durchführen zu können!
-Die Krönung wird schließlich die Möglichkeit sein, die in der Partitur gespeicherten Einträge zum kritischen Bericht direkt in eine schriftliche Fassung exportieren zu lassen.
+Schließlich wird es sogar Möglichkeit sein, die in der Partitur gespeicherten Einträge zum kritischen Bericht direkt in eine schriftliche Fassung exportieren zu lassen.
 
 \section{Programmierbarkeit}
 \label{sec:pt_lilypond-programmability}
@@ -432,7 +432,7 @@ Weiter oben auf S.\,\pageref{sec:pt_programmability} habe ich über den programm
 Dies trifft selbstverständlich auch auf LilyPond-Dateien zu, wobei auf zwei Ebenen programmiert werden kann:
 Einerseits verfügt LilyPond mit Scheme%
 \footnote{\url{http://de.wikipedia.org/wiki/Scheme}}
-über eine mächtige und praktisch unbeschränkte Erweiterungssprache, mit der die Funktionalität des Programms fundamental erweitert werden kann (ein Großteil der eingebauten Funktionalität basiert auf Scheme)%
+über eine mächtige und praktisch unbeschränkte Erweiterungssprache, mit der die Funktionalität des Programms fundamental erweitert werden kann (ein Großteil der eingebauten Funktionalität selbst basiert auf Scheme)%
 \footnote{So zeigt etwa Nicolas Sceaux in einer Reihe von Blog-Beiträgen, wie LilyPonds Notation um historische Ornamente erweitert werden kann, die dann als Befehle genauso wie die eingebauten zur Verfügung stehen: \url{http://lilypondblog.org/2013/08/adding-ornamentations-to-note-heads-part-1/}}.
 Andererseits können die Eingabedateien selbst mit beliebigen Programmiersprachen bearbeitet oder generiert werden.
 
@@ -451,15 +451,15 @@ Die Arbeit kann so einerseits beliebig „parallelisiert“ werden und andererse
 Durch die in diesem Kapitel beschriebenen Eigenschaften bietet sich LilyPond in hervorragender Weise für die musikwissenschaftliche Editionspraxis an.
 Dabei wurden die Integrationsmöglichkeiten mit Textsatz durch \LaTeX{} noch nicht einmal näher erläutert und das Potenzial der Versionskontrolle nicht erneut hervorgehoben.
 
-Es gibt allerdings derzeit einen Schönheitsfehler, der an dieser Stelle nicht unterschlagen werden kann: den Datenaustausch mit \todo{anderen Programmen}.
+Es gibt allerdings derzeit noch einen Schönheitsfehler, der an dieser Stelle nicht unterschlagen werden kann: den Datenaustausch mit anderen Notensatzprogrammen.
 Momentan ist die Verwendung von LilyPond noch eine Einbahnstraße, deren einziger Ausgang die verschiedenen grafischen Partiturformate sind.
-Leider ist es nicht möglich, eine in LilyPond eingegebene Partitur in Formate zu exportieren, die von anderen Notationsprogrammen gelesen werden können.
+So ist es zwar möglich, Partituren aus anderen Programmen in LilyPond-Eingabedateien zu konvertieren, nicht dagegen, eine in LilyPond eingegebene Partitur in Formate zu exportieren, die von anderen Notationsprogrammen gelesen werden können.
 Dies ist insofern ein großes Problem (abgesehen davon, dass unkooperatives Verhalten an sich problematisch ist), als die Mehrzahl der Verlage auf Dateien der beiden großen grafischen Programme besteht und LilyPond-Dateien nicht akzeptiert.
 
-Die Vorbereitung von Notenausgaben mit LilyPond wäre auch äußerst sinnvoll, wenn die endgültige Druckvorbereitung mit \emph{Fin}ale oder \emph{Sibelius} durchgeführt würde.
+Die Vorbereitung von Notenausgaben mit LilyPond wäre auch dann äußerst sinnvoll, wenn die endgültige Druckvorbereitung mit \emph{Fin}ale oder \emph{Sibelius} durchgeführt würde.
 Daher ist die Ergänzung einer Exportmöglichkeit in das gebräuchliche Austauschformat MusicXML eines der wichtigsten Desiderata aus musikwissenschaftlicher Perspektive.
 Diese scheint kein grundsätzliches technisches Problem, sondern „nur“ eine Frage der Ressourcen zu sein -- für eine grundlegende Implementierung wären wohl lediglich einige Wochen Arbeit eines einzelnen Programmiers erforderlich.
-\emph{Ein} größeres Projekt wäre möglicherweise genug, um sowohl den MusicXML-Export als auch die zuvor beschriebene Erweiterung der Quelltextkommentierung zufriedenstellend zu realisieren \dots
+\emph{Ein} größeres Projekt wäre möglicherweise genug, um in dessen Rahmen sowohl den MusicXML-Export als auch die zuvor beschriebene Erweiterung der Quelltextkommentierung zufriedenstellend zu realisieren \dots
 
 
 \chapter{\LaTeX}
