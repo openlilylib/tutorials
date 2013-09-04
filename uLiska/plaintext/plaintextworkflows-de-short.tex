@@ -465,14 +465,17 @@ Diese scheint kein grundsätzliches technisches Problem, sondern „nur“ eine 
 \chapter{\LaTeX}
 \label{chap:pt_latex}
 
-\LaTeX{} ist für Textdokumente, was LilyPond für Partituren ist:
+\LaTeX%
+\footnote{\url{http://www.latex-project.org}}
+ist für Textdokumente, was LilyPond für Partituren ist:
 es bietet Text\emph{satz}, im Gegensatz zu bloßer Text\emph{verarbeitung}.
 Wem an guter Typografie gelegen ist, wird \LaTeX{} lieben, wer ihr aber keine Bedeutung beimisst, sollte bedenken, dass „keine Typografie“ nicht möglich ist -- sie wirkt \emph{immer}. 
 
-Mit Textverarbeitungsprogrammen wie Word oder OpenOffice ist es unmöglich, professionell gesetzte Dokumente zu erstellen, insofern ist \LaTeX{} eher in Konkurrenz zu \textsc{dtp}-Programmen wie InDesign QuarkXPress zu sehen.
-Hinsichtlich der Qualität zumindest bei Textdokumenten muss man bei der freien Software keine Abstriche machen.
-Da \LaTeX{} ursprünglich für den Buchsatz entwickelt und seit Jahrzehnten verbessert wurde, bietet es selbstverständlich weitestgehende Möglichkeiten für Literaturverwaltung, Zitate, Indizes etc.
-Darüber hinaus bietet \LaTeX{} alle Vorzüge, die ich für textbasierte Softwaresysteme im Allgemeinen  beschrieben habe.
+Mit Textverarbeitungsprogrammen wie Word oder OpenOffice ist es unmöglich, professionell gesetzte Dokumente zu erstellen, insofern ist \LaTeX{} eher in Konkurrenz zu \textsc{dtp}-Programmen wie InDesign oder QuarkXPress zu sehen.
+Hinsichtlich der Qualität zumindest bei Textdokumenten muss man bei der freien Software keinerlei Abstriche machen, im Gegenteil bietet sie gerade hinsichtlich der Mikrotypografie ganz hervorragende Möglichkeiten.
+Einzig bei grafisch komplexen Aufgaben wie Plakaten oder vielleicht Buchcovern könnte die Wahl auf ein grafisch orientiertes Programm fallen.
+Da \LaTeX{} ursprünglich für den Buchsatz entwickelt und seit Jahrzehnten verbessert wurde, bietet es selbstverständlich professionelle Möglichkeiten für Literaturverwaltung, Zitate, Indizes etc.
+Darüber hinaus bietet \LaTeX{} alle Vorzüge, die ich für textbasierte Softwaresysteme im Allgemeinen beschrieben habe.
 
 Die Schnittstelle zu \LaTeX{} ist ähnlich wie bei LilyPond:
 Eingabedateien mit einer ähnlichen Syntax werden in \textsc{pdf}-Dateien \emph{übersetzt}.
@@ -491,7 +494,7 @@ Zur Verwaltung von Notenbeispielen gibt es jedoch einige speziellere Werkzeuge, 
 
 \package{lilypond-book} ist ein Hilfsprogramm, das gemeinsam mit LilyPond ausgeliefert wird und ermöglicht, LilyPond-Code direkt in \LaTeX-Dokumente einzufügen.
 Beim Durchlauf werden die Notenbeispiele bei Bedarf neu erzeugt und der Quellcode durch entsprechende Bilddateien ersetzt.
-Der potenzielle Nachteil an diesem Ansatz ist, dass die zu bearbeitende Datei nicht direkt von \LaTeX{} übersetzt werden kann, sondern zunächst \package{lilypond-book} durchlaufen muss.
+Der potenzielle Nachteil an diesem Ansatz ist, dass die zu bearbeitende Datei nicht direkt von \LaTeX{} übersetzt werden kann, sondern zunächst von \package{lilypond-book} vorverarbeitet werden muss.
 Für Dokumente mit vielen kurzen Notenbeispielen kann es jedoch die effektivste Möglichkeit sein, die Noten \emph{in situ} zu verwalten.
 
 Demgegenüber versteht sich \package{musicexamples}%
@@ -507,10 +510,10 @@ Mit Hilfe des Pakets \lilyglyphs%
 ist es möglich, \emph{jegliche} mit LilyPond realisierbare Notationselemente auf Zeichenebene in \LaTeX-Dokumente einzubetten.
 Dies können etwa dynamische Zeichen wie \lilyDynamics{mf}, Vorzeichen wie \flatflat{} oder auch grafische Zeichen wie \crescHairpin{} oder Taktbezeichnungen (\lilyTimeSignature{4+3}{8} oder \lilyTimeCHalf) sein.
 Mit etwas größerem Aufwand kann man auch individuelle Notationen erstellen und einbinden.
-Das Schöne daran ist, dass man mit dem Paket den \emph{gesamten} Notationsvorrat von LilyPond in dessen hervorragender Qualität zur Verfügung hat und die verwendeten Zeichen als Zeichen problemlos im Text fließen und sich leicht in Größe und Positionierung anpassen lassen.
+Das Schöne daran ist, dass man mit dem Paket auf den \emph{gesamten} Notationsvorrat von LilyPond in dessen hervorragender Qualität zugreifen kann, die verwendeten Zeichen problemlos mit dem Text fließen und sich leicht in Größe und Positionierung anpassen lassen.
 
 \bigskip
-Ideen für weitere Pakete, die bei konkretem Bedarf jederzeit in Angriff genommen werden können, umfassen beispielsweise funktionsharmonische Analysesymbole oder Generalbassbezifferungen.
+Ideen für weitere Erweiterungspakete, die bei konkretem Bedarf jederzeit in Angriff genommen werden können, umfassen beispielsweise funktionsharmonische Analysesymbole oder Generalbassbezifferungen.
 
 \chapter{Anwendungsbeispiele}
 \label{chap:pt_applications}
