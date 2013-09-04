@@ -214,7 +214,7 @@ Wie bereits gesagt trennen textbasierte Arbeitsumgebungen das Bearbeiten der Ein
 Dies hebt die Bindung an \emph{die eine}, vom (kommerziellen) Hersteller vorgegebene, Anwendung auf, und man kann je nach Kontext beliebige Bearbeitungsprogramme verwenden.
 Beispielsweise kann an einem Projekt gleichzeitig mit verschiedenen Werkzeugen gearbeitet werden, so können Skizzen ohne Weiteres auf dem Smartphone oder in einem Email-Programm notiert und später in die eigentlichen Dateien eingefügt werden.
 Ein weiteres Beispiel für die geräte- und ortsunabhängige Bearbeitung von Textdateien ist der Internetbrowser.
-So gibt es inzwischen eine Reihe von Projekten, die im Browser eingegebenen Quelltext in Noten oder formatierten Text umwandeln -- so auch seit kurzem eine neue Wikipedia-Erweiterung%
+So gibt es inzwischen eine Reihe von \todo{Projekten}, die im Browser eingegebenen Quelltext in Noten oder formatierten Text umwandeln -- so auch seit kurzem eine neue Wikipedia-Erweiterung%
 \footnote{\url{http://en.wikipedia.org/wiki/Help:Score}}.
 
 \section{Programmierbarkeit}
@@ -269,7 +269,7 @@ Darüber hinaus erlaubt sie, jeden einzelnen Änderungsschritt individuell, d.\,
 So kann etwa die Überarbeitung eines bestimmten Kapitels, die vor zwei Wochen durchgeführt wurde, rückgängig gemacht werden, ohne die sonstige seitherige Arbeit zu berühren.
 Traditionellerweise wäre man auf das Vorhandensein eines Backups genau des gewünschten Zustands angewiesen und würde bei der Gelegenheit alle spätere Arbeit verlieren.
 
-Es mag nicht selbsterklärend sein, aber dies kann ohne Weiteres Jahrzehnte, Programmwechsel und sogar Betriebssystemgenerationen überdauern -- weil Textdateien gewissermaßen zeitlos sind, wie im vorigen Kapitel erläutert wurde.
+\todo{Es mag nicht selbsterklärend sein}, aber dies kann ohne Weiteres Jahrzehnte, Programmwechsel und sogar Betriebssystemgenerationen überdauern -- weil Textdateien gewissermaßen zeitlos sind, wie im vorigen Kapitel erläutert wurde.
 Die ältesten bekannten Software-Projekte, die heute noch entwickelt werden, haben eine kontinuierliche Versions-History seit den 80er Jahren des vergangenen Jahrhunderts.
 Dies ist auch eine hervorragende Perspektive für (musikalische oder andere) Gesamtausgaben und vergleichbar langfristig angelegte akademische Projekte.
 
@@ -340,7 +340,7 @@ Und bei Partituren wüsste ich nicht, wie ich außer mit einem -- fehleranfälli
 Zusammenfassend kann man sagen, dass in einem Projekt unter Versionskontrolle eine beliebige Anzahl von Mitarbeitern auf einen beliebig großen gemeinsamen Datenbestand zugreifen kann.
 Versionskontrolle garantiert die Minimierung von Zusammenführungskonflikten, bietet einfache Mittel, diese im Fall des Falles aufzulösen und verwaltet die Projekt-History sauber und transparent, notfalls auch über Jahrzehnte.
 Dies eröffnet vielversprechende Perspektiven für akademische Projekte und Arbeitsweisen, von denen ich im abschließenden Kapitel ab S.\,\pageref{chap:pt_applications} einige näher vorstellen werde.
-Doch zunächst werde ich auf die zwei hauptsächlichen Softwareprogramme eingehen, die ich für musikwissenschaftliches Arbeiten empfehlen möchte:
+Doch zunächst \todo{werde} ich auf die zwei hauptsächlichen Softwareprogramme eingehen, die ich für musikwissenschaftliches Arbeiten empfehlen möchte:
 Das Notensatzprogramm LilyPond und
 das Textsatzsystem \LaTeX.
 
@@ -385,7 +385,7 @@ Die Tendenz geht allgemein dahin, die Arbeit mit Partituren komfortabler zu gest
 
 \section{Variablen und Inklusion}
 \label{sec:pt_variables-includes}
-In einer LilyPond-Eingabedatei wird die Struktur der Partitur (natürlich) textlich definiert.
+In einer LilyPond-Eingabedatei wird die Struktur der Partitur textlich definiert.
 Ein grundlegender \cmd{score}-Block sieht etwa folgendermaßen aus:
 
 \begin{quote}
@@ -401,7 +401,7 @@ Ein grundlegender \cmd{score}-Block sieht etwa folgendermaßen aus:
 
 Anstatt nun den musikalischen Inhalt direkt in die Definition des Notensystems einzufügen, wird man diesen in aller Regel in einer \emph{Variablen} notieren und im Notensystem lediglich darauf \emph{verweisen}.
 Dies mag auf den ersten Blick wie ein syntaktisches Detail wirken, hat aber ganz erhebliche Auswirkungen auf die Arbeit mit dem Material:
-Habe ich weiter oben über die Unterscheidung von \emph{Inhalt} und \emph{Erscheinungsbild} gesprochen, so geht es hier um die Unterscheidung von \emph{Definition} und (Wieder-)\emph{Verwendung} des musikalischen Inhalts.
+Habe ich weiter oben über die Unterscheidung von \emph{Inhalt} und \emph{Erscheinungsbild} \todo{gesprochen}, so geht es hier um die Unterscheidung von \emph{Definition} und (Wieder-)\emph{Verwendung} des musikalischen Inhalts.
 Musik, die in einer Variablen definiert ist, wird in einer Partitur verwendet.
 Und sie kann ebenso in einer anderen Partitur verwendet werden.
 Durch diese grundsätzliche Herangehensweise kann eine anders kaum mögliche Stabilität beim Herstellen von Einzelstimmen oder Transposition erreicht werden.
@@ -452,7 +452,7 @@ Die Arbeit kann so einerseits beliebig „parallelisiert“ werden und andererse
 Durch die in diesem Kapitel beschriebenen Eigenschaften bietet sich LilyPond in hervorragender Weise für die musikwissenschaftliche Editionspraxis an.
 Dabei wurden die Integrationsmöglichkeiten mit Textsatz durch \LaTeX{} noch nicht einmal näher erläutert und das Potenzial der Versionskontrolle nicht erneut hervorgehoben.
 
-Es gibt allerdings derzeit einen Schönheitsfehler, der an dieser Stelle nicht unterschlagen werden kann: den Datenaustausch mit anderen Programmen.
+Es gibt allerdings derzeit einen Schönheitsfehler, der an dieser Stelle nicht unterschlagen werden kann: den Datenaustausch mit \todo{anderen Programmen}.
 Momentan ist die Verwendung von LilyPond noch eine Einbahnstraße, deren einziger Ausgang die verschiedenen grafischen Partiturformate sind.
 Leider ist es nicht möglich, eine in LilyPond eingegebene Partitur in Formate zu exportieren, die von anderen Notationsprogrammen gelesen werden können.
 Dies ist insofern ein großes Problem (abgesehen davon, dass unkooperatives Verhalten an sich problematisch ist), als die Mehrzahl der Verlage auf Dateien der beiden großen grafischen Programme besteht und LilyPond-Dateien nicht akzeptiert.
