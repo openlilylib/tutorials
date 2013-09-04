@@ -256,22 +256,22 @@ Neben diesen grundlegenden Charakteristika textbasierten Arbeitens gibt es noch 
 Diese, insbesondere die Verwendung von \emph{Variablen}, kaskadierenden Set-ups durch \emph{Inklusion} von Dateien sowie die \emph{Kommentierung} und \emph{Dokumentation} von Quelldateien, werde ich im Kapitel \ref{chap:pt_lilypond} ab S.\,\pageref{chap:pt_lilypond} am Beispiel von LilyPond vorstellen.
 Doch zunächst werde ich auf den vielleicht wichtigsten Aspekt textbasierten Arbeitens eingehen: \emph{Versionskontrolle}.
 
-\chapter{Versionskontrolle}
+\chapter{Versionskontrolle} 
 \label{chap:pt_version-control}
 Das Konzept der \emph{Versionskontrolle}%
 \footnote{\url{http://de.wikipedia.org/wiki/Versionsverwaltung}}
-ist vor allem aus der Softwareentwicklung bekannt, wo es bei Projekten ab einer gewissen Größe zum Standardrepertoire gehört.
-Zu realisieren, dass es ebensogut für musikalische wie musikwissenschaftliche Zwecke nutzbar gemacht werden kann, war eine Erkenntnis, die meine Arbeitsmethoden grundlegend verändert hat.
+ist vor allem aus der Softwareentwicklung bekannt und gehört dort zum grundlegenden Handwerkszeug.
+Zu realisieren, dass dieses Handwerkszeug für musikalische wie musikwissenschaftliche Zwecke ebenso fruchtbar gemacht werden kann, war eine Erkenntnis, die meine Arbeitsmethoden grundlegend verändert hat.
 
 In einer ersten Näherung kann man Versionskontrolle als eine unendlich flexible Ausprägung des \emph{Rückgängig/Wiederherstellen}-Mechanismus begreifen.
-Versionierung dokumentiert die gesamte Entstehungsgeschichte eines Dokuments bzw. eines Verzeichnisses von Dokumenten und erlaubt es, \emph{jeden beliebigen} vergangenen Zustand des Projekts zu inspizieren oder wiederherzustellen.
+Versionierung dokumentiert die gesamte Entstehungsgeschichte eines Dokuments bzw. eines Verzeichnisses von Dokumenten und erlaubt es, \emph{jeden beliebigen} vergangenen Zustand bzw. Überarbeitungsschritt des Projekts zu inspizieren oder wiederherzustellen.
 Darüber hinaus erlaubt sie, jeden einzelnen Änderungsschritt individuell, d.\,h. nicht notwendig in chronologischer Reihenfolge zu widerrufen.
 So kann etwa die Überarbeitung eines bestimmten Kapitels, die vor zwei Wochen durchgeführt wurde, rückgängig gemacht werden, ohne die sonstige seitherige Arbeit zu berühren.
 Traditionellerweise wäre man auf das Vorhandensein eines Backups genau des gewünschten Zustands angewiesen und würde bei der Gelegenheit alle spätere Arbeit verlieren.
 
-\todo{Es mag nicht selbsterklärend sein}, aber dies kann ohne Weiteres Jahrzehnte, Programmwechsel und sogar Betriebssystemgenerationen überdauern -- weil Textdateien gewissermaßen zeitlos sind, wie im vorigen Kapitel erläutert wurde.
-Die ältesten bekannten Software-Projekte, die heute noch entwickelt werden, haben eine kontinuierliche Versions-History seit den 80er Jahren des vergangenen Jahrhunderts.
-Dies ist auch eine hervorragende Perspektive für (musikalische oder andere) Gesamtausgaben und vergleichbar langfristig angelegte akademische Projekte.
+Es mag nicht für jeden unmittelbar offensichtlich sein, aber diese \emph{Versionsgeschichte} kann ohne Weiteres Jahrzehnte, Programmwechsel und sogar Betriebssystemgenerationen überdauern -- weil Textdateien gewissermaßen zeitlos sind, wie im vorigen Kapitel erläutert wurde.
+Die ältesten bekannten, heute noch aktiv weiterentwickelten Software-Projekte haben eine kontinuierliche Versions-History seit den 80er Jahren des vergangenen Jahrhunderts.
+Dies ist auch eine hervorragende Perspektive für (musikalische oder andere) langfristig angelegte akademische Projekte wie etwa Gesamtausgaben.
 
 \section{Grundlagen der Versionskontrolle}
 \label{sec:pt_basics-version-control}
@@ -279,17 +279,17 @@ Das Fundament der Versionskontrolle ist der zeilenweise%
 \footnote{„Zeilenweise“ bezieht sich auf die Zeilen der Quelltextdatei.}
 Vergleich eines gesamten Projektverzeichnisses.
 Quelldatei-Zeilen beinhalten üblicherweise eine logische Einheit wie etwa einen Satz (in einem Textdokument) oder einen Takt einer Stimme in einer Partitur.
-In einem sogenannten „Commit“ wird ein Satz zusammenhängender Zeilen-Änderungen in 
+In einem sogenannten \emph{Commit} wird ein Satz zusammenhängender Zeilen-Änderungen in 
 einem Projektverzeichnis zusammengefasst, es wird also eine Liste aller geänderten (z.\,B.) Sätze während eines Bearbeitungsschrittes dokumentiert.
 Der Zuschnitt dieser Liste ist dabei frei wählbar:
-Ein Commit kann die Korrektur eines Rechtschreibfehlers bzw. eines Taktstriches umfassen oder die Überarbeitung eines kompletten Kapitels.
+Ein Commit kann die Korrektur eines einzelnen Rechtschreibfehlers bzw. eines Taktstriches umfassen oder die Überarbeitung eines kompletten Kapitels.
 Diese Menge von Änderungen wird -- mit einer erläuternden Beschreibung versehen -- der Projektgeschichte hinzugefügt und kann später zu jedem Zeitpunkt eingesehen, widerrufen oder verändert werden.
 
 In diesem mächtigen zeilenweisen Ansatz liegt auch der Grund für die ausschließliche Anwendbarkeit von Versionskontrolle auf textbasierte Dateiformate.
 In Binärdateien lassen sich Änderungen überhaupt nicht erfassen, und auch \textsc{xml}-basierte Formate eignen sich nur sehr bedingt für die Versionierung:
 Allein durch das Öffnen und Speichern eines Dokuments (ohne tatsächliche Änderungen) werden so viele Zeilen der Datei verändert (etwa durch Angaben über Zeitstempel oder geöffnete Werkzeugleisten), dass der resultierende Commit praktisch nichtssagend wird.
 
-Ein wichtiges und mächtiges Konzept der Versionskontrolle sind \emph{Zweige} (\emph{branches}).
+Ein wichtiges und mächtiges Konzept der Versionskontrolle sind \emph{Zweige} („branches“).
 Diese kann man etwa wie eine unabhängige „Sitzung“ verstehen, in deren Kontext man arbeitet, ohne die übrigen Sitzungen zu beeinflussen.
 Ein üblicher und leicht verständlicher Verwendungszweck von Zweigen ist es, 
 Arbeitsschritte abzugrenzen, die das Projekt zeitweise in einen inkonsistenten Zustand bringen.
@@ -305,14 +305,13 @@ Dabei ist „Arbeiten“ in doppeltem Sinne gemeint: als Erarbeiten eines (Forsc
 Versionskontrolle reduziert in erheblichem Maße Schwierigkeiten, die üblicherweise bei der gemeinsamen Bearbeitung von Dokumenten entstehen.
 
 Die heute bei weitem verbreitetste Methode gemeinsamen Arbeitens besteht im Austausch von Dateien per Email, Datenträger oder der abwechselnden Bearbeitung im Netzwerk (oder der „Cloud“) lagernder Dateien.
-Abhängig von der jeweiligen Einrichtung sind dabei mehr oder weniger umständliche Vorkehrungen erforderlich, um inkonsistente Datenzustände zu vermeiden.
+Abhängig von der jeweiligen Vorgehensweise sind dabei mehr oder weniger umständliche Vorkehrungen erforderlich, um inkonsistente Datenzustände zu vermeiden.
 Durch Austausch entstehende Kopien von Dokumenten müssen verwaltet werden, es muss dafür gesorgt werden, dass nicht zwei Personen gleichzeitig verschiedene Versionen des Dokuments verändern%
 \footnote{Dies kann etwa geschehen, wenn ich ein vom Partner bearbeitetes Dokument zurückerhalte und weiterbearbeite, der Partner dann jedoch weitere Änderungen „nachreicht“},
 und schließlich behindert das -- technisch oder durch Vereinbarung bedingte -- „Sperren“ von Dokumenten das freie Arbeiten.
 Und schließlich wird eine derart gestaltete Zusammenarbeit vollends unpraktikabel, wenn dabei eine große Zahl von Dokumenten von mehr als zwei Mitarbeitern benutzt werden soll.
 
 Hier nun setzt Versionskontrolle an.
-Die Verwendung von Textdateien in Verbindung mit Versionskontrolle ermöglicht es, von jahrzentelanger Erfahrung in der Softwareentwicklung zu profitieren.
 Deren Techniken und Strategien wurden insbesondere entwickelt, um die reibungslose Zusammenarbeit zahlreicher Mitarbeiter zu gewährleisten%
 \footnote{So zählt beispielsweise das Linux Kernel Projekt mehrere Hunderttausend Commits von über zehntausend Beitragenden (es gibt leider keine adäquate Übersetzung für das passendere \emph{contributor}).}.
 
@@ -326,21 +325,21 @@ So könnte beispielsweise ein Herausgeber Fingersätze bearbeiten, während ein 
 Solange die beiden nicht \emph{dieselbe Quelltextzeile} verändern, wird die Versionskontrolle alles transparent und unbemerkt integrieren.
 Dies zielt nicht darauf ab, Konflikte \emph{unwahrscheinlich} zu machen -- das wäre fahrlässig.
 Sollte das System Dateiversionen nicht selbständig zusammenführen können, wird der Bearbeiter auf die divergierenden Zeilen hingewiesen und kann den Konflikt manuell auflösen.
-Versionierung kann und wird also Bearbeitungskonflikte nicht verhindern, garantiert jedoch, dass sie mit minimalem Aufwand behoben werden können, und zwar ziemlich unabhängig von der Anzahl der Mitarbeiter und betroffenen Dateien.
+Versionierung kann und wird also Bearbeitungskonflikte nicht verhindern, garantiert jedoch, dass sie mit minimalem Aufwand behoben werden können, und zwar unabhängig von der Anzahl der Mitarbeiter und betroffenen Dateien.
 
 \medskip
 Ein weiterer wichtiger Aspekt ist die Art und Weise, wie Änderungen am Datenbestand dokumentiert werden.
-Wie beschrieben speichert ein \emph{commit} einen Satz an Änderungen, der später eingesehen werden kann.
+Wie beschrieben speichert ein Commit einen Satz an Änderungen, der später eingesehen werden kann.
 Möchte ich also Änderungen beurteilen, die ein Partner eingebracht hat, so werden mir diese direkt angezeigt, ohne dass ich in den Dokumenten nach ihnen suchen müsste.
 Im Gegensatz zu entsprechenden Funktionen, die zum Beispiel Textverarbeitungen bieten, ist diese Dokumentation permanent und verschwindet nicht, nachdem die Änderungen akzeptiert oder verworfen wurden.
-Und bei Partituren wüsste ich nicht, wie ich außer mit einem -- fehleranfälligen -- AB-Vergleich den Korrekturdurchgang eines Anderen in einem grafischen Notationsprogramm überhaupt überprüfen könnte.
+Und für Partituren gibt es in einem grafischen Notationsprogramm meines Wissens überhaupt keine zuverlässige Möglichkeit, etwa den Korrekturdurchgang eines Anderen zu überprüfen.
 
 
 \medskip
 Zusammenfassend kann man sagen, dass in einem Projekt unter Versionskontrolle eine beliebige Anzahl von Mitarbeitern auf einen beliebig großen gemeinsamen Datenbestand zugreifen kann.
 Versionskontrolle garantiert die Minimierung von Zusammenführungskonflikten, bietet einfache Mittel, diese im Fall des Falles aufzulösen und verwaltet die Projekt-History sauber und transparent, notfalls auch über Jahrzehnte.
-Dies eröffnet vielversprechende Perspektiven für akademische Projekte und Arbeitsweisen, von denen ich im abschließenden Kapitel ab S.\,\pageref{chap:pt_applications} einige näher vorstellen werde.
-Doch zunächst \todo{werde} ich auf die zwei hauptsächlichen Softwareprogramme eingehen, die ich für musikwissenschaftliches Arbeiten empfehlen möchte:
+Dies eröffnet vielversprechende Perspektiven und Arbeitsweisen insbesondere für akademische Projekte, von denen ich im abschließenden Kapitel ab S.\,\pageref{chap:pt_applications} einige näher vorstellen werde.
+Doch zunächst gehe ich auf die zwei hauptsächlichen Softwareprogramme ein, die ich für musikwissenschaftliches Arbeiten empfehlen möchte:
 Das Notensatzprogramm LilyPond und
 das Textsatzsystem \LaTeX.
 
@@ -371,7 +370,7 @@ Als Beispiel sei \textit{Frescobaldi%
 genannt, das derzeit vermutlich umfangreichste Programm zur komfortablen Bearbeitung von LilyPond-Partituren.
 Wie in Abb.\,\ref{fig:pt_fb-main-window} mit einer kleinen Partitur zu sehen ist, bietet das Programm neben einer Partituransicht einen Quelltexteditor, zahlreiche Werkzeugleisten und -- nicht zu sehen -- weitere Assistenten und hilfreiche Details.
 	\begin{figure}
-	\includegraphics[max width=\textwidth]{examples/frescobaldi/main-window}
+	\includegraphics[max width=\textwidth]{examples/frescobaldi-main}
 	\caption{Hauptfenster von Frescobaldi, mit Partituranzeige, Quelltext-Editor und Werkzeugleisten}
 	\label{fig:pt_fb-main-window}
 	\end{figure}
