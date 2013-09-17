@@ -471,7 +471,7 @@ Diese scheint dabei kein grundsätzliches technisches Problem, sondern „nur“
 \footnote{\url{http://www.latex-project.org}}
 ist für Textdokumente, was LilyPond für Partituren ist:
 es bietet Text\emph{satz}, im Gegensatz zu bloßer Text\emph{verarbeitung}.
-Wem an guter Typografie gelegen ist, wird \LaTeX{} lieben, wer ihr aber keine Bedeutung beimisst, sollte bedenken, dass „keine Typografie“ nicht möglich ist -- sie wirkt \emph{immer}. 
+Wem an guter Typografie gelegen ist, wird \LaTeX{} lieben, wer ihr dagegen keine Bedeutung beimisst, sollte bedenken, dass „keine Typografie“ nicht möglich ist -- sie wirkt \emph{immer}. 
 
 Mit Textverarbeitungsprogrammen wie Word oder OpenOffice ist es unmöglich, professionell gesetzte Dokumente zu erstellen, insofern ist \LaTeX{} eher in Konkurrenz zu \textsc{dtp}-Programmen wie InDesign oder QuarkXPress zu sehen.
 Hinsichtlich der Qualität zumindest bei Textdokumenten muss man bei der freien Software keinerlei Abstriche machen, im Gegenteil bietet sie gerade hinsichtlich der Mikrotypografie ganz hervorragende Möglichkeiten.
@@ -480,7 +480,7 @@ Da \LaTeX{} ursprünglich für den Buchsatz entwickelt und seit Jahrzehnten verb
 Darüber hinaus bietet \LaTeX{} alle Vorzüge, die ich für textbasierte Softwaresysteme im Allgemeinen beschrieben habe.
 
 Die Schnittstelle zu \LaTeX{} ist ähnlich wie bei LilyPond:
-Eingabedateien mit einer ähnlichen Syntax werden in \textsc{pdf}-Dateien \emph{übersetzt}.
+Eingabedateien im Reintextformat werden in \textsc{pdf}-Dateien \emph{übersetzt}.
 Auf Grund des Alters des Systems existieren zahllose Bearbeitungsprogramme unterschiedlichen Zuschnitts und Komforts.
 Die Eingabesprache bietet \emph{Befehle} und \emph{Umgebungen}, die entfernt mit Text- und Absatzvorlagen von Textverarbeitungsprogrammen vergleichbar, jedoch ungleich mächtiger sind:
 Sie reichen von einfacher semantischer Auszeichnung über (etwa) Abbildungen, die nach traditionellen Satzregeln im Text positioniert werden bis hin zu komplexen Befehlen mit mehreren Argumenten.
@@ -503,19 +503,29 @@ Demgegenüber versteht sich \package{musicexamples}%
 \footnote{\url{http://www.openlilylib.org/musicexamples}} 
 als ein Werkzeug, das sich mehr der Einbettung und konsistenten Verwaltung von Notenbeispielen widmet.
 Besonderes Augenmerk wurde auf den Umgang mit ganz- und mehrseitigen Notenbeispielen gelegt, für eine weitergehende Integration speziell von LilyPond-Partituren existieren konkrete Pläne.
-Insbesondere ist mittelfristig vorgesehen, mit Hilfe der in \hologo{LuaLaTeX} verwendeten Programmiersprache \emph{Lua} ebenfalls die Einbettung von LilyPond-Quellcode zu ermöglichen -- allerdings dann ohne den Umweg über ein zwischengeschaltetes Hilfsdokument.
+Insbesondere ist mittelfristig vorgesehen, mit Hilfe der in \hologo{LuaLaTeX} verwendeten Programmiersprache \emph{Lua} ebenfalls die Einbettung von LilyPond-Quellcode zu ermöglichen -- der dann allerdings dann ohne den Umweg über ein zwischengeschaltetes Hilfsdokument direkt kompiliert werden könnte.
+Somit wird es möglich sein ein vollständiges Textdokument inklusive seiner Notenbeispiele in einer Textdatei zu bearbeiten.
 
 \section{Notationselemente}
 \label{sec:pt_notational-elements}
 Mit Hilfe des Pakets \lilyglyphs%
 \footnote{\url{http://www.openlilylib.org/lilyglyphs}}
 ist es möglich, \emph{jegliche} mit LilyPond realisierbare Notationselemente auf Zeichenebene in \LaTeX-Dokumente einzubetten.
-Dies können etwa dynamische Zeichen wie \lilyDynamics{mf}, Vorzeichen wie \flatflat{} oder auch grafische Zeichen wie \crescHairpin{} oder Taktbezeichnungen (\lilyTimeSignature{4+3}{8} oder \lilyTimeCHalf) sein.
-Mit etwas größerem Aufwand kann man auch individuelle Notationen erstellen und einbinden.
-Das Schöne daran ist, dass man mit dem Paket auf den \emph{gesamten} Notationsvorrat von LilyPond in dessen hervorragender Qualität zugreifen kann, die verwendeten Zeichen problemlos mit dem Text fließen und sich leicht in Größe und Positionierung anpassen lassen.
+Dies können etwa dynamische Zeichen wie \lilyDynamics{mf}, Vorzeichen wie  \flatflat{} oder auch grafische Zeichen wie \crescHairpin{} oder Taktbezeichnungen (\lilyTimeSignature{4+3}{8} oder \lilyTimeCHalf) sein.
+Mit etwas größerem Aufwand kann man auch individuelle Notationen erstellen und einbinden, wie etwa dieses funktionslose \fancyExample{} Demonstrationsobjekt aus dem Paket.
+Das Besondere an dieser Lösung ist, dass man mit dem Paket auf den \emph{gesamten} Notationsvorrat von LilyPond in dessen hervorragender Qualität zugreifen kann, die verwendeten Zeichen problemlos mit dem Text fließen und sich leicht in Größe und Positionierung anpassen lassen.
 
 \bigskip
-Ideen für weitere Erweiterungspakete, die bei konkretem Bedarf jederzeit in Angriff genommen werden können, umfassen beispielsweise funktionsharmonische Analysesymbole oder Generalbassbezifferungen.
+\hrule
+\bigskip
+Ideen für weitere \LaTeX-Erweiterungspakete, die bei konkretem Bedarf jederzeit in Angriff genommen werden können, umfassen beispielsweise 
+
+\begin{itemize*}
+\item funktionsharmonische Analysesymbole,
+\item Generalbassbezifferungen,
+\item Akkordsymbole oder
+\item ein flexibles System für Anmerkungen im Kritischen Bericht.
+\end{itemize*}
 
 \chapter{Anwendungsbeispiele}
 \label{chap:pt_applications}
