@@ -347,24 +347,26 @@ das Textsatzsystem \LaTeX.
 \label{chap:pt_lilypond}
 Mein persönlicher Favorit für Notensatz jeglicher Art ist das freie Programm \emph{GNU LilyPond}%
 \footnote{\url{http://www.lilypond.org}}.
-Neben dem hervorragenden Notenbild im Allgemeinen -- das jeglichen verlegerischen Qualitätsanspruch zu erfüllen vermag -- möchte ich einige weitere Vorteile hervorheben, die insbesondere für die vorgeschlagene Verwendung im akademischen Bereich relevant sind:
+Neben dem hervorragenden Notenbild im Allgemeinen -- das jeglichen verlegerischen Qualitätsanspruch zu erfüllen vermag%
+\footnote{Ergänzend zum vorliegenden Dokument erhalten Sie eine Sammlung mit Notationsbeispielen.}
+-- möchte ich einige weitere Vorteile hervorheben, die insbesondere für die vorgeschlagene Verwendung im akademischen Bereich relevant sind:
 
 \begin{itemize*}
 \item die saubere Trennung von musikalischer Struktur und notentypografischen Anpassungen,
 \item die Qualität der unbearbeiteten Standard-Ausgabe, die eine Konzentration auf den \emph{Inhalt} fördert,
 \item die hervorragende Integrierbarkeit in Textdokumente,
 \item die Möglichkeit der Versionierung sowie
-\item weitere aus dem textbasierten Zugang resultierende Aspekte, die im Folgenden näher ausgeführt werden.
+\item weitere aus dem textbasierten Ansatz resultierende Aspekte, im Folgenden näher ausgeführt.
 \end{itemize*}
 
 Da LilyPond Partituren setzt, indem es \emph{Eingabedateien} übersetzt, die nach bestimmten Syntax-Vorgaben geschrieben werden müssen, ist es tatsächlich erforderlich, die Eingabesprache zu erlernen.
 Eine Einführung in diese kann natürlich nicht Gegenstand des vorliegenden Überblicks sein.
 Um eine konkrete Vorstellung von LilyPonds Texteingabe zu erhalten, empfehle ich den Einführungsaufsatz auf der Webseite%
-\footnote{\url{http://www.lilypond.org/introduction.html}}, und in der englischen Fassung meines Texts finden sich ebenfalls einige Seiten hierzu.
+\footnote{\url{http://www.lilypond.org/introduction.html}}
+oder die englische Fassung meines Aufsatzes mit ebenfalls einigen Seiten hierzu.
 
 \bigskip
-Glücklicherweise ist man heutzutage nicht mehr darauf angewiesen, den Quelltext auf sich allein gestellt in einem simplen Texteditor zu verfassen.
-Es existieren eine Reihe von Programmen für verschiedenste Betriebssysteme, die den Autor in vielfältiger Weise unterstützen.
+Glücklicherweise ist man heutzutage nicht mehr darauf angewiesen, den „nackten“ Quelltext in einem simplen Texteditor zu verfassen, denn es existieren eine Reihe von Programmen für verschiedenste Betriebssysteme, die den Autor in vielfältiger Weise unterstützen.
 Als Beispiel sei \textit{Frescobaldi%
 \footnote{\url{http://www.frescobaldi.org}}}
 genannt, das derzeit vermutlich umfangreichste Programm zur komfortablen Bearbeitung von LilyPond-Partituren.
@@ -374,7 +376,7 @@ Wie in Abb.\,\ref{fig:pt_fb-main-window} mit einer kleinen Partitur zu sehen ist
 	\caption{Hauptfenster von Frescobaldi, mit Partituranzeige, Quelltext-Editor und Werkzeugleisten}
 	\label{fig:pt_fb-main-window}
 	\end{figure}
-Der Editor vereinfacht die Arbeit durch farbige Auszeichnung der Struktur (\emph{syntax highlighting}) und bietet Features wie die automatische Vervollständigung von Befehlen oder der Navigation im Quelltext.
+Der Editor vereinfacht die Arbeit durch farbige Darstellung der Struktur (\emph{syntax highlighting}) und bietet Funktionen wie die automatische Vervollständigung von Befehlen oder einfache Navigation im Quelltext.
 Besonders wichtig ist jedoch die automatische Verknüpfung zwischen Quelltext und Partitur, die es ermöglicht, in der Partitur ein Element anzuklicken, wodurch die Einfügemarke automatisch an die entsprechende Stelle im Quelltext gebracht wird.
 Daher ist es inzwischen nicht mehr problematisch, in komplexen Dateien die Übersicht zu behalten.
 
@@ -398,7 +400,7 @@ Ein grundlegender \cmd{score}-Block sieht etwa folgendermaßen aus:
 \end{minipage}
 \end{quote}
 
-Anstatt nun -- wie im Screenshot zu sehen -- den musikalischen Inhalt direkt in die Definition des Notensystems einzufügen, wird man diesen in aller Regel in einer \emph{Variablen} notieren und im Notensystem lediglich darauf \emph{verweisen}.
+Anstatt nun -- wie im Screenshot zu sehen -- den musikalischen Inhalt direkt in die Definition des Notensystems einzufügen, wird man diesen in einer \emph{Variablen} notieren und im Notensystem lediglich darauf \emph{verweisen}, sobald die Partitur eine gewisse Komplexität erreicht.
 Dies mag auf den ersten Blick wie ein syntaktisches Detail wirken, hat aber ganz erhebliche Auswirkungen auf die Arbeit mit dem Material:
 Ging es weiter oben (Abschnitt \ref{sec:pt_separation-content-meaning-appearance} auf S.\,\pageref{sec:pt_separation-content-meaning-appearance}) um die Unterscheidung von \emph{Inhalt} und \emph{Erscheinungsbild}, so handelt es sich hier um die \emph{Definition} und (Wieder-)\emph{Verwendung} des musikalischen Inhalts.
 Musik, die in einer Variablen definiert ist, wird in einer Partitur verwendet.
@@ -449,16 +451,16 @@ Die Arbeit kann so einerseits beliebig „parallelisiert“ werden und andererse
 \bigskip
 
 Durch die in diesem Kapitel beschriebenen Eigenschaften bietet sich LilyPond in hervorragender Weise für die musikwissenschaftliche Editionspraxis an.
-Dabei wurden die Integrationsmöglichkeiten mit Textsatz durch \LaTeX{} noch nicht einmal näher erläutert und das Potenzial der Versionskontrolle nicht erneut hervorgehoben.
+Dabei steht die Erörterung der Integrationsmöglichkeiten mit Textsatz durch \LaTeX{} noch aus, und das Potenzial der Versionskontrolle sollte an dieser Stelle noch einmal hervorgehoben werden.
 
-Es gibt allerdings derzeit noch einen Schönheitsfehler, der an dieser Stelle nicht unterschlagen werden kann: den Datenaustausch mit anderen Notensatzprogrammen.
-Momentan ist die Verwendung von LilyPond noch eine Einbahnstraße, deren einziger Ausgang die verschiedenen grafischen Partiturformate sind.
+Es gibt allerdings derzeit noch einen Schönheitsfehler, der leider nicht unterschlagen werden kann: den Datenaustausch mit anderen Notensatzprogrammen.
+Momentan ist die Verwendung von LilyPond noch eine Einbahnstraße, deren einziger „Ausgang“ die verschiedenen grafischen Partiturformate sind.
 So ist es zwar möglich, Partituren aus anderen Programmen in LilyPond-Eingabedateien zu konvertieren, nicht dagegen, eine in LilyPond eingegebene Partitur in Formate zu exportieren, die von anderen Notationsprogrammen gelesen werden können.
-Dies ist insofern ein großes Problem (abgesehen davon, dass unkooperatives Verhalten an sich problematisch ist), als die Mehrzahl der Verlage auf Dateien der beiden großen grafischen Programme besteht und LilyPond-Dateien nicht akzeptiert.
+Dies ist insofern ein großes Problem, als die Mehrzahl der Verlage auf Dateien der beiden großen grafischen Programme besteht und LilyPond-Dateien nicht akzeptiert.
 
-Die Vorbereitung von Notenausgaben mit LilyPond wäre auch dann äußerst sinnvoll, wenn die endgültige Druckvorbereitung mit \emph{Fin}ale oder \emph{Sibelius} durchgeführt würde.
-Daher ist die Ergänzung einer Exportmöglichkeit in das gebräuchliche Austauschformat MusicXML eines der wichtigsten Desiderata aus musikwissenschaftlicher Perspektive.
-Diese scheint kein grundsätzliches technisches Problem, sondern „nur“ eine Frage der Ressourcen zu sein -- für eine grundlegende Implementierung wären wohl lediglich einige Wochen Arbeit eines einzelnen Programmiers erforderlich.
+Auf Grund des bisher Beschriebenen sollte deutlich sein, dass die Vorbereitung von Notenausgaben mit LilyPond auch dann äußerst sinnvoll ist, wenn die endgültige Druckvorbereitung mit \emph{Fin}ale oder \emph{Sibelius} durchgeführt würde.
+Daher ist die Ergänzung einer Exportmöglichkeit in das gebräuchliche Austauschformat MusicXML eines der wichtigsten Desiderata der LilyPond-Entwicklung aus musikwissenschaftlicher Perspektive.
+Diese scheint dabei kein grundsätzliches technisches Problem, sondern „nur“ eine Frage der Ressourcen zu sein -- für eine grundlegende Implementierung wären wohl lediglich einige Wochen Arbeit eines einzelnen Programmiers erforderlich.
 \emph{Ein} größeres Projekt wäre möglicherweise genug, um in dessen Rahmen sowohl den MusicXML-Export als auch die zuvor beschriebene Erweiterung der Quelltextkommentierung zufriedenstellend zu realisieren \dots
 
 
