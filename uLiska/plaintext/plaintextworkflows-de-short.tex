@@ -5,68 +5,7 @@
 % without modifications, however.
 
 \documentclass[DIV=12]{scrreprt}
-
-\usepackage{scrpage2}
-\pagestyle{scrheadings}
-\rohead{\textcolor{red}{\textsc{Entwurf} -- bitte nicht weitergeben!}}
-\cohead{}
-
-\usepackage{fontspec}
-
-% Language settings
-\usepackage{polyglossia}
-\setdefaultlanguage{german}
-\frenchspacing
-
-% fontspec base settings
-\defaultfontfeatures{%
-	Ligatures=TeX
-}
-\setmainfont[%
-	Numbers=OldStyle,
-	]{Minion Pro}
-\setsansfont[Scale=MatchLowercase,]{Cronos Pro}
-\setmonofont[Scale=MatchLowercase]{Inconsolata}
-
-% Typographical improvements
-\RequirePackage{microtype}
-\RequirePackage[ngerman]{selnolig}
-
-\linespread{1.05}
-
-\RequirePackage{lilyglyphs}
-
-\RequirePackage{xmpFancyref}
-\RequirePackage{musicexamples}
-
-\RequirePackage{hologo}
-
-% Do not restart footnote numbering for each chapter
-\RequirePackage{chngcntr}
-\counterwithout*{footnote}{chapter}
-
-% Enhanced lists
-\RequirePackage{mdwlist}
-\RequirePackage{paralist}
-
-% Multicolumn texts
-\RequirePackage{multicol}
-
-% Extended verbatim (listing) texts
-\RequirePackage{fancyvrb}
-\usepackage{listings}
-\usepackage{OLLstyles}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Options for use of hyperlinks
-% (make sure this is included last)
-\RequirePackage[%
-	colorlinks,
-	urlcolor=blue,
-	bookmarks=true,
-	bookmarksnumbered=true]{hyperref}
-
-
+\usepackage{plaintextGerman}
 
 \begin{document}
 \title{Reintext-basiertes Arbeiten\\für Musikwissenschaftler}
