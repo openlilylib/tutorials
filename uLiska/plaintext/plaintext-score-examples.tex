@@ -4,6 +4,7 @@
 
 \documentclass[DIV=12]{scrreprt}
 \usepackage{plaintextGerman}
+\usepackage{adjustbox}
 
 \usepackage{pdfpages}
 
@@ -34,9 +35,9 @@ Gleichzeitig weisen diese Beispiele auch eine große stilistische Bandbreite auf
 
 \paragraph{Standardqualität, mit oder ohne Stilvorlagen}
 Partituren, die keine nennenswerten individuellen Anpassungen aufweisen.
-Diese Beispiele sind daher repräsentativ für die Qualität der vorläufigen Ergebnisse und das hohe Maß and Les- und Verwendbarkeit der Standardausgabe.
-Auch wenn diese Beispiele je nach Komplexität teilweise recht weit von Publikationsqualität entfernt sind, zeigen sie, wie gut und weitgehend man diese Partituren im Arbeitsprozess verwenden kann, ohne sich um die notentypografischen Details kümmern zu müssen.
-Einige Partituren entsprechen dem grundlegenden Erscheinungsbild der Software, andere wurden mit Hilfe von Stilvorlagen verändert.
+Diese Beispiele sind daher repräsentativ für die Qualität der vorläufigen Ergebnisse und für das hohe Maß an Les- und Verwendbarkeit der Standardausgabe.
+Auch wenn diese Beispiele je nach Komplexität teilweise recht weit von Publikationsqualität entfernt sind, zeigen sie, wie gut und weitgehend man diese Partituren im Arbeitsprozess verwenden kann, ohne sich um notentypografische Details kümmern zu müssen.
+Einige Partituren entsprechen LilyPonds Standard-Erscheinungsbild, andere wurden mit Hilfe von Stilvorlagen verändert, ohne jedoch individuelle Satzkorrekturen aufzuweisen.
 
 Einige der Ausschnitte sind urheberrechtlich geschützten Werken entnommen und nur für den Zweck der Demonstration zusammengestellt.
 Bitte respektieren Sie dies und geben das Dokument nicht an Dritte weiter.
@@ -75,13 +76,15 @@ Bitte respektieren Sie dies und geben das Dokument nicht an Dritte weiter.
 \item Julio Sagreras: El colibri
 \end{itemize}
 
-\textbf{B) Partituren in LilyPonds Original-Erscheinungsbild \\
-(keinerlei Korrekturen außer Seitenlayout und evtl. pauschaler Größe):}
+\noindent\textbf{B) Partituren in LilyPonds Original-Erscheinungsbild \\
+(keinerlei Korrekturen außer Seitenlayout und evtl. pauschaler Notensystemgröße):}
 
 \begin{itemize}
 \item Arnold Schönberg: Gethsemane
 \item Alban Berg: Orchesterstück op. 6,\,1 (achthändige Bearbeitung)
-\item Bryan Ferneyhough: La chute d'Icare
+\item Bryan Ferneyhough: La Chute d'Icare
+\item Arnold Schönberg: Nie werd ich, Herrin, müd op. 8.\,4 (Klavierauszug)\\
+Vergleich Standardausgabe von LilyPond und Finale
 \end{itemize}
 
 \includepdf[pages=1]{images/default/beethoven.pdf}
@@ -92,5 +95,11 @@ Bitte respektieren Sie dies und geben das Dokument nicht an Dritte weiter.
 \includepdf[pages=1]{images/default/gethsemane.pdf}
 \includepdf[pages=1]{images/default/berg.pdf}
 \includepdf[pages=1]{images/default/ferneyII.pdf}
+
+
+\includegraphics[max width=\textwidth]{examples/schoenberg-opus-8-4}
+\hspace*{-2.2cm}
+\includegraphics[width=19.5cm]{examples/schoenberg-opus-8-4-finale}
+
 
 \end{document}
