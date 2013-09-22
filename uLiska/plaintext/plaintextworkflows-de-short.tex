@@ -13,10 +13,10 @@
 \maketitle
 
 \subsection*{Vorbemerkung}
-Eine große Mehrheit an Partituren und musikwissenschaftlichen Textdokumenten entsteht mit Hilfe grafischer Anwendungsprogramme, und den meisten Autoren dürfte die Existenz einer grundsätzlichen Alternative überhaupt nicht bewusst sein.
+Eine große Mehrheit an Partituren und musikwissenschaftlichen Textdokumenten entsteht mit Hilfe grafischer Anwendungsprogramme, doch den meisten Autoren dürfte die Existenz einer grundsätzlichen Alternative überhaupt nicht bewusst sein.
 Der vorliegende Aufsatz zeigt demgegenüber einen Ansatz, der auf der Bearbeitung reiner Textdateien basiert.
 Dieser Ansatz, der Erfahrungen und Strategien aus der Softwareentwicklung für unsere Disziplinen fruchtbar macht, ermöglicht neuartige Wege gemeinschaftlichen Arbeitens, Forschens und Publizierens.
-Die beschriebenen Konzepte, Werkzeuge und Arbeitsprozesse haben mein Leben als Autor von Text- und Partiturdokumenten grundlegend verändert, und es ist mir ein großes Anliegen, sie der musikwissenschaftlichen Gemeinschaft vorstellen.
+Die beschriebenen Konzepte, Werkzeuge und Arbeitsprozesse haben mein Leben als Autor von Text- und Partiturdokumenten grundlegend verändert, und es ist mir ein großes Anliegen, sie der musikwissenschaftlichen Gemeinschaft vorzustellen.
 
 In den Geisteswissenschaften ist textbasiertes Arbeiten weitgehend unbekannt, während es in vielen natur- und computerwissenschaftlichen Disziplinen zum Standard gehört.
 Tatsächlich erfordert das Arbeiten mit Reintextdateien ein grundlegendes Umdenken, was wohl auch die erheblichen Vorbehalte erklärt, mit denen die entsprechenden Techniken meist zur Kenntnis genommen werden.
@@ -33,7 +33,7 @@ Insbesondere möchte ich die komplexeren Aspekte und Potenziale bei institutione
 Bei Verständnisfragen empfehle ich daher, auf die nahezu gleich strukturierte englische 
 Fassung zurückzugreifen.
 
-Die wesentlichen Softwaresysteme, die ich auf den folgenden Seiten vorstellen -- in deren Benutzung ich aber nicht einführen -- werde, sind:
+Die wesentlichen Softwaresysteme, die ich auf den folgenden Seiten vorstellen, in deren Benutzung aber nicht einführen werde, sind:
 
 \begin{itemize*}
 \item \emph{Versionsverwaltung} -- behält die Übersicht über Ihre Arbeit
@@ -174,7 +174,7 @@ Der einzelne Mitarbeiter hingegen muss damit überhaupt nicht konfrontiert werde
 Einer der Aspekte textbasierten Arbeitens, an den sich Benutzer am meisten gewöhnen müssen, ist das Fehlen eines unmittelbaren visuellen Feedbacks eingegebener Änderungen.
 Grafische Programme reflektieren jegliche Änderung sofort, während die Eingabedatei des textbasierten Programms zunächst kompiliert werden muss, sich also während des eigentlichen Eingabevorgangs nicht aktualisiert.
 
-Auch wenn dies zunächst umständlich erscheint, ist es doch ein inhärenter bedeutender Vorteil.
+Auch wenn dies zunächst umständlich erscheint, ist es doch ein bedeutender Vorteil.
 Das grafische Programm ist gezwungen, jede Änderung des Dokumenteninhalts \emph{unmittelbar} mit einem brauchbaren Ergebnis zu quittieren.
 So kann etwa das Löschen eines Satzes in einem Buchdokument mit zahlreichen Abbildungen ein Textverarbeitungsprogramm ohne weiteres in die Knie zwingen, da es den augenblicklich aktualisierten Seitenumbruch des verbleibenden Dokuments erforderlich macht.
 Abgesehen von der Unterbrechung des Arbeitsflusses geht dies auch zu Lasten der Ausgabequalität.
@@ -279,7 +279,7 @@ Zusammenfassend kann man sagen, dass in einem Projekt unter Versionskontrolle ei
 Versionskontrolle garantiert die Minimierung von Zusammenführungskonflikten, bietet einfache Mittel, diese im Fall des Falles aufzulösen und verwaltet die Projekt-History sauber und transparent, notfalls auch über Jahrzehnte.
 Dies eröffnet vielversprechende Perspektiven und Arbeitsweisen insbesondere für akademische Projekte, von denen ich im abschließenden Kapitel ab S.\,\pageref{chap:pt_applications} einige näher vorstellen werde.
 Doch zunächst gehe ich auf die zwei hauptsächlichen Softwareprogramme ein, die ich für musikwissenschaftliches Arbeiten empfehlen möchte:
-Das Notensatzprogramm LilyPond und
+das Notensatzprogramm LilyPond und
 das Textsatzsystem \LaTeX.
 
 \chapter{LilyPond}
@@ -348,9 +348,9 @@ Durch diese grundsätzliche Herangehensweise kann eine anders kaum mögliche Sta
 Einmal definiertes Material kann beliebig wiederverwendet werden.
 
 \medskip
-Eine erhebliche Erweiterung ihres Potenzials erhalten Variablen durch die Möglichkeit, in separate Dateien ausgelagert zu werden, die durch einen \cmd{include}-Befehl in das zentrale Partiturdokument integriert werden.
-Nicht nur Musik, auch Formatierungsbefehle oder manuelle Layoutanpassungen können auf diese Weise \emph{wiederverwendet} werden, und es können -- ähnlich den bekannten \emph{Cascading Style Sheets (\textsc{css})} im Webdesign -- komplexe und mächtige Szenarien entwickelt werden.
-So können etwa Stildefinitionen hierarchisch auf globaler, Haus-, Projekt- und Dateiebene verwaltet werden -- Änderungen etwa der Projekt-Stilvorlage wirken sich dann automatisch auf alle Partituren des Projekts aus.
+Eine erhebliche Erweiterung ihres Potenzials erhalten Variablen durch die Möglichkeit, in separate Dateien ausgelagert zu werden, die durch einen \cmd{include}-Befehl in das zentrale Partiturdokument integrierbar sind.
+Nicht nur Musik, auch Formatierungsbefehle oder manuelle Layoutanpassungen können auf diese Weise \emph{wiederverwendet} werden und es lassen sich -- ähnlich den bekannten \emph{Cascading Style Sheets (\textsc{css})} im Webdesign -- komplexe und mächtige Szenarien entwickeln.
+So werden Stildefinitionen hierarchisch auf globaler, Haus-, Projekt- und Dateiebene verwaltet -- Änderungen etwa der Projekt-Stilvorlage wirken sich dann automatisch auf alle Partituren des Projekts aus.
 Ebenso kann etwa durch den Austausch einer einzigen \cmd{include}-Anweisung zwischen Layouteinstellungen für Partitur, Einzelstimme, Studienpartitur oder Projektor gewechselt werden.
 Denkbar und nützlich ist beispielsweise auch ein Entwurfsmodus, bei dem während der Entwicklung der Partitur Herausgeberzusätze farblich hervorgehoben werden und der Zeilen- und Seitenumbruch der Originalvorlage übernommen wird.
 Darüber hinaus können hauseigene oder projektbezogene Funktionsbibliotheken erstellt und gepflegt werden.
@@ -358,7 +358,7 @@ Darüber hinaus können hauseigene oder projektbezogene Funktionsbibliotheken er
 \section{Kommentare}
 \label{sec:pt_lilypond-comments}
 Wie bei jedem Texteingabeformat können auch in LilyPond-Dateien \emph{Kommentare} in den Quelltext eingefügt werden, die bei der Übersetzung ignoriert werden.
-Diese dienen zunächst der Dokumentation und Erläuterung des Quelltextes, können aber auch zur Kommentierung und Diskussion des Inhalts verwendet werden und beispielsweise offene Fragen festhalten.
+Diese dienen zunächst der Dokumentation und Erläuterung des Quelltextes, eignen sich aber auch zur Kommentierung und Diskussion des Inhalts, um beispielsweise offene Fragen festhalten.
 
 Derzeit wird an einer erheblichen Ausweitung dieses Konzepts mit Blick auf kritische Ausgaben gearbeitet.
 In Kürze wird es möglich sein, explizite Kommentare in den Quelltext -- \emph{d.\,h. in unmittelbarer Nähe der Definition des Notentexts} -- einzufügen und von einem Hilfsprogramm zu verschiedenartigen Listen aufbereiten zu lassen.
@@ -442,7 +442,7 @@ Demgegenüber versteht sich \package{musicexamples}%
 \footnote{\url{http://www.openlilylib.org/musicexamples}} 
 als ein Werkzeug, das sich mehr der Einbettung und konsistenten Verwaltung von Notenbeispielen widmet.
 Besonderes Augenmerk wurde auf den Umgang mit ganz- und mehrseitigen Notenbeispielen gelegt, für eine weitergehende Integration speziell von LilyPond-Partituren existieren konkrete Pläne.
-Insbesondere ist mittelfristig vorgesehen, mit Hilfe der in \hologo{LuaLaTeX} verwendeten Programmiersprache \emph{Lua} ebenfalls die Einbettung von LilyPond-Quellcode zu ermöglichen -- der dann allerdings dann ohne den Umweg über ein zwischengeschaltetes Hilfsdokument direkt kompiliert werden könnte.
+Insbesondere ist mittelfristig vorgesehen, mit Hilfe der in \hologo{LuaLaTeX} verwendeten Programmiersprache \emph{Lua} ebenfalls die Einbettung von LilyPond-Quellcode zu ermöglichen -- der dann allerdings ohne den Umweg über ein zwischengeschaltetes Hilfsdokument direkt kompiliert werden könnte.
 Somit wird es möglich sein ein vollständiges Textdokument inklusive seiner Notenbeispiele in einer Textdatei zu bearbeiten.
 
 \section{Notationselemente}
@@ -452,7 +452,7 @@ Mit Hilfe des Pakets \lilyglyphs%
 ist es möglich, \emph{jegliche} mit LilyPond realisierbare Notationselemente auf Zeichenebene in \LaTeX-Dokumente einzubetten.
 Dies können etwa dynamische Zeichen wie \lilyDynamics{mf}, Vorzeichen wie  \flatflat{} oder auch grafische Zeichen wie \crescHairpin{} oder Taktbezeichnungen (\lilyTimeSignature{4+3}{8} oder \lilyTimeCHalf) sein.
 Mit etwas größerem Aufwand kann man auch individuelle Notationen erstellen und einbinden, wie etwa dieses funktionslose \lilyFancyExample{} Demonstrationsobjekt aus dem Paket.
-Das Besondere an dieser Lösung ist, dass man mit dem Paket auf den \emph{gesamten} Notationsvorrat von LilyPond in dessen hervorragender Qualität zugreifen kann, die verwendeten Zeichen problemlos mit dem Text fließen und sich leicht in Größe und Positionierung anpassen lassen.
+Das Besondere an dieser Lösung ist, dass damit ein Zugriff auf den \emph{gesamten} Notationsvorrat von LilyPond in dessen hervorragender Qualität angeboten ist, die verwendeten Zeichen problemlos mit dem Text fließen und sich leicht in Größe und Positionierung anpassen lassen.
 
 \bigskip
 \hrule
@@ -525,8 +525,8 @@ Wie bereits weiter oben angesprochen wurde, lassen sich mit Hilfe von Versionsko
 So wird man zwar eine kritische Revision nicht beliebig „clustern“ können, da es selbstverständlich erforderlich ist, den geistigen Zusammenhang zu bewahren.
 Tätigkeiten wie Noteneingabe oder Fehlerkorrektur können dagegen ohne weiteres in kleine Portionen aufgeteilt werden.
 
-Ein erfolgreiches Beispiel derartigen Arbeitens ist eine holländische Gesangbuch-Ausgabe%
+Ein erfolgreiches Beispiel derartigen Arbeitens ist eine holländische Gesangbuch-Ausgabe%,
 \footnote{\url{http://www.liedboek.nl}},
-die kürzlich mit einer Vielzahl unabhängiger Beitragender einen 1.600 Seiten umfassenden Notenband in nur einem Jahr fertigstellte.
+für die kürzlich eine Vielzahl unabhängiger Beitragender einen 1.600 Seiten umfassenden Notenband in nur einem Jahr fertigstellte.
 
 \end{document}
