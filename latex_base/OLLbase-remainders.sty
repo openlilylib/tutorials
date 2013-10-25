@@ -1,0 +1,32 @@
+% This file contains packages that had been included by OLLbase
+% but which aren't part of olltutorials anymore.
+% Individual tutorial documents should include packages like the ones given below
+% individually. This file is here mainly for reference and to help finding errors
+% resulting from the change.
+
+% base file to be included by any OLL document class
+%\NeedsTeXFormat{LaTeX2e} 
+%\ProvidesPackage{OLLbase}
+
+
+% Individual parts of the books (e.g. tutorials or separate parts of
+% documentation are organized as 'subfiles'
+\RequirePackage{subfiles}
+
+% Extended boxes
+\RequirePackage{fancybox}
+
+% Multicolumn texts
+\RequirePackage{multicol}
+
+% Extended table options
+\RequirePackage{tabularx}
+
+% Extended verbatim (listing) texts
+\RequirePackage{fancyvrb}
+
+% Enable the drawing of directory tree graphs
+\RequirePackage{dirtree}
+
+% Conditional commands for sections etc. in subfiles or main books
+\RequirePackage{OLLbookparttools}

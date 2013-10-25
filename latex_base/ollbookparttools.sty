@@ -1,0 +1,147 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%      This file is part of the 'openLilyLib' library.                    %
+%                                ===========                              %
+%                                                                         %
+%              https://github.com/lilyglyphs/openLilyLib                  %
+%                                                                         %
+%  Copyright 2012-13 by Urs Liska, lilyglyphs@ursliska.de                 %
+%                                                                         %
+%  'openLilyLib' is free software: you can redistribute it and/or modify  %
+%  it under the terms of the GNU General Public License as published by   %
+%  the Free Software Foundation, either version 3 of the License, or      %
+%  (at your option) any later version.                                    %
+%                                                                         %
+%  This program is distributed in the hope that it will be useful,        %
+%  but WITHOUT ANY WARRANTY; without even the implied warranty of         %
+%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the           %
+%  GNU General Public License for more details.                           %
+%                                                                         %
+%  You should have received a copy of the GNU General Public License      %
+%  along with this program.  If not, see <http://www.gnu.org/licenses/>.  %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Tools to handle bookparts to behave
+% differently if they are compiled standalone
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ollbookparttools}
+
+\usepackage{ifthen}
+
+\newcommand{\tutAuthor}{}
+\newcommand{\tutorialauthor}[1]{%
+	\renewcommand{\tutAuthor}{#1}}
+
+\newcommand{\tutTitle}{No Title Given}
+\newcommand{\tutorialtitle}[1]{%
+	\renewcommand{\tutTitle}{#1}}
+
+% Message if no author of the bookpart is given
+\newcommand{\nopartauthor}{%
+	Undefined author of bookpart\\
+	Please use the optional argument\\
+	of \cmd{parttitle}
+}
+
+% Conditionally include copyright notice and the full licenses
+% This combination of commands checks if the active document class
+% is 'subfiles'. Only in this case the commands include the 
+% copyright-notice or the full licenses.
+% This is done because we don't want these items to show up multiple times
+% in a compiled book.
+
+\newcommand{\titleauthor}{%
+	\tutTitle{} 
+%	( \tutAuthor)
+	\ifthenelse{\equal{\tutAuthor}{}}{}{( \tutAuthor)}
+	}
+% First define the commands for use from the main book files
+\newcommand{\copyrightnotice}{}
+\newcommand{\titleaspart}{\part{\titleauthor}}
+\newcommand{\titleaschapter}{\chapter{\titleauthor}}
+\newcommand{\titleassection}{\section{\titleauthor}}
+
+% Check if we're in a subfile and set a flag
+\makeatletter
+\newcommand{\issubfile}{
+	\@ifclassloaded{subfiles}
+		{\def\subfiletest{true}}
+		{}
+}
+\makeatother
+% Run it once
+\issubfile
+
+% Helper function that checks if a flag is set
+\makeatletter
+\newcommand*{\ifmacrodefined}[1]{%
+  \begingroup\expandafter\expandafter\expandafter\endgroup
+  \expandafter\ifx\csname #1\endcsname\relax
+    \expandafter\@secondoftwo
+  \else
+    \expandafter\@firstoftwo
+  \fi
+}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define the commands that should be executed
+% when compiled from within a subfile
+
+\newcommand{\doctitleifsub}[3]{%
+	\thispagestyle{empty}
+	\begin{center}
+		\sffamily This document is part of \textbf{\openlilylib}%
+		\footnote{\url{http://www.openlilylib.org}},\\
+		a collection of resources for the LilyPond notation software%
+		\footnote{\url{http://www.lilypond.org}}\\
+		and the \LaTeX{} typesetting system.
+		\vfill
+		
+		\Large Excerpt from:\\
+		\textbf{openLilyLib Tutorials}
+		
+		\bigskip
+    	\Huge\textsf{\textbf{#2}}
+    	
+    	\bigskip
+    	\rmfamily
+    	\Large
+    	\textbf{#3}
+    	
+    	\large
+    	\medskip
+    	\today
+    \end{center}
+    \markboth{#2}{#2}%
+    
+    \vspace{4cm}
+    \vfill
+    
+    \pagebreak
+	\vfill
+    
+    \copyrightnotice
+        
+    \tableofcontents
+    \clearpage
+}
+
+% call the in-subfile document title with the appropriate sectioning info
+\newcommand{\parttitleifsub}[2]{\doctitleifsub{part}{#1}{#2}}
+\newcommand{\chaptertitleifsub}[2]{\doctitleifsub{chapter}{#1}{#2}}
+\newcommand{\sectiontitleifsub}[2]{\doctitleifsub{section}{#1}{#2}}
+
+\newcommand*{\ollcompilation}{}
+% A document that is a compilation of several tutorials
+% will define \ollcompilation.
+% Then we'll simply start the tutorial as a part/chapter/section
+% depending on the used command. Otherwise we'll create a title
+% and a license page.
+\ifmacrodefined{ollcompilation}{}{
+			\renewcommand{\copyrightnotice}{\input{copyright-notice.inp}}
+			\renewcommand{\titleaspart}[2][\nopartauthor]{\parttitleifsub{#2}{#1}}
+			\renewcommand{\titleaschapter}[2]{\chaptertitleifsub{#2}{#1}}
+			\renewcommand{\titleassection}[2]{\sectiontitleifsub{#2}{#1}}
+}

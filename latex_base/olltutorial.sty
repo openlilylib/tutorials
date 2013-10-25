@@ -1,0 +1,142 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%      This file is part of the 'openLilyLib' library.                    %
+%                                ===========                              %
+%                                                                         %
+%              https://github.com/lilyglyphs/openLilyLib                  %
+%                                                                         %
+%  Copyright 2012-13 by Urs Liska, lilyglyphs@ursliska.de                 %
+%                                                                         %
+%  'openLilyLib' is free software: you can redistribute it and/or modify  %
+%  it under the terms of the GNU General Public License as published by   %
+%  the Free Software Foundation, either version 3 of the License, or      %
+%  (at your option) any later version.                                    %
+%                                                                         %
+%  This program is distributed in the hope that it will be useful,        %
+%  but WITHOUT ANY WARRANTY; without even the implied warranty of         %
+%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the           %
+%  GNU General Public License for more details.                           %
+%                                                                         %
+%  You should have received a copy of the GNU General Public License      %
+%  along with this program.  If not, see <http://www.gnu.org/licenses/>.  %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Style sheet to be included by the olltutorial.cls document class
+% Contains commands and formattings available to any tutorial document.
+%
+% The structure of this style file is:
+% - character styles
+% - environments
+% - listings
+% - other commands
+
+\NeedsTeXFormat{LaTeX2e} 
+\ProvidesPackage{olltutorial}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Character styles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Format LaTeX or LilyPond commands like \env with a prepended backslash
+\newcommand*{\cmd}[1]{\env{\textbackslash #1}}
+
+% Format a contributor's name.
+% Used to indicate smaller contributions
+%TODO: Implement an index of contributors and their contributions
+\newcommand*{\contributor}[1]{\textit{#1}}
+
+% Format directory names
+\newcommand*{\dir}[1]{\texttt{#1}}
+
+% Format environment names
+\newcommand*{\env}[1]{\texttt{#1}}
+
+% Format package names
+\newcommand*{\package}[1]{\texttt{#1}}
+
+% Add a TODO item that is easily spotted
+\newcommand{\todo}[1]{{\color{red}{\textbf{\textsf{[TODO: #1]}}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Any tutorial (or significant documentation chapter) should
+% be attributed to its original (main) author and prepended 
+% with an abstract.
+% Use this environment for this purpose (usually immediately after 
+% a \chapter heading) and give the author name as #1
+\newenvironment{authorAbstract}[2][None yet]{%
+	\originalAuthor[#1]{#2}
+	\begin{quote}
+	\textbf{\textsf{Abstract}}	
+	
+	\smallskip
+}
+{%
+	\end{quote}
+	\hrule
+	
+	\medskip
+}
+
+\newenvironment{knownIssues}[1][Known issues and warnings:]{
+
+	\begin{quote}
+	\noindent
+	\textcolor{red}{\textsf{\textbf{#1}}}
+}{%
+	\end{quote}
+	
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Listings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Define listing style for colored diffs
+\definecolor{diffstart}{named}{gray}
+\definecolor{diffincl}{named}{green}
+\definecolor{diffrem}{named}{red}
+\lstdefinelanguage{diff}{
+    basicstyle=\ttfamily\small,
+    morecomment=[f][\color{diffstart}]{@@},
+    morecomment=[f][\color{diffincl}]{+\ },
+    morecomment=[f][\color{diffrem}]{-\ },
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Other commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% print "LilyPond" (may be formatted later)
+\newcommand*{\lilypond}{\texttt{LilyPond}}
+
+% print "openLilyLib" (may be formatted later)
+\newcommand*{\openlilylib}{\texttt{openLilyLib}}
+
+% Reference an Issue on openLilyLib's Github account
+% #1 is the name of the repository (e.g. 'tutorials')
+% #2 is the issue number
+\newcommand*{\ghIssue}[2]{\href{https://github.com/openlilylib/#1/issues/#2}{(GitHub-Issue #1/\##2)}}
+
+% Reference a ticket on openLilyLib's new sourceforge tracker
+% deprecated, kept for reference in case of errors with existing tutorials
+%\newcommand*{\ollTicket}[1]{\href{https://sourceforge.net/p/openlilylib/tickets/#1/}{(sourceforge-Ticket \##1)}}
+
+% Attribution of the original author of a chapter/tutorial or anything.
+% This should be placed after the \chapter heading.
+% This command is defined in case one needs it instead of the
+% - preferred - 'authorAbstract' environment
+% #1 (optional) is a list of contributors
+% #2 (mandatory) is the author's name
+\newcommand{\originalAuthor}[2][]{%
+\textbf{Original author:\ #2} | Contributors:\ #1
+
+\smallskip
+\hrule
+
+\smallskip
+}
