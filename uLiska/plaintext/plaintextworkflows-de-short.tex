@@ -181,9 +181,9 @@ Der einzelne Mitarbeiter hingegen muss damit überhaupt nicht konfrontiert werde
 Einer der Aspekte textbasierten Arbeitens, an den sich Benutzer am meisten gewöhnen müssen, ist das Fehlen eines unmittelbaren visuellen Feedbacks eingegebener Änderungen.
 Grafische Programme reflektieren jegliche Änderung sofort, während die Eingabedatei des textbasierten Programms zunächst kompiliert werden muss, sich also während des eigentlichen Eingabevorgangs nicht aktualisiert.
 
-Auch wenn dies zunächst umständlich erscheint, ist es doch ein bedeutender Vorteil.
+Auch wenn dies zunächst umständlich erscheint, ist es doch ein inhärenter Vorteil.
 Das grafische Programm ist gezwungen, jede Änderung des Dokumenteninhalts \emph{unmittelbar} mit einem brauchbaren Ergebnis zu quittieren.
-So kann etwa das Löschen eines Satzes in einem Buchdokument mit zahlreichen Abbildungen ein Textverarbeitungsprogramm ohne weiteres in die Knie zwingen, da es den Seitenumbruch des verbleibenden Dokuments in Echtzeit erforderlich macht.
+So kann etwa das Löschen eines Satzes in einem Buchdokument mit zahlreichen Abbildungen ein Textverarbeitungsprogramm ohne weiteres in die Knie zwingen, da es den sofortigen Seitenumbruch des verbleibenden Dokuments in Echtzeit erforderlich macht.
 Abgesehen von der Unterbrechung des Arbeitsflusses geht dies auch zu Lasten der Ausgabequalität, die letztlich immer ein Kompromiss bleiben muss.
 Der Reintexteditor hingegen kann sich auf die Bearbeitung des reinen Texts beschränken, was in aller Regel erheblich geringere Ansprüche an die Rechenleistung stellt.
 Das eigentliche Übersetzungsprogramm kann sich dann genügend Zeit nehmen, um zunächst eine interne Repräsentation der \emph{Struktur} zu erzeugen und schließlich das Layout bestmöglich zu erstellen.
@@ -252,11 +252,11 @@ Dabei ist »Arbeiten« in doppeltem Sinne gemeint: als Erarbeiten eines (Forschu
 Versionskontrolle reduziert in erheblichem Maße Schwierigkeiten, die üblicherweise bei der gemeinsamen Bearbeitung von Dokumenten entstehen.
 
 Die heute bei weitem verbreitetste Methode gemeinsamen Arbeitens besteht im Austausch von Dateien per Email, Datenträger oder der abwechselnden Bearbeitung von im Netzwerk (oder in der »Cloud«) lagernden Dateien.
-Abhängig von der jeweiligen Vorgehensweise sind dabei mehr oder weniger umständliche Vorkehrungen erforderlich, um inkonsistente Datenzustände zu vermeiden.
+Abhängig von der jeweiligen Vorgehensweise sind dabei mehr oder weniger ausgefeilte Vorkehrungen erforderlich, um inkonsistente Datenzustände zu vermeiden.
 Durch Austausch entstehende Kopien von Dokumenten müssen verwaltet werden, es muss dafür gesorgt werden, dass nicht zwei Personen gleichzeitig verschiedene Versionen des Dokuments verändern%
 \footnote{Dies kann etwa geschehen, wenn ich ein vom Partner bearbeitetes Dokument zurückerhalte und weiterbearbeite, der Partner dann jedoch weitere Änderungen »nachreicht«},
 und schließlich behindert das -- technisch oder durch Vereinbarung bedingte -- »Sperren« von Dokumenten das freie Arbeiten.
-Eine derart gestaltete Zusammenarbeit wird vollends unpraktikabel, wenn dabei eine große Zahl von Dokumenten von mehr als zwei Mitarbeitern benutzt werden soll.
+Eine derart gestaltete Zusammenarbeit wird vollends unpraktikabel, wenn dabei eine große Zahl von Dateien von mehr als zwei Mitarbeitern bearbeitet werden soll.
 
 Hier nun setzt Versionskontrolle an.
 Deren Techniken und Strategien wurden insbesondere dafür entwickelt, die reibungslose Zusammenarbeit zahlreicher Mitarbeiter zu gewährleisten%
@@ -372,9 +372,9 @@ Diese dienen zunächst der Dokumentation und Erläuterung des Quelltextes, eigne
 Derzeit wird an einer erheblichen Ausweitung dieses Konzepts mit Blick auf kritische Ausgaben gearbeitet.
 In Kürze wird es möglich sein, explizite Kommentare in den Quelltext -- \emph{d.\,h. in unmittelbarer Nähe der Definition des Notentexts} -- einzufügen und von einem Hilfsprogramm zu verschiedenartigen Listen aufbereiten zu lassen.
 Auf diese Weise können unmittelbar aus dem Partiturdokument heraus Listen mit \textsc{todo}s, editorischen und typografischen Fragen und schließlich auch kritischen Anmerkungen erzeugt werden.
-Von den Listeneinträgen führen Links direkt an die entsprechende Stelle im Quelltext.
-Geplant ist darüber hinaus, die Kommentare direkt in Frescobaldis Partituransicht bearbeiten zu können, und schließlich wird man sogar in der Lage sein, die in der Partitur gespeicherten Einträge zum kritischen Bericht direkt vom zugehörigen Textdokument verwenden zu lassen.
-Somit wird es möglich, die gesamte Vorbereitung einer kritischen Ausgabe \emph{innerhalb der konkreten Partitur} durchführen zu können!
+Von den Listeneinträgen führen Links direkt an die entsprechende Stelle im Quelltext, geplant ist darüber hinaus, die Kommentare direkt in Frescobaldis Partituransicht bearbeiten zu können.
+Schließlich wird man sogar in der Lage sein, die in der Partitur gespeicherten Einträge zum kritischen Bericht direkt vom zugehörigen Textdokument verwenden zu lassen -- der Abgleich zwischen Partitur und Revisionsbericht bei der Korrekturlesung wird damit ganz erheblich vereinfacht, wenn nicht gar überflüssig gemacht werden.
+Somit wird es möglich, die gesamte Vorbereitung einer kritischen Ausgabe \emph{innerhalb des konkreten Partiturdokuments} durchführen zu können!
 
 \section{Programmierbarkeit}
 \label{sec:pt_lilypond-programmability}
@@ -409,7 +409,7 @@ Dies ist insofern ein großes Problem, als die Mehrzahl der Verlage auf Dateien 
 
 Auf Grund des bisher Beschriebenen sollte deutlich sein, dass die Vorbereitung von Notenausgaben mit LilyPond auch dann äußerst sinnvoll ist, wenn die endgültige Druckvorbereitung mit \emph{Finale} oder \emph{Sibelius} durchgeführt würde.
 Daher ist die Ergänzung einer Exportmöglichkeit in das gebräuchliche Austauschformat MusicXML eines der wichtigsten Desiderata der LilyPond-Entwicklung aus musikwissenschaftlicher Perspektive.
-Diese scheint dabei kein grundsätzliches technisches Problem, sondern »nur« eine Frage der Ressourcen zu sein -- für eine grundlegende Implementierung wären wohl lediglich einige Wochen Arbeit eines einzelnen Programmierers erforderlich.
+Diese scheint dabei kein grundsätzliches technisches Problem, sondern »nur« eine Frage der Ressourcen zu sein -- an einer grundlegenden Implementierung wird derzeit gearbeitet, die Frage ist jedoch natürlich, welcher Aufwand erforderlich ist, um zu einer stabilen und verlässlichen Funktionalität zu gelangen.
 
 
 \chapter{\LaTeX}
@@ -430,7 +430,7 @@ Die Schnittstelle zu \LaTeX{} ist ähnlich wie bei LilyPond:
 Eingabedateien im Reintextformat werden in \textsc{pdf}-Dateien \emph{übersetzt}.
 Auf Grund des Alters des Systems (das grundlegende Satzsystem \TeX{} wurde 1978 veröffentlicht) existieren zahllose Bearbeitungsprogramme unterschiedlichen Zuschnitts und Komforts.
 Die Eingabesprache bietet \emph{Befehle} und \emph{Umgebungen}, die entfernt mit Text- und Absatzvorlagen von Textverarbeitungsprogrammen vergleichbar, jedoch ungleich mächtiger sind:
-Sie reichen von einfacher semantischer Auszeichnung über (etwa) Abbildungen, die nach traditionellen Satzregeln im Text positioniert werden, bis hin zu komplexen Befehlen mit mehreren Argumenten.
+Sie reichen von einfacher semantischer Auszeichnung über (etwa) Abbildungen, die nach traditionellen Satzregeln im Text positioniert werden, bis hin zu komplexen Befehlen mit Argumenten.
 
 Eine noch so oberflächliche Einführung in \LaTeX{} würde den Rahmen dieses Textes sprengen, daher beschränke ich mich auf einige Hinweise zu spezifisch musikalischen Aspekten.
 
@@ -441,7 +441,7 @@ Eine noch so oberflächliche Einführung in \LaTeX{} würde den Rahmen dieses Te
 \LaTeX{} ist in der Lage, Abbildungen satztechnisch hochwertig einzufügen und hat auch keine Schwierigkeiten mit einer Vielzahl von Bildern in langen Dokumenten.
 Zur Verwaltung von Notenbeispielen gibt es jedoch einige speziellere Werkzeuge, insbesondere \package{lilypond-book} and \package{musicexamples}.
 
-\package{lilypond-book} ist ein Hilfsprogramm, das gemeinsam mit LilyPond ausgeliefert wird und ermöglicht, LilyPond-Code direkt in \LaTeX-Dokumente einzufügen.
+\package{lilypond-book} ist ein Hilfsprogramm, das gemeinsam mit LilyPond ausgeliefert wird und ermöglicht, LilyPond-Code direkt in \LaTeX-Dokumente einzubetten.
 Beim Durchlauf werden die Notenbeispiele bei Bedarf neu erzeugt und der Quellcode durch entsprechende Bilddateien ersetzt.
 Der potenzielle Nachteil an diesem Ansatz ist, dass die zu bearbeitende Datei nicht direkt von \LaTeX{} übersetzt werden kann, sondern zunächst von \package{lilypond-book} vorverarbeitet werden muss.
 Für Dokumente mit vielen kurzen Notenbeispielen kann es jedoch die effektivste Möglichkeit sein, die Noten \emph{in situ} zu verwalten.
@@ -491,7 +491,9 @@ Der Hauptgedanke, der allen weiteren zugrunde liegt, ist das \emph{gemeinschaftl
 Da das Versionskontrollsystem alle Bearbeitungsschritte lückenlos und nachvollziehbar dokumentiert, können die im Rahmen des Projekts anfallenden Aufgaben flexibel verteilt werden.
 Nach wie vor sollte es für jede Teilaufgabe Spezialisten geben, doch können durch gegenseitigen Austausch \emph{bereits während der Entstehung des Projekts} nennenswerte kreative Synergien freigesetzt werden.
 Versionskontrolle stellt explizit Werkzeuge zur Verfügung, um verschiedene Modelle von \emph{peer review} zu befördern.
-Insbesondere lässt sich in der Phase der Korrektur die Zusammenarbeit zwischen Herausgeber, Korrekturleser und Notensetzer äußerst effektiv organisieren.
+Insbesondere lässt sich in der Phase der Korrektur die Zusammenarbeit zwischen Herausgeber, Korrekturleser und Notensetzer äußerst effektiv organisieren%
+\footnote{Dies erfahre ich derzeit im Rahmen der Fertigstellung einer Notenausgabe.
+Insbesondere zeigt sich auch, dass die Interaktion mit Beteiligten, die sich noch nicht auf unsere Werkzeuge eingelassen haben, erheblich umständlicher ist.}.
 Das verteilte Arbeiten erhöht darüber hinaus die Effizienz, da Teilaufgaben häufig parallel bearbeitet werden und Wartezeiten durch »Dateisperren« bzw. das Warten auf die Fertigstellung einer Teilaufgabe durch einen anderen Mitarbeiter entfallen können.
 
 Als sehr fruchtbar hat sich die Entwicklung eines »Entwurfsmodus« bei der Partiturausarbeitung erwiesen.
@@ -531,8 +533,8 @@ Das mag von der Aufbereitung eines kritischen Berichts für eine Web-Abfrage bis
 \label{sec:pt_crowd-editing}
 Ein bislang weitgehend unbekanntes Phänomen lässt sich mit dem künstlich geprägten \emph{Crowd Editing} beschreiben.
 Wie bereits weiter oben angesprochen wurde, lassen sich mit Hilfe von Versionskontrolle viele Aufgaben auf eine beliebige Anzahl von Teilnehmern verteilen.
-So wird man zwar eine kritische Revision nicht beliebig »clustern« können, da es selbstverständlich erforderlich ist, den geistigen Zusammenhang zu bewahren.
-Tätigkeiten wie Noteneingabe oder Fehlerkorrektur können dagegen ohne weiteres in kleine Portionen aufgeteilt werden.
+So wird man zwar eine kritische Revision nicht beliebig »clustern« können, da der geistige Zugriff eines Herausgebers nicht einfach durch »Schwarmintelligenz« zu ersetzen ist.
+Tätigkeiten wie Noteneingabe oder Fehlerkorrektur können dagegen ohne weiteres zu kleinen Teilaufgaben konfektioniert werden.
 
 Ein erfolgreiches Beispiel derartigen Arbeitens ist eine holländische Gesangbuch-Ausgabe%,
 \footnote{\url{http://www.liedboek.nl}},
