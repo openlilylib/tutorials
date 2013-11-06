@@ -54,9 +54,9 @@ Außer dem Verfassen von Text- und Partiturdokumenten spielen im Zusammenhang mi
 
 \chapter{Textformate}
 \label{chap:pt_plain-text-format}
-„Traditionelle“, grafische Programme bilden den gesamten Arbeitsprozess der Erstellung von Dokumenten in einer \textsc{wysiwyg%
+»Traditionelle«, grafische Programme bilden den gesamten Arbeitsprozess der Erstellung von Dokumenten in einer \textsc{wysiwyg%
 \footnote{What You See Is What You Get -- die Bildschirmdarstellung gleicht der endgültigen Ausgabe auf Papier}}-Umgebung ab.
-Demgegenüber ist bei der Bearbeitung von Textdateien das Ergebnis nicht unmittelbar ersichtlich -- der „Quelltext“ muss erst in ein grafisches Dateiformat „übersetzt“ oder „kompiliert“ werden.
+Demgegenüber ist bei der Bearbeitung von Textdateien das Ergebnis nicht unmittelbar ersichtlich -- der »Quelltext« muss erst in ein grafisches Dateiformat »übersetzt« oder »kompiliert« werden.
 Weshalb sollte man sich nun diese Abstraktionsebene aufbürden, wo es doch offensichtlich schnell, einfach und effizient ist, ein Dokument in seinem endgültigen Erscheinungsbild zu bearbeiten?
 Ist es nicht nachgerade \emph{natürlich}, eine Partitur grafisch zu bearbeiten?
 
@@ -69,7 +69,7 @@ Da es bei diesem Thema eine Reihe von Mehrdeutigkeiten gibt, werde ich im Folgen
 Wenn ich von \emph{Dateien} spreche, meine ich die physische Speicherung auf einer Festplatte, während \emph{Dokument} die konzeptionelle Einheit bezeichnet.
 Ein \emph{Textdokument} ist somit beispielsweise der vorliegende Aufsatz, unabhängig von dem Dateiformat, in dem er gespeichert ist.
 \emph{Textdatei} (oder auch \emph{Reintextdatei}) bezeichnet dagegen eine physische Datei, in der ausschließlich Reintext gespeichert ist.
-Auf das zweideutige „Text“ versuche ich nach Möglichkeit zu verzichten.
+Auf das zweideutige »Text« versuche ich nach Möglichkeit zu verzichten.
 
 \section{Inhalt, Bedeutung und Erscheinungsbild}
 \label{sec:pt_separation-content-meaning-appearance}
@@ -87,9 +87,9 @@ Es ist aber nicht sichtbar, ob der Autor statt dessen mit einer
 gearbeitet hat.
 
 Im Quelldokument eines textbasierten Programms hingegen wird der Text mit \emph{Auszeichnungsbefehlen}%
-\footnote{„Semantisches Markup“}
+\footnote{»Semantisches Markup«}
 versehen, Missverständnisse sind ausgeschlossen.
-\fbox{„\texttt{Schuberts \textbackslash werktitel\{Winterreise\}}“} ist beispielsweise ein Quelltextfragment, das strikt zwischen dem Inhalt („Winterreise“), der strukturellen Bedeutung („es ist ein Werktitel“) und der Darstellung trennt, die überhaupt separat definiert werden muss.
+\fbox{»\texttt{Schuberts \textbackslash werktitel\{Winterreise\}}«} ist beispielsweise ein Quelltextfragment, das strikt zwischen dem Inhalt (»Winterreise«), der strukturellen Bedeutung (»es ist ein Werktitel«) und der Darstellung trennt, die überhaupt separat definiert werden muss.
 Der Vorteil dieser konsequenten Trennung überwiegt nach einer Gewöhnungsphase den Umstand, dass die Auszeichnungsbefehle dem flüssigen Lesen (im Quelltextdokument) etwas im Wege stehen und gewissermaßen mental ausgeblendet werden müssen.
 
 Im Falle von Partituren ist die Sache ähnlich gelagert:
@@ -136,7 +136,7 @@ Bei der Wiederherstellung korrupter \emph{Text}dateien hingegen kann praktisch a
 Dies ist selbst dann möglich, wenn man mangels Dateizuordnungstabelle nur noch die rohen Bytes der Datenträgeroberfläche auslesen konnte.
 Mit etwas Glück lassen sich somit die fehlenden Puzzleteile leicht ergänzen.
 
-\paragraph{Verwendung „antiker“ Dateien}
+\paragraph{Verwendung »antiker« Dateien}
 Mit der Weiterentwicklung von Software ändern sich deren Dateiformate.
 Auch wenn Programme üblicherweise Dateien ihrer Vorgängerversionen öffnen können, wird deren Unterstützung irgendwann eingestellt, so dass zum Bearbeiten alter Dateien eine ältere Version des Programms erforderlich ist.
 Bei einem Wechsel des Betriebssystems verschärft sich dieses Problem erheblich.
@@ -144,7 +144,7 @@ In aller Regel werden Daten und Dateien irgendwann unbenutzbar.
 
 Programme, die mit Textdateien arbeiten, sind dieser Problematik ebenso ausgesetzt, doch sind deren Dateiformate meist wesentlich besser und v.\,a. öffentlich dokumentiert.
 Die Wahrscheinlichkeit, eine verfügbare Konvertierungsmöglichkeit zu finden, ist daher erheblich größer.
-Und sollte alles nichts helfen, ist zumindest noch die „rohe“ Reintextdatei offen zugänglich.
+Und sollte alles nichts helfen, ist zumindest noch die »rohe« Reintextdatei offen zugänglich.
 Ihr Inhalt kann prinzipiell jederzeit verarbeitet und/oder ein neues Editorprogramm dafür entwickelt werden.
 
 Textdatei-basierte Projekte können auf diese Weise -- insbesondere in Verbindung mit Versionskontrolle (siehe das nächste Kapitel) -- eine Vielzahl von Computer- und sogar Betriebssystemgenerationen umspannen.
@@ -211,7 +211,7 @@ Zu realisieren, dass dieses Handwerkszeug für musikalische wie musikwissenschaf
 
 In einer ersten Näherung kann man Versionskontrolle als eine unendlich flexible Ausprägung des \emph{Rückgängig/Wiederherstellen}-Mechanismus begreifen.
 Versionierung dokumentiert die gesamte Entstehungsgeschichte eines Dokuments bzw. eines Verzeichnisses von Dokumenten und erlaubt es, \emph{jeden beliebigen} vergangenen Zustand bzw. Überarbeitungsschritt des Projekts zu inspizieren oder wiederherzustellen.
-Änderungen, die sich etwa im Rahmen der Korrekturlesung ergeben, werden nicht in Form geänderter Dateien kommuniziert, sondern als „Änderungen” punktgenau dokumentiert und können so eingesehen und beurteilt werden.
+Änderungen, die sich etwa im Rahmen der Korrekturlesung ergeben, werden nicht in Form geänderter Dateien kommuniziert, sondern als »Änderungen” punktgenau dokumentiert und können so eingesehen und beurteilt werden.
 Darüber hinaus erlaubt Versionsverwaltung, jeden einzelnen Änderungsschritt individuell, d.\,h. nicht notwendig in chronologischer Reihenfolge zu widerrufen.
 So kann etwa die Überarbeitung eines bestimmten Kapitels, die vor zwei Wochen durchgeführt wurde, rückgängig gemacht werden, ohne die sonstige seitherige Arbeit zu berühren.
 Traditionellerweise wäre man auf das Vorhandensein eines Backups genau des gewünschten Zustands angewiesen und würde bei der Gelegenheit alle spätere Arbeit verlieren.
@@ -223,7 +223,7 @@ Dies ist auch eine hervorragende Perspektive für (musikalische oder andere) lan
 \section{Grundlagen der Versionskontrolle}
 \label{sec:pt_basics-version-control}
 Das Fundament der Versionskontrolle ist der zeilenweise%
-\footnote{„Zeilenweise“ bezieht sich auf die Zeilen der Quelltextdatei.}
+\footnote{»Zeilenweise« bezieht sich auf die Zeilen der Quelltextdatei.}
 Vergleich eines gesamten Projektverzeichnisses.
 Quelldatei-Zeilen beinhalten üblicherweise eine logische Einheit wie etwa einen Satz (in einem Textdokument) oder einen Takt einer Stimme in einer Partitur.
 In einem sogenannten \emph{Commit} wird ein Satz zusammenhängender Zeilen-Änderungen in 
@@ -236,8 +236,8 @@ In diesem mächtigen zeilenweisen Ansatz der Versionskontrolle liegt auch der Gr
 In Binärdateien lassen sich Änderungen überhaupt nicht erfassen, und auch \textsc{xml}-basierte Formate eignen sich nur sehr bedingt für die Versionierung:
 Allein durch das Öffnen und Speichern eines Dokuments (ohne tatsächliche Änderungen) werden so viele Zeilen der Datei verändert (etwa durch Angaben über Zeitstempel oder geöffnete Werkzeugleisten), dass der resultierende Commit praktisch nichtssagend wird.
 
-Ein wichtiges und mächtiges Konzept der Versionskontrolle sind \emph{Zweige} („branches“).
-Diese kann man etwa wie eine unabhängige „Sitzung“ verstehen, in deren Kontext man arbeitet, ohne die übrigen Sitzungen zu beeinflussen.
+Ein wichtiges und mächtiges Konzept der Versionskontrolle sind \emph{Zweige} (»branches«).
+Diese kann man etwa wie eine unabhängige »Sitzung« verstehen, in deren Kontext man arbeitet, ohne die übrigen Sitzungen zu beeinflussen.
 Ein üblicher und leicht verständlicher Verwendungszweck von Zweigen ist es, 
 Arbeitsschritte abzugrenzen, die das Projekt zeitweise in einen inkonsistenten Zustand bringen.
 So würde man beispielsweise die kritische Revision einer Notenausgabe im Rahmen eines Zweiges erledigen, wodurch die Partitur zu keinem Zeitpunkt eine Mischform zwischen Hauptquelle und revidierter Form aufweist.
@@ -248,14 +248,14 @@ Später lässt sich der Überarbeitungsvorgang dann jederzeit detailliert nachvo
 
 Der bedeutendste Aspekt jedoch, der akademischem Arbeiten wirklich neue Impulse verleihen kann, ist das von Versionskontrolle erheblich profitierende \emph{gemeinschaftliche Arbeiten%
 \footnote{Der englische Begriff \emph{collaboration} erscheint mir dabei treffender.}}.
-Dabei ist „Arbeiten“ in doppeltem Sinne gemeint: als Erarbeiten eines (Forschungs-)Gegenstands und als Bearbeiten von Dateien.
+Dabei ist »Arbeiten« in doppeltem Sinne gemeint: als Erarbeiten eines (Forschungs-)Gegenstands und als Bearbeiten von Dateien.
 Versionskontrolle reduziert in erheblichem Maße Schwierigkeiten, die üblicherweise bei der gemeinsamen Bearbeitung von Dokumenten entstehen.
 
-Die heute bei weitem verbreitetste Methode gemeinsamen Arbeitens besteht im Austausch von Dateien per Email, Datenträger oder der abwechselnden Bearbeitung von im Netzwerk (oder in der „Cloud“) lagernden Dateien.
+Die heute bei weitem verbreitetste Methode gemeinsamen Arbeitens besteht im Austausch von Dateien per Email, Datenträger oder der abwechselnden Bearbeitung von im Netzwerk (oder in der »Cloud«) lagernden Dateien.
 Abhängig von der jeweiligen Vorgehensweise sind dabei mehr oder weniger umständliche Vorkehrungen erforderlich, um inkonsistente Datenzustände zu vermeiden.
 Durch Austausch entstehende Kopien von Dokumenten müssen verwaltet werden, es muss dafür gesorgt werden, dass nicht zwei Personen gleichzeitig verschiedene Versionen des Dokuments verändern%
-\footnote{Dies kann etwa geschehen, wenn ich ein vom Partner bearbeitetes Dokument zurückerhalte und weiterbearbeite, der Partner dann jedoch weitere Änderungen „nachreicht“},
-und schließlich behindert das -- technisch oder durch Vereinbarung bedingte -- „Sperren“ von Dokumenten das freie Arbeiten.
+\footnote{Dies kann etwa geschehen, wenn ich ein vom Partner bearbeitetes Dokument zurückerhalte und weiterbearbeite, der Partner dann jedoch weitere Änderungen »nachreicht«},
+und schließlich behindert das -- technisch oder durch Vereinbarung bedingte -- »Sperren« von Dokumenten das freie Arbeiten.
 Eine derart gestaltete Zusammenarbeit wird vollends unpraktikabel, wenn dabei eine große Zahl von Dokumenten von mehr als zwei Mitarbeitern benutzt werden soll.
 
 Hier nun setzt Versionskontrolle an.
@@ -314,7 +314,7 @@ Um eine konkrete Vorstellung von LilyPonds Texteingabe zu erhalten, empfehle ich
 oder die englische Fassung meines Aufsatzes, die ebenfalls einigen Seiten hierzu enthält.
 
 \bigskip
-Glücklicherweise ist man heutzutage nicht mehr darauf angewiesen, den „nackten“ Quelltext in einem simplen Texteditor zu verfassen, denn es existieren eine Reihe von Programmen für verschiedenste Betriebssysteme, die den Autor in vielfältiger Weise unterstützen.
+Glücklicherweise ist man heutzutage nicht mehr darauf angewiesen, den »nackten« Quelltext in einem simplen Texteditor zu verfassen, denn es existieren eine Reihe von Programmen für verschiedenste Betriebssysteme, die den Autor in vielfältiger Weise unterstützen.
 Als Beispiel sei \textit{Frescobaldi%
 \footnote{\url{http://www.frescobaldi.org}}}
 genannt, das derzeit vermutlich umfangreichste Programm zur komfortablen Bearbeitung von LilyPond-Partituren.
@@ -392,7 +392,7 @@ Derzeit arbeite ich zum Beispiel an der Edition eines großen Orchesterwerks%
 \footnote{Oskar Fried: \emph{Das trunkne Lied}, siehe \url{http://lilypondblog.org/2013/06/das-trunkne-lied/}}.
 Dieses Projekt ist so eingerichtet, dass der einzelne Bearbeiter jeweils nur mit einem kurzen Segment (d.\,h. dem Inhalt einer Stimme im Umfang einer Probenziffer) konfrontiert ist.
 Die Partitur und die Einzelstimmen können zu jedem Zeitpunkt erzeugt werden und verwenden in einer von Pausen erfüllten Partitur alle bereits eingegebenen Segmente.
-Die Arbeit kann so einerseits beliebig „parallelisiert“ werden und andererseits von Personen erledigt werden, die möglicherweise mit der Bearbeitung einer ganzen Partitur überfordert wären.
+Die Arbeit kann so einerseits beliebig »parallelisiert« werden und andererseits von Personen erledigt werden, die möglicherweise mit der Bearbeitung einer ganzen Partitur überfordert wären.
 
 \bigskip
 \hrule
@@ -403,13 +403,13 @@ Und dabei steht die Erörterung der Integrationsmöglichkeiten mit Textsatz in \
 
 \bigskip
 Es gibt allerdings derzeit noch einen Schönheitsfehler, der leider nicht unterschlagen werden kann: den Datenaustausch mit anderen Notensatzprogrammen.
-Momentan ist die Verwendung von LilyPond noch eine Einbahnstraße, deren einziger „Ausgang“ die verschiedenen grafischen Partiturformate sind.
+Momentan ist die Verwendung von LilyPond noch eine Einbahnstraße, deren einziger »Ausgang« die verschiedenen grafischen Partiturformate sind.
 So ist es zwar möglich, Partituren aus anderen Programmen in LilyPond-Eingabedateien zu konvertieren, nicht dagegen, eine in LilyPond eingegebene Partitur in Formate zu exportieren, die von anderen Notationsprogrammen gelesen und bearbeitet werden können.
 Dies ist insofern ein großes Problem, als die Mehrzahl der Verlage auf Dateien der beiden großen kommerziellen grafischen Programme besteht und LilyPond-Dateien nicht akzeptiert.
 
 Auf Grund des bisher Beschriebenen sollte deutlich sein, dass die Vorbereitung von Notenausgaben mit LilyPond auch dann äußerst sinnvoll ist, wenn die endgültige Druckvorbereitung mit \emph{Finale} oder \emph{Sibelius} durchgeführt würde.
 Daher ist die Ergänzung einer Exportmöglichkeit in das gebräuchliche Austauschformat MusicXML eines der wichtigsten Desiderata der LilyPond-Entwicklung aus musikwissenschaftlicher Perspektive.
-Diese scheint dabei kein grundsätzliches technisches Problem, sondern „nur“ eine Frage der Ressourcen zu sein -- für eine grundlegende Implementierung wären wohl lediglich einige Wochen Arbeit eines einzelnen Programmierers erforderlich.
+Diese scheint dabei kein grundsätzliches technisches Problem, sondern »nur« eine Frage der Ressourcen zu sein -- für eine grundlegende Implementierung wären wohl lediglich einige Wochen Arbeit eines einzelnen Programmierers erforderlich.
 
 
 \chapter{\LaTeX}
@@ -419,7 +419,7 @@ Diese scheint dabei kein grundsätzliches technisches Problem, sondern „nur“
 \footnote{\url{http://www.latex-project.org}}
 ist für Textdokumente, was LilyPond für Partituren ist:
 es bietet Text\emph{satz}, im Gegensatz zu bloßer Text\emph{verarbeitung}.
-Wem an guter Typografie gelegen ist, sollte \LaTeX{} lieben, wer ihr dagegen keine Bedeutung beimisst, sollte bedenken, dass „keine Typografie“ nicht möglich ist -- sie wirkt \emph{immer}. 
+Wem an guter Typografie gelegen ist, sollte \LaTeX{} lieben, wer ihr dagegen keine Bedeutung beimisst, sollte bedenken, dass »keine Typografie« nicht möglich ist -- sie wirkt \emph{immer}. 
 
 Mit Textverarbeitungsprogrammen wie \emph{Word} oder \emph{OpenOffice} ist es unmöglich, professionell gesetzte Dokumente zu erstellen, insofern ist \LaTeX{} eher in Konkurrenz zu \textsc{dtp}-Programmen wie \emph{InDesign} oder \emph{QuarkXPress} zu sehen.
 Zumindest bei Textdokumenten muss man bei der freien Software keinerlei Abstriche hinsichtlich der Qualität machen, im Gegenteil bietet sie gerade hinsichtlich der Mikrotypografie ganz hervorragende Möglichkeiten.
@@ -492,9 +492,9 @@ Da das Versionskontrollsystem alle Bearbeitungsschritte lückenlos und nachvollz
 Nach wie vor sollte es für jede Teilaufgabe Spezialisten geben, doch können durch gegenseitigen Austausch \emph{bereits während der Entstehung des Projekts} nennenswerte kreative Synergien freigesetzt werden.
 Versionskontrolle stellt explizit Werkzeuge zur Verfügung, um verschiedene Modelle von \emph{peer review} zu befördern.
 Insbesondere lässt sich in der Phase der Korrektur die Zusammenarbeit zwischen Herausgeber, Korrekturleser und Notensetzer äußerst effektiv organisieren.
-Das verteilte Arbeiten erhöht darüber hinaus die Effizienz, da Teilaufgaben häufig parallel bearbeitet werden und Wartezeiten durch „Dateisperren“ bzw. das Warten auf die Fertigstellung einer Teilaufgabe durch einen anderen Mitarbeiter entfallen können.
+Das verteilte Arbeiten erhöht darüber hinaus die Effizienz, da Teilaufgaben häufig parallel bearbeitet werden und Wartezeiten durch »Dateisperren« bzw. das Warten auf die Fertigstellung einer Teilaufgabe durch einen anderen Mitarbeiter entfallen können.
 
-Als sehr fruchtbar hat sich die Entwicklung eines „Entwurfsmodus“ bei der Partiturausarbeitung erwiesen.
+Als sehr fruchtbar hat sich die Entwicklung eines »Entwurfsmodus« bei der Partiturausarbeitung erwiesen.
 Gemeinsam mit der Möglichkeit, durch Quelltextkommentare einen Kommunikationskanal zwischen den Projektbeteiligten zu eröffnen, verbessert der Entwurfsmodus den Überblick über das Projekt erheblich.
 Die Entwicklung erweiterter Möglichkeiten für Anmerkungen und Dokumentation im Rahmen des \package{lilypond-doc}-Projekts werden diesen Vorteil noch einmal deutlich ausweiten.
 
@@ -520,18 +520,18 @@ Gerade diese können von den Implikationen gemeinschaftlichen (Be-)Arbeitens pro
 So ist es -- zumindest von der technischen und logistischen Seite her betrachtet -- ohne Weiteres möglich, die Arbeit eines Herausgebers zu übernehmen und nahtlos fortzusetzen.
 
 
-\section{„Single Source Publishing“}
+\section{»Single Source Publishing«}
 \label{sec:pt_single-source-publishing}
 Bedenkenswert (wenn auch an dieser Stelle nicht näher ausgeführt) ist in diesem Zusammenhang auch, dass neben Text- und Notensatz natürlich auch andere Techniken zum Zuge kommen können, so etwa Datenspeicherung in Datenbanken sowie deren Aufbereitung in Netzwerk- und Internettechnologien.
 Das zukunftsträchtige Schlagwort des \emph{Single Source} oder \emph{Cross Media Publishing} ist hierbei eine fast zwangsläufig auftretende Assoziation.
 Textbasierte Arbeitsprozesse bieten eine hervorragende Materialgrundlage für die Verarbeitung allgemeiner Inhalte für verschiedene Medien.
 Das mag von der Aufbereitung eines kritischen Berichts für eine Web-Abfrage bis zu interaktiven Partituren reichen.
 
-\section{„Crowd Editing“}
+\section{»Crowd Editing«}
 \label{sec:pt_crowd-editing}
 Ein bislang weitgehend unbekanntes Phänomen lässt sich mit dem künstlich geprägten \emph{Crowd Editing} beschreiben.
 Wie bereits weiter oben angesprochen wurde, lassen sich mit Hilfe von Versionskontrolle viele Aufgaben auf eine beliebige Anzahl von Teilnehmern verteilen.
-So wird man zwar eine kritische Revision nicht beliebig „clustern“ können, da es selbstverständlich erforderlich ist, den geistigen Zusammenhang zu bewahren.
+So wird man zwar eine kritische Revision nicht beliebig »clustern« können, da es selbstverständlich erforderlich ist, den geistigen Zusammenhang zu bewahren.
 Tätigkeiten wie Noteneingabe oder Fehlerkorrektur können dagegen ohne weiteres in kleine Portionen aufgeteilt werden.
 
 Ein erfolgreiches Beispiel derartigen Arbeitens ist eine holländische Gesangbuch-Ausgabe%,
