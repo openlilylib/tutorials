@@ -1,28 +1,252 @@
-% Use this or any other documentclass you like
-\documentclass{scrreprt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%      This file is part of the 'openLilyLib' library.                    %
+%                                ===========                              %
+%                                                                         %
+%              https://github.com/lilyglyphs/openLilyLib                  %
+%                                                                         %
+%  Copyright 2012-13 by Urs Liska, lilyglyphs@ursliska.de                 %
+%                                                                         %
+%  'openLilyLib' is free software: you can redistribute it and/or modify  %
+%  it under the terms of the GNU General Public License as published by   %
+%  the Free Software Foundation, either version 3 of the License, or      %
+%  (at your option) any later version.                                    %
+%                                                                         %
+%  This program is distributed in the hope that it will be useful,        %
+%  but WITHOUT ANY WARRANTY; without even the implied warranty of         %
+%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the           %
+%  GNU General Public License for more details.                           %
+%                                                                         %
+%  You should have received a copy of the GNU General Public License      %
+%  along with this program.  If not, see <http://www.gnu.org/licenses/>.  %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[../../LilyPond-Tutorials]{subfiles}
+
+
+%\usepackage{verbatim}
 
 % include OLL's base files (in their present state)
-\usepackage{OLLbase}
-\usepackage{OLLstyles}
+%\usepackage{OLLbase}
+%\usepackage{OLLstyles}
 
 % Style file for command you define along writing
 \usepackage{agStyles}
 
 \begin{document}
 \chapter{Orchestral Scores with LilyPond}
-\originalAuthor{Antonio Gervasoni}
-\begin{abstract}
-Please provide an abstract.
-This will be formatted differently in the final version (not on its own page).
-\end{abstract}
+%\originalAuthor{Antonio Gervasoni}
 
-Start your body text here.
+\begin{authorAbstract}{Antonio Gervasoni}
+About two years ago, I became interested in writing an orchestral score using Lilypond and wanted a tutorial that could guide me through the process step by step. 
+Being unable to find one on the Internet, I embarked myself in the task of putting together ideas from blogs, forums, and the Lilypond documentation.
+I went back and forth, trying different approaches and finally, I found my way through the maze of possibilities and came out with a system that could be followed by other users facing the same issue.
+If you want to write an orchestral score using Lilypond, I'm sure you will find this tutorial useful.
+\end{authorAbstract}
 
-Use \fancyStyle{semantic markup} instead of \textsc{manual formatting}.
-See the style file \simpleStyle{agStyles.sty} for examples.
-And use \cmd{fref} for cross-references (see \fref{sec:ref_sec}).
+\section{Introduction}
 
-\todo{think about life!}
+If you are reading this document then you must be someone with an interest in typesetting orchestral scores with Lilypond.
+You may be an experienced Lilypond user who, until now, has only created simple scores for just a few instruments and wants to know how to deal with the typesetting of a whole orchestral score; or maybe one who has already done this several times and is just curious about how other users tackle this kind of job.
+On the other hand, you may be a beginner, someone who has discovered Lilypond very recently and wants to start right away with using it to compose or transcribe an orchestral piece.
+
+A word of notice: if you have no experience with Lilypond at all, I would advise you to at least read the Learning Manual, which is available at Lilypond's official website, before you read and/or attempt to follow the instructions given in this document.
+
+I discovered Lilypond on December 2011 and got very interested in testing it's capabilities.
+I struggled to typeset a small piece for 8 instruments and liked the output very much.
+Then, I decided to create an orchestral score and searched websites and blogs, looking for ideas of how to start such a job.
+While I did find various posts that gave me hints on how to accomplish my goal, I couldn't find a document like the one you are reading right now, where a Lilypond user presents a full description of how to write an orchestral score using Lilypond.
+
+One of the first things I discovered about Lilypond is that it is incredibly flexible, and, while this may be one of the reasons it is so powerful, it also means it can be quite confusing for the user, especially for the beginner.
+There are so many ways to perform the same task that it is very hard to say which one is the best one to use, the most efficient one, the less cumbersome and, more importantly, the one that consumes less time!
+Indeed, two scores of the same music, created by different users, may have been written very differently in terms of the code, even if the output resemble each other very closely.
+Therefore, I set myself the task of developing a system which would enable me to create a score for orchestra, a whole structure of files and code that would minimize effort while maximizing efficiency.
+
+It has taken me more than a year to test all the different options I found and to finally come up with the solution you will find in this tutorial.
+To effectively show the system I have developed, I thought it would be appropriate to use an example which anybody can consult.
+Therefore, I chose the first 27 bars of Gustav Holst's Jupiter, the Bringer of Jollity, from his suite The Planets.
+You can download the score from the Internet Music Score Library Project (IMSLP).
+However, let me say that I have not tried to make an exact reproduction of the score found there.
+I have taken the liberty to adjust a few details to comply with modern notation standards as well as to fit my personal taste and the way I like scores to look.
+You may agree or disagree with these decisions but, in either case, the truth is they have no effect upon the purpose of this tutorial.
+
+Finally, I'd like to thank all those users who, by sharing their ideas, suggestions, templates and snippets on the Internet, have allowed me to create this tutorial.
+
+Before you go on reading, you may want to download the files of the example, which can be found here: internet address.
+
+\section{The First Steps}
+
+A simple music score, like a small piece for piano solo, can be written in a single Lilypond file.
+A score for a full orchestra, on the other hand, even it is a small piece, may need so many lines of code that it could become very hard to find one's way around. 
+Fortunately, Lilypond offers a simple way to solve this problem: separate the code in different files.
+You can write the music for each part of the score in a different file and, also, use separate files for special definitions, preferences and just about anything you can think of. 
+Then you just have to use a command known as \include, which puts the code from those other files in the places you want.
+Please refer to the Lilypond documentation to find detailed information about how to use the \include command.
+
+Now, let's put hands to work.
+As we just said, in orchestral music it is better to break up the code in separate files and that's precisely what we'll do here.
+We will begin with the files which will contain the music.
+First, I recommend the creation of a file I call the empty file, which, in our case, will look like this:
+
+\begin{lilypondcode}
+\version 2.16.1 % or whatever other version of Lilypond you are using
+
+
+% -*-
+% indent-tabs: yes;
+% indent-width: 8;
+
+Empty = {
+	R2 | % 1
+	R2 | % 2
+	R2 | % 3
+	R2 | % 4
+	R2 | % 5
+	R2 | % 6
+	R2 | % 7
+	R2 | % 8
+	R2 | % 9
+	R2 | % 10
+	R2 | % 11
+	R2 | % 12
+	R2 | % 13
+	R2 | % 14
+	R2 | % 15
+	R2 | % 16
+	R2 | % 17
+	R2 | % 18
+	R2 | % 19
+	R2 | % 20
+	R2 | % 21
+	R2 | % 22
+	R2 | % 23
+	R2 | % 24
+	R2 | % 25
+	R2 | % 26
+	R2 | % 27
+}
+\end{lilypondcode}
+
+
+If you use Frescobaldi to work with Lilypond, as I do, you will find the first three lines, the ones that begin with a %, very interesting.
+They tell the program that I want the music indented with tabs which are equivalent to 8 spaces.
+You can change the command to suit your own indentation preferences, otherwise you may just erase those lines.
+
+As you can see, I have created an expression called Empty, which contains separate lines for every measure in the score, each with a comment to enumerate the measure. 
+You may find this trivial but you will see how helpful it is.
+In fact, it's like having a blank score in front of you.
+Every measure can be identified right away, and the rest contained in it can easily be replaced with the appropriate music.
+
+Now, we need to define the template for the files that will contain the music for each instrument in the score.
+It will look like this:
+
+\begin{lilypondcode}
+\version "2.16.1"
+
+% -*-
+% indent-tabs: yes;
+% indent-width: 8;
+
+InstrumentName = {
+	\clef treble % or bass, or alto, or tenor
+	\key c \major
+	\relative c {
+		\PersonalSettings
+		%%%%% copy the contents of Empty here
+	}
+}
+\end{lilypondcode}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The first thing you may have noticed are two obscure include commands. 
+The first one includes a file called IcarusMetrics.ly. 
+As I already explained, my piece has constant time signature changes.
+Having to write them all again in every score would be tedious and will ultimately cost me precious time.
+Therefore, I created a file with all those changes to be included in every score, so I don't have to write them down repeatedly.
+The first lines of this file look like this:
+
+\begin{lilypondcode}
+\version "2.16.1"
+
+Metrics = {
+  \time 4/4 \tempo 4 = 55 \skip 1*8 | % 1-8
+  \time 2/4 \skip 2 | % 9 \mark \default %{ A %}
+  \skip 2 | % 10
+  \time 3/4 \skip 2. | % 11
+  \time 2/4 \skip 2 | % 12
+  .
+  .
+  .
+  etc.
+}
+\end{lilypondcode}
+
+
+
+
+
+As you can see, it is just a series of time signature changes and tempo markings separated by skips. 
+The complete file can be found amongst the files uploaded to the Mutopia Project.
+
+The second file which I have included is called MyDefinitions.ly and is located one tree level above the present location of the score, in a folder named Definitions, which is the reason why the name of the file is preceded by \verb|"../Definitions"|.
+This file contains the code of all the tweaks that I use throughout my scores. 
+The first lines of this file look like this:
+
+\begin{lilypondcode}
+\version "2.16.1"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Tuplets
+bracketUp = \override TupletBracket #'direction = #UP
+bracketNeutral = \revert TupletBracket #'direction
+bracketDown = \override TupletBracket #'direction = #DOWN
+hideTupletBracket = \once \override TupletBracket #'stencil = ##f 
+hideTupletNumber = \once \override TupletNumber #'stencil = ##f
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Rests
+restMiddle = \override Rest #'staff-position = #0
+restNeutral = \revert Rest #'staff-position
+multirestMiddle = \override MultiMeasureRest #'staff-position = #-0.01
+multirestFourthLine = \override MultiMeasureRest #'staff-position = #2
+multirestNeutral = \revert MultiMeasureRest #'staff-position
+\end{lilypondcode}
+
+The whole point about creating definitions - known in Lilypond as "variables" - is that they make it easier for us to perform a particular task.
+Instead of writing a whole bunch of code every time we need to do something, we just have to enclose that code inside a variable, and write it's name where we need the task to be performed.
+
+As we go through each part in the score, I will make notice of any special definition I have used for it's creation and at the end of this tutorial I'll include a complete list with all of them.
 
 \pagebreak
 
