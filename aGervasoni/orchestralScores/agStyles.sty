@@ -11,3 +11,11 @@
 
 \newcommand{\simpleStyle}[1]{\textbf{#1}}
 
+% environment to typeset LilyPond code.
+% Temporarily this simply uses verbatim
+
+\RequirePackage{verbatim}
+\usepackage{verbatim}
+\newenvironment{lilypondcode}
+    {\verbatim}
+    {\endverbatim}
