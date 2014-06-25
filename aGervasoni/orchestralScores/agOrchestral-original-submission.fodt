@@ -1,0 +1,2053 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rpt="http://openoffice.org/2005/report" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" office:mimetype="application/vnd.oasis.opendocument.text">
+ <office:meta><meta:creation-date>2013-12-16T20:25:51.506301000</meta:creation-date><dc:date>2013-12-26T21:48:32.191789000</dc:date><meta:editing-duration>PT23H16M18S</meta:editing-duration><meta:editing-cycles>68</meta:editing-cycles><meta:generator>LibreOffice/3.5$Linux_x86 LibreOffice_project/350m1$Build-2</meta:generator><meta:document-statistic meta:table-count="0" meta:image-count="0" meta:object-count="0" meta:page-count="20" meta:paragraph-count="793" meta:word-count="7513" meta:character-count="43182" meta:non-whitespace-character-count="35240"/></office:meta>
+ <office:settings>
+  <config:config-item-set config:name="ooo:view-settings">
+   <config:config-item config:name="ViewAreaTop" config:type="int">77655</config:config-item>
+   <config:config-item config:name="ViewAreaLeft" config:type="int">0</config:config-item>
+   <config:config-item config:name="ViewAreaWidth" config:type="int">25998</config:config-item>
+   <config:config-item config:name="ViewAreaHeight" config:type="int">15827</config:config-item>
+   <config:config-item config:name="ShowRedlineChanges" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="InBrowseMode" config:type="boolean">false</config:config-item>
+   <config:config-item-map-indexed config:name="Views">
+    <config:config-item-map-entry>
+     <config:config-item config:name="ViewId" config:type="string">view2</config:config-item>
+     <config:config-item config:name="ViewLeft" config:type="int">4498</config:config-item>
+     <config:config-item config:name="ViewTop" config:type="int">84794</config:config-item>
+     <config:config-item config:name="VisibleLeft" config:type="int">0</config:config-item>
+     <config:config-item config:name="VisibleTop" config:type="int">77655</config:config-item>
+     <config:config-item config:name="VisibleRight" config:type="int">25996</config:config-item>
+     <config:config-item config:name="VisibleBottom" config:type="int">93481</config:config-item>
+     <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
+     <config:config-item config:name="ViewLayoutColumns" config:type="short">0</config:config-item>
+     <config:config-item config:name="ViewLayoutBookMode" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="ZoomFactor" config:type="short">160</config:config-item>
+     <config:config-item config:name="IsSelectedFrame" config:type="boolean">false</config:config-item>
+    </config:config-item-map-entry>
+   </config:config-item-map-indexed>
+  </config:config-item-set>
+  <config:config-item-set config:name="ooo:configuration-settings">
+   <config:config-item config:name="PrintAnnotationMode" config:type="short">0</config:config-item>
+   <config:config-item config:name="PrintHiddenText" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintDrawings" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="PrintProspectRTL" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintBlackFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintTextPlaceholder" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintProspect" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintSingleJobs" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintRightPages" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="PrintGraphics" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="PrintPaperFromSetup" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrinterSetup" config:type="base64Binary"/>
+   <config:config-item config:name="PrinterName" config:type="string"/>
+   <config:config-item config:name="IgnoreFirstLineIndentInNumbering" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="CollapseEmptyCellPara" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="UnbreakableNumberings" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintEmptyPages" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="MathBaselineAlignment" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="UnxForceZeroExtLeading" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="TabAtLeftIndentForParagraphsInList" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintReversed" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="TabsRelativeToIndent" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="LoadReadonly" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="ConsiderTextWrapOnObjPos" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="TableRowKeep" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintLeftPages" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="DoNotJustifyLinesWithManualBreak" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="ClipAsCharacterAnchoredWriterFlyFrames" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="TabOverflow" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="DoNotResetParaAttrsForNumFont" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsKernAsianPunctuation" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="UseFormerTextWrapping" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="FieldAutoUpdate" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="AllowPrintJobCancel" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="PrinterIndependentLayout" config:type="string">high-resolution</config:config-item>
+   <config:config-item config:name="UpdateFromTemplate" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="AddParaSpacingToTableCells" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="UseFormerLineSpacing" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="CurrentDatabaseDataSource" config:type="string"/>
+   <config:config-item config:name="SaveGlobalDocumentLinks" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="OutlineLevelYieldsNumbering" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="UseOldNumbering" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsLabelDocument" config:type="boolean">false</config:config-item>
+   <config:config-item-map-indexed config:name="ForbiddenCharacters">
+    <config:config-item-map-entry>
+     <config:config-item config:name="Language" config:type="string">es</config:config-item>
+     <config:config-item config:name="Country" config:type="string">PE</config:config-item>
+     <config:config-item config:name="Variant" config:type="string"/>
+     <config:config-item config:name="BeginLine" config:type="string"/>
+     <config:config-item config:name="EndLine" config:type="string"/>
+    </config:config-item-map-entry>
+   </config:config-item-map-indexed>
+   <config:config-item config:name="SaveVersionOnClose" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="CurrentDatabaseCommandType" config:type="int">0</config:config-item>
+   <config:config-item config:name="SmallCapsPercentage66" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="AlignTabStopPosition" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="AddExternalLeading" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="PrintPageBackground" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="DoNotCaptureDrawObjsOnPage" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="RedlineProtectionKey" config:type="base64Binary"/>
+   <config:config-item config:name="UseOldPrinterMetrics" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IgnoreTabsAndBlanksForLineCalculation" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="ProtectForm" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="CurrentDatabaseCommand" config:type="string"/>
+   <config:config-item config:name="ApplyUserData" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ChartAutoUpdate" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="InvertBorderSpacing" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="LinkUpdateMode" config:type="short">1</config:config-item>
+   <config:config-item config:name="UseFormerObjectPositioning" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintFaxName" config:type="string"/>
+   <config:config-item config:name="AddParaTableSpacing" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="PrintTables" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="AddParaTableSpacingAtStart" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="AddFrameOffsets" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintControls" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="CharacterCompressionType" config:type="short">0</config:config-item>
+  </config:config-item-set>
+ </office:settings>
+ <office:scripts>
+  <office:script script:language="ooo:Basic">
+   <ooo:libraries xmlns:ooo="http://openoffice.org/2004/office" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+  </office:script>
+ </office:scripts>
+ <office:font-face-decls>
+  <style:font-face style:name="Arial1" svg:font-family="Arial" style:font-family-generic="roman" style:font-pitch="variable"/>
+  <style:font-face style:name="Century Schoolbook L" svg:font-family="&apos;Century Schoolbook L&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  <style:font-face style:name="Times New Roman" svg:font-family="&apos;Times New Roman&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  <style:font-face style:name="Arial" svg:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable"/>
+  <style:font-face style:name="Arial Unicode MS" svg:font-family="&apos;Arial Unicode MS&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+ </office:font-face-decls>
+ <office:styles>
+  <style:default-style style:family="graphic">
+   <style:graphic-properties svg:stroke-color="#3465af" draw:fill-color="#729fcf" fo:wrap-option="no-wrap" draw:shadow-offset-x="0.3cm" draw:shadow-offset-y="0.3cm" draw:start-line-spacing-horizontal="0.283cm" draw:start-line-spacing-vertical="0.283cm" draw:end-line-spacing-horizontal="0.283cm" draw:end-line-spacing-vertical="0.283cm" style:flow-with-text="false"/>
+   <style:paragraph-properties style:text-autospace="ideograph-alpha" style:line-break="strict" style:writing-mode="lr-tb" style:font-independent-line-spacing="false">
+    <style:tab-stops/>
+   </style:paragraph-properties>
+   <style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="en" fo:country="US" style:letter-kerning="true" style:font-size-asian="10.5pt" style:language-asian="zh" style:country-asian="CN" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN"/>
+  </style:default-style>
+  <style:default-style style:family="paragraph">
+   <style:paragraph-properties fo:hyphenation-ladder-count="no-limit" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:tab-stop-distance="1.251cm" style:writing-mode="page"/>
+   <style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:language="en" fo:country="US" style:letter-kerning="true" style:font-name-asian="Arial Unicode MS" style:font-size-asian="10.5pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="Arial Unicode MS" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
+  </style:default-style>
+  <style:default-style style:family="table">
+   <style:table-properties table:border-model="collapsing"/>
+  </style:default-style>
+  <style:default-style style:family="table-row">
+   <style:table-row-properties fo:keep-together="auto"/>
+  </style:default-style>
+  <style:style style:name="Standard" style:family="paragraph" style:class="text"/>
+  <style:style style:name="Heading" style:family="paragraph" style:parent-style-name="Standard" style:next-style-name="Text_20_body" style:class="text">
+   <style:paragraph-properties fo:margin-top="0.423cm" fo:margin-bottom="0.212cm" fo:keep-with-next="always"/>
+   <style:text-properties style:font-name="Arial" fo:font-size="14pt" style:font-name-asian="Arial Unicode MS" style:font-size-asian="14pt" style:font-name-complex="Arial Unicode MS" style:font-size-complex="14pt"/>
+  </style:style>
+  <style:style style:name="Text_20_body" style:display-name="Text body" style:family="paragraph" style:parent-style-name="Standard" style:class="text">
+   <style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.212cm"/>
+  </style:style>
+  <style:style style:name="List" style:family="paragraph" style:parent-style-name="Text_20_body" style:class="list">
+   <style:text-properties style:font-size-asian="12pt"/>
+  </style:style>
+  <style:style style:name="Caption" style:family="paragraph" style:parent-style-name="Standard" style:class="extra">
+   <style:paragraph-properties fo:margin-top="0.212cm" fo:margin-bottom="0.212cm" text:number-lines="false" text:line-number="0"/>
+   <style:text-properties fo:font-size="12pt" fo:font-style="italic" style:font-size-asian="12pt" style:font-style-asian="italic" style:font-size-complex="12pt" style:font-style-complex="italic"/>
+  </style:style>
+  <style:style style:name="Index" style:family="paragraph" style:parent-style-name="Standard" style:class="index">
+   <style:paragraph-properties text:number-lines="false" text:line-number="0"/>
+   <style:text-properties style:font-size-asian="12pt"/>
+  </style:style>
+  <style:style style:name="Heading_20_5" style:display-name="Heading 5" style:family="paragraph" style:parent-style-name="Heading" style:next-style-name="Text_20_body" style:default-outline-level="5" style:class="text">
+   <style:text-properties fo:font-size="85%" fo:font-weight="bold" style:font-size-asian="85%" style:font-weight-asian="bold" style:font-size-complex="85%" style:font-weight-complex="bold"/>
+  </style:style>
+  <text:outline-style style:name="Outline">
+   <text:outline-level-style text:level="1" style:num-format="">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="0.762cm" fo:text-indent="-0.762cm" fo:margin-left="0.762cm"/>
+    </style:list-level-properties>
+   </text:outline-level-style>
+   <text:outline-level-style text:level="2" style:num-format="">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="1.016cm" fo:text-indent="-1.016cm" fo:margin-left="1.016cm"/>
+    </style:list-level-properties>
+   </text:outline-level-style>
+   <text:outline-level-style text:level="3" style:num-format="">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="1.27cm" fo:text-indent="-1.27cm" fo:margin-left="1.27cm"/>
+    </style:list-level-properties>
+   </text:outline-level-style>
+   <text:outline-level-style text:level="4" style:num-format="">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="1.524cm" fo:text-indent="-1.524cm" fo:margin-left="1.524cm"/>
+    </style:list-level-properties>
+   </text:outline-level-style>
+   <text:outline-level-style text:level="5" style:num-format="">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="1.778cm" fo:text-indent="-1.778cm" fo:margin-left="1.778cm"/>
+    </style:list-level-properties>
+   </text:outline-level-style>
+   <text:outline-level-style text:level="6" style:num-format="">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="2.032cm" fo:text-indent="-2.032cm" fo:margin-left="2.032cm"/>
+    </style:list-level-properties>
+   </text:outline-level-style>
+   <text:outline-level-style text:level="7" style:num-format="">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="2.286cm" fo:text-indent="-2.286cm" fo:margin-left="2.286cm"/>
+    </style:list-level-properties>
+   </text:outline-level-style>
+   <text:outline-level-style text:level="8" style:num-format="">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="2.54cm" fo:text-indent="-2.54cm" fo:margin-left="2.54cm"/>
+    </style:list-level-properties>
+   </text:outline-level-style>
+   <text:outline-level-style text:level="9" style:num-format="">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="2.794cm" fo:text-indent="-2.794cm" fo:margin-left="2.794cm"/>
+    </style:list-level-properties>
+   </text:outline-level-style>
+   <text:outline-level-style text:level="10" style:num-format="">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="3.048cm" fo:text-indent="-3.048cm" fo:margin-left="3.048cm"/>
+    </style:list-level-properties>
+   </text:outline-level-style>
+  </text:outline-style>
+  <text:notes-configuration text:note-class="footnote" style:num-format="1" text:start-value="0" text:footnotes-position="page" text:start-numbering-at="document"/>
+  <text:notes-configuration text:note-class="endnote" style:num-format="i" text:start-value="0"/>
+  <text:linenumbering-configuration text:number-lines="false" text:offset="0.499cm" style:num-format="1" text:number-position="left" text:increment="5"/>
+ </office:styles>
+ <office:automatic-styles>
+  <style:style style:name="P1" style:family="paragraph" style:parent-style-name="Standard">
+   <style:paragraph-properties fo:text-align="center" style:justify-single-word="false"/>
+   <style:text-properties style:font-name="Century Schoolbook L" fo:font-size="10pt" style:font-size-asian="8.75pt" style:font-size-complex="10pt"/>
+  </style:style>
+  <style:style style:name="P2" style:family="paragraph" style:parent-style-name="Standard">
+   <style:paragraph-properties fo:text-align="justify" style:justify-single-word="false"/>
+   <style:text-properties style:font-name="Century Schoolbook L" fo:font-size="10pt" style:font-size-asian="8.75pt" style:font-size-complex="10pt"/>
+  </style:style>
+  <style:style style:name="P3" style:family="paragraph">
+   <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:line-height="100%" fo:text-align="center" fo:text-indent="0cm"/>
+   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:font-name="Arial1" fo:font-size="18pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:font-name-asian="Arial Unicode MS" style:font-size-asian="18pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-name-complex="Arial Unicode MS" style:font-size-complex="18pt" style:font-style-complex="normal" style:font-weight-complex="normal" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+  </style:style>
+  <style:style style:name="gr1" style:family="graphic">
+   <style:graphic-properties OOoLilyPondCode="\include &quot;lilypond-book-preamble.ly&quot;&#x0a;\include &quot;nederlands.ly&quot;&#x0a;#(set-global-staff-size 18)&#x0a;&#x0a;fortissimoSempreStaccato =  \tweak DynamicText #&apos;self-alignment-X #-1 #(&#x0a;   make-dynamic-script (&#x0a;    markup #:line (&#x0a;      #:left-align&#x0a;      #:dynamic &quot;ff&quot;&#x0a;      #:hspace -1&#x0a;      #:normal-text&#x0a;      #:italic &quot;sempre staccato&quot; &#x0a;    )&#x0a;  )&#x0a;)&#x0a;&#x0a;\paper { }&#x0a;&#x0a;\layout { }&#x0a;&#x0a;FluteOne = {&#x0a;   \clef treble&#x0a;   \time 2/4 &#x0a;   \relative c&apos;&apos;&apos; {&#x0a;      \partcombineApart&#x0a;      a16\fortissimoSempreStaccato c d a c d a c&#x0a;   } &#x0a;}&#x0a;&#x0a;FluteTwo = { &#x0a;   \clef treble&#x0a;   \time 2/4 &#x0a;   \relative c&apos;&apos; { &#x0a;      g16\fortissimoSempreStaccato a e g a e g a&#x0a;   }  &#x0a;}&#x0a;&#x0a;{&#x0a;\new Staff = &quot;flutes&quot; {&#x0a;\set Staff.instrumentName = \markup \bold { \fontsize #0 &quot;Fl. &quot; }&#x0a;\override Staff.InstrumentName #&apos;self-alignment-X = #RIGHT&#x0a;\partcombine \FluteOne \FluteTwo&#x0a;}&#x0a;}&#x0a;" OOoLilyPondTemplate="Direct to LilyPond" OOoLilyPondLineWidth="17.5\cm" OOoLilyPondStaffSize="20" OOoLilyPondCustom1="" OOoLilyPondCustom2="" OOoLilyPondUseDefaultCode="False" OOoLilyPondUseDefaultLineWidth="True" OOoLilyPondUseDefaultStaffSize="True" OOoLilyPondUseDefaultCustom1="True" OOoLilyPondUseDefaultCustom2="True" draw:stroke="none" svg:stroke-width="0cm" svg:stroke-color="#3465af" draw:marker-start="" draw:marker-start-width="0.199cm" draw:marker-start-center="false" draw:marker-end="" draw:marker-end-width="0.199cm" draw:marker-end-center="false" draw:fill="none" draw:fill-color="#729fcf" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="middle" fo:padding-top="0.125cm" fo:padding-bottom="0.125cm" fo:padding-left="0.25cm" fo:padding-right="0.25cm" draw:shadow="hidden" draw:shadow-offset-x="0.199cm" draw:shadow-offset-y="0.199cm" draw:shadow-color="#808080" draw:color-mode="standard" draw:luminance="0%" draw:contrast="0%" draw:gamma="100%" draw:red="0%" draw:green="0%" draw:blue="0%" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:image-opacity="100%" style:mirror="none" fo:margin-top="0cm" fo:margin-bottom="0cm" style:run-through="foreground" style:wrap="none" style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+  </style:style>
+  <style:style style:name="gr2" style:family="graphic">
+   <style:graphic-properties OOoLilyPondCode="\include &quot;lilypond-book-preamble.ly&quot;&#x0a;\include &quot;nederlands.ly&quot;&#x0a;#(set-global-staff-size 18)&#x0a;&#x0a;fortissimoSempreStaccato =  \tweak DynamicText #&apos;self-alignment-X #-1 #(&#x0a;   make-dynamic-script (&#x0a;    markup #:line (&#x0a;      #:left-align&#x0a;      #:dynamic &quot;ff&quot;&#x0a;      #:hspace -1&#x0a;      #:normal-text&#x0a;      #:italic &quot;sempre staccato&quot; &#x0a;    )&#x0a;  )&#x0a;)&#x0a;&#x0a;\paper { }&#x0a;&#x0a;\layout { }&#x0a;&#x0a;FluteOne = {&#x0a;   \clef treble&#x0a;   \time 2/4 &#x0a;   \relative c&apos;&apos;&apos; {&#x0a;      \partcombineApart&#x0a;      a16 c d a c d a c&#x0a;   } &#x0a;}&#x0a;&#x0a;FluteOneMarks = {&#x0a;   s2\fortissimoSempreStaccato&#x0a;}&#x0a;&#x0a;FluteTwo = { &#x0a;   \clef treble&#x0a;   \time 2/4 &#x0a;   \relative c&apos;&apos; { &#x0a;      g16 a e g a e g a&#x0a;   }  &#x0a;}&#x0a;&#x0a;FluteTwoMarks = {&#x0a;   s2\fortissimoSempreStaccato&#x0a;}&#x0a;&#x0a;\score { &lt;&lt;&#x0a;\new Staff = &quot;flutes&quot; &lt;&lt; &#x0a;\set Staff.instrumentName = \markup \bold { \fontsize #0 &quot;Fl. &quot; }&#x0a;\override Staff.InstrumentName #&apos;self-alignment-X = #RIGHT&#x0a;\partcombine \FluteOne \FluteTwo &#x0a;\FluteOneMarks&#x0a;&gt;&gt;&#x0a;&gt;&gt;&#x0a;}&#x0a;" OOoLilyPondTemplate="Direct to LilyPond" OOoLilyPondLineWidth="17.5\cm" OOoLilyPondStaffSize="20" OOoLilyPondCustom1="" OOoLilyPondCustom2="" OOoLilyPondUseDefaultCode="False" OOoLilyPondUseDefaultLineWidth="True" OOoLilyPondUseDefaultStaffSize="True" OOoLilyPondUseDefaultCustom1="True" OOoLilyPondUseDefaultCustom2="True" draw:stroke="none" svg:stroke-width="0cm" svg:stroke-color="#3465af" draw:marker-start="" draw:marker-start-width="0.199cm" draw:marker-start-center="false" draw:marker-end="" draw:marker-end-width="0.199cm" draw:marker-end-center="false" draw:fill="none" draw:fill-color="#729fcf" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="middle" fo:padding-top="0.125cm" fo:padding-bottom="0.125cm" fo:padding-left="0.25cm" fo:padding-right="0.25cm" draw:shadow="hidden" draw:shadow-offset-x="0.199cm" draw:shadow-offset-y="0.199cm" draw:shadow-color="#808080" draw:color-mode="standard" draw:luminance="0%" draw:contrast="0%" draw:gamma="100%" draw:red="0%" draw:green="0%" draw:blue="0%" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:image-opacity="100%" style:mirror="none" fo:margin-top="0cm" fo:margin-bottom="0cm" style:run-through="foreground" style:wrap="none" style:vertical-pos="middle" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+  </style:style>
+  <style:style style:name="gr3" style:family="graphic">
+   <style:graphic-properties OOoLilyPondCode="\include &quot;lilypond-book-preamble.ly&quot;&#x0a;\include &quot;nederlands.ly&quot;&#x0a;#(set-global-staff-size 18)&#x0a;&#x0a;fortissimoSempreStaccato =  \tweak DynamicText #&apos;self-alignment-X #-1 #(&#x0a;   make-dynamic-script (&#x0a;    markup #:line (&#x0a;      #:left-align&#x0a;      #:dynamic &quot;ff&quot;&#x0a;      #:hspace -1&#x0a;      #:normal-text&#x0a;      #:italic &quot;sempre staccato&quot; &#x0a;    )&#x0a;  )&#x0a;)&#x0a;&#x0a;&#x0a;\paper { }&#x0a;&#x0a;\layout { }&#x0a;&#x0a;PiccoloOne = {&#x0a;   \clef treble&#x0a;   \time 2/4 &#x0a;   \relative c&apos;&apos;&apos; {&#x0a;      R2&#x0a;      a16 c d a c d a c&#x0a;   } &#x0a;}&#x0a;&#x0a;PiccoloOneMarks = {&#x0a;   s2&#x0a;   s2\fortissimoSempreStaccato&#x0a;}&#x0a;&#x0a;PiccoloTwo = { &#x0a;   \clef treble&#x0a;   \time 2/4 &#x0a;   \relative c&apos;&apos; {&#x0a;      \partcombineSoloII&#x0a;      r4 e16 g a e&#x0a;      \partcombineApart&#x0a;      g a e g a e g a&#x0a;   }  &#x0a;}&#x0a;&#x0a;PiccoloTwoMarks = {&#x0a;   s4 s\f\&lt;&#x0a;   s2\fortissimoSempreStaccato&#x0a;}&#x0a;&#x0a;PartCombineTexts = {&#x0a;&#x09;\set Staff.soloText = #&quot;I&quot;&#x0a;&#x09;\set Staff.soloIIText = #&quot;II&quot;&#x0a;&#x09;\set Staff.aDueText = #&quot;a2&quot;&#x0a;}&#x0a;&#x0a;\score { &lt;&lt;&#x0a;\new Staff = &quot;piccolos&quot; &lt;&lt; &#x0a;\set Staff.instrumentName = \markup \bold { \fontsize #0 &quot;Picc. &quot; }&#x0a;\override Staff.InstrumentName #&apos;self-alignment-X = #RIGHT&#x0a;\PartCombineTexts&#x0a;\partcombine \PiccoloOne \PiccoloTwo &#x0a;\PiccoloTwoMarks&#x0a;&gt;&gt;&#x0a;&gt;&gt;&#x0a;}&#x0a;" OOoLilyPondTemplate="Direct to LilyPond" OOoLilyPondLineWidth="17.5\cm" OOoLilyPondStaffSize="20" OOoLilyPondCustom1="" OOoLilyPondCustom2="" OOoLilyPondUseDefaultCode="False" OOoLilyPondUseDefaultLineWidth="True" OOoLilyPondUseDefaultStaffSize="True" OOoLilyPondUseDefaultCustom1="True" OOoLilyPondUseDefaultCustom2="True" draw:stroke="none" svg:stroke-width="0cm" svg:stroke-color="#3465af" draw:marker-start="" draw:marker-start-width="0.199cm" draw:marker-start-center="false" draw:marker-end="" draw:marker-end-width="0.199cm" draw:marker-end-center="false" draw:fill="none" draw:fill-color="#729fcf" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="middle" fo:padding-top="0.125cm" fo:padding-bottom="0.125cm" fo:padding-left="0.25cm" fo:padding-right="0.25cm" draw:shadow="hidden" draw:shadow-offset-x="0.199cm" draw:shadow-offset-y="0.199cm" draw:shadow-color="#808080" draw:color-mode="standard" draw:luminance="0%" draw:contrast="0%" draw:gamma="100%" draw:red="0%" draw:green="0%" draw:blue="0%" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:image-opacity="100%" style:mirror="none" fo:margin-top="0cm" fo:margin-bottom="0cm" style:run-through="foreground" style:wrap="none" style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+  </style:style>
+  <style:style style:name="gr4" style:family="graphic">
+   <style:graphic-properties OOoLilyPondCode="\time 2/4&#x0a;\compressFullBarRests&#x0a;R2*6" OOoLilyPondTemplate="Default" OOoLilyPondLineWidth="17.5\cm" OOoLilyPondStaffSize="18" OOoLilyPondCustom1="c c&apos;" OOoLilyPondCustom2="" OOoLilyPondUseDefaultCode="False" OOoLilyPondUseDefaultLineWidth="True" OOoLilyPondUseDefaultStaffSize="False" OOoLilyPondUseDefaultCustom1="True" OOoLilyPondUseDefaultCustom2="True" draw:stroke="none" svg:stroke-width="0cm" svg:stroke-color="#3465af" draw:marker-start="" draw:marker-start-width="0.199cm" draw:marker-start-center="false" draw:marker-end="" draw:marker-end-width="0.199cm" draw:marker-end-center="false" draw:fill="none" draw:fill-color="#729fcf" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="middle" fo:padding-top="0.125cm" fo:padding-bottom="0.125cm" fo:padding-left="0.25cm" fo:padding-right="0.25cm" draw:shadow="hidden" draw:shadow-offset-x="0.199cm" draw:shadow-offset-y="0.199cm" draw:shadow-color="#808080" draw:color-mode="standard" draw:luminance="0%" draw:contrast="0%" draw:gamma="100%" draw:red="0%" draw:green="0%" draw:blue="0%" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:image-opacity="100%" style:mirror="none" fo:margin-top="0cm" fo:margin-bottom="0cm" style:run-through="foreground" style:wrap="none" style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+  </style:style>
+  <style:page-layout style:name="pm1">
+   <style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin="2cm" fo:margin-top="2cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="2cm" style:writing-mode="lr-tb" style:footnote-max-height="0cm">
+    <style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+   </style:page-layout-properties>
+   <style:header-style/>
+   <style:footer-style/>
+  </style:page-layout>
+  <style:page-layout style:name="pm2">
+   <style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="1cm" fo:margin-left="2cm" fo:margin-right="1cm" style:writing-mode="lr-tb" style:footnote-max-height="0cm">
+    <style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+   </style:page-layout-properties>
+   <style:header-style/>
+   <style:footer-style/>
+  </style:page-layout>
+ </office:automatic-styles>
+ <office:master-styles>
+  <style:master-page style:name="Standard" style:page-layout-name="pm1"/>
+  <style:master-page style:name="HTML" style:page-layout-name="pm2"/>
+ </office:master-styles>
+ <office:body>
+  <office:text text:use-soft-page-breaks="true">
+   <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
+   <text:sequence-decls>
+    <text:sequence-decl text:display-outline-level="0" text:name="Illustration"/>
+    <text:sequence-decl text:display-outline-level="0" text:name="Table"/>
+    <text:sequence-decl text:display-outline-level="0" text:name="Text"/>
+    <text:sequence-decl text:display-outline-level="0" text:name="Drawing"/>
+   </text:sequence-decls>
+   <text:p text:style-name="P1">How to Write for Orchestra with Lilypond</text:p>
+   <text:p text:style-name="P1"/>
+   <text:p text:style-name="P1">Antonio Gervasoni</text:p>
+   <text:p text:style-name="P1"/>
+   <text:p text:style-name="P1">December 2013</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Abstract</text:p>
+   <text:p text:style-name="P2">About two years ago, I became interested in writing an orchestral score using Lilypond and wanted a tutorial that could guide me through the process step by step. </text:p>
+   <text:p text:style-name="P2">Being unable to find one on the Internet, I embarked myself in the task of putting together ideas from blogs, forums, and the Lilypond documentation.</text:p>
+   <text:p text:style-name="P2">I went back and forth, trying different approaches and finally, I found my way through the maze of possibilities and came out with a system that could be followed by other users facing the same issue.</text:p>
+   <text:p text:style-name="P2">If you want to write an orchestral score using Lilypond, I&apos;m sure you will find this tutorial useful.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">1. Introduction</text:p>
+   <text:p text:style-name="P2">If you are reading this document then you must be someone with an interest in typesetting orchestral scores with Lilypond.</text:p>
+   <text:p text:style-name="P2">You may be an experienced Lilypond user who, until now, has only created simple scores for just a few instruments and wants to know how to deal with the typesetting of a whole orchestral score; or maybe one who has already done this several times and is just curious about how other users tackle this kind of job.</text:p>
+   <text:p text:style-name="P2">On the other hand, you may be a beginner, someone who has discovered Lilypond very recently and wants to start right away with using it to compose or transcribe an orchestral piece.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">A word of notice: if you have no experience with Lilypond at all, I would advise you to at least read the Learning Manual, which is available at Lilypond&apos;s official website, before you read and/or attempt to follow the instructions given in this document.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">I discovered Lilypond on December 2011 and got very interested in testing it&apos;s capabilities.</text:p>
+   <text:p text:style-name="P2">I struggled to typeset a small piece for 8 instruments and liked the output very much.</text:p>
+   <text:p text:style-name="P2">Then, I decided to create an orchestral score and searched websites and blogs, looking for ideas of how to start such a job.</text:p>
+   <text:p text:style-name="P2">While I did find various posts that gave me hints on how to accomplish my goal, I couldn&apos;t find a document like the one you are reading right now, where a Lilypond user presents a full description of how to write an orchestral score using Lilypond.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">One of the first things I discovered about Lilypond is that it is incredibly flexible, and, while this may be one of the reasons it is so powerful, it also means it can be quite confusing for the user, especially for the beginner.</text:p>
+   <text:p text:style-name="P2">There are so many ways to perform the same task that it is very hard to say which one is the best one to use, the most efficient one, the less cumbersome and, more importantly, the one that consumes less time!</text:p>
+   <text:p text:style-name="P2">Indeed, two scores of the same music, created by different users, may have been written very differently in terms of the code, even if the output resemble each other very closely.</text:p>
+   <text:p text:style-name="P2">Therefore, I set myself the task of developing a system which would enable me to create a score for orchestra, a whole structure of files and code that would minimize effort while maximizing efficiency.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">It has taken me more than a year to test all the different options I found and to finally come up with the solution you will find in this tutorial.</text:p>
+   <text:p text:style-name="P2">To effectively show the system I have developed, I thought it would be appropriate to use an example which anybody can consult.</text:p>
+   <text:p text:style-name="P2">Therefore, I chose the first 27 bars of Gustav Holst&apos;s Jupiter, the Bringer of Jollity, from his suite The Planets.</text:p>
+   <text:p text:style-name="P2">You can download the score from the Internet Music Score Library Project (IMSLP).</text:p>
+   <text:p text:style-name="P2">However, let me say that I have not tried to make an exact reproduction of the score found there.</text:p>
+   <text:p text:style-name="P2"><text:soft-page-break/>I have taken the liberty to adjust a few details to comply with modern notation standards as well as to fit my personal taste and the way I like scores to look.</text:p>
+   <text:p text:style-name="P2">You may agree or disagree with these decisions but, in either case, the truth is they have no effect upon the purpose of this tutorial.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Finally, I&apos;d like to thank all those users who, by sharing their ideas, suggestions, templates and snippets on the Internet, have allowed me to create this tutorial.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Before you go on reading, you may want to download the files of the example, which can be found here: internet address.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">2. The First Steps</text:p>
+   <text:p text:style-name="P2">A simple music score, like a small piece for piano solo, can be written in a single Lilypond file.</text:p>
+   <text:p text:style-name="P2">A score for a full orchestra, on the other hand, even it is a small piece, may need so many lines of code that it could become very hard to find one&apos;s way around. </text:p>
+   <text:p text:style-name="P2">Fortunately, Lilypond offers a simple way to solve this problem: separate the code in different files.</text:p>
+   <text:p text:style-name="P2">You can write the music for each part of the score in a different file and, also, use separate files for special definitions, preferences and just about anything you can think of. </text:p>
+   <text:p text:style-name="P2">Then you just have to use a command known as \include, which puts the code from those other files in the places you want.</text:p>
+   <text:p text:style-name="P2">Please refer to the Lilypond documentation to find detailed information about how to use the \include command.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Now, let&apos;s put hands to work.</text:p>
+   <text:p text:style-name="P2">As we just said, in orchestral music it is better to break up the code in separate files and that&apos;s precisely what we&apos;ll do here.</text:p>
+   <text:p text:style-name="P2">We will begin with the files which will contain the music.</text:p>
+   <text:p text:style-name="P2">First, I recommend the creation of a file I call the empty file, which, in our case, will look like this:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\version &quot;2.16.1&quot;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">% -*-</text:p>
+   <text:p text:style-name="P2">% indent-tabs: yes;</text:p>
+   <text:p text:style-name="P2">% indent-width: 8;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Empty = {</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 1</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 2</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 3</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 4</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 5</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 6</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 7</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 8</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 9</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 10</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 11</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 12</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 13</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 14</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 15</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 16</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 17</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 18</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 19</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 20</text:p>
+   <text:p text:style-name="P2"><text:soft-page-break/><text:tab/>R2 | % 21</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 22</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 23</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 24</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 25</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 26</text:p>
+   <text:p text:style-name="P2"><text:tab/>R2 | % 27</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">If you use Frescobaldi to work with Lilypond, as I do, you will find the first three lines, the ones that begin with a %, very interesting.</text:p>
+   <text:p text:style-name="P2">They tell the program that I want the music indented with tabs which are equivalent to 8 spaces.</text:p>
+   <text:p text:style-name="P2">You can change the command to suit your own indentation preferences, otherwise you may just erase those lines.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">As you can see, I have created an expression called Empty, which contains separate lines for every measure in the score, each with a comment to enumerate the measure. </text:p>
+   <text:p text:style-name="P2">You may find this trivial but you will see how helpful it is.</text:p>
+   <text:p text:style-name="P2">In fact, it&apos;s like having a blank score in front of you.</text:p>
+   <text:p text:style-name="P2">Every measure can be identified right away, and the rest contained in it can easily be replaced with the appropriate music.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Now, we need to define the template for the files that will contain the music for each instrument in the score.</text:p>
+   <text:p text:style-name="P2">It will look like this:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\version &quot;2.16.1&quot;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">% -*-</text:p>
+   <text:p text:style-name="P2">% indent-tabs: yes;</text:p>
+   <text:p text:style-name="P2">% indent-width: 8;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">InstrumentName = {</text:p>
+   <text:p text:style-name="P2"><text:tab/>\clef treble % or bass, or alto, or tenor</text:p>
+   <text:p text:style-name="P2"><text:tab/>\key c \major</text:p>
+   <text:p text:style-name="P2"><text:tab/>\relative c {</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\PersonalSettings</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>%%%%% copy the contents of Empty here</text:p>
+   <text:p text:style-name="P2"><text:tab/>}</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">You sure may wonder what \PersonalSettings is.</text:p>
+   <text:p text:style-name="P2">Well, it&apos;s a file that contains some special settings that I always use.</text:p>
+   <text:p text:style-name="P2">By separating the code in a different file I can make quick adjustments in just one place, instead of going through every individual file.</text:p>
+   <text:p text:style-name="P2">\PersonalSettings is an expression contained in a file named MyPersonalSettings.ly, which looks like this:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\version &quot;2.16.1&quot;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">% -*-</text:p>
+   <text:p text:style-name="P2">% indent-tabs: yes;</text:p>
+   <text:p text:style-name="P2">% indent-width: 8;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">PersonalSettings = {</text:p>
+   <text:p text:style-name="P2"><text:tab/>\set Score.quotedCueEventTypes = #&apos;(note-event rest-event tie-event beam-event </text:p>
+   <text:p text:style-name="P2"><text:soft-page-break/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>tuplet-span-event dynamic-event slur-event script-event)</text:p>
+   <text:p text:style-name="P2"><text:tab/>\override Staff.TrillSpanner #&apos;to-barline = ##t</text:p>
+   <text:p text:style-name="P2"><text:tab/>\override Staff.TrillSpanner #&apos;bound-details #&apos;right #&apos;padding = #1</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">The first line is related to cues (you know, those small notes in a part that show what other instruments are doing).</text:p>
+   <text:p text:style-name="P2">It defines the way I want the cues to look (see Writing parts in the documentation for more information about this).</text:p>
+   <text:p text:style-name="P2">The following line tells Lilypond that I want trill lines to end in the barline and the next one, that I want a little space between the end of the line and the barline.</text:p>
+   <text:p text:style-name="P2">It is just how I like trill lines to look.</text:p>
+   <text:p text:style-name="P2">You may omit or change this if you want.</text:p>
+   <text:p text:style-name="P2">Other special settings may go here as well, like the length of stemlets or extra padding for some particular objects.</text:p>
+   <text:p text:style-name="P2">It&apos;s up to you.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">As you can see, the line with the \include command that refers to MyPersonalSettings.ly is missing in the part template.</text:p>
+   <text:p text:style-name="P2">This is because that line is located in other files that I will describe later.</text:p>
+   <text:p text:style-name="P2">There is no need to include MyPersonalSettings.ly in the part template, as you will see.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">3. Combined Parts</text:p>
+   <text:p text:style-name="P2">As I&apos;m sure you already know, full scores usually have more than one instrument written in a single part.</text:p>
+   <text:p text:style-name="P2">This is almost always the case with the winds.</text:p>
+   <text:p text:style-name="P2">Two (sometimes more) instruments will be written on the same line in the score but will have to be separated to produce the individual parts for each musician.</text:p>
+   <text:p text:style-name="P2">The strings, on the other hand, may be divided into two or more lines per group (divisi) but this doesn&apos;t mean we will need to separate those lines in different scores (except for some very unusual situations).</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">This is the problem that I struggled the most with, when trying to design this system.</text:p>
+   <text:p text:style-name="P2">In WYSIWYG software you write the score and then manually separate the combined parts in separate files.</text:p>
+   <text:p text:style-name="P2">The same thing on Lilypond would mean to write both instruments in one single music expression and then separate the parts for each instrument manually.</text:p>
+   <text:p text:style-name="P2">I have tried that and, believe me, it is a real nightmare!.</text:p>
+   <text:p text:style-name="P2">It is also very inefficient, from the whole Lilypond perspective.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Fortunately, Lilypond has a tool that will help us deal with this problem; it&apos;s a very useful command called \partcombine (notice the absence of uppercases).</text:p>
+   <text:p text:style-name="P2">With \partcombine, you just have to write both parts separately and then combine them in the score by using the command in this way:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\partcombine \ExpressionOne \ExpressionTwo</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">However, \partcombine is not always perfect, so we will have to set up its behavior now and then with the following modes, which will have to be written in the expression of one of the parts to be combined: </text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\partcombineApart (separate the parts in different voices, first part is treated as voice one, second part as voice two)</text:p>
+   <text:p text:style-name="P2">\partcombineChords (write both parts as chords, which applies only where the rhythm is identical)</text:p>
+   <text:p text:style-name="P2">\partcombineUnisono (when both parts play the same pitches and rhythm)</text:p>
+   <text:p text:style-name="P2">\partcombineSoloI (when only the first instrument is playing, so that a text indicating this is placed above it)</text:p>
+   <text:p text:style-name="P2">\partcombineSoloII (when only the second instrument is playing, so that a text indicating this is placed <text:soft-page-break/>above it)</text:p>
+   <text:p text:style-name="P2">\partcombineAutomatic (to reset to the automatic behavior of \partcombine)</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Where to put these commands is a bit tricky, as you will soon find out.</text:p>
+   <text:p text:style-name="P2">Also, they shouldn&apos;t always go in the file of the same instrument.</text:p>
+   <text:p text:style-name="P2">The description of all the intricacies involved go beyond this tutorial so I&apos;ll leave it to you to explore all the different possibilities.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Also, using \partcombine presents one more problem.</text:p>
+   <text:p text:style-name="P2">It so happens that, in Apart mode, the marks for each voice are both written in the score.</text:p>
+   <text:p text:style-name="P2">This means that you end up with duplicate dynamics as well as duplicate trill lines or texts for special indications; even fermatas appear twice.</text:p>
+   <text:p text:style-name="P2">Look at what happens at bar 16 of the flutes when using \partcombine:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2"><draw:frame text:anchor-type="as-char" svg:y="-1.448cm" draw:z-index="0" draw:style-name="gr1" draw:text-style-name="P3" svg:width="5.224cm" svg:height="2.895cm">
+     <draw:image xlink:href="">
+      <office:binary-data>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
+       Pc8jW3ernYEJcQAAoEaffvopeaA3Voh0WtJVxgy33W610ufvf//7n/3sZ9yn3njjjZdffln0
+       wt/+9rd37tx577331Pd15cqVH/7whz/+8Y/VX9KMIAjeeeedW7du3bx588UXX7x58+bly5ct
+       y3rnnXfee++9d9555969e3/961//4z/+49/+7d/aDrYz3n///Tt37vz3f/+3ysavvfaagR+M
+       c4Bq6oTmq+n+/fuvv/46efztb3/7yX8LO1ctpt1JsJf9TO6z1SUa9uL7vuglh8OhyrQAjuNs
+       t9sm32MhlbBd193v921H2hncMVlyy+Wy7ajPDqqpE1qpps1mQ0sbj8fkn2VyJ7tZn3KnqEpE
+       eWK73dYy+4FR38DCaG3bRuJUVPqnlW3bbcd+RlBNndBiNXFzZ8m5Ebp14VOFaFis7/vcmRAK
+       J1JXN5vNujKXOllzTTQ1BLDIqqjlblXqynICPYBq6gQDqwm58wnRweVOtVO4xIquMAwlEzI0
+       pvATRiZPaCaYTiNf9SrTGuOk3ABUUyeYWU0l57Olq2H3JolyRxV5nsdtY8mXWClnNpvZtm3y
+       8QyCADMhKJpOp+avBwCopk4ws5pK5k6rd4uOiXInd0utidRt21Zsoc5ms/F43OIM8vI118ic
+       SmRWKZNzfOvCMKz+O9fYhQR6A9XUCcZWU/nceQrT6ZRO+Od9oZld59OGqBUoX5vM87zxeOw4
+       zrVr18g/V6vVeDyO45gs2SbJo6QruMUfJaJbelzXJRO+087qY3cmLiZrvyRJQo88qaYTdT6T
+       pdmql3NWfeMN15GFaioF1fSUzIAi7jb5cba68mXmx9lyE1XF/VaJkHtryuFw4B4iMq86uyXt
+       7A2CgH15EATyH0GZcprE/YS5rksWWjkej/Tqb1sRqtvv977vSw614zinGOxdy6oyZzKAs606
+       OqKadKCa6rxHRVe+zPyxPtGuS0fIvXWEW5e+79PsQtGfAvm3sN/vJb+DaN00jPuzwLZtegfq
+       4XCg359WIlREvuqiw5vB/rKpRS09JZJbivuh3To6oprUoJqI4twpCbTKzwpusZL5FiSbnU5+
+       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
+       12WHlSdJQm7M4n43SD+taTcXJ0kyn89Vpord7XbD4dC0y7RAkSmLKxZi2uezZ1BH3TU4Sm9F
+       6LT1en2KH3R/+tOf3n777b///e/lXv7cc8+99NJL3/ve9/75n/+53sAqunv37rvvvkuWRNfy
+       la985fr169evX3/llVdOEZjIr3/963fffdeyrNdee+2FF15octciDx8+vHPnjmVZFxcXP/rR
+       j1qM5NGjR7/61a8+++yziuVUP7YmV9Pt27cb/tCyzKkjC9WkFollWd///vfffvttq9+5czAY
+       tB0CAAD0x8XFxf/+7/9a/e6zDYLg1BcSHj9+fDgcPvroo48//vjzzz//6KOP6FNXr1798pe/
+       fOXKlatXr37++ef/8z//Q/75r//6rycN6Xzcv3//ww8/tCzr1q1bpVeBqNfhcLh3755lWc8/
+       //zLL7/cYiR//vOfP/jgg4qFfPOb33zppZcqFmJyNV1cXNy4caOtMMypIwvVpOwfc+a0OVvD
+       2WCnpWg7lv4weSaU1ucVqj7JRl2zXJlcTe1OWGNOHR1RTfowzhagh1SGf8thvu9TQx11GnJn
+       E9jbQwFOrfpcM2StjFqCgRNBHbULuROgbype5icrZtQVDIhcvXq19GtRR61D7gSAf8BJuTGl
+       h+SgjkyA3FmMzIEwmUwGg8FgMBgOh7PZDPNgQc/Ytr1arXBSbszFxYXuS1BH5kDuLDCfz8n8
+       7zRZJkkSRVFmTloAA125ckVxS9/39/s9u2YtnNqlS3q3CKKOjILcKTObzcIwFM3aGobhbDZr
+       OCQAdWEYssvHcpEz8nK5xNRubXnxxRflG6CODNTnuREqms/nhYulRFE0Ho/xSxDMdPPmze12
+       u16v4zje7XZ0DNF4PHYcx3Vdz/NwOm7df/3Xf5EVllBHHYLcyRfHcRiGKlvO5/PC3Il1EqBF
+       nufh553hUEedgz5bPpWFRIgkSQpTI9bqAgDoE+ROPq1htIUb09yJSUAAAHoAuZNPa7qswmYl
+       bZgidwIA9AByZxNo7iwc9AgAAOZD7uTTaiDKp6slI+jIY+ROAIAeQO7kU8+djuPIcyc77AiT
+       wgMA9AByJ596A3GxWMg3oLkT92kBAPQDcief4r1Wvu/Lt4zjmHbY+r5fQ2QAANA25E4+13Xl
+       TU/btpfLZeGkzHTO2/F4jA5bAIB+wLxCQkEQTKdT+qfv++TGFfWJsubzOR1hi1VqAQB6A7lT
+       yPO88XhMe1x3u91ms1G/YBlFEZ3VLwgCNDoBAHoDfbYy7MIFu91uMpkozq7HLrHiui4anQAA
+       fYLcKeM4DtvW3O12w+FQvrhKkiTs0p5krVoMrwUA6BPkzgKu67LpM03T2Ww2HA7Jati0Gbrb
+       7aIomk6nw+GQnQlhs9lgHj4AgJ7B9c5iJAXOZjM68CdJkjAM5YuUeZ6HtWoBAHoJuVOJ67rb
+       7Zbky8JLno7jBEGAuzlP7dNPPyUP3nzzTa11b07n4cOH5MGDBw9ov33zHjx4QB6YcGRoMAa6
+       e/cuqsnAYAj6bXr06FG7kfAdQdNyueTeoGLbtu/7q9Wq7QDPxde//vVWvjJQzhtvvNH2R+aJ
+       N954o+2DARpu377d9keGA+1Obb7vkzZlmqbsAinonm3Y48eP2w4BAM4Ucmd5tm3jrk0AgDOE
+       cbYAAAB6kDsBAAD0IHcCAADoQe4EAADQg9wJAACgB+NsoateeOGFDz/80LKsW7duXbt2re1w
+       LMuyDofDvXv3LMt6/vnnX3755bbCuH//vjlHhgbT4gHJoJFcXFzcuHGjrTDMrCYTgiHot+ml
+       l15qOxaetm8wBSiJ3iC02WzajuWJzWZDQhqPxy2GYdSRMSoYglZTEAQthmHUkTEqGMKQahJB
+       ny0AAIAe5E4AAAA9yJ0AAAB6kDsBAAD0YJwtdBXWIBMxaj0prEEmYmY1mRAMYfgaZIPj8dh2
+       DABlfOtb3/rb3/7WdhSg6pe//OVPf/rTtqOwLMv6xS9+8frrr7cdBah69dVX33rrrbajyEKf
+       LXQVbXdCJ3zyySdthwCd9Nlnn7UdAgdyJwAAgB7kTuiqS5dwtb5LLl++3HYIT5gTCXQXcid0
+       VYuzqUEJN2/ebDuEJ8yJBFTcvn277RA4kDuhq5599tm2QwCAk3vmmWfaDoEDuRMAAEAPcicA
+       AIAe5E7oqvF4bNt221GAEsdxXNdtO4onXNd1HKftKECVOZ8cFuZGAAAA0IN2JwAAgB7kTgAA
+       AD3InQAAAHqQOwEAAPQgdwIAAOhB7gQAANCD3AkAAKAHuRMAAEAPcicAAIAe5E4AAAA9yJ0A
+       MmmahmE4mUyuXbs2GAwGg8FoNJrP50mStFIOAJgA89kC8CVJEoZhFEXcZ23bXiwWvu83Vg4A
+       mAO5E4AjiqL5fJ6mqXyz1WrleV4D5QCAUdBnC5A1m81msxmb8FzXXa1Wx+PxeDzu93v6//l8
+       3kA5AGCaS20HAGCQNE2n02kcx+w/XdfdbDbctUKTJNntdvn1BesqBwDMhHYnwD/kE55lWavV
+       iia8JEmm0yn7LLc/tq5yAMBMaHcCPDGbzfIJz/d9x3HI4yRJRqNRJsnl25F1lQMAxkK7E8Cy
+       LCuKIu5QWHYEbBRF+YSX6WitqxwAMBlyJ4CVJAl3tI7jOGxKyzcNM4Nj6yoHAAyH3AlgiW4j
+       GY/H7J++77Npz7btIAhOUQ6AxHq9nn6h7VjMdeqjhNwJ5y6O4/V6zX0q049q2/ZmsyFtRM/z
+       NpsNvYRZYzkActPpdL1eiz5sQJz6KGFuBDh3k8kkP7SH2O/36lmtrnIA5AaDAXmAKTUkTn2U
+       kDvhrCVJMhwOuU/Ztn04HBouB0CONKfIY5y9RRo4SuizhbMmmmbWyl2kbKYcAOgEtDvhjCRJ
+       MplMyi1dEgTBYrGotxwAXbQr0vO81WrVbjDGauAoIXfCGZnP52EYln45/bLUVQ6AFjJ2lDzG
+       p0ikmaOEPls4I1W6T9nX1lVOXcjJYvA0xaH5ZBB/4QvZEf90e3ZLthD2apMoSHl406dlXpIJ
+       WDSWUh4zG488mPzhreW2B26V5d+L6KCpHIFM5bIv17qFI1+OyvjVcsdNvi9RzFWOEnenxaEe
+       Ac7Jfr/ffEGSxsitI6wTlVMdHUPoMWgAdNkWyQvpayVnBu5IRVo4972zuxYNdBTFJipQ1P/m
+       eZ78DWai4j6VL4Edoll4iNTljzxbeOa9cN+vSuSijckRkB86bjnyODOv4r5HNgCtmMm+JB/s
+       ckdJVBeivTy1R8lRA+g3yX0jku/M6copQXJekJ8yMmelwv/nN7ByyUyUXcqdm465kyn5k1zB
+       ym8gOZWze6R/5qPNBFOYzORZpzCY/HuXpyX2zcqPWyYf5A8X+y5Ufl3l46HHUL73fOHsB0Ml
+       ZvrUUe3Iqx8lyZYqhSB3wplil8/Ma76cEujpRvJU/kQjzzeZNCMv+fjF6Yw9v7Dl0w1Kpx95
+       ejuqneYyR8MStJi5DeUSh0iCzV558k+O4n4lVU/3olKU5Ahkqli093xCEv1u0I1ZsTdFtM1R
+       4WMjeY9PQpKUDtBjy+XSEtBqT9RVTgmS77bkZCQPTz13is6DmdzM3ZHKSTCzpeR4qm+Q3yn3
+       tfKDUCV3KhbL3UDlc6XSEFc5pJL3mOkMED0lanHm96sSs3pvue5RkvXKSotC7oQzxS5skrFc
+       LpsvpwTJqUR07is8ARWeejLvUdLxKCpHvVdNJR7dmLntSNHFM254KiEVhpp/Sp5CdE/3ovo9
+       FvWpFu6r3M+yfPd76Zglm9V4lAo3Q+6EMyW5SLnf75svpwTRyYggXWSZ/0jObuwGoqyQOQMW
+       tlzLNW25u5Nspr67wj0WhqcYUmGokirjnvRVDlpdmUN9A9FwMO6ruJ3AJa5Yq1/Y5lL/6SY/
+       DsidcI4kFyld122+nHLy4xJFZ16C3VJy4VDx3CQ6PalvoH6xs0ovpfrQpMLwVA6RnG6VqUSV
+       30Z05FWKUkxm5SIsHbPi760aj1LhlsidcI4kFymDIGi+nNIyyUxy7pBcpqLlFJ7HC8876k3b
+       wjPXUdrDmYlcssfCmEWlicazVBw7rV5llEpTSTHnFR7/cldzy2Vc9VepVGKNR+lY9H05InfC
+       eZJcpNxut82XUxH3dJw5NXBzDOkkJAr3ojumo9wG3N1JNmPfcrlRuPLw6OhQxQaiIpUqk0Ql
+       36bKMFQ2nnJvR/0oKb6q3J1IhUVp3eeT3wC5E86R6CKl4zitlFMLkgJF5+L8U7rJQOVMV3iO
+       UzkJZnZXpUWi24rKH6LS3bMq5FWWj6pi5jgKLlXq7qv03iWvUsz3pYfFahV1LPpNdkTuhDMk
+       uUjp+37z5dSOeyIrd3ZjsW+wcJty98ypF0UUngpVzqdVtq+LvHZ0D4VoG5XjX+4IVM+dks1U
+       PnjH+o7SUaHD9ng8Yj5bODuiFaotzclm6yqnBDoZKXeKzvyAlHqJrtixU4Byt6EbiErQxb79
+       fJnyZxtWusokR1VlUlluURXLaZLo7WdiVjxKih8DtjRh1UhyL0AviS5S2rbdSjklFH6F889W
+       bHeqvJxuUNhhm5+HSHJ1trB3UbRNibdcvXUuUqLK5CF5T0+QVBi56FKfbjm0NJXC5a/SijlT
+       siW+JJHfBfd2UkmQdBvZeF3REwB9JbpIqdvRWlc5utTHsopu+ZePw+Q+q5U71TMZN3FmNubu
+       sXAox7FU96NiDtC9VFzYByiqMtG7oMOXuLvIv19RALrliF4lipMbg/q+rKdlAijcOzdO+slR
+       +U3G3eDJZpLnAPpHcpFS62xYVznlSL7bknsQM/km0/iTN/UKz4wlRthyT22Z3eV3usqt0cHd
+       ne4IW+6u86fdwjNvYbGSUBUHComOm+iw5Dsqy5WzenpVGdG74B430dtXjzkTduHvQpVPl/pb
+       4BQifxqgZ0RXL3RHxtZVTjmZLzlL/s0vvN4jb8jmz1n5klWSmfru5AFXHxVS+FrFmAvVW2WF
+       tcB9ifp7KXfY5RfaS+yLvEQlAK2jdHw612YqQhLqUyUUbgHQJ0EQcL+li8WilXKqyHzh1b/2
+       3FdJXqiSh1QCyOQPxTScaWjKX6sVjwR3p+WKYpWrMq3TOjdy+pT6MSx9BEq8Sl7FJe7vVImz
+       YhUPjrysDtBXo9Fot9tl/mnb9n6/t227+XI6YTAYkAfkjJbfgAwiJY+rn1IKdwfQukttBwDQ
+       nDRN8wnPsizf97USXl3ldEVhOhT1rZVg1I0lACK4vxPOCPeOTNu2RR2wpy4H8pA7oROQO6FX
+       1uv1cDgcDAbD4TDfNOQ2FheLRb6xWFc5UBoSJ5gM1zuhP3a73Wg0on/atr3dbtm7MPMXKV3X
+       3W63JyoHSqAXO/NDOQDMgXYn9EcYhuyfaZqyHYBJkuTbi9xFxOoqB3Shwxa6ArkT+iM/LWea
+       ppJngyBwXfd05YAukydWBWAhd0JP5Mfv2LbNTjmbOS+7rrtYLE5XDpRAjy0anWA45E7oJ9d1
+       9/s9vUgZxzHb0Wrb9mazabIckCALjNArnVbRqiMArcP9ndATmTGuq9WK/idN09lsxm652WxE
+       Y2LrKgfUcRMk2qBgMrQ7oSdc12WHwtIrlOv1ejKZJElC/iQJT3J5sq5yQJ184rS2owPgwD0q
+       0B/szHBcrusul8vChFdXOQDQV2h3Qn94nrdcLkWdqEEQKLYU6yoHAPoK7U7omyRJoiiig3oc
+       x/E8z/d90VLVpy4HAPoHuRMAAEAP+mwBAAD0/D+rG2el6mKyPgAAAABJRU5ErkJggg==
+      </office:binary-data>
+      <text:p/>
+     </draw:image>
+    </draw:frame></text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">This is applicable only when both parts need different indications.</text:p>
+   <text:p text:style-name="P2">In that case, all marks for voice one should be printed on top of the staff, while marks for voice two should appear below, just like the example above.</text:p>
+   <text:p text:style-name="P2">But, in our case, having the instruments the same dynamics, it is unnecessary to print them for both.</text:p>
+   <text:p text:style-name="P2">Moreover, it consumes vertical space, a very limited resource in orchestral scores.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\partcombine does well in Unisono and Chords modes, where the marks are printed just once, but not in Apart mode, as has been shown.</text:p>
+   <text:p text:style-name="P2">In this mode, we would be expected it to check if the dynamics are identical (for hairpins, if their start and end points are the same) and print them once – below the staff – if this is true or print them both in their respective positions, if they&apos;re not identical.</text:p>
+   <text:p text:style-name="P2">However, \partcombine isn&apos;t yet smart enough to do this, and it is up to us to find a proper workaround.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">My first intention was to use a snippet that can be found in the LSR (Lilypond Snippet Repository), <text:s/>which creates a function called \filtermusic.</text:p>
+   <text:p text:style-name="P2">It&apos;s purpose is to filter all marks from one of the expressions to be combined, so that only the notes remain, and it&apos;s supposed to be used in this way:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\partCombine { \ExpressionOne \filtermusic \ExpressionTwo }</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Unfortunately, this doesn&apos;t work for the following two reasons:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">1. What if you have a measure where the voices should both have their marks printed individually?</text:p>
+   <text:p text:style-name="P2">2. Unfortunately, Lilypond seems to first combine the expressions and then apply the filter, even if \filtermusic is placed in between.</text:p>
+   <text:p text:style-name="P2">In fact, you end up with a part that shows only notes; all dynamics, lines, text, etc., are missing.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">So, until \partCombine is overhauled and its behavior corrected, there is no other way but to write all marks for each part in a separate expression; something like this:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\version &quot;2.16.1&quot;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">% -*-</text:p>
+   <text:p text:style-name="P2">% indent-tabs: yes;</text:p>
+   <text:p text:style-name="P2">% indent-width: 8;</text:p>
+   <text:p text:style-name="P2"><text:soft-page-break/></text:p>
+   <text:p text:style-name="P2">InstrumentName = { %%%%% here we write all the notes and their articulations</text:p>
+   <text:p text:style-name="P2"><text:tab/>\clef treble</text:p>
+   <text:p text:style-name="P2"><text:tab/>\key c \major</text:p>
+   <text:p text:style-name="P2"><text:tab/>\relative c {</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\PersonalSettings</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>R1 | % 1</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>R1 | % 2</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>...</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>R1 | % 22</text:p>
+   <text:p text:style-name="P2"><text:tab/>}</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">InstrumentNameMarks = { %%%%% here we write all the dynamics, lines and special text indications</text:p>
+   <text:p text:style-name="P2"><text:tab/>s1 | % 1</text:p>
+   <text:p text:style-name="P2"><text:tab/>s1 | % 2</text:p>
+   <text:p text:style-name="P2"><text:tab/>...</text:p>
+   <text:p text:style-name="P2"><text:tab/>s1 | % 22</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">There is no need to write the articulations separately, as \partCombine does print only one when the parts are combined in Unisono or Chords modes.</text:p>
+   <text:p text:style-name="P2">In Apart mode, the articulations will be printed individually for each voice, just as they should do.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">In this way, after the parts are combined we can use the marks from the first instrument and have them printed in the score.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Therefore, if we apply the above mentioned to our little example, we get:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2"><draw:frame text:anchor-type="as-char" draw:z-index="1" draw:style-name="gr2" draw:text-style-name="P3" svg:width="5.224cm" svg:height="2.363cm">
+     <draw:image xlink:href="">
+      <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAAmkAAAEXCAIAAAB500SpAAAACXBIWXMAAC4jAAAuIwF4pT92
+       AAAAHXRFWHRTb2Z0d2FyZQBHUEwgR2hvc3RzY3JpcHQgOC43MHQ4WKIAACAASURBVHic7d1L
+       qOPW/QdwOUxgAplMdAOZO01LLnJmMskizUSGZNV0YdOULtqN3EBfgYAcui6RN920FKysummL
+       DLNKoam96KoPsBZpoYuANRe6aEqmFnMhYdLQWsPM0Gkh4P/i3Op/osfROXoeyd/P6j5k+Wf9
+       bP18js456u12OwVgL00mk/l83nQUwGu9Xuu63nQUiqIonucNBoOmowBes9nMsqxy9/lAubsD
+       aBHf95sOAQQEQdB0CKfkiQR4VJEv1E4AAAAxqJ0AAABiUDthf22326ZDAAH37t1rOoRT8kQC
+       PP7xj3+Uvk/UTthfJycnTYcAAm7cuNF0CKfkiQR4/O1vfyt9n6idAAAAYlA7AQAAxKB2wv46
+       ODhoOgQQcOnSpaZDOCVPJMDj8PCw9H2idsL+evLJJ8kPq9VqJ4fVakVCsiyrwTCGw6E8RyYM
+       5uGHH67/TZIojARpkjMYIlwP4emnny79PYDaCQAAIAa1EwAAQAxqJwAAgBjUTgAAADFnmg4A
+       oHnHx8dNh3AqjOTk5MR13abCCFdckuHIyLz8E9IUkioYotLFT3o73IMM9tUXvvCFDz/8sOko
+       gNfbb7/97W9/u+koFEVRfvGLX3z/+99vOgrg9corr/z+978vd5/os4X9df/+/aZDAAG3bt1q
+       OoRTWM+2XW7fvl36PlE7AQAAxKB2AgAAiEHtBAAAEIPaCQAAIAa1EwAAQAxqJwAAgBjUTthf
+       Dz30UNMhgICLFy82HcIpeSIBHmfPni19n1hXCPbXlStXyNoIb7311tWrV5sOR1EU5fj4+M03
+       31QU5dVXX3399debCsOyrOvXrytyHJkwmCruwphPGAnSJGcwxLVr19555x1FUV588cXSd47a
+       CaBcvXo1vPugJJ588skGQwrvCi7DkZH5FuVIk5zBEJUul4g+WwAAADGonQAAAGJQOwEAAMSg
+       dgIAAIhB7QQAABCD2gkAACAGtRMAAEAMaicAAIAY1E4AAAAxqJ0AAABiUDsBAADEYD1bgD3l
+       uq7rur7vB0FA/qLrumEYuq43GxiEkCNpoXYC7Bff923bXi6X4ek45Lqubduapj388MONxAYE
+       T45ms1kjsQGB2gmwL8gZeT6fZ25WTzwQx5+j8Xh8dHRUS1CQALUTYC/Ytm3bdrwdA/IQzdHN
+       mzerDAdYUDsBOi4IgvF4XOm9DKEg5Kh1MM4WoMuCIBiNRrlPysfHx+XGA3EFcwSNQO0E6Cxy
+       UvY8L/cecO2zasVzpCiKpmllxQOcUDsBOms8Hhc8KZ8/f76sYCBR8Ry98cYbqJ31Q+0E6Cbb
+       tot3A6qqWkowkKiUHGG0bSMwVgigbjVMeA+CwLbt4vvZ5zn4VacJOSpFU8tHoHYC1IRnwvu3
+       vvWtUp4r8VlEqao6HA5LiadFaksTclQET5qee+656gJA7QSoHP+E9x//+MelPGMpgzYNwyi+
+       kxapOU3IUT78aap0pBtqJ0C1GlmUoODwE0VRVFW1LKuUYFqh/jQhRznIs8QHaidAVRqc8F78
+       G7dlWXsyerOpNCFHQmRbPgK1E6ASBeftnZyclBuPENM096RB09407U+OFCnThDkqAOUrPuG9
+       4FKlRQYZmqbpOE6RZ2+LZtOEHHFq/NOUCLUToHzFJ7xfuXKlyMNzj73cq5Nys2lCjjg1/mlK
+       hNoJULJSJrwX/LRbliW6rIGqqovFYn9Oyo2nCTni0XiaUu0A9lX4xX+1WuXbg2ma5X8mkwyH
+       w81mkxjDZrOpZ3Y8GdVZ4HjnhDQJQZoyMdLED7UT9lfBT/tqtarno06knRBrO+MQ6/W62FEX
+       VjBNi8WizuMjSZqK1wZR3UgTP/TZAgAAiEHtBMhpOBzW2cuU9lyWZdXZGdi61VMNw9jDNLVu
+       3qckaRJQsN0K0F7Fr9DEFf1AKspsNisrmG5Amlph39KEdmf5giCQZ/ELaJe9mvDeXkhTK1Sa
+       JtTOknmeNxgMRqPRZDJpOhZoACa8twLS1Aoypwm1s0zz+XwwGJBlKufzeeZK/9A9mPDeCkhT
+       K8icJtTO0szn80hbczqdFr9VArQLJry3AtLUCjKnCbWzHPHCqShKEAToud03qqo6jsP/gTdN
+       c7PZ7OFdGJuFNLWCzGnCfVRKkFg4Cc/zbNvGsIIGua7ruq7v++E9/3RdNwyjugkDhmFomjaZ
+       TNi9DmQgQ+vmElSh/hwpSJM4pOkzKhq/uz/W6zX7a5Gqqtvttukw985mszFNk5EaTdOee+45
+       8nOJo+ppi8XCNE36zEImljmOg7fEji9Hi8WiiskPNKSJDWlKhNpZyHa75fmmY5pm05HuEfJR
+       z0wKraJPO6QRytHR0RHS1AikiQHXOwuxbZvn5u/z+bz4PeKBh23bg8EAI5xlJpqjKm6+CJmQ
+       JjZc78yPXMvk3Ni2bYzQq1QQBOPxGKtSyAw5agWkiQfanflNp1P+jdH0rBS5s3zuT/vx8XG5
+       8UBcwRxBPZAmTqidOZEhZ0IPQUdiRcinvchUWnytqVrxHCmKgsGuVUOa+KF25rRcLnk2oxdU
+       nM/n4dhuKNF4PC74aT9//nxZwUCi4jl644039uSk3CCkiV9vV8Za9fsmCIKDgwP2NrquO46j
+       67rv+/1+n/zRcZyab4HbJYlt/ffee+/dd98tuOcvf/nLL774YviraZqcn3/f9+vpThgOh4z1
+       yZbLZQ0rWKmqSibbsTeLB1NFjjiDIZAmnmCQJjFND/Rtpdlsxj6qkZuSh3OShsNhUzG3XZ0j
+       rTin5G6329pCUhTFcRz5j4xUwRCbzaa2kBRFWSwWMhwZ9jHJPIPVGYxUaeKHPts8GF8eySJS
+       kbdm+B2HrMpRbXAdxdlJXoogCHjaB3WGpKS/66Q6MlIFQ9Q87CXt6Wo+MuxXXecx4bwnoyRp
+       4ofamUfax0BV1dVqFe+VpdfCqPmE2xl1LiWqqirPMmM1r26aFpJUR0aqYIgSeudEpD1dzUeG
+       /arrPCaZwRCSpIkfrncKc113NBol/muxWCR+QuiH6Lq+Xq8rjK+74tc7Hce5fft2kX2ePXv2
+       tddei4wVwvXORPkupFWUozZeSEOa2CRJE6+Cfb57KO1SwWw2S3tI5MIYFsksS9F3PzNrUArk
+       qBWQJlHosxWWOM9kOBwybpYSWUYZ844lQc8gAjkhR62wh2lC7RQWH+xDxgfx7wE3xC5LkZsf
+       1XBneVCQo5ZAmkShdgqLtzv5L48RqJ1lyX3RYj8/7Y1AjloBaRKFsULCIos9qqq62Wwy72ze
+       6/XoX3HYSxEEQb/fF1qtiXQS1DxEdp8hR62ANIlCu7Mo9l1hifg7Ek3PUpBPb+bxD5mmudls
+       9vbT3gjkqBWQJlGonUXxvHvilRIL25bFMIzVapV5tYZ81IXODlAW5KgVkCYhuH9nIZqm8Vxj
+       j1dKrC5UIjJldrlcuq7reV74TWU4HJIEGYax55/zxiFHrYA08UPtLISzyyLe7kTtLJ1hGPvc
+       g9QKyFErIE080GdbCOfwWlzdBADoEtTOQjhrJxZDAADoEtROYfQFTp6LnVj8HQCgY1A7C+G5
+       bJ7Y6CyyigcAADQLtbNaQRAktjsxVg0AoL1QO4UJlb3lcpm2dnx5EQEAQL2avpFLhdAvCgAA
+       JbIsi9SXLq9ne3BwgOV7AACgLBcuXPj444+Vbq+NsF6vK1qCYDQakR/eeuutq1evpm323e9+
+       99atW/G///CHP/zSl75URWBF3Lt3709/+tMHH3xw48aNDz74gPzx3Llzly5dunjx4uXLl194
+       4YXDw8NmgwQAqNnx8fGbb75Jfn7mmWfID12unZqmCd0ajJ+u62S5g3/9619pVy6n02li4VRV
+       9Uc/+lEVUeUWBIFt2/P5PGym67quqqrv+77vX79+XVGU3/72t8r/bvGNi7UAsJ/OnDktmhgr
+       lEdYktP6hH3fn8/nif+SbbGr5XLZ7/dt2yavxTCMzWazXq9XqxX5gb5s7LruaDQajUZYKQkA
+       9hlqZx5h7UxbMGgymaSVValq53w+H4/HYajD4XCxWNCNdV3X47dWcF13MBikfTkAAOg81M48
+       wk5L0qsZ+a9t22k1dTgcytPh6bruZDKh/5I4MllV1dlsFv/7ZDJB+QSA/YTamQdd/yJl0vd9
+       27bTHmiaZoVhiQiCIFI4lfQ164fDYWJZnUwmWKoXAPYQamdOYfmM1Bu6CzT+EHk6bJfLZbzF
+       7LpuWuFPay7HCzAAQOehduYU1hJ6yb3pdMoYRGNZVuVhcUtboX46nSY2JdNqJ2NUFABAV6F2
+       5hTWkiAISLGZz+fs3lp5rnQqzFuKJjYlGbN90G0LAPsGtTMnXdfp0bae502n07SN04bbNIix
+       4lLighKonQAAIdTO/MKLl8vlcjQaMaqR4ziy3TilxFUjsPAhAOwb1M78wtrp+z6jfhiGIc8Q
+       oRAjJAmjBQCQCmpnfnS3bRpVVR3HqSceIZZlCc3mZKwMXNHChwAA0kLtLCSzibZYLGTrrSVU
+       VV2tVpHhS5qmrVarxFrIGFuE2gkA+6bLa8FXzfM89vSM2Wwm1djaCFI+Pc8jg33SFkAgGAOC
+       ZH6NAABVQO3MKQgC9vgg0zSlmtCZRtf1zJuEB0GQNh9UwfVRANg/Xa6diYvNluLevXuWZTEK
+       5+XLl7/61a92ZvLGtWvX0l7sq6++Wt1xBgBo3PHxcfjzp59+Sn7o7Xa7huKp3MHBAaZPAABA
+       WS5cuPDxxx8r3R4rhDEsAABQooceeoj80OU+2/V6Xfo+bdtmrB+kKIrjOPLcLKUgck03cYSt
+       ruuRO30CAHSS67qj0Yj8/NRTT5EfutzuLN18PmcXTiXlFpht5Pt+WuG0LGu9XqNwAsDeQu3k
+       xV6xNtSN8UGu6w4Gg3jhNE1zs9nItjYvAEDNHlAUpVc2suvxeMzYhjHnQUKZM1JCHaid0+k0
+       8mJVVSVV03EcNDcBACppd7arLmbKLJy6rodNMdd12zu41/O8wWBA30lN13XHcVA1AQBoDyiK
+       svsfxiT3xWKx+6zFYsGeFB8+pO1z59l3tCar89CvsaVfHabTadhPSxqa6/V6vV6bpinnsoIA
+       AE35zDjbxWIR9rjSEu8EEv5xPB6zq0XablthPp8zFt4jhVNVVVVVNU0jSwQwCq2cgiAYj8ek
+       t1nTNMuyDMNAvQQASFNCn21mA7S9MscHOY4TDqylb+dZeWTl8Tyv3++HhdMwDN/3l8tl674B
+       AADUppz5nYvFIrP12TpBEEwmE8bFy9lsRn9pCItoEASu67ZihXTP8+hLub7v0xc7SSk1TRNX
+       OgEAaPnbnePxeDweh78uFosy4pGIbduMtld8qXe6jrZitG2kcMaRUtrv96fTKWOzwWDAM3sH
+       AKAzctbOJSX8Y5d6bl3XpVtgEfTAWlrY1pS/w5Nc4+QcEmzb9mAwSPxCMJ/PPc9r79BiAIAc
+       8tfO+B+7VDsnk0nav1RVTbujddhtK/9MFdu2hW5+QpYZGo1G8/mcPDAIgnCFwlZ0UAMAlCXn
+       9c5u187pdMqoK4x1XIfDYdhadV1X2gMSua7Jz3XdeOtT13VpXykAQBXytDvpy5wRHZjQGQQB
+       Y1KKZVmMNhb9L5m7bcOvPpqmOY6z3W53u91ms8l3s27HcUqNDgBAdmK1c7lctm45PVG2bad1
+       t6Zd5qSF5VPm4UIkNl3X6aUPNE2bzWaiY77oWToAAHuCq3aSktnr9Rgtzm5gNDrJZc7MPYSF
+       ROYRNKRHejabxa/aGobhOA7PwgjkgHTmhmsAAPy6fP/OHBP8//jHP6YVvC9+8YuMvtzQyclJ
+       +POzzz579uxZ8vPh4eGjjz56dHR0/vx5oZCq4Pv+o48+mnjxkvj617/+hz/8gdwePdHzzz//
+       0ksveZ4nc9e0tE5OTm7evHn79u3//Oc/5C+Hh4dXrly5cOFCs4EBDWlqhRrSRJ/V7969e/pT
+       ZJXaxEcahpF2ITO+zm2i+D45H1hEOYcNAABAURRFeeyxx0h9EWt3kk7LtixOa1mWUKvok08+
+       +ctf/pL4rxdeeOHg4CDtgR999NHJycm///1v/ud68MEHn3jiifAW5PI4Pj6+c+fOwcHBI488
+       cu7cuUceeeTMmTOKoty9e/f+/ft37tzZbrd37tx55plnnnjiiaaDbY379++fnJx8+OGHPBsf
+       HR1J+MbYB0hTK9Sfpu12e/36dfLz448/fvpXnrZa2O4k6Mt+Mrc7RaVdujNNM+0h2+22yNRG
+       TdPW63WdrzETT9i6rm82m6YjbY3E68psjuM0HfXeQZpaoZE0rVarcG/D4ZD8MU/tpDfrUu1M
+       S0lanViv16XcbESqT2BmtKqqonByyv3VSlXVpmPfI0hTKzSYpsTamXNdoVbP4EyUNiw2bSX0
+       zMVg+U0mk7asB0vuuYal4XmQW6bnm6pEbidQekgQhzS1goRpQu08lXZwE5cLyLzFiijbtnkG
+       8VYt8x02m80wm5MH+agXGYSMk3INkKZWkDNNOeeohDe+7kwRTVyEzzCMxDYW+xYr+UwmE1VV
+       ZT6elmVhNien8XiM2TvyQ5paQc405Z/f2bGbjqXVzsQthRaDVVWVs4U6mUyGw2Ep11DzYd9z
+       jaypRFaVkrnGN8627eLfcxt8G+wJpKkVpE2TXGsj0DfQNv6nnqeOl420ViD73mSGYQyHQ03T
+       wjkti8ViOBy6rktu2caoo6QruMEvJWkr4Ou6ThatDTurd+2ZPkuWgPB9PzzyJE0VdT6T28sU
+       389e9Y3XnCMFacoFafqMyICixG3i42xFxfcZH2ebWKgKPm+RCBOnpmy328RDpOv6arWitww7
+       ey3Loh9uWRb7S1BkP3VKfIfpuk4Wi9/tduHV36Yi5LfZbMKlehNpmlbFYO9SVsbfkwGcTeVo
+       hzSJQJrKnKMiKr7P+LGu6KlzR5g4dSQxl6ZphtUlFH4ViL+EzWbD+B4U5qZmiV8LVFUNZ6Bu
+       t9vw89NIhJzIRz3t8EbQ32xKUUpPCWNKcTc0m6Md0sQHaSKyaycj0CJfKxJ3y1hvgbFZdeJP
+       nTiLMf5OSoswbKJpmpa4AeNN2cgEysSvBXQjmB5yXH94nBqf4V58Ak/nZ9A2nqMd0sQBaQql
+       1k7RaDjrKOdXhnBvUvXZpjXzI5NzVVWNtzgJ+nCnbZNWPmezWWkvjFv8+NOfhEhlrT+8TJLM
+       cM8RQEQj2a+HJDnaIU1MSFOE7LVz99nWZ20tTiLyDSut4zQSPKObgu4CTbuEud1u0y4xlvOq
+       uMU7bOmXFm+S1hxeprQjyamsa8xpl8P5dbgbUJIc7ZAmJqQpjut6596KfM9Kq9yR3LB7AxKH
+       C0Ws1+vErBd9PYIi1TF8+dvtNrFxXHN4bAU/7ewECaE/YzngjFxDjnZIUzqkKTOSomvydU+k
+       3cnTz65pGnuz8F2YNveDbJNYnGper4QeCB7OSPE8bzAYyLDgEZucU6dFmaZZyqhCOXUjRwrS
+       1BI1pAm18xTnRWm6xGY+JNyA/XZMXPaPUW5LR+ZskZ/JirXkZY7H4zrDyEfaqdNCz75YLDp8
+       Ru5AjhSkic/+pAm18xTntXGhDg263clYEkHTtPhu6yxaYaOTLpw1x5CPtFOnH3zwQc4tTdPc
+       bDYdXqdJ2hwpinL27FnOLZEmTvuTpt6uPQvEiJpOp/z9D59++um7774b/pp2x9S///3vN2/e
+       JD8/+OCDL7/8MmOf9+/f//Of/0x+Zt89++Tk5MaNG/RfaruzLn1b18gdrRlfQovctbREH330
+       0fvvv19wJ5l55BcezPPnz+92uzt37jA2/vznP//kk08+9NBDpTy1tGTLkUKl6XOf+9y9e/eQ
+       JgVp4otEUZRnnnnmr3/9q9Lt2tnr9ZoOAQAAuuOxxx775z//qci2nm25FouF0HXv9957L2x6
+       Hh4efu9730vczHGc27dvk59feukl9vesX//616Sd+vzzz3/lK19J2+y///3vT3/6U/ovmXsu
+       RfiSE8Nj9OEkXqOtH52LfM6ePfvaa6+dP3++lHhOTk7eeecdRVGOjo6++c1vlrLPtpMtRwqV
+       pno+Za2ANPFEoijK/3cHljWKtwM2mw19vNIWNKDLBmNtBCIcQ5u50l4kWzWsarvZbMilTc7J
+       rLSqY+NU6AOhKErZM9zDsexNLawoIdlytKPSVMUyci2FNPFEomCOSiJN0+jLeOEdXSIsywoH
+       0AZBMJ1OGfsMx92IDmArvhhVJnJHFF3XW3o7ueJDmUzTlKQBDWmQo1bYwzShdn4GPdUyrXaq
+       qkruZEnM53PGDEi6GDPO9ZFRuJkzR4sj49FVVXUcp/Fh5fmwv7Vk6vZEPXkUeXchR7VBmkSh
+       dn6GYRhh0SI3q0vbjP6SNZlM0sonXQIZtTNyXbbqMdae55HCs1qt2nsDQs47iifaz097I3Jf
+       AEOO6oQ0iULtjKLblIzBMrPZjG6kTiaT8XgcP5vTtZPRbRv5V6W1MwiC8XisKIrjOO0tnLl1
+       foa7bI6OjkQfghzVD2kS1eVxtvkYhjEcDkkxc113uVymVTLypglbnMvlMgiC+BqMuq5nDvel
+       +4eHw2GlJW00Gvm+PxwONU3LvYxI/IE19DOnOXfu3N27d3m2NE0zx52VoIgzZ8ROMshRI5Am
+       UaidCRzH6ff75OfJZKLrelpVcBxH0zTbtkmLM7FGhm+vtApKL4mnVDz9w/d9EgajR5rHaDSK
+       /IXcJbuR8mnb9rVr19hfUMhYhqaqu5zIe4Be9ErXdcMwKvrqdvny5Q8++ICxAXIUV3OOFKSJ
+       X7Njf6VF99zqus6eiLLZbIbDIRl3E/9v5k2w6Y9BDXMbKhocpGka+yiVLhyHRebzLBYL0zQj
+       B5NcjKktsFbMUdlsNqZpMt4DmqYVudd9BJ0mGXK0k2nyQ5qac7RDmvgiUXAPMh50V21m+WSg
+       y3D8v5HZolLdiT7tc5v4QuoXqZ0ykLx2kjMyI620sk5YMqep8ZNyXCM52iFNfJEomN/Jgx5K
+       43neaDTKN7CT/voW6Vd0XZcejjSbzeTpCWG/2CJjXKERtm0L3VHOtm35bz/XMchRi6B2piI3
+       FYmUzxw3t6PLIV1yXNcl412JyMDdxrFfac23F4UigiAYjUbT6VT0G0/BGbTADzlqHdROlnj5
+       HAwGom9WunaGBcm2bboha1mWbKtysKsjamdbkJNyvnwFQYBE1wA5aiPUzgykfNLLA9m23e/3
+       hbpKwmv+5I1OvmCG/3Uch74mKoMgCNgvcD6fd+P+8t1GTspFMoXzctWQo5ZC7cxGyifdLvR9
+       fzKZ9Pv96XTKs6pq2HIlzc3wva5p2mq1kqqrliBL3RbfBpo1Ho/xFUdyyFFLYX4nr9lsNhwO
+       6ftp+75v27Zt22QReVVVdV2nh5X7vk8mZiV+Nkg/rWyTi33fn06naWv50jzP6/f7sl2mhRBZ
+       srjgTmR7f3YMctReXa6dpHSVu8/ZbPa73/3unXfeuXXrFv1E/F24Fy9efPnll7/2ta8dHh5K
+       9X3z2rVr169fZ0+LjgiCYDKZ/OAHP7h06dLly5dff/316sKL22635Ifj4+M6n5chjGS73Tbb
+       k3bv3r2f/OQnxffzwAMPFHwhMqfp5OSkwTTJkyMFaeKLRFGUTz/9lPzQ25Vx5zY5HRwcoFMR
+       AADKcuHChY8//ljp9vVOeeZKAgBAB7z22munPzW6XMO+oJelaDqW7pB5JZTG1xUq/sWxrFWu
+       ZE5TswvWyJOjHdIkrsvtToC9VfxKP9b7rhpy1GqonXWgp4cCVK34wApyr4xSgoGKIEfNQu0E
+       6BrGPdt5kDtmlBUMpHnkkUdyPxY5ahxqJwD8P5yUa3NwcJDvgciRDFA7s5E1EEajUa/X6/V6
+       /X5/MplgHSzoGFVVF4sFTsq1OTo6En0IciQP1M4M0+mUrP8eFkuyEkJkTVoACZ07d45zS9M0
+       N5sNfc9aqNqZM2JL0yBHUkHtZJlMJrZtpy2wYNv2ZDKpOSQAfrZt07ePTUTOyI7jYGm3ply+
+       fJm9AXIkoS6vyVfQdDrNXGlvPp8Ph0N8EwQ5Xbp0ab1eL5dL13U9zwvXgBwOh5qm6bpuGAZO
+       x4372c9+Ru6whBy1CGpnMtd1OQcrTqfTzNop1bq1sG8Mw8DXO8khR62DPttkPDcSIXzfzyyN
+       WFYXAKBLUDuTCQ2jzdw4rJ1YBAQAoANQO5MJLZeV2awMG6aonQAAHYDaWYewdmYOegQAAPmh
+       diYTaiCyl6slI+jIz6idAAAdgNqZjL92aprGrp30sCMsCg8A0AGoncn4G4iz2Yy9QVg7MU8L
+       AKAbUDuTcc61Mk2TvaXrumGHrWmaJUQGAABNQ+1Mpus6u+mpqqrjOJmLModr3g6HQ3TYAgB0
+       A9YVSmVZ1ng8Dn81TZNMXOFfKGs6nYYjbHGXWgCAzkDtTGUYxnA4DHtcPc9brVb8Fyzn83m4
+       qp9lWWh0AgB0BvpsWegbF3ieNxqNOFfXo2+xous6Gp0AAF2C2smiaRrd1vQ8r9/vs2+u4vs+
+       fWtPcq9aDK8FAOgS1M4Muq7T5TMIgslk0u/3yd2ww2ao53nz+Xw8Hvf7fXolhNVqhXX4AAA6
+       Btc7s5ESOJlMwoE/vu/bts2+SZlhGLhXLQBAJ6F2ctF1fb1ek3qZeclT0zTLsjCbszbHx8dN
+       h3AqjGS73Qrdiqdc2+02Ek+DwmAkdHJygjQRUgVDyBNJsh0IchwncYKKqqqmaS4Wi6YD3BdH
+       R0dNfGIgp7fffrvpt8ypn//8500fDBDwyiuvNP2WSYB2pzDTNEmbMggC+gYp6J6t2d27d5sO
+       AQTcunWr6RBO3bt3r+kQQMDt27ebDiEBamd+qqpi1iYAwB7COFsAAAAxqJ0AAABiUDsBAADE
+       oHYCAACIQe0EAAAQg9oJbXXu3LmmQwABly5dajqEUxcvXmw6BBBweHjYdAgJUDuhrZ566iny
+       w2q1anqe9KnVakVCGg6HDYYRTp2S4ciEwTz88MP1v0kS2TUTxwAACy9JREFUhediy7JkODJS
+       pUmGYIjw0/T000/X/ybJhNoJAAAgBrUTAABADGonAACAGNROAAAAMaidAAAAYnq73a7pGADy
+       ePbZZ99///2mowBev/nNb77xjW80HYWiKMovf/nL73znO01HAbxeffXVX/3qV01HEYV2J7TV
+       J5980nQIIODGjRtNh3BKnruhAY+bN282HUIC1E4AAAAxqJ0AAABiUDuhrR5//PGmQwABV69e
+       bTqEU/KsDgg8rly50nQICVA7oa2eeOKJpkOAVpJndUDgceHChaZDSIDaCQAAIAa1EwAAQAxq
+       J7SVpmlNhwAC5MmXPJEAD1VVmw4hAdZGgLYKgsDzvKajAC6apklVsTzPC4Kg6SiAS3h/NKmg
+       dgIAAIhBny0AAIAY1E4AAAAxqJ0AAABiUDsBAADEoHYCAACIQe0EAAAQg9oJAAAgBrUTAABA
+       DGon7K8gCGzbHo1GBwcHvV6v1+sNBoPpdOr7fiP7AYC2wLpCsI9837dtez6fJ/5XVdXZbGaa
+       Zm37AYB2Qe2EvTOfz6fTaeZypovFwjCMGvYDAK2DPlvYL5PJZDKZ0AVP1/XFYrHb7Xa73Waz
+       Cf8+nU5r2A8AtNGZpgMAqEkQBOPx2HVd+o+6rq9Wq8SbHPm+73merusV7QcA2gvtTtgX8YKn
+       KMpisQgLnu/74/GY/m9if2xZ+wGA9kK7E/bCZDKJFzzTNMObSvq+PxgMIkUu3o4saz8A0Gpo
+       d0L3zefzxKGw9AjY+XweL3iRjtay9gMAbYfaCR3n+37iaB1N0+iSFm8aRgbHlrUfAOgA1E7o
+       uLRpJMPhkP7VNE267KmqallWFfsBYBj/z3K5bDoWeclwlFA7octc1037dEX6UVVVXa1WpI1o
+       GMZqtQovYZa4HwCGJaXpWOQlyVHC2gjQZaPRKD60h9hsNvxVraz9ADDQDSmcmdNIcpRQO6Gz
+       fN/v9/uJ/1JVdbvd1rwfALZer0d+MAxjsVg0G4y0JDlK6LOFzkpbZlaJXaSsZz8A0Blod0JH
+       +L4/Go3y3brEsqzZbFbufgCESNIVKTl5jhJqJ3TEdDq1bTv3w8MPQln7ARASdkUqeBelk+co
+       oc8WOqJI9yn92LL2U5blcjkej3ufFVnzLw0Zx08/KnFo4pgSbpwWAGMP7G0Sny58VPiQyItN
+       21VizIk7YR+ryB74jy0Df8roDXj+Hok8bf8kAM4pHJxvkooeFY85fqAKHqXS83tqB9AVm81m
+       9T+MMkamjtAq2k9x4boKBiUMILxtC88D6bAjGzPODIkLO9B7SBuskRYbY/u0f8UDZsfMuYfI
+       MYm8UmZaWPhTxjnOhR05+wgkvvDEACKhMh5Y/FER5JikxZz7KDHiVJifHU6ondBNjHkjQh+b
+       svaTA+O8wHnKSDtTJ0YeOdfsYmUgfqqKn57YpzNaZONwRiwjHvZRUqhOvMxg0vbM84wM+VK2
+       ++zRYD9F2tcgcrgiQ0959hN/pfFclPWoMEI6ZuWzva883wj5jxLjm2LBzy9qJ3QQffvMuPr3
+       k0P44Wf8K35qYJ830x6VuEHiqZA+74TPRZ+D+M9uu1gDMX4uy6z3iTGTLSPtlcR9phWAfPnN
+       l7L4q+B5iszDxX4JmSUw8eGMRzHeeDyvnfOwcx4l9mac3y0yoXZCBzmOo6QQak+UtZ8cGB9v
+       Rhjh3xMrDfu/u8+edBJfI72HxPBy106ekDJ3EnnSxMeyd1ikdjIeyK4fPF8RMncSiYGxDU91
+       jP+X8ai0ryk7vs4Dnph3uY5S2jY8T5cJtRM6iL6xSYTjOPXvJwfG5z/tPJX2dyLz63bkDMhu
+       HmXGlnlWEu2SzWxDKEmn1LTvFmkHgT9+xmPj/2Kf0EVbXYzNMrdhVyB2h7Doozhj5rwMyXOU
+       OHfFE1Um1E7oIMZFys1mU/9+cqCfK/FsxeitzdfozLxamVmoeJ4l8ekYm4Xb8FxIYz9jZrUO
+       Nyh4sTPx5S8WC56u8rSdl9WryZ9i+iWwH7VLyTtnSzFz55wvLceu2JuxoXZC1zAuUuq6Xv9+
+       8olfu6IHWcSxTwfhmZdzD4mbZRaqfB22jJAyq53QSZD9AgsWzp14yuKPKlhgcgwHE31dQgeH
+       Mzs8O+c5SpxHkj8wNtRO6BrGRUrLsurfT26RhiDjFMM4u3GWBNHrUuwNeM6wPCcv/suEQo3O
+       +JOG13cLjr3kT1niQ3i2KdKrme9qbr5HcWZHdFQw51HiDEzoFUWgdkLXMC5Srtfr+vdTUOLp
+       OHIySqwxBkXoWdK2YZ8K+b/100/HOWAycZ9C5/TEQ0T6UTkPET+elIUyN9hxv9LMo0rHw/9y
+       8j2qxKuYu1I7bIX6+Vkh5X4kgJzSLlJqmtbIfkpBzu9p5+LI6YAQakJlnncyS2O+SsbZYZu4
+       T6EzYPzoFW9lZj4jI2VERVcEcw9aLvFRokWR853Ac5SKfCHjh9oJncK4SGmaZv37KV3iKSlf
+       rxot82yS+RRCZ1ieaNkNF6FmLk/81WE8dYmtruI9B+U+iieeEjtsOeMsq8N2t9thPVvolLQ7
+       VCuCi82WtZ8cyPKbaatuci5RJvqM4c9pV+zC1UoTN6DXMk3bQ+LGjG3Y+xR6xqqx149lpIxx
+       VHmOEs+uRPdTp/CNx465iqOkFP8oFSm8ALJJu0ipqmoj+xFFP1fmVavwLwUbVZnXyXJ32BrU
+       Qj9C0dLHgT0ZhrMxVGm7M/OMmvhfxlEl0fLvP62NHtkP/2iatJ2X+Ki0lx95z/AfJaG3cfEr
+       3Kid0ClpFylFO1rL2o8o+rnY0wwi/+U5KaRNMWQ/4y5vh62RtThRWrSZozlEO2wZQcb3LHpW
+       5Z82ylld4huzu68jrbHI3+mQeIpHPY9K6zuN74f/KO2yrgUkPmNuqJ3QHYyLlEKDAsraTw7s
+       QTSMCSeRehOZos74Ss5zzSnz1BnZgBFn4iTItP+yz9SiJ0HOQ5Qjy4xgOFMW2TgeQNqbMN6N
+       Sf89832SeASqfpRQzEJHiRFM/OkKQu2E7ki7gCE6Mras/eRDf/5piaehxAemyT0+Nt9T8yyw
+       IBotZzxpMg9Rvq68SBsrnrXM7xyZL5x9cS7xv/neJzx9D6U8ij/mfM8o9NnJAbUTusOyrMSP
+       2Ww2a2Q/uUWaQfS5IN8Di9ShHIMhGXFGtokHzI52l7fDNi1U/mPLs9vEPTMeEim6/PNi42EL
+       7SrHYU97VI73pGjMokcpX5yieruUqg7QOoPBwPO8yB9VVd1sNqqq1r8f+ZEBouTnxLqrKAo9
+       fLT46aLX67GfDqAVzjQdAEA5giCIFzxFUUzTFCp4Ze2nFciXcfY2Jc6KkWpiCUARmN8JHZE4
+       I1NV1bQO2Kr3A3HsSaIALYLaCa2xXC77/X6v1+v3+/GmYWJjcTabxRuLZe0HRMk8Tx9ACK53
+       Qjt4njcYDMJfVVVdr9f0LMz4RUpd19frdUX7AVH0tVWcdqDt0O6EdrBtm/41CAK6EeP7fry9
+       mHgTsbL2A6LQ6IQuQe2EdoifeYMgYPzXsixd16vbD4jCxU7oEtROaIH4+B1VVeklZyM1T9f1
+       2WxW3X5AFBqd0DGYowLto+v6arUKB++4rkt3tKqqulqt6twPMJBrnHTtDC98Ji4mANAKqJ3Q
+       ApExrovFIvxLEASTyYTeki6HFe0HOEVuJUb/nfyA2gkthT5baAFd1+mhsOEVyuVyORqNfN8n
+       v5KCx7g8WdZ+gBP/inQA7YI5KtAO9AyHRLquO46TWfDK2g8A7DO0O6EdDMNwHCetE9WyLM6W
+       Yln7AYB9hnYntInv+/P5PBzUo2maYRimaabdqrrq/QDAfkLtBAAAEPN/aRG8We2Ytd8AAAAA
+       SUVORK5CYII=
+      </office:binary-data>
+      <text:p/>
+     </draw:image>
+    </draw:frame></text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">To show you a complete example of how the file for the first instrument should look, I&apos;ll copy here the contents of HornThree.ly:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\version &quot;2.16.1&quot;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">% -*-</text:p>
+   <text:p text:style-name="P2">% indent-tabs: yes;</text:p>
+   <text:p text:style-name="P2">% indent-width: 8;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">HornThree = {</text:p>
+   <text:p text:style-name="P2"><text:tab/>\transpose c g {</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\clef treble</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\key c \major</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\relative c&apos; {</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>\PersonalSettings</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>R2 | % 1</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>R2 | % 2</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>R2 | % 3</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>R2 | % 4</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>R2 | % 5</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>a8-. b4-- g8~-- | % 6</text:p>
+   <text:p text:style-name="P2"><text:soft-page-break/><text:tab/><text:tab/><text:tab/>g b-. a4-- | % 7</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>b16-. c-. a-. b-. c8. g16~-- | % 8</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>g4 b8-. c-. | % 9</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>g16-. a-. c-. e-. g8. g16 | % 10</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>a8-. b4-- g8~-- | % 11</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>g r r4 | % 12</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>R2 | % 13</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>R2 | % 14</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>R2 | % 15</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>R2 | % 16</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>R2 | % 17</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>R2 | % 18</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>R2 | % 19</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>R2 | % 20</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>R2 | % 21</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>r4 b,~ | % 22</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>b2~ | % 23</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>b | % 24</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>c8-. c4-- \partcombineApart f8~-- | % 25</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>f f f4-- | % 26</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>c&apos;8[ b a g] | % 27</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>}</text:p>
+   <text:p text:style-name="P2"><text:tab/>}</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">HornThreeMarks = {</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 1</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 2</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 3</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 4</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 5</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2\forteMoltoPesante | % 6</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 7</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 8</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 9</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 10</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 11</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 12</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 13</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 14</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 15</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 16</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 17</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 18</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 19</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 20</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 21</text:p>
+   <text:p text:style-name="P2"><text:tab/>s4 s\fff | % 22</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 23</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 24</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 25</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 26</text:p>
+   <text:p text:style-name="P2"><text:tab/>s2 | % 27</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">This is another example of where JupiterEmpty.ly comes in handy. </text:p>
+   <text:p text:style-name="P2"><text:soft-page-break/>To create the expression for HornThreeMarks I just have to copy the contents of Empty (which is inside JupiterEmpty.ly) and use the replace tool in Frescobaldi to change every R for an s.</text:p>
+   <text:p text:style-name="P2">If you don&apos;t use Frescobaldi, you can do the same thing on almost any text editing software, like LibreOffice, for example.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\forteMoltoPesante and \fortissimoSempreStaccato (which can be found in the parts for the piccolos, flutes, oboes, english horn and clarinets) are two user-defined dynamics I have created, which concatenate the dynamics to the phrases molto pesante and sempre staccato, so that both elements are treated as a single entity.</text:p>
+   <text:p text:style-name="P2">You will find them defined inside MyDefinitions.ly</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">And now you may think we&apos;ve nailed it.</text:p>
+   <text:p text:style-name="P2">Well, unfortunately, we haven&apos;t!</text:p>
+   <text:p text:style-name="P2">There is one special case where this approach will not work.</text:p>
+   <text:p text:style-name="P2">Take a look at measure 15 of the piccolos:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2"><draw:frame text:anchor-type="as-char" svg:y="-0.986cm" draw:z-index="2" draw:style-name="gr3" draw:text-style-name="P3" svg:width="8.575cm" svg:height="1.971cm">
+     <draw:image xlink:href="">
+      <office:binary-data>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
+       SUVORK5CYII=
+      </office:binary-data>
+      <text:p/>
+     </draw:image>
+    </draw:frame></text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Here, the first instrument is silent while the second one is playing.</text:p>
+   <text:p text:style-name="P2">If we use the expression with the marks for the first piccolo, no dynamics will be shown in the first measure.</text:p>
+   <text:p text:style-name="P2">What to do then?</text:p>
+   <text:p text:style-name="P2">We have to use tags.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Tags are a way in which to filter things in Lilypond.</text:p>
+   <text:p text:style-name="P2">You just tag something using a name you choose and then tell Lilypond to filter all code tagged with that particular name, so it will not be used when compiling.</text:p>
+   <text:p text:style-name="P2">Check Different editions from one source, in the documentation, to find more about tags.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Therefore, the solution for measure 18 is to write in in TubaOneMarks as follows:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">PiccoloOneMarks = {</text:p>
+   <text:p text:style-name="P2"><text:tab/>s1 | % 1</text:p>
+   <text:p text:style-name="P2"><text:tab/>s1 | % 2</text:p>
+   <text:p text:style-name="P2"><text:tab/>...</text:p>
+   <text:p text:style-name="P2"><text:tab/>\tag #&apos;inscore { s4 s\f\&lt; } | % 15</text:p>
+   <text:p text:style-name="P2"><text:tab/>\tag #&apos;inpart { s2 } | % 15</text:p>
+   <text:p text:style-name="P2"><text:tab/>…</text:p>
+   <text:p text:style-name="P2"><text:tab/>s1 | % 22</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">This is something that could only be done in Lilypond!</text:p>
+   <text:p text:style-name="P2">Measure 15 effectively appears twice in the expression PiccoloOneMarks, only that the first entry is tagged inscore and the second one is tagged inpart.</text:p>
+   <text:p text:style-name="P2">Then, in the score we have only to filter all code tagged inpart and the full score will be compiled using the first entry.</text:p>
+   <text:p text:style-name="P2">In the part, we&apos;ll have to filter all code tagged inscore, so the second entry will be used there.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">In any case, tags need to be used anyway when creating an orchestral score because it is not rare to find instances where something has to be printed in the full score but not in the parts, or the other way around, of course.</text:p>
+   <text:p text:style-name="P2">WYSIWYG software already includes this feature, so there has to be a way of dealing with this in Lilypond, and using tags is how to do it.</text:p>
+   <text:p text:style-name="P2"><text:soft-page-break/></text:p>
+   <text:p text:style-name="P2">The case explained above about the tubas is rather unusual so don&apos;t worry about it.</text:p>
+   <text:p text:style-name="P2">The important thing is that we have covered up every possible scenario regarding the combination of parts.</text:p>
+   <text:p text:style-name="P2">Now we can create the files for each individual instrument and forget about creating a third file for the full score (or the other way around, which is just as worse!).</text:p>
+   <text:p text:style-name="P2">We still have to write the marks for all combined instruments in separate expressions, which is a real drag!.</text:p>
+   <text:p text:style-name="P2">True!.</text:p>
+   <text:p text:style-name="P2">But, hopefully, \partcombine will be improved in later versions of Lilypond and there will be no need of doing this.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">4. Creating the Full Score</text:p>
+   <text:p text:style-name="P2">The file for the full score is the most complex one we have to create.</text:p>
+   <text:p text:style-name="P2">Instead of going into a very long preamble about it, I&apos;ll just print a compressed version here, section by section, and explain every distinctive feature.</text:p>
+   <text:p text:style-name="P2">You can open the file I created for this tutorial (called Zarathustra.ly) and check out the complete version there.</text:p>
+   <text:p text:style-name="P2">Let&apos;s examine each part of the score separately.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\version &quot;2.16.1&quot;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">% -*-</text:p>
+   <text:p text:style-name="P2">% indent-tabs: yes;</text:p>
+   <text:p text:style-name="P2">% indent-width: 8;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">%%%%% to place the bass drum and cymbal notes on the line in single-line staves</text:p>
+   <text:p text:style-name="P2">#(define mybassdrum &apos;((bassdrum default #t 0))) </text:p>
+   <text:p text:style-name="P2">#(define mycymbals &apos;((crashcymbal default #t 0)))</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">#(set-global-staff-size 8)</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\header {</text:p>
+   <text:p text:style-name="P2"><text:tab/>title = \markup \center-column { \fontsize #8 &quot;Jupiter, the Bringer of Jollity&quot; \vspace #1 }</text:p>
+   <text:p text:style-name="P2"><text:s/><text:tab/>composer = &quot;Gustav Holst&quot;</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\language &quot;nederlands&quot; %%%%% I prefer to use nederlands but you may change this if you like</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">I don&apos;t have to say much about this first part except for the drum style tables defined for the bass drum and cymbals.</text:p>
+   <text:p text:style-name="P2">As I want to use single-line staves for these instruments (one of the differences with the score found at IMSLP), I have to tell Lilypond that the notes in each case have to be written on the line.</text:p>
+   <text:p text:style-name="P2">Otherwise, Lilypond will place the notes in their default position (because a single-line staff is simply one where the first, second, fourth and fifth lines have not been printed, and Lilypond still sees it as any other five-line staff).</text:p>
+   <text:p text:style-name="P2">We don&apos;t need to do the same for the triangle and tambourine, as the default position for both instruments is the central line.</text:p>
+   <text:p text:style-name="P2">You can check out all the different instruments available and their positions by looking at Percussion notes, in the Lilypond documentation.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Now come the lines needed to include what I call the Global Parameters, which contain code needed to compile the full score:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">%%%%% Include Global Parameters</text:p>
+   <text:p text:style-name="P2">\include &quot;../Definitions/MyDefinitions.ly&quot;</text:p>
+   <text:p text:style-name="P2"><text:soft-page-break/>\include &quot;../Definitions/MyPersonalSettings.ly&quot;</text:p>
+   <text:p text:style-name="P2">\include &quot;JupiterMetrics.ly&quot;</text:p>
+   <text:p text:style-name="P2">\include &quot;JupiterScoreInstrumentHeadings.ly&quot;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">MyDefinitions is a file where I have stored tweaks collected from all over the Internet.</text:p>
+   <text:p text:style-name="P2">It helps me change several things without having to write very long expressions or intricate code.</text:p>
+   <text:p text:style-name="P2">The ../ before the name means it is located in a folder above the one where Jupiter.ly is.</text:p>
+   <text:p text:style-name="P2">The same folder is also the location for \MyPersonalSettings.ly, the file that contains the \PersonalSettings expression. </text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">JupiterMetrics.ly is a file that contains all the time signature and tempo changes.</text:p>
+   <text:p text:style-name="P2">As it is very usual to find changes of these parameters in an orchestral score, I prefer to put them in a separate file, so I don&apos;t have to be writing them down in every music expression.</text:p>
+   <text:p text:style-name="P2">In a score with constant changes of meter this is a must!</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Finally, JupiterScoreInstrumentHeadings.ly contains all the necessary definitions to produce the instrument names on the first page and on the subsequent pages, as well as other settings too.</text:p>
+   <text:p text:style-name="P2">You can check out the contents of this file by yourself, so I&apos;ll just reproduce a few headings here:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">PiccolosHeading = {</text:p>
+   <text:p text:style-name="P2"><text:tab/>#(set-accidental-style &apos;modern)</text:p>
+   <text:p text:style-name="P2"><text:tab/>\override Staff.Accidental #&apos;hide-tied-accidental-after-break = ##t</text:p>
+   <text:p text:style-name="P2"><text:tab/>\set Staff.instrumentName = #&quot;2 Piccolos &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/>\set Staff.shortInstrumentName = #&quot;Picc. &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/>\set Staff.midiInstrument = &quot;piccolo&quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/>\override Staff.InstrumentName #&apos;self-alignment-X = #RIGHT</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">OboesHeading = {</text:p>
+   <text:p text:style-name="P2"><text:tab/>#(set-accidental-style &apos;modern)</text:p>
+   <text:p text:style-name="P2"><text:tab/>\override StaffGroup.Accidental #&apos;hide-tied-accidental-after-break = ##t</text:p>
+   <text:p text:style-name="P2"><text:tab/>\set StaffGroup.instrumentName = #&quot;3 Oboes &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/>\set StaffGroup.shortInstrumentName = #&quot;Ob. &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/>\set StaffGroup.midiInstrument = &quot;oboe&quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/>\override StaffGroup.InstrumentName #&apos;self-alignment-X = #RIGHT</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">BassDrumHeading = {</text:p>
+   <text:p text:style-name="P2"><text:tab/>\set DrumStaff.drumStyleTable = #(alist-&gt;hash-table mybassdrum)</text:p>
+   <text:p text:style-name="P2"><text:tab/>\set DrumStaff.instrumentName = &quot;Grosse Trommel &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/>\set DrumStaff.shortInstrumentName = #&quot;gr. Trommel &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/>\override DrumStaff.InstrumentName #&apos;self-alignment-X = #RIGHT</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">HarpsHeading = {</text:p>
+   <text:p text:style-name="P2"><text:tab/>#(set-accidental-style &apos;piano)</text:p>
+   <text:p text:style-name="P2"><text:tab/>\override Staff.Accidental #&apos;hide-tied-accidental-after-break = ##t</text:p>
+   <text:p text:style-name="P2"><text:tab/>\set PianoStaff.instrumentName = #&quot;2 Harps &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/>\set PianoStaff.shortInstrumentName = #&quot;2 Hp. &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/>\set Staff.midiInstrument = &quot;orchestral harp&quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/>\override PianoStaff.InstrumentName #&apos;self-alignment-X = #RIGHT</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">I have intentionally copied here the heading for the bass drum, as it is a bit different from the rest.</text:p>
+   <text:p text:style-name="P2">The first line calls the drum style table defined at the top of the full score file.</text:p>
+   <text:p text:style-name="P2">Without this, the notes will not be printed on the line, but somewhere else (in this case, a few spaces <text:soft-page-break/>below).</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">As you can see, the harps use an accidental-style different from other instruments.</text:p>
+   <text:p text:style-name="P2">It may be obvious but you don&apos;t need to select any accidental-style for the percussion!.</text:p>
+   <text:p text:style-name="P2">You can check out all the available accidental styles in the Lilypond documentation.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Also, notice that each line calls for a particular type of staff.</text:p>
+   <text:p text:style-name="P2">For the piccolos it is simply Staff, for the oboes, StaffGroup, for the bass drum, DrumStaff and, for the harps, PianoStaff.</text:p>
+   <text:p text:style-name="P2">This is very important.</text:p>
+   <text:p text:style-name="P2">The staff type used for the heading must match the one used for the creation of the staff in the score, otherwise, the name will not be printed or appear in unexpected places.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">The next lines of the full score file include, one by one, all the files that contain the music expressions for every instrument on the piece.</text:p>
+   <text:p text:style-name="P2">Then, there is an expression which lets me define the way I want the texts of the \partCombine command to look like.</text:p>
+   <text:p text:style-name="P2">The default is solo I, where only the first instrument plays, solo II, where only the second one plays and a 2, where both play the same part.</text:p>
+   <text:p text:style-name="P2">I have changed that to 1., 2., and a2 (I don&apos;t like the space between the two characters).</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">%%%%% Include Instruments</text:p>
+   <text:p text:style-name="P2">\include &quot;PiccoloOne.ly&quot;</text:p>
+   <text:p text:style-name="P2">\include “PiccoloTwo.ly”</text:p>
+   <text:p text:style-name="P2">...</text:p>
+   <text:p text:style-name="P2">\include &quot;DoubleBass.ly&quot;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">PartCombineTexts = { %%%%% this defines the way \partCombine texts to look like</text:p>
+   <text:p text:style-name="P2"><text:tab/>\set Staff.soloText = #&quot;1.&quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/>\set Staff.soloIIText = #&quot;2.&quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/>\set Staff.aDueText = #&quot;a2&quot;</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Now we get to the score block itself.</text:p>
+   <text:p text:style-name="P2">I will copy and explain here only some parts, because much of the code is identical for several instruments.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\score { </text:p>
+   <text:p text:style-name="P2"><text:tab/>&lt;&lt; % begin of score</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\override Score.BarNumber #&apos;break-visibility = ##(#f #t #t)</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>%%%%% Woodwinds</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\new StaffGroup \with { \BracketinSingleStaff \WithinGroupSpacing } &lt;&lt;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>\new Staff = &quot;piccolos&quot; \with { \ShowEmptyStaves } &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\Metrics</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\PiccolosHeading</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\PartCombineTexts</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\killCues { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\partcombine </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\PiccoloOne </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\PiccoloTwo </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>} </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>}</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { \PiccoloOneMarks }</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>&gt;&gt;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>&gt;&gt; % end of piccolo staff</text:p>
+   <text:p text:style-name="P2"><text:soft-page-break/><text:tab/><text:tab/><text:tab/>\new Staff = &quot;flutes&quot; \with { \ShowEmptyStaves } &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\FlutesHeading</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\PartCombineTexts</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\killCues { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\partcombine </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\FluteOne </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\FluteTwo </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>} </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>}</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { \FluteOneMarks }</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>&gt;&gt; % end of flutes staff<text:tab/><text:tab/></text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>\new StaffGroup \with { \OboesHeading \NoSquareinSingleStaff } &lt;&lt;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\set StaffGroup.systemStartDelimiter = #&apos;SystemStartSquare</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\new Staff = &quot;oboes 1&amp;2&quot; \with { \ShowEmptyStaves } &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\set Staff.instrumentName = #&quot;I-II &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\set Staff.shortInstrumentName = #&quot;I-II &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\PartCombineTexts</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\killCues { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\partcombine </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\OboeOne </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\OboeTwo </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>} </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>}</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { \OboeOneMarks }</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>&gt;&gt; % end of oboes 1 &amp; 2</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\new Staff = &quot;oboe 3&quot; \with { \ShowEmptyStaves } &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\set Staff.instrumentName = #&quot;III &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\set Staff.shortInstrumentName = #&quot;III &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\killCues { \OboeThree } }</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>&gt;&gt; % end of oboe 3<text:tab/><text:tab/></text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>&gt;&gt; % end of oboes staff group</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>%%%%% here follows the code for creating the staves of all the other woodwinds</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>&gt;&gt;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>%%%%% Brass</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>%%%%% here goes the code to create the staves for the brass</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>%%%%% Percussion</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>\new StaffGroup \with { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\TimpaniHeading </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\BracketinSingleStaff </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\BetweenGroupSpacing } &lt;&lt;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\set StaffGroup.systemStartDelimiter = #&apos;SystemStartSquare</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\new Staff = &quot;timpani 1&quot; \with { \ShowEmptyStaves } &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\set Staff.instrumentName = #&quot;I &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\set Staff.shortInstrumentName = #&quot;I &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { \killCues { \TimpaniOne } }</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>&gt;&gt; % end of timpani I</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\new Staff = &quot;timpani 2&quot; \with { \ShowEmptyStaves } &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\set Staff.instrumentName = #&quot;II &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\set Staff.shortInstrumentName = #&quot;II &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { \killCues { \TimpaniTwo } }</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>&gt;&gt; % end of timpani II</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>&gt;&gt; % end of timpani staff group</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>%%%%% here goes the indefinite pitch group</text:p>
+   <text:p text:style-name="P2"><text:soft-page-break/><text:tab/><text:tab/>\new StaffGroup <text:s/>\with { \BracketinSingleStaff \BetweenGroupSpacing } &lt;&lt;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>\new Staff = &quot;glockenspiel&quot; \with { \HideEmptyStaves } &lt;&lt;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\GlockenspielHeading</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { \killCues { \Glockenspiel } }</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>&gt;&gt; % end of glockespiel staff</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>&gt;&gt; % end of glockenspiel staff group</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>%%%%% Harps</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\new PianoStaff \with { \HarpsHeading \KeyboardStaffSpacing } &lt;&lt;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>\new Staff = &quot;HarpOneRH&quot; \with { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\ShowEmptyStaves } &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { \killCues { \HarpOneRH } } &gt;&gt;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>\new Dynamics = &quot;organ dynamics&quot; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>{ \KeyboardCenteredDynamics \HarpOneDynamics }</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>\new Staff = &quot;HarpOneLH&quot; \with { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\ShowEmptyStaves } &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { \killCues { \HarpOneLH } } &gt;&gt;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>&gt;&gt; % end of harps</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>%%%%% Strings</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\new StaffGroup \with { \WithinGroupSpacing } &lt;&lt;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>\new StaffGroup \with { \ViolinsHeading } &lt;&lt;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\set StaffGroup.systemStartDelimiter = #&apos;SystemStartBrace</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\new Staff = &quot;violin I&quot; \with { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\consists &quot;Bar_number_engraver&quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\consists &quot;Metronome_mark_engraver&quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\override BarNumber #&apos;break-visibility = ##(#f #t #f)</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\ShowEmptyStaves } &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\set Staff.instrumentName = #&quot;I &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\set Staff.shortInstrumentName = #&quot;I &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\Metrics </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\killCues { &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\ViolinOneA </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\ViolinOneB &gt;&gt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>} </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>}</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>&gt;&gt; % end of violin I staff</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\new Staff = &quot;violin II&quot; \with { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\ShowEmptyStaves } &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\set Staff.instrumentName = #&quot;II &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\set Staff.shortInstrumentName = #&quot;II &quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\killCues { &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\ViolinTwoA </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\ViolinTwoB &gt;&gt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>} </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>}</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>&gt;&gt; % end of violin II staff</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>&gt;&gt; % end of violins staff group</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>\new Staff = &quot;viola&quot; \with { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\ShowEmptyStaves } &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\ViolaHeading </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\killCues { &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\ViolaA </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\ViolaB &gt;&gt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>} </text:p>
+   <text:p text:style-name="P2"><text:soft-page-break/><text:tab/><text:tab/><text:tab/><text:tab/>}</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>&gt;&gt; % end of viola staff</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>\new Staff = &quot;cello&quot; \with { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\ShowEmptyStaves } &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\VioloncelloHeading</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\killCues { &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\CelloA </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\CelloB &gt;&gt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>} </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>}</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>&gt;&gt; % end of cello staff</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>\new Staff = &quot;double bass&quot; \with { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\ShowEmptyStaves } &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\DoubleBassHeading </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inpart { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\killCues { &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\DoubleBassA </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\DoubleBassB &gt;&gt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>} </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>}</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>&gt;&gt; % end of double bass staff</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>&gt;&gt; % end of strings staff group</text:p>
+   <text:p text:style-name="P2"><text:tab/>&gt;&gt; % end of score</text:p>
+   <text:p text:style-name="P2"><text:tab/>\layout { %%%%% go to Jupiter.ly to see what I placed in here }</text:p>
+   <text:p text:style-name="P2"><text:tab/>\midi { }</text:p>
+   <text:p text:style-name="P2">} % end of score block</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Don&apos;t panic!</text:p>
+   <text:p text:style-name="P2">Let&apos;s go in step by step.</text:p>
+   <text:p text:style-name="P2">Right at the beginning of the score block, the \override Score.BarNumber #&apos;break-visibility is used to force Lilypond to print the bar number for every measure.</text:p>
+   <text:p text:style-name="P2">Even if you don&apos;t like this behavior (which, by the way, I do) leave this for the moment, as it will help you find your way in the score.</text:p>
+   <text:p text:style-name="P2">You can always erase this line afterwards or put a % before it.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Each section of the orchestra, except the percussion and the organ, are created inside a single staff group.</text:p>
+   <text:p text:style-name="P2">This will print a barline that crosses all the instruments within the group and a bracket at the left.</text:p>
+   <text:p text:style-name="P2">It will also help when adding extra spacing between the sections, which is a common thing in orchestral scores.</text:p>
+   <text:p text:style-name="P2">For the percussion (except, in this case, for the timpani), I put each instrument inside a staff group, to force Lilypond to print a bracket at the beginning of the line.</text:p>
+   <text:p text:style-name="P2">I do this simply because I don&apos;t like staves without brackets or braces, but you can change this if you want.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\BracketinSingleStaff and \WithinGroupSpacing are two of those tweaks I mentioned before, which can be found inside MyDefinitions.ly.</text:p>
+   <text:p text:style-name="P2">The first one tells Lilypond to always draw a bracket, even if only one staff is printed.</text:p>
+   <text:p text:style-name="P2">\WithinGroupSpacing defines a series of Lilypond parameters to modify the spacing of the staves within a staff group.</text:p>
+   <text:p text:style-name="P2">You can find the code for those two expressions in MyDefinitions.ly.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Then, you will see a tweak which is repeated several times in the score: \ShowEmptyStaves.</text:p>
+   <text:p text:style-name="P2">Located in MyDefinitions.ly, it tells Lilypond to print the staff even if it contains no music.</text:p>
+   <text:p text:style-name="P2">Once the score is finished, you can change this and use \HideEmptyStaves, to produce what is known <text:soft-page-break/>as a french score.</text:p>
+   <text:p text:style-name="P2">For this to work, the layout block should contain the following expressions:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\context { \Staff \RemoveEmptyStaves }</text:p>
+   <text:p text:style-name="P2">\context { \DrumStaff \RemoveEmptyStaves }</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">You can see that \Metrics has been called inside the piccolo staff.</text:p>
+   <text:p text:style-name="P2">This expression is contained within JupiterMetrics.ly and, as I already explained, defines all time signature and tempo changes.</text:p>
+   <text:p text:style-name="P2">You will only find it again inside the staff for the first violins.</text:p>
+   <text:p text:style-name="P2">The reason is simple: you don&apos;t need to repeat the time signature changes in every staff. If you just write them in the top one, Lilypond will repeat them throughout the whole score.</text:p>
+   <text:p text:style-name="P2">The tempo changes, on the other hand, will be repeated in every staff, if you call \Metrics for each one of them.</text:p>
+   <text:p text:style-name="P2">So, it makes sense to put \Metrics only in two places, the top staff and the staff for the first violins, which is where they usually go in an orchestral score.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Then, inside the piccolo staff, you will find the following expression:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\removeWithTag #&apos;inpart { </text:p>
+   <text:p text:style-name="P2"><text:tab/>\killCues { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\partcombine </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>\PiccoloOne </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>\PiccoloTwo </text:p>
+   <text:p text:style-name="P2"><text:tab/>} </text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">I already mentioned this before, when explaining the little problem with the tuba part.</text:p>
+   <text:p text:style-name="P2">With \removeWithTag #&apos;inpart we can filter all the lines of code which have been tagged inpart, so that they are not taken into consideration when compiling the full score.</text:p>
+   <text:p text:style-name="P2">\killCues removes all the cues that have been created in the part, which, of course, should be present in it, but are never printed in the full score.</text:p>
+   <text:p text:style-name="P2">\partcombine has also been fully explained above.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">At the beginning of the oboes group we find \NoSquareinSingleStaff.</text:p>
+   <text:p text:style-name="P2">This is another tweak found in MyDefinitions.ly.</text:p>
+   <text:p text:style-name="P2">It tells Lilypond not to draw a sub-bracket (the thin one) when only one of the staves of the group is showing.</text:p>
+   <text:p text:style-name="P2">Then, by the end of the oboes group, you will find \OboeOneMarks, which will make Lilypond print the dynamics, lines and special text for flute one, as we discussed before.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Take a look at the glockenspiel in the percussion section.</text:p>
+   <text:p text:style-name="P2">As you can see, I have created a staff for it and then placed that staff inside a staff group. </text:p>
+   <text:p text:style-name="P2">As I said before, I have done this to force Lilypond to print a bracket at the beginning of the line.</text:p>
+   <text:p text:style-name="P2">\BracketinSingleStaff has already been explained.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Now we come to the harps part.</text:p>
+   <text:p text:style-name="P2">I will print it again here for the sake of clarity:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\new PianoStaff \with { \HarpsHeading \KeyboardStaffSpacing } &lt;&lt;</text:p>
+   <text:p text:style-name="P2"><text:tab/>\new Staff = &quot;HarpOneRH&quot; \with { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\ShowEmptyStaves } &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\removeWithTag #&apos;inpart { \killCues { \HarpOneRH } } &gt;&gt;</text:p>
+   <text:p text:style-name="P2"><text:tab/>\new Dynamics = &quot;organ dynamics&quot; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>{ \KeyboardCenteredDynamics \HarpOneDynamics }</text:p>
+   <text:p text:style-name="P2"><text:tab/>\new Staff = &quot;HarpOneLH&quot; \with { </text:p>
+   <text:p text:style-name="P2"><text:soft-page-break/><text:tab/><text:tab/>\ShowEmptyStaves } &lt;&lt; </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\removeWithTag #&apos;inpart { \killCues { \HarpOneLH } } &gt;&gt;</text:p>
+   <text:p text:style-name="P2">&gt;&gt; % end of harps</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">This kind of staff is a bit different from others.</text:p>
+   <text:p text:style-name="P2">It requires not only to create the independent staves for each hand, but also a context called Dynamics, which contains all dynamic marks for the part.</text:p>
+   <text:p text:style-name="P2">This is the only way in which those marks will be printed vertically aligned between the staves.</text:p>
+   <text:p text:style-name="P2">Otherwise, they will appear attached to the staff where they have been created.</text:p>
+   <text:p text:style-name="P2">\KeyboardStaffSpacing and \KeyboardCenteredDynamics are two more tweaks that can be found inside MyDefinitions.ly.</text:p>
+   <text:p text:style-name="P2">The first one lets us modify the spacing of the piano staff, while the second one is necessary to effectively align the dynamics marks between the two staves.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Now, we come to the strings group.</text:p>
+   <text:p text:style-name="P2">You will first encounter an expression which tells Lilypond that the staff group should make use of a brace instead of a bracket: \set StaffGroup.systemStartDelimiter = #&apos;SystemStartBrace.</text:p>
+   <text:p text:style-name="P2">Then, notice that the \override BarNumber #&apos;break-visibility is also present here, as I want the bar numbers to be printed again, this time over the first violin part.</text:p>
+   <text:p text:style-name="P2">This is just the way I like it.</text:p>
+   <text:p text:style-name="P2">You may omit the line if you don want the bar numbers to be printed again.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Inside the staff for each violin part you will find a pair of lines that define the long and short names for it (I and II, in both cases).</text:p>
+   <text:p text:style-name="P2">This can also be found in other instruments, like the flutes, and allows us to do something which is not possible in a very popular WYSIWYG program: to print individual names for the staves inside a staff group.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Finally, every part of the strings calls two music expressions, labeled A and B on each case.</text:p>
+   <text:p text:style-name="P2">This is because I have written those parts using two voice contexts instead of writing them in one single expression, a task that would require very complex coding.</text:p>
+   <text:p text:style-name="P2">Open the file of any string group to see what I mean.</text:p>
+   <text:p text:style-name="P2">You can find more about voice contexts in the Lilypond documentation, under the title Explicitly instantiating voices.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">The paper block, at the end of the score file, contains the following lines:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\paper {</text:p>
+   <text:p text:style-name="P2"><text:tab/>two-sided = ##t</text:p>
+   <text:p text:style-name="P2"><text:tab/>page-limit-inter-system-space = ##t</text:p>
+   <text:p text:style-name="P2"><text:tab/>page-limit-inter-system-space-factor = 1.3</text:p>
+   <text:p text:style-name="P2"><text:tab/>ragged-bottom = ##f</text:p>
+   <text:p text:style-name="P2"><text:tab/>ragged-last-bottom = ##f</text:p>
+   <text:p text:style-name="P2"><text:tab/>ragged-last = ##t</text:p>
+   <text:p text:style-name="P2"><text:tab/>indent = 1.2\cm</text:p>
+   <text:p text:style-name="P2"><text:tab/>short-indent = 0.8\cm</text:p>
+   <text:p text:style-name="P2"><text:tab/>top-margin = 1.5\cm</text:p>
+   <text:p text:style-name="P2"><text:tab/>inner-margin = 2\cm</text:p>
+   <text:p text:style-name="P2"><text:tab/>outer-margin = 1.2\cm</text:p>
+   <text:p text:style-name="P2"><text:tab/>bottom-margin = 0.5\cm</text:p>
+   <text:p text:style-name="P2"><text:tab/>last-bottom-spacing #&apos;padding = #4</text:p>
+   <text:p text:style-name="P2"><text:tab/>last-bottom-spacing #&apos;stretchability = #4</text:p>
+   <text:p text:style-name="P2"><text:tab/>max-systems-per-page = 1</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Believe it or not, it has taken me a lot of time to figure out what to put in here in order to produce the <text:soft-page-break/>right type of layout.</text:p>
+   <text:p text:style-name="P2">Now, you have everything here in one single document, so you don&apos;t have to waste your time finding all those things by yourself, ain&apos;t that wonderful!</text:p>
+   <text:p text:style-name="P2">However, I&apos;d recommend you to search these variables in the Lilypond documentation, so you know what they are for.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">5. Creating the Parts</text:p>
+   <text:p text:style-name="P2">The creation of the parts is rather simple.</text:p>
+   <text:p text:style-name="P2">Now that we have written all the music, we only have to call the specific expressions for each instrument and Lilypond will create the part for us.</text:p>
+   <text:p text:style-name="P2">I prefer to create a separate folder for the parts and put there the .ly file that produces them.</text:p>
+   <text:p text:style-name="P2">There is a way to tell Lilypond to create separate pdf files for each part and name them appropriately, which I&apos;ll show you in a moment.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">First, we&apos;ll create a file called JupiterPartInstrumentHeadings.ly, to store the headings for the parts, which are different from the ones in the full score.</text:p>
+   <text:p text:style-name="P2">Then, we create a file called JupiterParts.ly.</text:p>
+   <text:p text:style-name="P2">The first part of the file looks like this:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\version &quot;2.16.1&quot;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">% -*-</text:p>
+   <text:p text:style-name="P2">% indent-tabs: yes;</text:p>
+   <text:p text:style-name="P2">% indent-width: 8;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">#(define mybassdrum &apos;((bassdrum default #t 0)))</text:p>
+   <text:p text:style-name="P2">#(define mycymbals &apos;((crashcymbal default #t 0)))</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\header {</text:p>
+   <text:p text:style-name="P2"><text:tab/>title = \markup \center-column { \fontsize #4 &quot;Also sprach Zarathustra!&quot; }</text:p>
+   <text:p text:style-name="P2"><text:tab/>subtitle = \markup \center-column { \fontsize #1 &quot;Tondichtung (frei nach Friedr, Nietzsche)&quot; }</text:p>
+   <text:p text:style-name="P2"><text:tab/>composer = &quot;Richard Strauss&quot;</text:p>
+   <text:p text:style-name="P2">} </text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\language &quot;nederlands&quot;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">%%%%% Include Global Parameters</text:p>
+   <text:p text:style-name="P2">\include &quot;../../Definitions/MyDefinitions.ly&quot;</text:p>
+   <text:p text:style-name="P2">\include &quot;../../Definitions/MyPersonalSettings.ly&quot;</text:p>
+   <text:p text:style-name="P2">\include &quot;../JupiterMetrics.ly&quot;</text:p>
+   <text:p text:style-name="P2">\include &quot;JupiterPartInstrumentHeadings.ly&quot;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">%%% %% Include Instruments</text:p>
+   <text:p text:style-name="P2">\include &quot;../PiccoloOne.ly&quot;</text:p>
+   <text:p text:style-name="P2">\include &quot;../PiccoloTwo.ly&quot;</text:p>
+   <text:p text:style-name="P2">…</text:p>
+   <text:p text:style-name="P2">\include &quot;../DoubleBass.ly&quot;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\include &quot;JupiterQuotes.ly&quot;</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">As you can see, we have to repeat the definitions of the <text:s/>drum style tables for the bass drum and cymbals.</text:p>
+   <text:p text:style-name="P2">The header now corresponds to the one that will be printed in each part.</text:p>
+   <text:p text:style-name="P2">Then, we need to include the files of the Global Parameters and all the files which contain the music.</text:p>
+   <text:p text:style-name="P2">I&apos;ll discuss the purpose of JupiterQuotes.ly for the next section of this tutorial.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2"><text:soft-page-break/>To create a part we have to use the command \book, which will tell Lilypond that everything inside it corresponds to a separate score.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">%%%%% PiccoloOne</text:p>
+   <text:p text:style-name="P2">\book {</text:p>
+   <text:p text:style-name="P2"><text:tab/>\bookOutputSuffix &quot;Piccolo One&quot;</text:p>
+   <text:p text:style-name="P2"><text:tab/>\score {</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>&lt;&lt;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>\override Score.BarNumber #&apos;break-visibility = ##(#f #t #t)</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>\new Staff = &quot;piccolo 1&quot; &lt;&lt;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\compressFullBarRests</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>\removeWithTag #&apos;inscore { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\Metrics</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\PiccoloOneHeading</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/><text:tab/>\transpose c c, { &lt;&lt; \PiccoloOne \PiccoloOneMarks &gt;&gt; }</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/><text:tab/>}</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/><text:tab/>&gt;&gt;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>&gt;&gt;</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\layout { }</text:p>
+   <text:p text:style-name="P2"><text:tab/>}</text:p>
+   <text:p text:style-name="P2"><text:tab/>\paper { </text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>indent = 5\cm</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>top-margin = 1.5\cm</text:p>
+   <text:p text:style-name="P2"><text:tab/>}</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\bookOutputSuffix tells Lilypond to use whatever appears between quotes as the file name.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">You can see that here I&apos;m also asking for every bar number to be printed in the score.</text:p>
+   <text:p text:style-name="P2">According to my experience, this saves a lot of time at rehearsals!</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\compressFullBarRests is involved with the creation of multirests.</text:p>
+   <text:p text:style-name="P2">In our present case, this command will do nothing, because we have written every bar separately.</text:p>
+   <text:p text:style-name="P2">For \compressFullBarRests to work, we would have to manually combine the rests, like this: R2*6.</text:p>
+   <text:p text:style-name="P2">This means 6 bars of value 1, in other words, 8 half rests, and will print something like this:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2"><draw:frame text:anchor-type="as-char" svg:y="-0.635cm" draw:z-index="3" draw:style-name="gr4" draw:text-style-name="P3" svg:width="2.184cm" svg:height="1.269cm">
+     <draw:image xlink:href="">
+      <office:binary-data>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
+      </office:binary-data>
+      <text:p/>
+     </draw:image>
+    </draw:frame></text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">In my opinion, there should be another way to deal with this.</text:p>
+   <text:p text:style-name="P2">I would certainly prefer not to combine the rests and leave them as they are, for the simple fact that this is an extra operation, one which requires quite some time, indeed!</text:p>
+   <text:p text:style-name="P2">Also, if I were writing a new composition, rather than transcribing an existing score, leaving the rests separated would mean I could easily make corrections.</text:p>
+   <text:p text:style-name="P2">Of course, I could always do things like this:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">%{ R2 | % 1</text:p>
+   <text:p text:style-name="P2">R2 | % 2</text:p>
+   <text:p text:style-name="P2">R2 | % 3</text:p>
+   <text:p text:style-name="P2">R2 | % 4</text:p>
+   <text:p text:style-name="P2">R2 | % 5</text:p>
+   <text:p text:style-name="P2">R2 | % 6 %}</text:p>
+   <text:p text:style-name="P2">R2*6 | % 1-6</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Here, everything contained within %{ and %} is considered a comment and the R1*6 replaces the <text:soft-page-break/>missing measures.</text:p>
+   <text:p text:style-name="P2">It works but, again, it consumes time!</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">Hopefully, our kind Lilypond developers will come up with a solution to this problem.</text:p>
+   <text:p text:style-name="P2">Something like a command that groups rests together according to certain parameters.</text:p>
+   <text:p text:style-name="P2">That would certainly be very much appreciated!</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">6. Cues</text:p>
+   <text:p text:style-name="P2">The only thing missing now is the insertion of cues; you know, those tiny notes that tell you what other performers are playing.</text:p>
+   <text:p text:style-name="P2">Experience has taught me that cues, though not essential, are the best way to prevent musicians from entering in the wrong places, and they also save precious rehearsal time!</text:p>
+   <text:p text:style-name="P2">Therefore, I always consider cues a basic task in part creation and dedicate some time in planning their location.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">In my opinion, there is no need to put cues everywhere, as the conductor will definitely give some entrances that musicians could hardly miss.</text:p>
+   <text:p text:style-name="P2">Take for example the entrance of the horns in measure 6.</text:p>
+   <text:p text:style-name="P2">It is very unlikely that any horn player will miss that entrance, since they will all be paying attention and the conductor will hardly forget to give it.</text:p>
+   <text:p text:style-name="P2">Besides, it&apos;s the sixth measure, and the only thing we could cue for them is the part of the violins, which seems rather absurd.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">As a matter of fact, I find nothing that needs to be cued in these 27 measures of the piece, but just to show you how it works, I&apos;ve decided to cue the horns in all the instruments that begin playing in measure 12.</text:p>
+   <text:p text:style-name="P2">To do this we first need to add a quote, which we&apos;ll have to do in this way:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\addQuote &quot;Horns&quot; { \HornOne }</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">This is a kind of alias and you&apos;ll see how it works in a moment.</text:p>
+   <text:p text:style-name="P2">Now, let&apos;s say we want to quote the horns in the part of the first piccolo.</text:p>
+   <text:p text:style-name="P2">To do this, we have to make some changes in the part of this instrument.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">PiccoloOne = {</text:p>
+   <text:p text:style-name="P2"><text:tab/>\clef treble</text:p>
+   <text:p text:style-name="P2"><text:tab/>\key c \major</text:p>
+   <text:p text:style-name="P2"><text:tab/>\relative c&apos;&apos;&apos; {</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\PersonalSettings</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>R2 | % 1</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>R2 | % 2</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>R2 | % 3</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>R2 | % 4</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>R2 | % 5</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>%{ R2 | % 6</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/> <text:s text:c="2"/>R2 | % 7</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/> <text:s text:c="2"/>R2 | % 8</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/> <text:s text:c="2"/>R2 | % 9</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/> <text:s text:c="2"/>R2 | % 10</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/> <text:s text:c="2"/>R2 | % 11 %}</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\tag #&apos;inpart { \new CueVoice { \set instrumentCueName = &quot;Horns&quot; } }</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>\cueDuring #&quot;Horns&quot; #DOWN { R2*6 } | % 6-11</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>r4 e8 r | % 12</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>R2 | % 13</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>R2 | % 14</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>R2 | % 15</text:p>
+   <text:p text:style-name="P2"><text:soft-page-break/><text:tab/><text:tab/>a16 c d a c d a c | % 16</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>d a c d a c d a | % 17</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>c d a c d a c d | % 18</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>a c d a c d a c | % 19</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>d a c d a c d a | % 20</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>c d a c d a c d | % 21</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>r4 e~ | % 22</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>e2~ | % 23</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>e | % 24</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>g8-. f4 c8~--| % 25</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>c e d4-- | % 26</text:p>
+   <text:p text:style-name="P2"><text:tab/><text:tab/>c8[ b a g] | % 27</text:p>
+   <text:p text:style-name="P2"><text:tab/>}</text:p>
+   <text:p text:style-name="P2">}</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">As you can see, I&apos;ve placed the contents of measures 6 to 11 between a %{ and a %} in order to turn them into a comment.</text:p>
+   <text:p text:style-name="P2">Then I have created a new cue voice with the name Horns, so that it this name will be printed above the cue.</text:p>
+   <text:p text:style-name="P2">Also, I have to tag the cue voice or it will be printed in the score as well and I certainly don&apos;t want that to happen.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">The next line is the cue itself.</text:p>
+   <text:p text:style-name="P2">It will insert a cue for the duration between the braces, which in this case is 6 bars.</text:p>
+   <text:p text:style-name="P2">Now, to tell Lilypond which instrument to cue, we use the name that we previously added as a quote.</text:p>
+   <text:p text:style-name="P2">As we defined above, the name Horns corresponds to the contents of \HornOne.</text:p>
+   <text:p text:style-name="P2">Then, Lilypond will cue the contents of \HornOne from measures 6 to 11; it will add them as a new voice with the direction we indicate, in this case, down (i.e. like voice two).</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">You can also specify what kind of events should be quoted.</text:p>
+   <text:p text:style-name="P2">For example, I never include dynamics or slurs in my quotes.</text:p>
+   <text:p text:style-name="P2">Therefore, in order to prevent those events from being printed I have included this line inside \PersonalSettings:</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">\set Score.quotedCueEventTypes = #&apos;(note-event rest-event tie-event beam-event tuplet-span-event script-event)</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">The above is a list of what I want included in my cues: notes, rests, ties, beams, tuplets and script events (which include articulations, among others), anything else will not be printed.</text:p>
+   <text:p text:style-name="P2">Take a look at the files of all instruments that start in measure 12 and compare that with the pdf output for the same instruments.</text:p>
+   <text:p text:style-name="P2">Also, you can find more information about cues in the Lilypond documentation, under the title Writing parts.</text:p>
+   <text:p text:style-name="P2"/>
+   <text:p text:style-name="P2">7. Conclusions</text:p>
+   <text:p text:style-name="P2"/>
+  </office:text>
+ </office:body>
+</office:document>
