@@ -85,8 +85,8 @@ A simple music score, like a small piece for piano solo, can be written in a sin
 A score for a full orchestra, on the other hand, even it is a small piece, may need so many lines of code that it could become very hard to find one's way around. 
 Fortunately, Lilypond offers a simple way to solve this problem: separate the code in different files.
 You can write the music for each part of the score in a different file and, also, use separate files for special definitions, preferences and just about anything you can think of. 
-Then you just have to use a command known as \include, which puts the code from those other files in the places you want.
-Please refer to the Lilypond documentation to find detailed information about how to use the \include command.
+Then you just have to use a command known as \cmd{include}, which puts the code from those other files in the places you want.
+Please refer to the Lilypond documentation to find detailed information about how to use the \cmd{include} command.
 
 Now, let's put hands to work.
 As we just said, in orchestral music it is better to break up the code in separate files and that's precisely what we'll do here.
@@ -102,33 +102,33 @@ First, I recommend the creation of a file I call the empty file, which, in our c
 % indent-width: 8;
 
 Empty = {
-	R2 | % 1
-	R2 | % 2
-	R2 | % 3
-	R2 | % 4
-	R2 | % 5
-	R2 | % 6
-	R2 | % 7
-	R2 | % 8
-	R2 | % 9
-	R2 | % 10
-	R2 | % 11
-	R2 | % 12
-	R2 | % 13
-	R2 | % 14
-	R2 | % 15
-	R2 | % 16
-	R2 | % 17
-	R2 | % 18
-	R2 | % 19
-	R2 | % 20
-	R2 | % 21
-	R2 | % 22
-	R2 | % 23
-	R2 | % 24
-	R2 | % 25
-	R2 | % 26
-	R2 | % 27
+        R2 | % 1
+        R2 | % 2
+        R2 | % 3
+        R2 | % 4
+        R2 | % 5
+        R2 | % 6
+        R2 | % 7
+        R2 | % 8
+        R2 | % 9
+        R2 | % 10
+        R2 | % 11
+        R2 | % 12
+        R2 | % 13
+        R2 | % 14
+        R2 | % 15
+        R2 | % 16
+        R2 | % 17
+        R2 | % 18
+        R2 | % 19
+        R2 | % 20
+        R2 | % 21
+        R2 | % 22
+        R2 | % 23
+        R2 | % 24
+        R2 | % 25
+        R2 | % 26
+        R2 | % 27
 }
 \end{lilypondcode}
 
@@ -153,40 +153,14 @@ It will look like this:
 % indent-width: 8;
 
 InstrumentName = {
-	\clef treble % or bass, or alto, or tenor
-	\key c \major
-	\relative c {
-		\PersonalSettings
-		%%%%% copy the contents of Empty here
-	}
+       \clef treble % or bass, or alto, or tenor
+       \key c \major
+       \relative c {
+              \PersonalSettings
+              %%%%% copy the contents of Empty here
+       }
 }
 \end{lilypondcode}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 The first thing you may have noticed are two obscure include commands. 
@@ -213,8 +187,896 @@ Metrics = {
 \end{lilypondcode}
 
 
+You sure may wonder what \cmd{PersonalSettings} is.
+Well, it's a file that contains some special settings that I always use.
+By separating the code in a different file I can make quick adjustments in just one place, instead of going through every individual file.
+\cmd{PersonalSettings} is an expression contained in a file named MyPersonalSettings.ly, which looks like this:
+
+\begin{lilypondcode}
+\version "2.16.1"
+
+% -*-
+% indent-tabs: yes;
+% indent-width: 8;
+
+PersonalSettings = {
+       \set Score.quotedCueEventTypes = #'(note-event rest-event tie-event beam-event 
+                                          tuplet-span-event dynamic-event slur-event script-event)
+       \override Staff.TrillSpanner #'to-barline = ##t
+       \override Staff.TrillSpanner #'bound-details #'right #'padding = #1
+}
+\end{lilypondcode}
 
 
+The first line is related to cues (you know, those small notes in a part that show what other instruments are doing).
+It defines the way I want the cues to look (see \textbf{Writing parts} in the documentation for more information about this).
+The following line tells Lilypond that I want trill lines to end in the barline and the next one that I want a little space between the end of the line and the barline.
+It is just how I like trill lines to look.
+You may omit or change this if you want.
+Other special settings may go here as well, like the length of stemlets or extra padding for some particular objects.
+It's up to you.
+
+As you can see, the line with the \cmd{include} command that refers to \package{MyPersonalSettings.ly} is missing in the part template.
+This is because that line is located in other files that I will describe later.
+There is no need to include \package{MyPersonalSettings.ly} in the part template, as you will see.
+
+
+\section{Combined Parts}
+\label{sec:combined-parts}
+
+As I'm sure you already know, full scores usually have more than one instrument written in a single part.
+This is almost always the case with the winds.
+Two (sometimes more) instruments will be written on the same line in the score but will have to be separated to produce the individual parts for each musician.
+The strings, on the other hand, may be divided into two or more lines per group (divisi) but this doesn't mean we will need to separate those lines in different scores (except for some very unusual situations).
+
+This is the problem that I struggled the most with, when trying to design this system.
+In \textsc{wysiwyg} software you write the score and then manually separate the combined parts in separate files.
+The same thing on Lilypond would mean to write both instruments in one single music expression and then separate the parts for each instrument manually.
+I have tried that and, believe me, it is a real nightmare!.
+It is also very inefficient, from the whole Lilypond perspective.
+
+Fortunately, Lilypond has a tool that will help us deal with this problem; it's a very useful command called \cmd{partcombine} (notice the absence of uppercases).
+With \cmd{partcombine}, you just have to write both parts separately and then combine them in the score by using the command in this way:
+
+\begin{verbatim}
+\partcombine \ExpressionOne \ExpressionTwo
+\end{verbatim}
+
+Text
+
+However, \cmd{partcombine} is not always perfect, so we will have to set up its behavior now and then with the following modes, which will have to be written in the expression of one of the parts to be combined: 
+
+\cmd{partcombineApart} (separate the parts in different voices, first part is treated as voice one, second part as voice two)
+\cmd{partcombineChords} (write both parts as chords, which applies only where the rhythm is identical)
+\cmd{partcombineUnisono} (when both parts play the same pitches and rhythm)
+\cmd{partcombineSoloI} (when only the first instrument is playing, so that a text indicating this is placed above it)
+\cmd{partcombineSoloII} (when only the second instrument is playing, so that a text indicating this is placed above it)
+\cmd{partcombineAutomatic} (to reset to the automatic behavior of \cmd{partcombine})
+
+Where to put these commands is a bit tricky, as you will soon find out.
+Also, they shouldn't always go in the file of the same instrument.
+The description of all the intricacies involved go beyond this tutorial so I'll leave it to you to explore all the different possibilities.
+
+Also, using \cmd{partcombine} presents one more problem.
+It so happens that, in Apart mode, the marks for each voice are both written in the score.
+This means that you end up with duplicate dynamics as well as duplicate trill lines or texts for special indications; even fermatas appear twice.
+Look at what happens at bar 16 of the flutes when using \cmd{partcombine}:
+
+\begin{musicExample}
+    \lilypondSFE{first-example}
+    \caption{Problem with \cmd{partcombine}}
+\label{xmp:partcombine-example-one}
+\end{musicExample}
+
+This is applicable only when both parts need different indications.
+In that case, all marks for voice one should be printed on top of the staff, while marks for voice two should appear below, just like the example above.
+But, in our case, having the instruments the same dynamics, it is unnecessary to print them for both.
+Moreover, it consumes vertical space, a very limited resource in orchestral scores.
+
+\cmd{partcombine} does well in Unisono and Chords modes, where the marks are printed just once, but not in Apart mode, as has been shown.
+In this mode, we would be expected it to check if the dynamics are identical (for hairpins, if their start and end points are the same) and print them once -- below the staff -- if this is true or print them both in their respective positions, if they're not identical.
+However, \cmd{partcombine} isn't yet smart enough to do this, and it is up to us to find a proper workaround.
+
+My first intention was to use a snippet that can be found in the LSR (Lilypond Snippet Repository),  which creates a function called \cmd{filtermusic}.
+It's purpose is to filter all marks from one of the expressions to be combined, so that only the notes remain, and it's supposed to be used in this way:
+
+\begin{lilypondcode}
+\partCombine { \ExpressionOne \filtermusic \ExpressionTwo }
+\end{lilypondcode}
+
+Unfortunately, this doesn't work for the following two reasons:
+
+\begin{enumerate*}
+\item What if you have a measure where the voices should both have their marks printed individually?
+\item Unfortunately, Lilypond seems to first combine the expressions and then apply the filter, even if \cmd{filtermusic} is placed in between.
+\end{enumerate*}
+
+In fact, you end up with a part that shows only notes; all dynamics, lines, text, etc., are missing.
+So, until \cmd{partcombine} is overhauled and its behavior corrected, there is no other way but to write all marks for each part in a separate expression; something like this:
+
+\begin{lilypondcode}
+\version "2.16.1"
+
+% -*-
+% indent-tabs: yes;
+% indent-width: 8;
+
+InstrumentName = { %%%%% here we write all the notes and their articulations
+       \clef treble
+       \key c \major
+       \relative c {
+              \PersonalSettings
+              R1 | % 1
+              R1 | % 2
+              ...
+              R1 | % 22
+       }
+}
+
+InstrumentNameMarks = { %%%%% here we write all the dynamics, lines and special text indications
+       s1 | % 1
+       s1 | % 2
+       ...
+       s1 | % 22
+}
+\end{lilypondcode}
+
+There is no need to write the articulations separately, as \cmd{partcombine} does print only one when the parts are combined in Unisono or Chords modes.
+In Apart mode, the articulations will be printed individually for each voice, just as they should do.
+
+In this way, after the parts are combined we can use the marks from the first instrument and have them printed in the score.
+
+Therefore, if we apply the above mentioned to our little example, we get:
+
+\begin{musicExample}
+\lilypondSFE{example-2}
+\caption{Improved partcombine}
+\label{xmp:partcombine-example-two}
+\end{musicExample}
+
+To show you a complete example of how the file for the first instrument should look, I'll copy here the contents of HornThree.ly:
+
+\begin{lilypondcode}#
+\version "2.16.1"
+
+% -*-
+% indent-tabs: yes;
+% indent-width: 8;
+
+HornThree = {
+       \transpose c g {
+              \clef treble
+              \key c \major
+              \relative c' {
+                     \PersonalSettings
+                     R2 | % 1
+                     R2 | % 2
+                     R2 | % 3
+                     R2 | % 4
+                     R2 | % 5
+                     a8-. b4-- g8~-- | % 6
+                     g b-. a4-- | % 7
+                     b16-. c-. a-. b-. c8. g16~-- | % 8
+                     g4 b8-. c-. | % 9
+                     g16-. a-. c-. e-. g8. g16 | % 10
+                     a8-. b4-- g8~-- | % 11
+                     g r r4 | % 12
+                     R2 | % 13
+                     R2 | % 14
+                     R2 | % 15
+                     R2 | % 16
+                     R2 | % 17
+                     R2 | % 18
+                     R2 | % 19
+                     R2 | % 20
+                     R2 | % 21
+                     r4 b,~ | % 22
+                     b2~ | % 23
+                     b | % 24
+                     c8-. c4-- \partcombineApart f8~-- | % 25
+                     f f f4-- | % 26
+                     c'8[ b a g] | % 27
+              }
+       }
+}
+
+HornThreeMarks = {
+       s2 | % 1
+       s2 | % 2
+       s2 | % 3
+       s2 | % 4
+       s2 | % 5
+       s2\forteMoltoPesante | % 6
+       s2 | % 7
+       s2 | % 8
+       s2 | % 9
+       s2 | % 10
+       s2 | % 11
+       s2 | % 12
+       s2 | % 13
+       s2 | % 14
+       s2 | % 15
+       s2 | % 16
+       s2 | % 17
+       s2 | % 18
+       s2 | % 19
+       s2 | % 20
+       s2 | % 21
+       s4 s\fff | % 22
+       s2 | % 23
+       s2 | % 24
+       s2 | % 25
+       s2 | % 26
+       s2 | % 27
+}\end{lilypondcode}
+
+This is another example of where JupiterEmpty.ly comes in handy. 
+To create the expression for HornThreeMarks I just have to copy the contents of Empty (which is inside JupiterEmpty.ly) and use the replace tool in Frescobaldi to change every R for an s.
+If you don't use Frescobaldi, you can do the same thing on almost any text editing software, like LibreOffice, for example.
+
+\cmd{forteMoltoPesante} and \cmd{fortissimoSempreStaccato} (which can be found in the parts for the piccolos, flutes, oboes, english horn and clarinets) are two user-defined dynamics I have created, which concatenate the dynamics to the phrases molto pesante and sempre staccato, so that both elements are treated as a single entity.
+You will find them defined inside MyDefinitions.ly
+
+And now you may think we've nailed it.
+Well, unfortunately, we haven't!
+There is one special case where this approach will not work.
+Take a look at measure 15 of the piccolos:
+
+\begin{musicExample}
+\lilypondSFE{example-3}
+\caption{Another problem with partcombine}
+\label{xmp:partcombine-example-three}
+\end{musicExample}
+
+Here, the first instrument is silent while the second one is playing.
+If we use the expression with the marks for the first piccolo, no dynamics will be shown in the first measure.
+What to do then?
+We have to use tags.
+
+Tags are a way in which to filter things in Lilypond.
+You just tag something using a name you choose and then tell Lilypond to filter all code tagged with that particular name, so it will not be used when compiling.
+Check Different editions from one source, in the documentation, to find more about tags.
+
+Therefore, the solution for measure 18 is to write it in TubaOneMarks as follows:
+
+\begin{lilypondcode}
+PiccoloOneMarks = {
+       s1 | % 1
+       s1 | % 2
+       ...
+       \tag #'inscore { s4 s\f\< } | % 15
+       \tag #'inpart { s2 } | % 15
+       …
+       s1 | % 22
+}
+\end{lilypondcode}
+
+This is something that could only be done in Lilypond!
+Measure 15 effectively appears twice in the expression PiccoloOneMarks, only that the first entry is tagged inscore and the second one is tagged inpart.
+Then, in the score we have only to filter all code tagged inpart and the full score will be compiled using the first entry.
+In the part, we'll have to filter all code tagged inscore, so the second entry will be used there.
+
+In any case, tags need to be used anyway when creating an orchestral score because it is not rare to find instances where something has to be printed in the full score but not in the parts, or the other way around, of course.
+\textsc{wysiwyg} software already includes this feature, so there has to be a way of dealing with this in Lilypond, and using tags is how to do it.
+
+The case explained above about the tubas is rather unusual so don't worry about it.
+The important thing is that we have covered up every possible scenario regarding the combination of parts.
+Now we can create the files for each individual instrument and forget about creating a third file for the full score (or the other way around, which is just as worse!).
+We still have to write the marks for all combined instruments in separate expressions, which is a real drag!.
+True!.
+But, hopefully, \cmd{partcombine} will be improved in later versions of Lilypond and there will be no need of doing this.
+
+
+\section{Creating the Full Score}
+
+The file for the full score is the most complex one we have to create.
+Instead of going into a very long preamble about it, I'll just print a compressed version here, section by section, and explain every distinctive feature.
+You can open the file I created for this tutorial (called \filename{Zarathustra.ly}) and check out the complete version there.
+Let's examine each part of the score separately.
+
+\begin{lilypondcode}
+\version "2.16.1"
+
+% -*-
+% indent-tabs: yes;
+% indent-width: 8;
+
+%%%%% to place the bass drum and cymbal notes on the line in single-line staves
+#(define mybassdrum '((bassdrum default #t 0))) 
+#(define mycymbals '((crashcymbal default #t 0)))
+
+#(set-global-staff-size 8)
+
+\header {
+        title = \markup \center-column { \fontsize #8 "Jupiter, the Bringer of Jollity" \vspace #1 }
+        composer = "Gustav Holst"
+}
+
+\language "nederlands" %%%%% I prefer to use nederlands but you may change this if you like
+\end{lilypondcode}
+
+I don't have to say much about this first part except for the drum style tables defined for the bass drum and cymbals.
+As I want to use single-line staves for these instruments (one of the differences with the score found at IMSLP), I have to tell Lilypond that the notes in each case have to be written on the line.
+Otherwise, Lilypond will place the notes in their default position (because a single-line staff is simply one where the first, second, fourth and fifth lines have not been printed, and Lilypond still sees it as any other five-line staff).
+We don't need to do the same for the triangle and tambourine, as the default position for both instruments is the central line.
+You can check out all the different instruments available and their positions by looking at Percussion notes, in the Lilypond documentation.
+
+Now come the lines needed to include what I call the Global Parameters, which contain code needed to compile the full score:
+
+\begin{lilypondcode}
+%%%%% Include Global Parameters
+\include "../Definitions/MyDefinitions.ly"
+\include "../Definitions/MyPersonalSettings.ly"
+\include "JupiterMetrics.ly"
+\include "JupiterScoreInstrumentHeadings.ly"
+\end{lilypondcode}
+
+\filename{MyDefinitions} is a file where I have stored tweaks collected from all over the Internet.
+It helps me change several things without having to write very long expressions or intricate code.
+The \filename{../} before the name means it is located in a folder above the one where \filename{Jupiter.ly} is.
+The same folder is also the location for \filename{MyPersonalSettings.ly}, the file that contains the \cmd{PersonalSettings} expression. 
+
+\filename{JupiterMetrics.ly} is a file that contains all the time signature and tempo changes.
+As it is very usual to find changes of these parameters in an orchestral score, I prefer to put them in a separate file, so I don't have to be writing them down in every music expression.
+In a score with constant changes of meter this is a must!
+
+Finally, \filename{JupiterScoreInstrumentHeadings.ly} contains all the necessary definitions to produce the instrument names on the first page and on the subsequent pages, as well as other settings too.
+You can check out the contents of this file by yourself, so I'll just reproduce a few headings here:
+
+\begin{lilypondcode}
+PiccolosHeading = {
+       #(set-accidental-style 'modern)
+       \override Staff.Accidental #'hide-tied-accidental-after-break = ##t
+       \set Staff.instrumentName = #"2 Piccolos "
+       \set Staff.shortInstrumentName = #"Picc. "
+       \set Staff.midiInstrument = "piccolo"
+       \override Staff.InstrumentName #'self-alignment-X = #RIGHT
+}
+
+OboesHeading = {
+       #(set-accidental-style 'modern)
+       \override StaffGroup.Accidental #'hide-tied-accidental-after-break = ##t
+       \set StaffGroup.instrumentName = #"3 Oboes "
+       \set StaffGroup.shortInstrumentName = #"Ob. "
+       \set StaffGroup.midiInstrument = "oboe"
+       \override StaffGroup.InstrumentName #'self-alignment-X = #RIGHT
+}
+
+BassDrumHeading = {
+       \set DrumStaff.drumStyleTable = #(alist->hash-table mybassdrum)
+       \set DrumStaff.instrumentName = "Grosse Trommel "
+       \set DrumStaff.shortInstrumentName = #"gr. Trommel "
+       \override DrumStaff.InstrumentName #'self-alignment-X = #RIGHT
+}
+
+HarpsHeading = {
+       #(set-accidental-style 'piano)
+       \override Staff.Accidental #'hide-tied-accidental-after-break = ##t
+       \set PianoStaff.instrumentName = #"2 Harps "
+       \set PianoStaff.shortInstrumentName = #"2 Hp. "
+       \set Staff.midiInstrument = "orchestral harp"
+       \override PianoStaff.InstrumentName #'self-alignment-X = #RIGHT
+}\end{lilypondcode}
+
+I have intentionally copied here the heading for the bass drum, as it is a bit different from the rest.
+The first line calls the drum style table defined at the top of the full score file.
+Without this, the notes will not be printed on the line, but somewhere else (in this case, a few spaces below).
+
+As you can see, the harps use an accidental-style different from other instruments.
+It may be obvious but you don't need to select any accidental-style for the percussion!.
+You can check out all the available accidental styles in the Lilypond documentation.
+
+Also, notice that each line calls for a particular type of staff.
+For the piccolos it is simply Staff, for the oboes, StaffGroup, for the bass drum, DrumStaff and, for the harps, PianoStaff.
+This is very important.
+The staff type used for the heading must match the one used for the creation of the staff in the score, otherwise, the name will not be printed or appear in unexpected places.
+
+The next lines of the full score file include, one by one, all the files that contain the music expressions for every instrument on the piece.
+Then, there is an expression which lets me define the way I want the texts of the \cmd{partCombine} command to look like.
+The default is solo I, where only the first instrument plays, solo II, where only the second one plays and a 2, where both play the same part.
+I have changed that to 1., 2., and a2 (I don't like the space between the two characters).
+
+\begin{lilypondcode}
+%%%%% Include Instruments
+\include "PiccoloOne.ly"
+\include “PiccoloTwo.ly”
+...
+\include "DoubleBass.ly"
+
+PartCombineTexts = { %%%%% this defines the way \partCombine texts to look like
+       \set Staff.soloText = #"1."
+       \set Staff.soloIIText = #"2."
+       \set Staff.aDueText = #"a2"
+}
+\end{lilypondcode}
+
+Now we get to the score block itself.
+I will copy and explain here only some parts, because much of the code is identical for several instruments.
+
+\begin{lilypondcode}
+\score { 
+       << % begin of score
+              \override Score.BarNumber #'break-visibility = ##(#f #t #t)
+              %%%%% Woodwinds
+              \new StaffGroup \with { \BracketinSingleStaff \WithinGroupSpacing } <<
+                     \new Staff = "piccolos" \with { \ShowEmptyStaves } << 
+                            \Metrics
+                            \PiccolosHeading
+                            \PartCombineTexts
+                            \removeWithTag #'inpart { 
+                                   \killCues { 
+                                          \partcombine 
+                                                 \PiccoloOne 
+                                                 \PiccoloTwo 
+                                   } 
+                            }
+                            \removeWithTag #'inpart { \PiccoloOneMarks }
+                     >>
+                     >> % end of piccolo staff
+                     \new Staff = "flutes" \with { \ShowEmptyStaves } << 
+                            \FlutesHeading
+                            \PartCombineTexts
+                            \removeWithTag #'inpart { 
+                                   \killCues { 
+                                          \partcombine 
+                                                 \FluteOne 
+                                                 \FluteTwo 
+                                   } 
+                            }
+                            \removeWithTag #'inpart { \FluteOneMarks }
+                     >> % end of flutes staff              
+                     \new StaffGroup \with { \OboesHeading \NoSquareinSingleStaff } <<
+                                   \set StaffGroup.systemStartDelimiter = #'SystemStartSquare
+                                   \new Staff = "oboes 1&2" \with { \ShowEmptyStaves } << 
+                                          \set Staff.instrumentName = #"I-II "
+                                          \set Staff.shortInstrumentName = #"I-II "
+                                          \PartCombineTexts
+                                          \removeWithTag #'inpart { 
+                                                 \killCues { 
+                                                        \partcombine 
+                                                               \OboeOne 
+                                                               \OboeTwo 
+                                                 } 
+                                          }
+                                          \removeWithTag #'inpart { \OboeOneMarks }
+                                   >> % end of oboes 1 & 2
+                                   \new Staff = "oboe 3" \with { \ShowEmptyStaves } << 
+                                          \set Staff.instrumentName = #"III "
+                                          \set Staff.shortInstrumentName = #"III "
+                                          \removeWithTag #'inpart { 
+                                                 \killCues { \OboeThree } }
+                                   >> % end of oboe 3              
+                     >> % end of oboes staff group
+                     %%%%% here follows the code for creating the staves of all the other woodwinds
+              >>
+              %%%%% Brass
+                     %%%%% here goes the code to create the staves for the brass
+              %%%%% Percussion
+                     \new StaffGroup \with { 
+                            \TimpaniHeading 
+                            \BracketinSingleStaff 
+                            \BetweenGroupSpacing } <<
+                                   \set StaffGroup.systemStartDelimiter = #'SystemStartSquare
+                                   \new Staff = "timpani 1" \with { \ShowEmptyStaves } << 
+                                          \set Staff.instrumentName = #"I "
+                                          \set Staff.shortInstrumentName = #"I "
+                                          \removeWithTag #'inpart { \killCues { \TimpaniOne } }
+                                   >> % end of timpani I
+                                   \new Staff = "timpani 2" \with { \ShowEmptyStaves } << 
+                                          \set Staff.instrumentName = #"II "
+                                          \set Staff.shortInstrumentName = #"II "
+                                          \removeWithTag #'inpart { \killCues { \TimpaniTwo } }
+                                   >> % end of timpani II
+              >> % end of timpani staff group
+              %%%%% here goes the indefinite pitch group
+              \new StaffGroup  \with { \BracketinSingleStaff \BetweenGroupSpacing } <<
+                     \new Staff = "glockenspiel" \with { \HideEmptyStaves } <<
+                            \GlockenspielHeading
+                            \removeWithTag #'inpart { \killCues { \Glockenspiel } }
+                     >> % end of glockespiel staff
+              >> % end of glockenspiel staff group
+              %%%%% Harps
+              \new PianoStaff \with { \HarpsHeading \KeyboardStaffSpacing } <<
+                     \new Staff = "HarpOneRH" \with { 
+                            \ShowEmptyStaves } << 
+                            \removeWithTag #'inpart { \killCues { \HarpOneRH } } >>
+                     \new Dynamics = "organ dynamics" 
+                            { \KeyboardCenteredDynamics \HarpOneDynamics }
+                     \new Staff = "HarpOneLH" \with { 
+                            \ShowEmptyStaves } << 
+                            \removeWithTag #'inpart { \killCues { \HarpOneLH } } >>
+              >> % end of harps
+              %%%%% Strings
+              \new StaffGroup \with { \WithinGroupSpacing } <<
+                     \new StaffGroup \with { \ViolinsHeading } <<
+                                   \set StaffGroup.systemStartDelimiter = #'SystemStartBrace
+                                   \new Staff = "violin I" \with { 
+                                          \consists "Bar_number_engraver"
+                                          \consists "Metronome_mark_engraver"
+                                          \override BarNumber #'break-visibility = ##(#f #t #f)
+                                          \ShowEmptyStaves } << 
+                                                 \set Staff.instrumentName = #"I "
+                                                 \set Staff.shortInstrumentName = #"I "
+                                                 \Metrics 
+                                                 \removeWithTag #'inpart { 
+                                                        \killCues { << 
+                                                               \ViolinOneA 
+                                                               \ViolinOneB >> 
+                                                        } 
+                                                 }
+                                          >> % end of violin I staff
+                                   \new Staff = "violin II" \with { 
+                                          \ShowEmptyStaves } << 
+                                          \set Staff.instrumentName = #"II "
+                                          \set Staff.shortInstrumentName = #"II "
+                                          \removeWithTag #'inpart { 
+                                                 \killCues { << 
+                                                        \ViolinTwoA 
+                                                        \ViolinTwoB >> 
+                                                 } 
+                                          }
+                                   >> % end of violin II staff
+                     >> % end of violins staff group
+                     \new Staff = "viola" \with { 
+                            \ShowEmptyStaves } << 
+                            \ViolaHeading 
+                            \removeWithTag #'inpart { 
+                                   \killCues { << 
+                                          \ViolaA 
+                                          \ViolaB >> 
+                                   } 
+                            }
+                     >> % end of viola staff
+                     \new Staff = "cello" \with { 
+                            \ShowEmptyStaves } << 
+                            \VioloncelloHeading
+                            \removeWithTag #'inpart { 
+                            \killCues { << 
+                                   \CelloA 
+                                   \CelloB >> 
+                            } 
+                     }
+                     >> % end of cello staff
+                     \new Staff = "double bass" \with { 
+                            \ShowEmptyStaves } << 
+                            \DoubleBassHeading 
+                            \removeWithTag #'inpart { 
+                                   \killCues { << 
+                                          \DoubleBassA 
+                                          \DoubleBassB >> 
+                                   } 
+                     }
+                     >> % end of double bass staff
+              >> % end of strings staff group
+       >> % end of score
+       \layout { %%%%% go to Jupiter.ly to see what I placed in here }
+       \midi { }
+} % end of score block
+\end{lilypondcode}
+
+Don't panic!
+Let's go in step by step.
+Right at the beginning of the score block, the \verb|\override Score.BarNumber #'break-visibility| is used to force Lilypond to print the bar number for every measure.
+Even if you don't like this behavior (which, by the way, I do) leave this for the moment, as it will help you find your way in the score.
+You can always erase this line afterwards or put a % before it.
+
+Each section of the orchestra, except the percussion and the organ, are created inside a single staff group.
+This will print a barline that crosses all the instruments within the group and a bracket at the left.
+It will also help when adding extra spacing between the sections, which is a common thing in orchestral scores.
+For the percussion (except, in this case, for the timpani), I put each instrument inside a staff group, to force Lilypond to print a bracket at the beginning of the line.
+I do this simply because I don't like staves without brackets or braces, but you can change this if you want.
+
+\cmd{BracketinSingleStaff} and \cmd{WithinGroupSpacing} are two of those tweaks I mentioned before, which can be found inside MyDefinitions.ly.
+The first one tells Lilypond to always draw a bracket, even if only one staff is printed.
+\cmd{WithinGroupSpacing} defines a series of Lilypond parameters to modify the spacing of the staves within a staff group.
+You can find the code for those two expressions in MyDefinitions.ly.
+
+Then, you will see a tweak which is repeated several times in the score: \cmd{ShowEmptyStaves}.
+Located in MyDefinitions.ly, it tells Lilypond to print the staff even if it contains no music.
+Once the score is finished, you can change this and use \cmd{HideEmptyStaves}, to produce what is known as a french score.
+For this to work, the layout block should contain the following expressions:
+
+\begin{lilypondcode}
+\context { \Staff \RemoveEmptyStaves }
+\context { \DrumStaff \RemoveEmptyStaves }
+\end{lilypondcode}
+
+You can see that \cmd{Metrics} has been called inside the piccolo staff.
+This expression is contained within JupiterMetrics.ly and, as I already explained, defines all time signature and tempo changes.
+You will only find it again inside the staff for the first violins.
+The reason is simple: you don't need to repeat the time signature changes in every staff. If you just write them in the top one, Lilypond will repeat them throughout the whole score.
+The tempo changes, on the other hand, will be repeated in every staff, if you call \cmd{Metrics} for each one of them.
+So, it makes sense to put \cmd{Metrics} only in two places, the top staff and the staff for the first violins, which is where they usually go in an orchestral score.
+
+Then, inside the piccolo staff, you will find the following expression:
+
+\begin{lilypondcode}
+\removeWithTag #'inpart { 
+       \killCues { 
+              \partcombine 
+                     \PiccoloOne 
+                     \PiccoloTwo 
+       } 
+}
+\end{lilypondcode}
+
+I already mentioned this before, when explaining the little problem with the tuba part.
+With \cmd{removeWithTag \#'inpart} we can filter all the lines of code which have been tagged inpart, so that they are not taken into consideration when compiling the full score.
+\cmd{killCues} removes all the cues that have been created in the part, which, of course, should be present in it, but are never printed in the full score.
+\cmd{partcombine} has also been fully explained above.
+
+At the beginning of the oboes group we find \cmd{NoSquareinSingleStaff}.
+This is another tweak found in MyDefinitions.ly.
+It tells Lilypond not to draw a sub-bracket (the thin one) when only one of the staves of the group is showing.
+Then, by the end of the oboes group, you will find \cmd{OboeOneMarks}, which will make Lilypond print the dynamics, lines and special text for flute one, as we discussed before.
+
+Take a look at the glockenspiel in the percussion section.
+As you can see, I have created a staff for it and then placed that staff inside a staff group. 
+As I said before, I have done this to force Lilypond to print a bracket at the beginning of the line.
+\cmd{BracketinSingleStaff} has already been explained.
+
+Now we come to the harps part.
+I will print it again here for the sake of clarity:
+
+\begin{lilypondcode}
+\new PianoStaff \with { \HarpsHeading \KeyboardStaffSpacing } <<
+       \new Staff = "HarpOneRH" \with { 
+              \ShowEmptyStaves } << 
+              \removeWithTag #'inpart { \killCues { \HarpOneRH } } >>
+       \new Dynamics = "organ dynamics" 
+              { \KeyboardCenteredDynamics \HarpOneDynamics }
+       \new Staff = "HarpOneLH" \with { 
+              \ShowEmptyStaves } << 
+              \removeWithTag #'inpart { \killCues { \HarpOneLH } } >>
+>> % end of harps
+\end{lilypondcode}
+
+This kind of staff is a bit different from others.
+It requires not only to create the independent staves for each hand, but also a context called Dynamics, which contains all dynamic marks for the part.
+This is the only way in which those marks will be printed vertically aligned between the staves.
+Otherwise, they will appear attached to the staff where they have been created.
+\cmd{KeyboardStaffSpacing} and \cmd{KeyboardCenteredDynamics} are two more tweaks that can be found inside \filename{MyDefinitions.ly}.
+The first one lets us modify the spacing of the piano staff, while the second one is necessary to effectively align the dynamics marks between the two staves.
+
+Now, we come to the strings group.
+You will first encounter an expression which tells Lilypond that the staff group should make use of a brace instead of a bracket: \verb|\set StaffGroup.systemStartDelimiter = #'SystemStartBrace|.
+Then, notice that the \cmd{override BarNumber \#'break-visibility} is also present here, as I want the bar numbers to be printed again, this time over the first violin part.
+This is just the way I like it.
+You may omit the line if you don want the bar numbers to be printed again.
+
+Inside the staff for each violin part you will find a pair of lines that define the long and short names for it (I and II, in both cases).
+This can also be found in other instruments, like the flutes, and allows us to do something which is not possible in a very popular \textsc{wysiwyg} program: to print individual names for the staves inside a staff group.
+
+Finally, every part of the strings calls two music expressions, labeled A and B on each case.
+This is because I have written those parts using two voice contexts instead of writing them in one single expression, a task that would require very complex coding.
+Open the file of any string group to see what I mean.
+You can find more about voice contexts in the Lilypond documentation, under the title Explicitly instantiating voices.
+
+The paper block, at the end of the score file, contains the following lines:
+
+\begin{lilypondcode}
+\paper {
+       two-sided = ##t
+       page-limit-inter-system-space = ##t
+       page-limit-inter-system-space-factor = 1.3
+       ragged-bottom = ##f
+       ragged-last-bottom = ##f
+       ragged-last = ##t
+       indent = 1.2\cm
+       short-indent = 0.8\cm
+       top-margin = 1.5\cm
+       inner-margin = 2\cm
+       outer-margin = 1.2\cm
+       bottom-margin = 0.5\cm
+       last-bottom-spacing #'padding = #4
+       last-bottom-spacing #'stretchability = #4
+       max-systems-per-page = 1
+}
+\end{lilypondcode}
+
+Believe it or not, it has taken me a lot of time to figure out what to put in here in order to produce the right type of layout.
+Now, you have everything here in one single document, so you don't have to waste your time finding all those things by yourself, ain't that wonderful!
+However, I'd recommend you to search these variables in the Lilypond documentation, so you know what they are for.
+
+\section{Creating the Parts}
+
+The creation of the parts is rather simple.
+Now that we have written all the music, we only have to call the specific expressions for each instrument and Lilypond will create the part for us.
+I prefer to create a separate folder for the parts and put there the .ly file that produces them.
+There is a way to tell Lilypond to create separate pdf files for each part and name them appropriately, which I'll show you in a moment.
+
+First, we'll create a file called JupiterPartInstrumentHeadings.ly, to store the headings for the parts, which are different from the ones in the full score.
+Then, we create a file called JupiterParts.ly.
+The first part of the file looks like this:
+
+\begin{lilypondcode}
+\version "2.16.1"
+
+% -*-
+% indent-tabs: yes;
+% indent-width: 8;
+
+#(define mybassdrum '((bassdrum default #t 0)))
+#(define mycymbals '((crashcymbal default #t 0)))
+
+\header {
+       title = \markup \center-column { \fontsize #4 "Also sprach Zarathustra!" }
+       subtitle = \markup \center-column { \fontsize #1 "Tondichtung (frei nach Friedr, Nietzsche)" }
+       composer = "Richard Strauss"
+} 
+
+\language "nederlands"
+
+%%%%% Include Global Parameters
+\include "../../Definitions/MyDefinitions.ly"
+\include "../../Definitions/MyPersonalSettings.ly"
+\include "../JupiterMetrics.ly"
+\include "JupiterPartInstrumentHeadings.ly"
+
+%%% %% Include Instruments
+\include "../PiccoloOne.ly"
+\include "../PiccoloTwo.ly"
+…
+\include "../DoubleBass.ly"
+
+\include "JupiterQuotes.ly"
+\end{lilypondcode}
+
+As you can see, we have to repeat the definitions of the  drum style tables for the bass drum and cymbals.
+The header now corresponds to the one that will be printed in each part.
+Then, we need to include the files of the Global Parameters and all the files which contain the music.
+I'll discuss the purpose of JupiterQuotes.ly for the next section of this tutorial.
+
+To create a part we have to use the command \cmd{book}, which will tell Lilypond that everything inside it corresponds to a separate score.
+
+\begin{lilypondcode}
+%%%%% PiccoloOne
+\book {
+       \bookOutputSuffix "Piccolo One"
+       \score {
+              <<
+                     \override Score.BarNumber #'break-visibility = ##(#f #t #t)
+                     \new Staff = "piccolo 1" <<
+                            \compressFullBarRests
+                            \removeWithTag #'inscore { 
+                                   \Metrics
+                                   \PiccoloOneHeading
+                                   \transpose c c, { << \PiccoloOne \PiccoloOneMarks >> }
+                            }
+                     >>
+              >>
+              \layout { }
+       }
+       \paper { 
+              indent = 5\cm
+              top-margin = 1.5\cm
+       }
+}
+\end{lilypondcode}
+
+\cmd{bookOutputSuffix} tells Lilypond to use whatever appears between quotes as the file name.
+
+You can see that here I'm also asking for every bar number to be printed in the score.
+According to my experience, this saves a lot of time at rehearsals!
+
+\cmd{compressFullBarRests} is involved with the creation of multirests.
+In our present case, this command will do nothing, because we have written every bar separately.
+For \cmd{compressFullBarRests} to work, we would have to manually combine the rests, like this: R2*6.
+This means 6 bars of value 1, in other words, 8 half rests, and will print something like this:
+
+\begin{musicExample}
+\lilypondSFE{example-4}
+\caption{MultiMeasureRest}
+\label{xmp:multi-measure-rest}
+\end{musicExample}
+
+In my opinion, there should be another way to deal with this.
+I would certainly prefer not to combine the rests and leave them as they are, for the simple fact that this is an extra operation, one which requires quite some time, indeed!
+Also, if I were writing a new composition, rather than transcribing an existing score, leaving the rests separated would mean I could easily make corrections.
+Of course, I could always do things like this:
+
+\begin{lilypondcode}
+%{ R2 | % 1
+R2 | % 2
+R2 | % 3
+R2 | % 4
+R2 | % 5
+R2 | % 6 %}
+R2*6 | % 1-6
+\end{lilypondcode}
+
+Here, everything contained within \%\{ and \%\} is considered a comment and the R1*6 replaces the missing measures.
+It works but, again, it consumes time!
+
+Hopefully, our kind Lilypond developers will come up with a solution to this problem.
+Something like a command that groups rests together according to certain parameters.
+That would certainly be very much appreciated!
+
+\section{Cue Notes}
+The only thing missing now is the insertion of cues; you know, those tiny notes that tell you what other performers are playing.
+Experience has taught me that cues, though not essential, are the best way to prevent musicians from entering in the wrong places, and they also save precious rehearsal time!
+Therefore, I always consider cues a fundamental task in part creation and dedicate some time in planning their location.
+
+In my opinion, there is no need to put cues everywhere, as the conductor will definitely give some entrances that musicians could hardly miss.
+Take for example the entrance of the horns in measure 6.
+It is very unlikely that any horn player will miss that entrance, since they will all be paying attention and the conductor will hardly forget to give it.
+Besides, it's the sixth measure, and the only thing we could cue for them is the part of the violins, which seems rather absurd.
+
+As a matter of fact, I find nothing that needs to be cued in these 27 measures of the piece, but just to show you how it works, I've decided to cue the horns in all the instruments that begin playing in measure 12.
+To do this we first need to add a quote, which we'll have to do in this way:
+
+\verb|\addQuote "Horns" { \HornOne }|
+
+This is a kind of alias and you'll see how it works in a moment.
+Now, let's say we want to quote the horns in the part of the first piccolo.
+To do this, we have to make some changes in the part of this instrument.
+
+\begin{lilypondcode}
+PiccoloOne = {
+       \clef treble
+       \key c \major
+       \relative c''' {
+              \PersonalSettings
+              R2 | % 1
+              R2 | % 2
+              R2 | % 3
+              R2 | % 4
+              R2 | % 5
+              %{ R2 | % 6
+                 R2 | % 7
+                 R2 | % 8
+                 R2 | % 9
+                 R2 | % 10
+                 R2 | % 11 %}
+              \tag #'inpart { \new CueVoice { \set instrumentCueName = "Horns" } }
+              \cueDuring #"Horns" #DOWN { R2*6 } | % 6-11
+              r4 e8 r | % 12
+              R2 | % 13
+              R2 | % 14
+              R2 | % 15
+              a16 c d a c d a c | % 16
+              d a c d a c d a | % 17
+              c d a c d a c d | % 18
+              a c d a c d a c | % 19
+              d a c d a c d a | % 20
+              c d a c d a c d | % 21
+              r4 e~ | % 22
+              e2~ | % 23
+              e | % 24
+              g8-. f4 c8~--| % 25
+              c e d4-- | % 26
+              c8[ b a g] | % 27
+       }
+}
+\end{lilypondcode}
+
+As you can see, I've placed the contents of measures 6 to 11 between a \%\{ and a \%\} in order to turn them into a comment.
+Then I have created a new cue voice with the name Horns, so that it this name will be printed above the cue.
+Also, I have to tag the cue voice or it will be printed in the score as well and I certainly don't want that to happen.
+
+The next line is the cue itself.
+It will insert a cue for the duration between the braces, which in this case is 6 bars.
+Now, to tell Lilypond which instrument to cue, we use the name that we previously added as a quote.
+As we defined above, the name Horns corresponds to the contents of \cmd{HornOne}.
+Then, Lilypond will cue the contents of \cmd{HornOne} from measures 6 to 11; it will add them as a new voice with the direction we indicate, in this case, down (i.e. like voice two).
+
+You can also specify what kind of events should be quoted.
+For example, I never include dynamics or slurs in my quotes.
+Therefore, in order to prevent those events from being printed I have included this line inside \cmd{PersonalSettings}:
+
+\begin{lilypondcode}
+\set Score.quotedCueEventTypes = 
+  #'(note-event rest-event tie-event beam-event tuplet-span-event script-event)
+\end{lilypondcode}
+
+The above is a list of what I want included in my cues: notes, rests, ties, beams, tuplets and script events (which include articulations, among others), anything else will not be printed.
+Take a look at the files of all instruments that start in measure 12 and compare that with the pdf output for the same instruments.
+Also, you can find more information about cues in the Lilypond documentation, under the title Writing parts.
+
+\section{Conclusion}
+
+
+\chapter{Old Stuff}
 
 As you can see, it is just a series of time signature changes and tempo markings separated by skips. 
 The complete file can be found amongst the files uploaded to the Mutopia Project.
